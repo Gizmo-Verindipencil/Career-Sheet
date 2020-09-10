@@ -1,0 +1,33 @@
+div#task-type-list {
+    border: solid 0.01rem #000000;
+    border-top: none;
+    display: inline-block;
+    padding: 1rem;
+    width: 100%;
+}
+
+div.task-type-list-task-wrapper{
+    float: left;
+    padding-bottom: 0.4rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.4rem;
+    vertical-align: middle;
+}
+
+p.task-type-list-task-symbol {
+    border: solid 0.08rem #222222;
+    border-radius: 20%;
+    color: #333333;
+    float: left;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    margin: 0.1rem;
+    padding: 0.1rem;
+    text-align: center;
+}
+
+p.task-type-list-task-description {
+    display: contents;
+    font-size: 0.8rem;
+}

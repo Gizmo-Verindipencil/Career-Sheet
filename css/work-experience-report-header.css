@@ -1,0 +1,138 @@
+p, strong, ul, li {
+    font-size: 0.8rem;
+}
+
+ul {
+    list-style-type: decimal;
+}
+
+table#work-experience-report-summary {
+    border-collapse: collapse;
+    border-spacing: 0;
+    height: 2.4rem;
+    width: 100%;
+}
+
+td.work-experience-report-summary-group {
+    background-color: #9c9c94;
+    border: solid 0.01rem #000;
+    border-bottom: none;
+    text-align: center;
+}
+
+td#work-experience-report-summary-item-name-number {
+    background-color: #9c9c94;
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 3.4%;
+}
+
+td#work-experience-report-summary-item-value-number {
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 3.4%;
+}
+
+td#work-experience-report-summary-item-name-period {
+    background-color: #9c9c94;
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 14%;
+}
+
+td#work-experience-report-summary-item-value-period {
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 14%;
+}
+
+td#work-experience-report-summary-item-name-month {
+    background-color: #9c9c94;
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 3%;
+}
+
+td#work-experience-report-summary-item-value-month {
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 3%;
+}
+
+td#work-experience-report-summary-item-name-task-and-system {
+    background-color: #9c9c94;
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 13.2%;
+}
+
+td#work-experience-report-summary-item-value-task-and-system {
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 13.2%;
+}
+
+td#work-experience-report-summary-item-name-project-peak-size {
+    background-color: #9c9c94;
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 13.2%;
+}
+
+td#work-experience-report-summary-item-value-project-peak-size {
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 13.2%;
+}
+
+td#work-experience-report-summary-item-name-technology {
+    background-color: #9c9c94;
+    border: solid 0.01rem #000;
+    font-weight: bold;
+    text-align: center;
+    width: 35.6%;
+}
+
+td#work-experience-report-summary-item-value-technology {
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 35.6%;
+}
+
+td.work-experience-report-summary-item-name-phase {
+    background-color: #9c9c94;
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 2.9%;
+}
+
+td.work-experience-report-summary-item-value-phase {
+    border: solid 0.01rem #000;
+    text-align: center;
+    width: 2.9%;
+}
+
+label.work-experience-report-summary-item-name-phase {
+    font-size: 0.8rem;
+    writing-mode: vertical-rl;
+}
+
+input[type="text"].work-experience-summary-value {
+    background: none;
+    border: none;
+    border-radius: 0;
+    font-size: 0.8rem;
+    outline: none;
+    overflow-x: hidden;
+    padding: 0;
+    pointer-events: none;
+    text-align: center;
+    width: 100%;
+}
+
+section#work-experience-report-detail {
+    border: solid 0.01rem #000;
+    border-top: none;
+    display: block;
+    padding: 1rem;
+}

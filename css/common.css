@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    background-color: #ebeae1ea;
+    color: #121212;
+    font-family: verdana, Arial, Helvetica, sans-serif;
+    max-width: 1000px;
+    min-width: 1000px;
+}
+
+p, label {
+    font-size: 0.8rem;
+}
+
+strong {
+    font-size: 1.4rem;
+}
+
+header {
+    background: linear-gradient(to bottom, #000000, #333333);
+    color: #fefefe;
+    position: relative;
+    height: 3rem;
+    width: 100%;
+}
+
+h1.page-title {
+    font-size: 1.25rem;
+    position: absolute;
+    margin: 0;
+    padding-left: 0.5rem;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+h1.section-title {
+    font-size: 1rem;
+}
+
+div.info-area {
+    height: 1.25rem;
+    line-height: 1.25rem;
+}
+
+.info-text {
+    font-size: 0.8rem;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

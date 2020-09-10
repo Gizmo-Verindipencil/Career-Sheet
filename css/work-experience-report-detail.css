@@ -1,0 +1,27 @@
+p.work-experience-report-detail-summary {
+    margin-block-start: 0;
+    margin-inline-start: 0;
+    text-indent: 0.8rem;
+}
+
+p.work-experience-report-detail-summary-without-text-indent {
+    margin-block-start: 0;
+    margin-inline-start: 0;
+    padding-left: 0.8rem;
+}
+
+ul.work-experience-report-detail-list {
+    list-style-type: decimal;
+}
+
+p.work-experience-report-detail-list-child {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+    margin-top: 0;
+    text-indent: 0.8rem;
+}
+
+img.work-experience-report-detail-list-child {
+    height: 300px;
+    width: 800px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>案件詳細</title>
+    <link rel="stylesheet" href="../css/work-experience-report-detail.css">
+</head>
+<body>
+    <strong>背景:</strong>
+    <p class="work-experience-report-detail-summary">
+        M社では内部監査を強する目的で、本番データに関連する各種の運用/開発業務に対する監視を行う事になりました。これはその当時の大枠の方針であり、この方針を受けて監視業務は拡大していく見通しでしたが、ある時点を境に方針は変わり、事業は縮小していった。
+    </p>
+
+    <strong>概要:</strong>
+    <p class="work-experience-report-detail-summary">
+        モニタリング業務
+    </p>
+
+    <strong>役割:</strong>
+    <p class="work-experience-report-detail-summary">
+        オペレーター
+    </p>
+
+    <strong>詳細:</strong>
+    <p class="work-experience-report-detail-summary">
+        次の日次/週次の作業に従事しました。
+    </p>
+    <ul class="work-experience-report-detail-list">
+        <li>本番サーバー接続の監視</li>
+        <p class="work-experience-report-detail-list-child">
+            ある本番サーバーには日々アクセスがあります。業務内容的にアクセスする必要性が判明している人もいましたが、実際にそれ以外のアクセスがあるのかを監視する業務でした。実際の作業としては、サーバーログを加工して、許可されているアクセス/各種申請などと照合するというものでした。稀に発生する例外ケースは判断が人に依存しており、対応方法は徐々に属人化していきました。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="3\1.png" alt="サーバーアクセスの監視">
+        <li>端末操作の監視</li>
+        <p class="work-experience-report-detail-list-child">
+            開発環境と本番環境は建前上完全に分離されており、特に開発チームから本番環境へのアクセスは規則上、禁止されている行為でした。従業員の端末には、ボタン押下等のイベント毎にディスプレイをキャプチャする仕組があり、その記録を参照することで作業者が本番環境に接続したか、また本番データの持ち出しを行ったか確認することができました。実際には、ピックアップされたいくつかのデータ転送コマンドを対象として確認しました。データ転送の手段は対象以外にも色々ある為、これはどちらかと言えば牽制の意味合いが強い業務でした。
+        </p>
+        <p class="work-experience-report-detail-list-child">
+            この作業は日次であり、また1日3～5時間程度を前述の動画染みた記録を視聴することになる為、健康面での問題がありました。1日座り続け、また数百回近く再生/停止ボタンを押して該当箇所の確認を行う為、指は腱鞘炎になり、軽いバネ指のようになりました。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="3\2.png" alt="端末操作の監視">
+        <li>データ持出の監視</li>
+        <p class="work-experience-report-detail-list-child">
+            これは恐らく殆どの企業でも同様だと思いますが、業務に関わる如何なるデータのプライベートな持出は許可されていません。特定部署におけるデータ持出を監視する業務で、対象は主にインターネットを介するデータの送信、印刷物の持出、社外へのメール送信、ID管理システムの運用でした。インターネットはi-Filter、印刷物はプリンターの印刷ログ、その他関連システムのログ等の解析がメインでした。ただしログだけで問題の有無を判断はできない場合、臨機応変に方法を変えて確認することになりました。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="3\3.png" alt="データ持出の監視">
+        <li>外部メール送信の監視</li>
+        <p class="work-experience-report-detail-list-child">
+            外部に送信されるメールに機密情報が含まれないかの監視でした。3にもメール監視がありますが、3とは別の組織が対象で、使われているシステムなどが違う為、手順や方法も大きく変わりました。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="3\4.png" alt="外部メール送信の監視">
+        <li>本番サーバー接続のサンプリング調査</li>
+        <p class="work-experience-report-detail-list-child">
+            本番サーバーに接続する際には、事前に申請を行う必要があります。この規則に違反して、申請のないアクセスが存在しないか監視を行いました。これは工数の関係上、本番サーバーにアクセスする全てを確認することが難しい為、サンプリングでの調査でした。人・チームによる使うツール・作業内容のバラツキが大きく、この作業には決まった手順というものがありませんでした。
+        </p>
+        <p class="work-experience-report-detail-list-child">
+            分からないコマンド・ツール・用語が登場した場合、都度調べて「何を意味しているか」を理解しながら作業をする必要がありました。ある程度パターン化はできたものの、最終的には考えて判断する必要がある為、属人化が進んでしまい、後の引継時に大きな苦労がありました。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="3\1.png" alt="本番サーバー接続の監視">
+        <li>セキュリティゾーン入室の監視</li>
+        <p class="work-experience-report-detail-list-child">
+            あるセキュリティゾーンでは20時以降の作業が禁止されることになりました。入室にはカードキーとパスワードを使う認証があり、そのログ情報を解析して20時以降の滞在や、不審な記録（例えば数十回続けて入室に失敗する、等）を検知しました。これは新しく始まった業務であり、どのような情報から何を判断するかという手順を作るところから始まりました。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="3\6.png" alt="セキュリティゾーン入室の監視">
+        <li>ツール作成</li>
+        <p class="work-experience-report-detail-list-child">
+            上記の監視業務などで発生する手作業について、日々の業務に影響が出ないレベルでツール化することが認められていました。基本的にはExcelかAccessでする作業の為、VBAを使ってツールを作成しました。作業はローテーションで行うものもあり、各担当者が色々な箇所を自動化していき、最後にはそれらをまとめて動作させるような仕組を作る人がおり、最終的には1時間程度かかる作業が15分に短縮された部分もありました。
+        </p>
+        <p class="work-experience-report-detail-list-child">
+            また、前任者が作りかけで放置したツールやバグが見つかることがあり、業務をする上で修正が必要になり、そういった既存ツールの不具合や不足部分の修正を余儀なくされることがありました。作業者は開発をする人ではなく、1年目の新人やパートの主婦だった為、コードの可読性はかなり悪いものでした。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="3\7.png" alt="ツール作成">
+        <li>業務整理（分析、ドキュメント作成）</li>
+        <p class="work-experience-report-detail-list-child">
+            ユーザー企業と業務を請け負う子会社Nと請負契約をしているT社と準委任契約をしている弊社という関係で仕事をしていましたが、ある時期から監視業務の拡大ではなく縮小に方針が切替わりました。これに伴い、子会社Nから各業務を別会社に移行、または廃止ということになりました。その為、状況整理と引継の為に各業務のDFDを作成し、また古くなっている手順書の刷新を行いました。業務によっては属人化が著しいものもあり、手順書が100頁近くなるものもありました。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="3\8.png" alt="業務整理（分析、ドキュメント作成）">
+    </ul>
+</body>
+</html>
