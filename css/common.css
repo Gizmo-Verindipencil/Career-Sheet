@@ -7,8 +7,7 @@ body {
     background-color: #ebeae1ea;
     color: #121212;
     font-family: verdana, Arial, Helvetica, sans-serif;
-    max-width: 1000px;
-    min-width: 1000px;
+    width: 1000px;
 }
 
 p, label {
