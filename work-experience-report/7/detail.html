@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>案件詳細</title>
+    <link rel="stylesheet" href="../css/work-experience-report-detail.css">
+</head>
+<body>
+    <strong>背景:</strong>
+    <p class="work-experience-report-detail-summary">
+        参画していた案は終わりましたが、引き続きA社にて次のお仕事をいただくことができました。販売管理/経費精算システム、等の基幹システムと連携して、全体の収支を可視化（帳票出力）するシステムの保守にアサインされました。近々、改訂が見込まれるが、その当時で詳しい人が一人しかいなかったので、システムの有識者を増やす意味もありました。
+    </p>
+
+    <strong>概要:</strong>
+    <p class="work-experience-report-detail-summary">
+        システム新規開発
+    </p>
+
+    <strong>役割:</strong>
+    <p class="work-experience-report-detail-summary-without-text-indent">
+        開発（設計～テスト）<br>
+        保守のサポート
+    </p>
+
+    <strong>詳細:</strong>
+    <p class="work-experience-report-detail-summary">
+        このシステムは2015年と比較的最近に開発されたが技術的負債の蓄積が著しいです。開発時は大炎上したようで、皆が見ているユーザー発表会で正常に動かない等のアクシデントがあったとお聞きしています。
+    </p>
+    <ul class="work-experience-report-detail-list">
+        <li>勉強</li>
+        <p class="work-experience-report-detail-list-child">
+            システムがどういうものか知る為に、まず最初に既存のドキュメントを探しました。設計書は見つかりまりましたが記載がありませんでした。炎上して納品物ではないドキュメント類は後回しにして、最終的につくらなかったみたいなので、プログラムの処理を書いてあるような参考になる資料はありませんでした。
+        </p>
+        <p class="work-experience-report-detail-list-child">
+            このシステムは、データ取込/帳票出力機能を持つWEBアプリケーションと、その他様々なシステムのデータを取り込んだり、連携したりするために追加開発されたネイティブアプリケーション群から構成されます。またデータの処理はDBのストアドプロシージャー群（20程度）で行われます。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="7\1.png" alt="勉強">
+        <li>関連システムの小改修</li>
+        <p class="work-experience-report-detail-list-child">
+            このシステムには他システムのマスタデータを内部マスタとして保持しています。しかし、その内のいくつかは保守担当者がDBに直接インポートしており、ユーザー自身はメンテナンスができませんでした。ユーザーの為の取込機能を開発したものの、担当者が多忙でリリースできていなかった機能があり、その機能に関して追加で改修することになりました。要件は単純でしたが、既存のソースコードの解析に時間がかかってしまいました。変数の名前などは、基本的に得体が知れない記号のように見えるもので（後から判明しましたが、これは別システムの項目の物理名でした。）ドキュメントがない状態では、処理を追わないと何を意味しているか分からない物でした。
+        </p>
+        <p class="work-experience-report-detail-list-child">
+            実装が終わってテストをしていた際、前回のテストケース/証跡を参考にしようとみたところ、画像が3枚おいてあるのみでした。嫌な予感がしましたが、今回用に作成された取込ファイルを全てインポートしてファイルの内容通りに取り込まれたか確認するとエラーが頻発しました。このマスタは他のマスタと綿密に絡み合っており、色々なチェック処理があり、そちらに該当していることが分かりました。最終的には全てが設定用ファイルの内容不備でしたが、30ファイルの500箇所以上を修正することになりました。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="7\2.png" alt="関連システムの小改修">
+        <li>保守データパッチの検証</li>
+        <p class="work-experience-report-detail-list-child">
+            本番データにて、誤ったマスタデータで処理されたことによるデータの不備が発生しました。これによって、帳票上で収支があわなくなるとインシデントになっており、保守担当の方がデータパッチを作成しました。関連する処理を確認して、修正後の金額は整合性がとれているか確認するクエリ（もしズレがあるならば、どの収支項目で、どの程度のズレが発生しているか）を作成しました。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="7\3.png" alt="保守データパッチの検証">
+        <li>パフォーマンス調査</li>
+        <p class="work-experience-report-detail-list-child">
+            このシステムのストアドプロシージャーは、不要なループ処理が使われており、クエリの並列実行に比べて、極端に処理時間が大きいという課題がありました。これについて、並列実行に置き換えたときにどの程度パフォーマンスが改善するかという調査を行いました。SQL-Serverでカーソルを使うループ処理を、クエリの並列実行に置き換えると50倍程度早くなるという結論になりました。
+        </p>
+        <img class="work-experience-report-detail-list-child" src="7\4.png" alt="パフォーマンス調査">
+    </ul>
+</body>
+</html>
