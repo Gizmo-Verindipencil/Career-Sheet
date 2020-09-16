@@ -13,7 +13,7 @@ class BasicInfoSetter {
     /**
      * セット処理の実行
      */
-    execute() {
+    execute = () => {
         this.setNameAndPhonetic(this.data);
         this.setBirthAndAge(this.data);
         this.setJoiningCurrentCompany(this.data);
@@ -30,7 +30,7 @@ class BasicInfoSetter {
      * 氏名・フリガナのセット
      * @param {Object} data 基本データ
      */
-    setNameAndPhonetic(data) {
+    setNameAndPhonetic = data => {
         // 漢字表記とフリガナ表記にて、姓と名でそれぞれの大きい方の文字長をセット
         const getGreaterLength = (value1, value2) => {
             return value1.length > value2.length ? 
@@ -64,7 +64,7 @@ class BasicInfoSetter {
      * 生年月日と年齢のセット
      * @param {Object} data 基本データ
      */
-    setBirthAndAge(data) {
+    setBirthAndAge = data => {
         const delimiter = "-";
         const date = data.birth.split(delimiter);
 
@@ -95,7 +95,7 @@ class BasicInfoSetter {
      * 入社年月日のセット
      * @param {Object} data 基本データ
      */
-    setJoiningCurrentCompany(data) {
+    setJoiningCurrentCompany = data => {
         const delimiter = "-";
         const date = data.joiningCurrentCompany.split(delimiter);
 
@@ -114,7 +114,7 @@ class BasicInfoSetter {
      * 性別のセット
      * @param {Object} data 基本データ
      */
-    setSex(data) {
+    setSex = data => {
         $("input[name='sex']").val(data.sex);
     }
 
@@ -122,7 +122,7 @@ class BasicInfoSetter {
      * 郵便番号と住所のセット
      * @param {Object} data 基本データ
      */
-    setZipCodeAndAddress(data) {
+    setZipCodeAndAddress = data => {
         // 郵便番号のセット
         const zipCode = `〒${data.address.zipCode}`;
         $("input[name='zipCode']").val(zipCode);
@@ -136,7 +136,7 @@ class BasicInfoSetter {
      * 最寄り駅のセット
      * @param {Object} data 基本データ
      */
-    setLocalStation(data) {
+    setLocalStation = data => {
         $("input[name='localLine']").val(`${data.localStation.line}  線`);
         $("input[name='localStation']").val(`${data.localStation.name}  駅`);
     }
@@ -145,7 +145,7 @@ class BasicInfoSetter {
      * 最終学歴と各種学校のセット
      * @param {Object} data 基本データ
      */
-    setAcademicBackground(data) {
+    setAcademicBackground = data => {
         const set = (mainOrSub) => {
             // 学歴をセット
             $(`input[name='${mainOrSub}']`).val(data.academicBackground[mainOrSub]);
