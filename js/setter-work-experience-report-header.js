@@ -30,6 +30,9 @@ class WorkExperienceReportHeaderSetter {
         this.setPhase6(this.data);
         this.setPhase7(this.data);
         this.setPhase8(this.data);
+
+        // セットした内容を表示
+        $("table#work-experience-report-summary").show();
     }
 
     /**

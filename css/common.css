@@ -50,3 +50,9 @@ div.info-area {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+p.no-javascript-warning {
+    color: #ff0000;
+    font-size: 1rem;
+    font-weight: bold;
+}

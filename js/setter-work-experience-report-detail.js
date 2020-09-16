@@ -15,6 +15,9 @@ class WorkExperienceReportDetailSetter {
      */
     execute = () => {
         this.setDetail(this.data);
+
+        // セットした内容を表示
+        $("section#work-experience-report-detail").show();
     }
 
     /**

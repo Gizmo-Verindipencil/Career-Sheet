@@ -21,6 +21,9 @@ class BasicInfoSetter {
         this.setZipCodeAndAddress(this.data);
         this.setLocalStation(this.data);
         this.setAcademicBackground(this.data);
+
+        // セットした内容を表示
+        $("section#basic-info-container").show();
     }
 
     /**

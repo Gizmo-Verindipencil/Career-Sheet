@@ -17,5 +17,8 @@ class QualificationSetter {
         for (const data of this.dataList) {
             $("#qualification").append(`<p>${data.name} ${data.score}</p>`);
         }
+
+        // セットした内容を表示
+        $("section#qualification-container").show();
     }
 }

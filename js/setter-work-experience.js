@@ -28,6 +28,9 @@ class WorkExperienceSetter {
             const row = `<tr>${cells.join("")}</tr>`;
             $("#work-experience tr:last").after(row);
         }
+
+        // セットした内容を表示
+        $("section#work-experience-container").show();
     }
 
     /**

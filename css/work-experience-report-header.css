@@ -9,6 +9,7 @@ ul {
 table#work-experience-report-summary {
     border-collapse: collapse;
     border-spacing: 0;
+    display: none;
     height: 2.4rem;
     width: 100%;
 }
@@ -133,6 +134,6 @@ input[type="text"].work-experience-summary-value {
 section#work-experience-report-detail {
     border: solid 0.01rem #000;
     border-top: none;
-    display: block;
+    display: none;
     padding: 1rem;
 }
