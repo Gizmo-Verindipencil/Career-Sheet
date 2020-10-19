@@ -14,6 +14,10 @@ class WorkExperienceReportHeaderSetter {
      * セット処理の実行
      */
     execute = () => {
+        // ボタン処理のセット
+        this.setPrevAndNextButtonAction(this.data);
+
+        //　サマリ情報のセット
         this.setNo(this.data);
         this.setPeriod(this.data);
         this.setMonth(this.data);
@@ -300,5 +304,26 @@ class WorkExperienceReportHeaderSetter {
     setPhase8 = data => {
         const targetTypes = [ "SM", "SO", "HD" ];
         this.setPhase(data, 8, targetTypes);
+    }
+
+    /**
+     * 前へ/次へボタン押下時の動作のセット
+     * @param {Object} data 経歴データ
+     */
+    setPrevAndNextButtonAction = data => {
+        // ページ遷移の処理
+        const jump = isNext => {
+            const direction = isNext ? 1 : -1;
+            const url = `report.html?no=${Number(data.no)+direction}`;
+            window.location = url;
+        }
+
+        // 前へボタンの動作をセット
+        const jumpPrev = () => jump(false);
+        $(`button#work-experience-report-jump-prev`).click(jumpPrev);
+
+        // 次へボタンの動作をセット
+        const jumpNext = () => jump(true);
+        $(`button#work-experience-report-jump-next`).click(jumpNext);
     }
 }
