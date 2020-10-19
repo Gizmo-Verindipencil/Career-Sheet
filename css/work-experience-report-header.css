@@ -6,6 +6,15 @@ ul {
     list-style-type: decimal;
 }
 
+button#work-experience-report-jump-prev,
+button#work-experience-report-jump-next {
+    float: right;
+    font-size: 0.8rem;
+    height: 2rem;
+    margin: 0.5rem;
+    width: 2.8rem;
+}
+
 table#work-experience-report-summary {
     border-collapse: collapse;
     border-spacing: 0;
