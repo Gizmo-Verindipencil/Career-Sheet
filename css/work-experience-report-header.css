@@ -7,6 +7,7 @@ ul {
 }
 
 button#work-experience-report-jump-prev,
+button#work-experience-report-jump-back,
 button#work-experience-report-jump-next {
     float: right;
     font-size: 0.8rem;
