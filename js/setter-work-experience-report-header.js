@@ -16,6 +16,7 @@ class WorkExperienceReportHeaderSetter {
     execute = () => {
         // ボタン処理のセット
         this.setPrevAndNextButtonAction(this.data);
+        this.setBackButtonAction();
 
         //　サマリ情報のセット
         this.setNo(this.data);
@@ -325,5 +326,15 @@ class WorkExperienceReportHeaderSetter {
         // 次へボタンの動作をセット
         const jumpNext = () => jump(true);
         $(`button#work-experience-report-jump-next`).click(jumpNext);
+    }
+
+    /**
+     * 戻るボタン押下時の動作のセット
+     */
+    setBackButtonAction = () => {
+        $(`button#work-experience-report-jump-back`).click(() => {
+            const url = "../index.html";
+            window.location = url;
+        });
     }
 }
