@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>案件詳細</title>
+    <link rel="stylesheet" href="../css/work-experience-report-detail.css">
+</head>
+<body>
+    <strong>背景:</strong>
+    <p class="work-experience-report-detail-summary">
+        （引き続きA社で）[7]で関わったシステムにて、収支管理の計上する項目の変更や、一部の拡売費項目の細分化とそれに付随する変更をする改訂が発生しました。当時は4年近くそのシステムに関わってきたべテランと私しかシステムを知る人がいなかったので、アサインされることになりました。
+    </p>
+
+    <strong>概要:</strong>
+    <p class="work-experience-report-detail-summary">
+        システム改訂
+    </p>
+
+    <strong>役割:</strong>
+    <p class="work-experience-report-detail-summary-without-text-indent">
+        開発（詳細設計～テスト）<br>
+        レビュワー（詳細設計/コード）
+    </p>
+
+    <strong>詳細:</strong>
+    <p class="work-experience-report-detail-summary">
+        メインはWEBアプリケーションですが、データを処理するDBのストアドプロシージャと、データを取込する既存のネイティブアプリケーションに、新レイアウトのファイルを取込する機能を追加しました。
+    </p>
+    <ul class="work-experience-report-detail-list">
+        <li>開発（詳細設計～テスト）</li>
+        <p class="work-experience-report-detail-list-child">
+            納期の問題があり、納品物ではない詳細設計書は半ば後回しで作業しました。あまり大きな機能ではなかったのですが、進める内に何度か基本設計を修正する必要が出てきて、一時的に稼働が高くなりました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child" src="12\1.png" alt="開発（詳細設計～テスト）"> -->
+        <li>詳細設計書の整備</li>
+        <p class="work-experience-report-detail-list-child">
+            [7]と同様に、既存の詳細設計書がないので、ソースコードを解析して資料化しました。前回はネイティブアプリケーションについてでしたが、今回のメインはストアドプロシージャ部分でした。このシステムには他にも設計書もない作った本人しか分からないものがありますが、最も難読なプログラムが改修対象でなくてよかったと思いました。（処理が48パターンあるが詳細が不明な処理。SQLをあまり整形していないので、エディタなどで開くと只管右端に見切れます。）
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child" src="12\2.png" alt="詳細設計書の整備"> -->
+        <li>設計書の整備</li>
+        <p class="work-experience-report-detail-list-child">
+            基本的に処理に関するドキュメントはなかったので、今回修正した機能については変更箇所を含めて全体の設計書を作成しました。当時の実装者が試行錯誤した後が残っており、例えば変数が100ほど宣言されているのに使っているのは50程度だったりと、解析に一番時間がかかりました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child" src="12\3.png" alt="設計書の整備"> -->
+    </ul>
+</body>
+</html>
