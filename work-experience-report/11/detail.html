@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>案件詳細</title>
+    <link rel="stylesheet" href="../css/work-experience-report-detail.css">
+</head>
+<body>
+    <strong>背景:</strong>
+    <p class="work-experience-report-detail-summary">
+        （引き続きA社で）製造段階がほとんど終わった販売管理システムを途中から引継しました。パートナー会社から派遣されてきている人が担当していましたが、この方との契約がきれるということでした。このシステムはWEBアプリケーションで、Forguncyというツールを使って構築されました。
+    </p>
+
+    <strong>概要:</strong>
+    <p class="work-experience-report-detail-summary">
+        システム新規開発
+    </p>
+
+    <strong>役割:</strong>
+    <p class="work-experience-report-detail-summary-without-text-indent">
+        開発（詳細設計～結合テスト）
+    </p>
+
+    <strong>詳細:</strong>
+    <p class="work-experience-report-detail-summary">
+        次の業務を行いました。
+    </p>
+    <ul class="work-experience-report-detail-list">
+        <li>開発（製造～テスト）</li>
+        <p class="work-experience-report-detail-list-child">
+            Forguncyは、GrapeCity社の製品で、Excelの方眼紙感覚でWEBシステムを構築できるという製品です。このA社は「Excelで○○」という製品を好み、他にも色々試しているようでした。このForguncyは既に他のシステムでも構築実績があるとのことですが、少し開発を通してかなり課題が出ました。（当時はバージョン3.0で、その後に更新されているようなので、最新版では解消しているかもしれません。）<br>
+            <br>
+            課題：<br>
+            ⅰ バージョン管理できない<br>
+            データはXML形式ですが、保存する度に要素の並びが変わるようでした。これによって、変更箇所でない部分についても、変更箇所扱いになるのでバージョン管理するうえで課題がありました。将来的にはデータはバイナリ形式で保存されるようになる為、バージョン管理できるようになる見込もなさそうでした。<br>
+            <br>
+            ⅱ 開発データが破損する<br>
+            Forguncyは専用の開発ツールであり、GUIで作業します。特定作業の組み合わせだと思いますが、開発データが破損するようで、この開発ツールがフリーズして作業内容を破棄せざるを得ないことが何度かありました。遭遇率は高くありませんでしたが、再現性のある事象でした。<br>
+            <br>
+            ⅲ PDF表示関連の機能にバグがある<br>
+            PDFの帳票を出力する機能がありましたが、書式や表示が特にPDFでおかしくなるという事象がありました。例えば、文字の色が透明になる、他のオプションと表示したときの見た目が大幅に異なる、等。<br>
+            <br>
+            ⅳ 挙動の統一性に欠ける<br>
+            例えば、用意されている処理に付属するメッセージの表示などでは、外観が不統一でした。<br>
+            <br>
+            ⅴ 明言されていない処理の副作用がある<br>
+            コマンドと呼ばれる処理（例：データ検索など）を組み合わせて動きを定義します。例えば、データ更新の際に表示される確認ダイアログで「いいえ」を選ぶと、後続の処理に関わらずそこで処理が終了するというような仕様がありました。GUI上はフローチャートのように見えるので、落とし穴のようでした。<br>
+            <br>
+            ⅵ Excelと同じと謳うが、Excelとは微妙に違う<br>
+            例えば書式設定と実際に表示される内容は、Excelとは異なっていました。<br>
+            <br>
+            ⅶ GUIが使いにくい（個人の感想）<br>
+            細かい処理を定義するコマンドについては、モーダルウィンドウから別のモーダルウィンドウを呼出して、更に別のモーダルウィンドウを呼出するということを何度もする必要がありました。画面はウィンドウがたくさんあり、何かをするにはそれらを閉じたり開いたりすることになりました。（これは開発する際に、この機能を使わないことで回避できる可能性があります。）
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child" src="11\1.png" alt="開発（製造～テスト）"> -->
+        <li>ツールに関する報告</li>
+        <p class="work-experience-report-detail-list-child">
+            Forguncyに関する長所/短所を纏めてレポートにしました。課題もありますが、メリットや向いている開発もあると思うので、その辺を盛り込んで客観的な内容となることを意識しました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child" src="11\2.png" alt="ツールに関する報告"> -->
+    </ul>
+</body>
+</html>
