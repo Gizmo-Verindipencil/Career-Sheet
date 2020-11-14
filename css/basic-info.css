@@ -135,7 +135,7 @@ td#basic-info-item-name-joining-current-company {
 
 td#basic-info-item-value-joining-current-company {
     border: solid 0.01rem #000000;
-    text-align: center;
+    text-align: left;
     vertical-align: middle;
 }
 
@@ -159,7 +159,7 @@ td#basic-info-item-name-address {
 
 td#basic-info-item-value-address {
     border: solid 0.01rem #000000;
-    text-align: center;
+    text-align: left;
     vertical-align: top;
 }
 
@@ -184,7 +184,7 @@ td#basic-info-item-name-academic-background-education {
 td#basic-info-item-value-academic-background-education {
     border: solid 0.01rem #000000;
     border-right: none;
-    text-align: center;
+    text-align: left;
     vertical-align: middle;
 }
 
@@ -204,7 +204,7 @@ td#basic-info-item-name-academic-background-other {
 td#basic-info-item-value-academic-background-other {
     border: solid 0.01rem #000000;
     border-right: none;
-    text-align: center;
+    text-align: left;
     vertical-align: middle;
 }
 
