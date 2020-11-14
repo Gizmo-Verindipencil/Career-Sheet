@@ -4,7 +4,7 @@ p.work-experience-report-detail-summary {
     text-indent: 0.8rem;
 }
 
-p.work-experience-report-detail-summary-without-text-indent {
+p#work-experience-report-detail-summary-without-text-indent {
     margin-block-start: 0;
     margin-inline-start: 0;
     padding-left: 0.8rem;
@@ -14,14 +14,32 @@ ul.work-experience-report-detail-list {
     list-style-type: decimal;
 }
 
-p.work-experience-report-detail-list-child {
+a.work-experience-report-detail-button {
+    appearance: button;
+    color: -internal-light-dark(black, white);
+    display: block;
+    float: right;
+    font-size: 0.8rem;
+    height: 2rem;
+    margin: 0.5rem;
+    text-rendering: auto;
+    width: 2.8rem;
+}
+
+li.work-experience-report-detail-list-child-title {
+    margin-left: 2.4rem;
+}
+
+p.work-experience-report-detail-list-child-text {
     font-size: 0.8rem;
     margin-bottom: 0.8rem;
     margin-top: 0;
+    padding-left: 1.6rem;
     text-indent: 0.8rem;
 }
 
-img.work-experience-report-detail-list-child {
+img.work-experience-report-detail-list-child-image {
     height: 300px;
+    padding-left: 1.6rem;
     width: 800px;
 }

@@ -28,33 +28,33 @@
         これは[7]で述べたシステムのアプリケーション基盤を流用することに決まりました。
     </p>
     <ul class="work-experience-report-detail-list">
-        <li>アプリケーション基盤-調査</li>
-        <p class="work-experience-report-detail-list-child">
+        <li class="work-experience-report-detail-list-child-title">アプリケーション基盤-調査</li>
+        <p class="work-experience-report-detail-list-child-text">
             [7]で述べたシステムのアプリケーション基盤を流用するという方針で開発することになりました。しかし、内容が整理されておらず、明らかに不要そうなものも散見される状態だったので、内容の棚卸を実施して、必要なものを選別しました。元々[7]のシステムも、WEBアプリケーションの経験が少ない人が開発していたというもあってか、公開されているサンプルや試行錯誤の末に使わなかったものが大量に存在していました。
         </p>
-        <img class="work-experience-report-detail-list-child" src="8\1.png" alt="アプリケーション基盤-調査">
-        <li>アプリケーション基盤-開発</li>
-        <p class="work-experience-report-detail-list-child">
+        <img class="work-experience-report-detail-list-child-image" src="8\1.png" alt="アプリケーション基盤-調査">
+        <li class="work-experience-report-detail-list-child-title">アプリケーション基盤-開発</li>
+        <p class="work-experience-report-detail-list-child-text">
             基本的な機能は揃っているので、大きく何かを変える必要はありませんでした。ただし、いくつかの処理にあるバグやおかしな仕様を修正する必要はありました。
         </p>
-        <p class="work-experience-report-detail-list-child">
+        <p class="work-experience-report-detail-list-child-text">
             修正前の処理にも、既にシステムでよくある「上か左端に常に表示されるメニュー」なるものがありましたが、これはかなり不便な仕様で、表示の切替などができないものでしかなかったので、その部分は完全に作りなおすことになりました。その時は初めてのWEBアプリケーションという事もあり、知識が足りなかったのでその手の仕組を表示の切替などをスムーズにする処理などをすべて自作しましたが、公開されているCSSライブラリなんかを使えば簡単に実装できることを後で知りました。
         </p>
-        <p class="work-experience-report-detail-list-child">
+        <p class="work-experience-report-detail-list-child-text">
             ユーザーが操作する一覧画面（入力画面を兼ねる）部分についても共通部分として作成しました。データの量がかなり多く（最大で1万レコード程度）で、かつ同時操作のユーザー数も最大100人程度を保証するものだった為、パフォーマンスには気を付け、可能な限りサーバー側の負担にならないようにしました。
         </p>
-        <p class="work-experience-report-detail-list-child">
+        <p class="work-experience-report-detail-list-child-text">
             共通のCSSなどを作成して、システム全体の雰囲気を統一できるようにしました。また、テーマ色の変更など、後で全体的な色味やデザインを変更したい時に作業が容易となることを意識して作業しました。
         </p>
-        <img class="work-experience-report-detail-list-child" src="8\2.png" alt="アプリケーション基盤-開発">
-        <li>設計・実装・テスト（単体/結合）</li>
-        <p class="work-experience-report-detail-list-child">
+        <img class="work-experience-report-detail-list-child-image" src="8\2.png" alt="アプリケーション基盤-開発">
+        <li class="work-experience-report-detail-list-child-title">設計・実装・テスト（単体/結合）</li>
+        <p class="work-experience-report-detail-list-child-text">
             WEB機能（画面/サーバー処理）と、取込されたデータを一括処理するストアドプロシージャの基本/詳細設計・実装・テストを担当しました。画面のデザインなどは黄金比・白銀比などのデザインの定石を取り入れたものにしました。
         </p>
-        <p class="work-experience-report-detail-list-child">
+        <p class="work-experience-report-detail-list-child-text">
             ストアドプロシージャの作成では、クエリの並列実行が行えないような処理を避けて、無意味な処理の遅さが発生しないようにしました。また取込対象のデータはカラム数が200と多かったので、処理過程では無用な一時データが発生しないように意識しました。
         </p>
-        <img class="work-experience-report-detail-list-child" src="8\3.png" alt="設計・実装・テスト（単体/結合）">
+        <img class="work-experience-report-detail-list-child-image" src="8\3.png" alt="設計・実装・テスト（単体/結合）">
     </ul>
 </body>
 </html>
