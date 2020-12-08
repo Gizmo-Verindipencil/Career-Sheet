@@ -1510,5 +1510,49 @@ const workExperience = [
                 "type" : []
             }
         ]
+    },
+    {
+        "no" : "24",
+        "businessType" : "自販機サービス",
+        "period" : {
+            "from" : "2020-08-21",
+            "to" : "2020-08-31"
+        },
+        "device" : [
+            "PC"
+        ],
+        "os" : [
+            "Windows 10"
+        ],
+        "programLanguage" : [
+            "VBA"
+        ],
+        "developmentTool" : [],
+        "framework" : [],
+        "platform" : [],
+        "db" : [
+            "Access"
+        ],
+        "other" : [],
+        "projectSummary" : "不具合調査",
+        "projectPeakSize" : "1",
+        "subordinate" : "0",
+        "system" : [
+            "業務ツール"
+        ],
+        "task" : [
+            {
+                "name" : "調査",
+                "type" : [
+                    "C"
+                ]
+            },
+            {
+                "name" : "実装",
+                "type" : [
+                    "C"
+                ]
+            }
+        ]
     }
 ]
