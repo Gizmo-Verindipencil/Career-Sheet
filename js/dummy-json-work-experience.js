@@ -1513,7 +1513,7 @@ const workExperience = [
     },
     {
         "no" : "24",
-        "businessType" : "自販機サービス",
+        "businessType" : "業務委託サービス",
         "period" : {
             "from" : "2020-08-21",
             "to" : "2020-08-31"
