@@ -8,7 +8,7 @@
 <body>
     <strong>背景:</strong>
     <p class="work-experience-report-detail-summary">
-        （引き続きA社で）現在Excelで行っている社内の進行プロジェクト管理をWEBアプリケーション化したいという要望がありました。これを昔に購入した「xCute」というExcelでWEBアプリケーションが構築できるという謳い文句の製品を試して欲しいと依頼を受けました。
+        常駐していたA社にて、社内管理業務の一部をシステム化するという話がありました。Excelで作った管理表を、各拠点間でメール送付し合うという内容の業務でしたが、これをWEBアプリケーションにしたいと言うものでした。これは昔にライセンスを入手した「xCute」というExcelでWEBアプリケーションを構築できるという謳い文句の製品を試すという目的で行われました。
     </p>
 
     <strong>概要:</strong>
@@ -18,28 +18,28 @@
 
     <strong>役割:</strong>
     <p class="work-experience-report-detail-summary-without-text-indent">
-        検証（1人作業）
+        検証/報告
     </p>
 
     <strong>詳細:</strong>
     <p class="work-experience-report-detail-summary">
-        次の段階に分けて検証を行いました。
+        次で示すような手順で検証を行いました。
     </p>
     <ul class="work-experience-report-detail-list">
         <li class="work-experience-report-detail-list-child-title">ツールの理解</li>
         <p class="work-experience-report-detail-list-child-text">
-            ツールの使い方や、実際にどのように作業するのかを確認しました。開発会社がとても小さいということがあるのかもしれませんが、ヘルプや説明の文章がとても奇妙でした。（誤字や、展開がおかしい、等。）
+            製品の機能・使い方等を確認して、システムの構築例を確認しました。この製品の開発会社が非常に小さい会社であり、もしかしたらチェックの体制が構築できていない等の事情があるのかもしれませんが、付随するヘルプや公式サイトの説明がとても奇妙なものであったのが印象的でした。（誤字が多く、日本語がおかしい。また、WEBサイトの構造も奇妙な構造でした。）
         </p>
         <p class="work-experience-report-detail-list-child-text">
-            対応しているDBなどは、SIで使われるものはほとんど網羅していましたが「○○というDBの場合は、特定の設定を××にする」といったお約束事が山のようにあり、習熟するまでは大変そうだと感じました。
+            この製品はDBとの連携機能があり、一般的なDBはほとんど網羅しているように思われましたが「○○というDBの場合は、××という設定を△△にする」というお約束が山のようにあり、習熟するまでに時間がかかりそうでした。この設定ファイルの実態は、今は懐かしのiniですが、一部はコメントと設定が逆になっている（つまり、設定がコメントアウトされ、コメントと思わしき内容が設定のように記述されている）箇所などもあり「本当にこれで正しいのか？」と疑ってしまうこともありました。
         </p>
         <img class="work-experience-report-detail-list-child-image" src="9\1.png" alt="ツールの理解">
         <li class="work-experience-report-detail-list-child-title">実践</li>
         <p class="work-experience-report-detail-list-child-text">
-            実際に社内業務をWEBアプリケーションにするとどうなるか確認してみることにしました。開発する際はExcel上で作業するのですが、特定セルに○○を記述するとか、セルにJavascriptを記述するとかという
+            実際に、社内業務を「xCute」を使ったWEBアプリケーションで構築するというのをやってみました。Excelそのものを使って開発するのですが、特定セルに動作を意味する文字列や、html・JavaScriptを記述するという見たこともない形式でした。Excelが使えればある程度の形にはなりますが、凝った画面を作りたい場合は、いずれにしてもhtml・CSS・JavaScriptなどの知識は必要になるようでした。
         </p>
         <p class="work-experience-report-detail-list-child-text">
-            結果的に、かなり特殊なスタイルでの開発であることと、あえてこれを採用する必要がないことから、この技術は採用しないことになりました。以下に、このツールを象徴するガイドがあったので紹介します。<br>
+            色々試行錯誤しながら試した結果、前評判通りかなり独特の開発スタイルであることが分かりました。調べてみると、この製品を愛用しているユーザーも世の中にいることが分かりました。しかしながら、あえてこれから利用する技術でもないことが分かった為、この製品は採用しないという結論になりました。以下に、このツールを象徴するノウハウがあったので、紹介します。<br>
             <br>
             xCuteで行・列を固定する方法：<br>
             https://www.microlab.jp/xcutedoc/documents/fix/fixhtm.htm
