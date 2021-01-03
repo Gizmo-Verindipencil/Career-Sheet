@@ -14,6 +14,11 @@ class WorkExperienceSetter {
      * セット処理の実行
      */
     execute = () => {
+        // 最近の職歴から並べる
+        this.dataList.sort((a, b) => {
+            return b.no - a.no;
+        });
+
         for (const data of this.dataList) {
             // td要素を生成
             const cells = [];
