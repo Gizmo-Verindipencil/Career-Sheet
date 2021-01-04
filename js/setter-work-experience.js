@@ -40,16 +40,16 @@ class WorkExperienceSetter {
 
     /**
      * td要素を生成
-     * @type {String}
      * @param {String} tdClass
      * @param {String} innerHtml
+     * @return {String} td要素を表すhtml
      */
     createTd = (tdClass, innerHtml) => `<td class='${tdClass}'>${innerHtml}</td>`;
 
     /**
      * No.のtd要素を生成
-     * @type {String}
      * @param {Object} 職務経歴データ
+     * @return {String} td要素を表すhtml
      */
     createNoTd = data => {
         // この情報に対応するクラス名
@@ -65,8 +65,8 @@ class WorkExperienceSetter {
 
     /**
      * 業種のtd要素を生成
-     * @type {String}
      * @param {Object} data 職務経歴データ
+     * @return {String} td要素を表すhtml
      */
     createBusinessTypeTd = data => {
         // この情報に対応するクラス名
@@ -92,8 +92,8 @@ class WorkExperienceSetter {
 
     /**
      * 期間のtd要素を生成
-     * @type {String}
      * @param {Object} data 職務経歴データ
+     * @return {String} td要素を表すhtml
      */
     createWorkingPeriodTd = data => {
         // この情報に対応するクラス名
@@ -135,8 +135,8 @@ class WorkExperienceSetter {
 
     /**
      * 機種とOSのtd要素を生成
-     * @type {String}
      * @param {Object} data 職務経歴データ
+     * @return {String} td要素を表すhtml
      */
     createTechnologyTd = data => {
         // この情報に対応するクラス名
@@ -174,8 +174,8 @@ class WorkExperienceSetter {
 
     /**
      * 対象業務のtd要素を生成
-     * @type {String}
      * @param {Object} data 職務経歴データ
+     * @return {String} td要素を表すhtml
      */
     createMainTask = data => {
         // この情報に対応するクラス名
@@ -204,8 +204,8 @@ class WorkExperienceSetter {
 
     /**
      * 作業内容のtd要素を生成
-     * @type {String}
      * @param {Object} data 職務経歴データ
+     * @return {String} td要素を表すhtml
      */
     createTaskType = data => {
         // この情報に対応するクラス名
