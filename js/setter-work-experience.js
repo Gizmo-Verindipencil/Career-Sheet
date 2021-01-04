@@ -48,7 +48,7 @@ class WorkExperienceSetter {
 
     /**
      * No.のtd要素を生成
-     * @param {Object} 職務経歴データ
+     * @param {Object} data 職務経歴データ
      * @return {String} td要素を表すhtml
      */
     createNoTd = data => {
