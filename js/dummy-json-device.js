@@ -3,10 +3,11 @@
  */
 class DeviceService {
     /**
-     * コンストラクタ
+     * 機種データを取得する
+     * @return 全ての機種データ
      */
-    constructor() {
-        this.data = [
+    getAll = () => {
+        return [
             {
                 "no" : "1",
                 "name" : "PC",
@@ -18,13 +19,5 @@ class DeviceService {
                 "description" : "小型で携帯性に優れたバーコード読込機能付きの端末。"
             }    
         ];
-    }
-
-    /**
-     * 機種データを取得する
-     * @return 全ての機種データ
-     */
-    getAll = () => {
-        return this.data.slice();
     }
 }
