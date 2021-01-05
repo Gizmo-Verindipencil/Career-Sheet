@@ -1,0 +1,30 @@
+/**
+ * 機種関連のサービス（ダミー）
+ */
+class DeviceService {
+    /**
+     * コンストラクタ
+     */
+    constructor() {
+        this.data = [
+            {
+                "no" : "1",
+                "name" : "PC",
+                "description" : "一般的なパソコン（デスクトップ/ノート）。"
+            },
+            {
+                "no" : "2",
+                "name" : "ハンディターミナル",
+                "description" : "小型で携帯性に優れたバーコード読込機能付きの端末。"
+            }    
+        ];
+    }
+
+    /**
+     * 機種データを取得する
+     * @return 全ての機種データ
+     */
+    getAll = () => {
+        return this.data.slice();
+    }
+}
