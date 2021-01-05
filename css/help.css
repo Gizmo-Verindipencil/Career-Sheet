@@ -1,0 +1,22 @@
+section#help-wrapper {
+    display: none;
+}
+
+table#help-info {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 0.8rem;
+}
+
+th.help-info-header {
+    background-color: #ffe4c4;
+    border: solid 0.01rem #000000;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+td.help-info-cell {
+    border: solid 0.01rem #000000;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
