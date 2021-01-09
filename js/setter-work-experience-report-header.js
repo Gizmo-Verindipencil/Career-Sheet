@@ -3,37 +3,40 @@
  */
 class WorkExperienceReportHeaderSetter {
     /**
-     * コンストラクタ
-     * @param {Object} dataList 経歴データ
-     */
-    constructor(data) {
-        this.data = data;
-    }
-
-    /**
      * セット処理の実行
      */
     execute = () => {
+        // 職務経歴データを取得
+        const service = new WorkExperienceService();
+        const params = new URLSearchParams(document.location.search.substring(1));
+        const no = params.get("no");
+        const experience = service.getByNo(no);
+
+        // データがなければ終了
+        if (!experience) {
+            return;
+        }
+
         // ボタン処理のセット
-        this.setPrevAndNextButtonAction(this.data);
+        this.setPrevAndNextButtonAction(experience);
 
         //　サマリ情報のセット
-        this.setNo(this.data);
-        this.setPeriod(this.data);
-        this.setMonth(this.data);
-        this.setTask(this.data);
-        this.setSystem(this.data);
-        this.setProjectPeakSize(this.data);
-        this.setSubordinate(this.data);
-        this.setTechnology(this.data);
-        this.setPhase1(this.data);
-        this.setPhase2(this.data);
-        this.setPhase3(this.data);
-        this.setPhase4(this.data);
-        this.setPhase5(this.data);
-        this.setPhase6(this.data);
-        this.setPhase7(this.data);
-        this.setPhase8(this.data);
+        this.setNo(experience);
+        this.setPeriod(experience);
+        this.setMonth(experience);
+        this.setTask(experience);
+        this.setSystem(experience);
+        this.setProjectPeakSize(experience);
+        this.setSubordinate(experience);
+        this.setTechnology(experience);
+        this.setPhase1(experience);
+        this.setPhase2(experience);
+        this.setPhase3(experience);
+        this.setPhase4(experience);
+        this.setPhase5(experience);
+        this.setPhase6(experience);
+        this.setPhase7(experience);
+        this.setPhase8(experience);
 
         // セットした内容を表示
         $("table#work-experience-report-summary").show();
