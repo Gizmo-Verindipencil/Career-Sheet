@@ -17,7 +17,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/dummy-json-basic-info.js"></script>
     <script src="js/dummy-json-qualification.js"></script>
-    <script src="js/dummy-json-task-color.js"></script>
     <script src="js/dummy-json-task-type.js"></script>
     <script src="js/dummy-json-work-experience.js"></script>
     <script src="js/setter-basic-info.js"></script>
@@ -27,10 +26,10 @@
     <script>
         $(document).ready(() => {
             const setters = [];
-            setters.push(new BasicInfoSetter(basicInfo));
-            setters.push(new WorkExperienceSetter(workExperience));
-            setters.push(new QualificationSetter(qualification));
-            setters.push(new TaskTypeListSetter(taskType));
+            setters.push(new BasicInfoSetter());
+            setters.push(new WorkExperienceSetter());
+            setters.push(new QualificationSetter());
+            setters.push(new TaskTypeListSetter());
             for (const setter of setters) {
                 setter.execute();
             }

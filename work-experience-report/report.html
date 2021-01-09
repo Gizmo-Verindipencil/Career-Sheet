@@ -13,16 +13,9 @@
     <script src="../js/setter-work-experience-report-detail.js"></script>
     <script>
         $(document).ready(() => {
-            const params = new URLSearchParams(document.location.search.substring(1));
-            const no = params.get("no");
-            const target = workExperience.filter(x => x.no === no);
-            if (target.length === 0) {
-                return;
-            }
-
             const setters = [];
-            setters.push(new WorkExperienceReportHeaderSetter(target[0]));
-            setters.push(new WorkExperienceReportDetailSetter(target[0]));
+            setters.push(new WorkExperienceReportHeaderSetter());
+            setters.push(new WorkExperienceReportDetailSetter());
             for (const setter of setters) {
                 setter.execute();
             }

@@ -3,24 +3,21 @@
  */
 class BasicInfoSetter {
     /**
-     * 基本情報のセット
-     * @param {Object} data 基本データ
-     */
-    constructor(data) {
-        this.data = data;
-    }
-
-    /**
      * セット処理の実行
      */
     execute = () => {
-        this.setNameAndPhonetic(this.data);
-        this.setBirthAndAge(this.data);
-        this.setJoiningCurrentCompany(this.data);
-        this.setSex(this.data);
-        this.setZipCodeAndAddress(this.data);
-        this.setLocalStation(this.data);
-        this.setAcademicBackground(this.data);
+        // 基本データを取得
+        const service = new BasicInfoService();
+        const data = service.get();
+
+        // 画面にデータをセット
+        this.setNameAndPhonetic(data);
+        this.setBirthAndAge(data);
+        this.setJoiningCurrentCompany(data);
+        this.setSex(data);
+        this.setZipCodeAndAddress(data);
+        this.setLocalStation(data);
+        this.setAcademicBackground(data);
 
         // セットした内容を表示
         $("section#basic-info-container").show();

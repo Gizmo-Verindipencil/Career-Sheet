@@ -4,7 +4,7 @@
 class DeviceService {
     /**
      * 機種データを取得する
-     * @return 全ての機種データ
+     * @return {Array<Object>} 全ての機種データ
      */
     getAll = () => {
         return [
