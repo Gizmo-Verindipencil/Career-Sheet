@@ -1429,7 +1429,7 @@ class WorkExperienceService {
                 "businessType" : "自販機サービス",
                 "period" : {
                     "from" : "2019-12-1",
-                    "to" : "2020-07-04"
+                    "to" : "2020-7-4"
                 },
                 "device" : [
                     "PC"
@@ -1524,8 +1524,8 @@ class WorkExperienceService {
                 "no" : "24",
                 "businessType" : "業務委託サービス",
                 "period" : {
-                    "from" : "2020-08-21",
-                    "to" : "2020-08-31"
+                    "from" : "2020-8-21",
+                    "to" : "2020-8-31"
                 },
                 "device" : [
                     "PC"
