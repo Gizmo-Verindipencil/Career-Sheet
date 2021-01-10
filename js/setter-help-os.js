@@ -10,10 +10,18 @@ class OsHelpSetter {
         const service = new OsService();
         const oss = service.getAll();
 
-        for (const os of oss) {
+        // 名前の昇順で並べる
+        oss.sort((a, b) => {
+            return a.no > b.no ? 1 : -1;
+        });
+
+        // データ毎の処理
+        for (let i = 0; i < oss.length;  i++) {
+            const os = oss[i];
+
             // td要素を生成
             const cells = [];
-            cells.push(this.createNoTd(os));
+            cells.push(this.createNoTd(i));
             cells.push(this.createNameTd(os));
             cells.push(this.createDescriptionTd(os));
 
@@ -22,6 +30,7 @@ class OsHelpSetter {
             $("#help-info tr:last").after(row);
         }
 
+        // 生成した要素を表示
         $("#help-wrapper").show();
     }
 
@@ -34,12 +43,13 @@ class OsHelpSetter {
 
     /**
      * No.のtd要素を生成
-     * @param {Object} os OSデータ
+     * @param {Number} index インデックス
      * @return {String} td要素を表すhtml
      */
-    createNoTd = os => {
+    createNoTd = index => {
+        const number = index + 1;
         const centering = "text-align:center;";
-        return this.createTd(`<p style="${centering}">${os.no}</p>`);
+        return this.createTd(`<p style="${centering}">${number}</p>`);
     }
 
     /**
