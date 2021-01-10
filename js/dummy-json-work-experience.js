@@ -111,7 +111,7 @@ class WorkExperienceService {
                 ],
                 "programLanguage" : [
                     "VBA", 
-                    "VBS"
+                    "VBScript"
                 ],
                 "developmentTool" : [],
                 "framework" : [],
@@ -1220,11 +1220,11 @@ class WorkExperienceService {
                 ],
                 "programLanguage" : [
                     "VB.NET",
-                    "UWSC",
-                    "Oracle Enterprise Manager Console"
+                    "UWSC"
                 ],
                 "developmentTool" : [
-                    "Visual Studio"
+                    "Visual Studio",
+                    "Oracle Enterprise Manager Console"
                 ],
                 "framework" : [],
                 "platform" : [],
