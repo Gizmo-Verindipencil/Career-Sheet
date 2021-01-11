@@ -54,19 +54,19 @@ class DevelopmentToolHelpSetter {
 
     /**
      * 名称のtd要素を生成
-     * @param {Object} device 機種データ
+     * @param {Object} developmentTool 開発ツールデータ
      * @return {String} td要素を表すhtml
      */
-    createNameTd = device => {
-        return this.createTd(`<p>${device.name}</p>`);
+    createNameTd = developmentTool => {
+        return this.createTd(`<p>${developmentTool.name}</p>`);
     }
 
     /**
      * 説明のtd要素を生成
-     * @param {Object} device 機種データ
+     * @param {Object} developmentTool 開発ツールデータ
      * @return {String} td要素を表すhtml
      */
-    createDescriptionTd = device => {
-        return this.createTd(`<p>${device.description}</p>`);
+    createDescriptionTd = developmentTool => {
+        return this.createTd(`<p>${developmentTool.description}</p>`);
     }
 }
