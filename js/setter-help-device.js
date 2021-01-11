@@ -58,7 +58,8 @@ class DeviceHelpSetter {
      * @return {String} td要素を表すhtml
      */
     createNameTd = device => {
-        return this.createTd(`<p>${device.name}</p>`);
+        const noWrap = "white-space:nowrap;";
+        return this.createTd(`<p style="${noWrap}">${device.name}</p>`);
     }
 
     /**

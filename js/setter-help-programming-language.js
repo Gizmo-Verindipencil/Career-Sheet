@@ -57,7 +57,8 @@ class ProgrammingLanguageHelpSetter {
      * @return {String} td要素を表すhtml
      */
     createNameTd = language => {
-        return this.createTd(`<p>${language.name}</p>`);
+        const noWrap = "white-space:nowrap;";
+        return this.createTd(`<p style="${noWrap}">${language.name}</p>`);
     }
 
     /**

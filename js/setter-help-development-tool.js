@@ -58,7 +58,8 @@ class DevelopmentToolHelpSetter {
      * @return {String} td要素を表すhtml
      */
     createNameTd = developmentTool => {
-        return this.createTd(`<p>${developmentTool.name}</p>`);
+        const noWrap = "white-space:nowrap;";
+        return this.createTd(`<p style="${noWrap}">${developmentTool.name}</p>`);
     }
 
     /**
