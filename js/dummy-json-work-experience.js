@@ -563,7 +563,7 @@ class WorkExperienceService {
                     "Visual Studio"
                 ],
                 "framework" : [
-                    "独自基盤"
+                    "独自基盤1"
                 ],
                 "platform" : [],
                 "db" : [
@@ -848,7 +848,7 @@ class WorkExperienceService {
                 ],
                 "framework" : [
                     "ASP.NET",
-                    "独自基盤"
+                    "独自基盤1"
                 ],
                 "platform" : [],
                 "db" : [
@@ -894,7 +894,7 @@ class WorkExperienceService {
                     "Visual Studio"
                 ],
                 "framework" : [
-                    "独自基盤"
+                    "独自基盤2"
                 ],
                 "platform" : [],
                 "db" : [
