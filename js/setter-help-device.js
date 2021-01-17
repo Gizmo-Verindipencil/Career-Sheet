@@ -58,8 +58,9 @@ class DeviceHelpSetter {
      * @return {String} td要素を表すhtml
      */
     createNameTd = device => {
+        const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p style="${noWrap}">${device.name}</p>`);
+        return this.createTd(`<p class="${classPrefix}-device" style="${noWrap}">${device.name}</p>`);
     }
 
     /**

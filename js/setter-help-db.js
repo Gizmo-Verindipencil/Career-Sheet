@@ -58,8 +58,9 @@ class DbHelpSetter {
      * @return {String} td要素を表すhtml
      */
     createNameTd = db => {
+        const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p style="${noWrap}">${db.name}</p>`);
+        return this.createTd(`<p class="${classPrefix}-db" style="${noWrap}">${db.name}</p>`);
     }
 
     /**

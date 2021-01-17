@@ -58,8 +58,9 @@ class OsHelpSetter {
      * @return {String} td要素を表すhtml
      */
     createNameTd = os => {
+        const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p style="${noWrap}">${os.name}</p>`);
+        return this.createTd(`<p class="${classPrefix}-os" style="${noWrap}">${os.name}</p>`);
     }
 
     /**

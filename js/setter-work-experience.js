@@ -165,7 +165,7 @@ class WorkExperienceSetter {
         const innerHtml = [];
         innerHtml.push(createMultiP("device", experience.device));
         innerHtml.push(createMultiP("os", experience.os));
-        innerHtml.push(createMultiP("program-language", experience.programLanguage));
+        innerHtml.push(createMultiP("programming-language", experience.programLanguage));
         innerHtml.push(createMultiP("development-tool", experience.developmentTool));
         innerHtml.push(createMultiP("db", experience.db));
         innerHtml.push(createMultiP("framework", experience.framework));
