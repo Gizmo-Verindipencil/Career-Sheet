@@ -1,29 +1,29 @@
 /**
- * 開発ツールデータ（ヘルプ）のセッター
+ * DBデータ（ヘルプ）のセッター
  */
-class DevelopmentToolHelpSetter {
+class DbHelpSetter {
     /**
      * セット処理の実行
      */
     execute = () => {
-        // 機種データを取得
-        const service = new DevelopmentToolService();
-        const tools = service.getAll();
+        // DBデータを取得
+        const service = new DbService();
+        const dbs = service.getAll();
 
         // 名前の昇順で並べる
-        tools.sort((a, b) => {
+        dbs.sort((a, b) => {
             return a.name > b.name ? -1 : 1;
         });
 
         // データ毎の処理
-        for (let i = 0; i < tools.length;  i++) {
-            const tool = tools[i];
+        for (let i = 0; i < dbs.length;  i++) {
+            const db = dbs[i];
 
             // td要素を生成
             const cells = [];
             cells.push(this.createNoTd(i));
-            cells.push(this.createNameTd(tool));
-            cells.push(this.createDescriptionTd(tool));
+            cells.push(this.createNameTd(db));
+            cells.push(this.createDescriptionTd(db));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
@@ -54,21 +54,21 @@ class DevelopmentToolHelpSetter {
 
     /**
      * 名称のtd要素を生成
-     * @param {Object} developmentTool 開発ツールデータ
+     * @param {Object} db DBデータ
      * @return {String} td要素を表すhtml
      */
-    createNameTd = developmentTool => {
+    createNameTd = db => {
         const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p class="${classPrefix}-development-tool" style="${noWrap}">${developmentTool.name}</p>`);
+        return this.createTd(`<p class="${classPrefix}-db" style="${noWrap}">${db.name}</p>`);
     }
 
     /**
      * 説明のtd要素を生成
-     * @param {Object} developmentTool 開発ツールデータ
+     * @param {Object} db DBデータ
      * @return {String} td要素を表すhtml
      */
-    createDescriptionTd = developmentTool => {
-        return this.createTd(`<p>${developmentTool.description}</p>`);
+    createDescriptionTd = db => {
+        return this.createTd(`<p>${db.description}</p>`);
     }
 }
