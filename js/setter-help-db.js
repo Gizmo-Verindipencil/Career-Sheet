@@ -12,7 +12,7 @@ class DbHelpSetter {
 
         // 名前の昇順で並べる
         dbs.sort((a, b) => {
-            return a.name > b.name ? -1 : 1;
+            return a.name > b.name ? 1 : -1;
         });
 
         // データ毎の処理
