@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OSの説明</title>
+    <link rel="stylesheet" href="../css/destyle.css">
+    <link rel="stylesheet" href="../css/restyle.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/help.css">
+    <link rel="stylesheet" href="../css/work-experience.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/dummy-json-platform.js"></script>
+    <script src="../js/setter-help-platform.js"></script>
+    <script>
+        $(document).ready(() => {
+            const setter = new PlatformHelpSetter();
+            setter.execute();
+        });
+    </script>
+</head>
+<body>
+    <noscript>
+        <p class="no-javascript-warning">内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <section id="help-wrapper">
+        <h1 class="section-title">ヘルプ - プラットフォーム</h1>
+        <table id="help-info">
+            <thead>
+                <th class="help-info-header"><p>No.</p></th>
+                <th class="help-info-header"><p>名称</p></th>
+                <th class="help-info-header"><p>説明</p></th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
