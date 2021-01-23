@@ -7,8 +7,8 @@ class OsHelpSetter {
      */
     execute = () => {
         // OSデータを取得
-        const service = new OsService();
-        const oss = service.getAll();
+        const Repository = new OsRepository();
+        const oss = Repository.getAll();
 
         // 名前の昇順で並べる
         oss.sort((a, b) => {

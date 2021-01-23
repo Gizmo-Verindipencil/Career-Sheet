@@ -1,7 +1,7 @@
 /**
  * その他データ関連のサービス（ダミー）
  */
-class OtherService {
+class OtherRepository {
     /**
      * その他データを取得する
      * @return {Array<Object>} 全てのその他データ

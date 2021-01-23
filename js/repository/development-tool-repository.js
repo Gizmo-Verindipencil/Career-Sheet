@@ -1,7 +1,7 @@
 /**
  * 開発ツールデータ関連のサービス（ダミー）
  */
-class DevelopmentToolService {
+class DevelopmentToolRepository {
     /**
      * 開発ツールデータを取得する
      * @return {Array<Object>} 全ての開発ツールデータ

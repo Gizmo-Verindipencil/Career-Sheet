@@ -1,7 +1,7 @@
 /**
  * プログラミング言語データ関連のサービス（ダミー）
  */
-class ProgrammingLanguageService {
+class ProgrammingLanguageRepository {
     /**
      * プログラミング言語データを取得する
      * @return {Array<Object>} 全てのプログラミング言語データ

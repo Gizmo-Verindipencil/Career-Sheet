@@ -1,7 +1,7 @@
 /**
  * 基礎データ関連のサービス（ダミー）
  */
-class BasicInfoService {
+class BasicInfoRepository {
     /**
      * 基礎データを取得する
      * @return {Object} 基礎データ

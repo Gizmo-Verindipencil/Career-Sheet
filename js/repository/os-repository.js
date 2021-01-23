@@ -1,7 +1,7 @@
 /**
  * OSデータ関連のサービス（ダミー）
  */
-class OsService {
+class OsRepository {
     /**
      * OSデータを取得する
      * @return {Array<Object>} 全てのOSデータ

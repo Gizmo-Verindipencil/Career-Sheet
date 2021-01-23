@@ -7,8 +7,8 @@ class QualificationSetter {
      */
     execute = () => {
         // 資格データを取得
-        const service = new QualificationService();
-        const qualifications = service.getAll();
+        const Repository = new QualificationRepository();
+        const qualifications = Repository.getAll();
 
         for (const qualification of qualifications) {
             $("#qualification").append(`<p>${qualification.name} ${qualification.score}</p>`);

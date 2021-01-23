@@ -7,8 +7,8 @@ class OtherHelpSetter {
      */
     execute = () => {
         // その他データを取得
-        const service = new OtherService();
-        const others = service.getAll();
+        const Repository = new OtherRepository();
+        const others = Repository.getAll();
 
         // 名前の昇順で並べる
         others.sort((a, b) => {

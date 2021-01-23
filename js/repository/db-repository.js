@@ -1,7 +1,7 @@
 /**
  * DBデータ関連のサービス（ダミー）
  */
-class DbService {
+class DbRepository {
     /**
      * DBデータを取得する
      * @return {Array<Object>} 全てのDBデータ

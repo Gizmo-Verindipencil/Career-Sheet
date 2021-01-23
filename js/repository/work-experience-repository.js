@@ -1,7 +1,7 @@
 /**
  * 職務経歴データのサービス（ダミー）
  */
-class WorkExperienceService {
+class WorkExperienceRepository {
     /**
      * 職務経歴データを取得する
      * @return {Array<Object>} 職務経歴データ

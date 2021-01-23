@@ -1,7 +1,7 @@
 /**
  * フレームワークデータ関連のサービス（ダミー）
  */
-class FrameworkService {
+class FrameworkRepository {
     /**
      * フレームワークデータを取得する
      * @return {Array<Object>} 全てのフレームワークデータ

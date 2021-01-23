@@ -7,8 +7,8 @@ class DbHelpSetter {
      */
     execute = () => {
         // DBデータを取得
-        const service = new DbService();
-        const dbs = service.getAll();
+        const Repository = new DbRepository();
+        const dbs = Repository.getAll();
 
         // 名前の昇順で並べる
         dbs.sort((a, b) => {

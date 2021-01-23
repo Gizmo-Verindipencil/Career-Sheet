@@ -1,7 +1,7 @@
 /**
  * プラットフォームデータ関連のサービス（ダミー）
  */
-class PlatformService {
+class PlatformRepository {
     /**
      * プラットフォームデータを取得する
      * @return {Array<Object>} 全てのプラットフォームデータ

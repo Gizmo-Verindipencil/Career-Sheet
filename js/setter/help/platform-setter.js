@@ -7,8 +7,8 @@ class PlatformHelpSetter {
      */
     execute = () => {
         // プラットフォームデータを取得
-        const service = new PlatformService();
-        const platforms = service.getAll();
+        const Repository = new PlatformRepository();
+        const platforms = Repository.getAll();
 
         // 名前の昇順で並べる
         platforms.sort((a, b) => {

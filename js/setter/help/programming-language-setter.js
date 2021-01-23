@@ -7,8 +7,8 @@ class ProgrammingLanguageHelpSetter {
      */
     execute = () => {
         // languageデータを取得
-        const service = new ProgrammingLanguageService();
-        const languages = service.getAll();
+        const Repository = new ProgrammingLanguageRepository();
+        const languages = Repository.getAll();
 
         // 名前の昇順で並べる
         languages.sort((a, b) => {

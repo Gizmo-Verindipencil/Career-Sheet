@@ -1,7 +1,7 @@
 /**
  * 資格データ関連のサービス（ダミー）
  */
-class QualificationService {
+class QualificationRepository {
     /**
      * 資格データを取得する
      * @return {Array<Object>} 資格データ

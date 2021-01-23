@@ -1,7 +1,7 @@
 /**
  * 作業データ関連のサービス（ダミー）
  */
-class TaskService {
+class TaskRepository {
     /**
      * 作業種類データを取得する
      * @return {Array<Object>} 作業種類データ

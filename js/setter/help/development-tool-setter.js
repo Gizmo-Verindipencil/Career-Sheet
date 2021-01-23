@@ -7,8 +7,8 @@ class DevelopmentToolHelpSetter {
      */
     execute = () => {
         // 機種データを取得
-        const service = new DevelopmentToolService();
-        const tools = service.getAll();
+        const Repository = new DevelopmentToolRepository();
+        const tools = Repository.getAll();
 
         // 名前の昇順で並べる
         tools.sort((a, b) => {

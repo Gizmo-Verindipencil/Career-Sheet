@@ -7,8 +7,8 @@ class FrameworkHelpSetter {
      */
     execute = () => {
         // OSデータを取得
-        const service = new FrameworkService();
-        const frameworks = service.getAll();
+        const Repository = new FrameworkRepository();
+        const frameworks = Repository.getAll();
 
         // 名前の昇順で並べる
         frameworks.sort((a, b) => {

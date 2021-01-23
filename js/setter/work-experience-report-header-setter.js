@@ -7,10 +7,10 @@ class WorkExperienceReportHeaderSetter {
      */
     execute = () => {
         // 職務経歴データを取得
-        const service = new WorkExperienceService();
+        const Repository = new WorkExperienceRepository();
         const params = new URLSearchParams(document.location.search.substring(1));
         const no = params.get("no");
-        const experience = service.getByNo(no);
+        const experience = Repository.getByNo(no);
 
         // データがなければ終了
         if (!experience) {

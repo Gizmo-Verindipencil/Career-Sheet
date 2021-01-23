@@ -7,8 +7,8 @@ class BasicInfoSetter {
      */
     execute = () => {
         // 基本データを取得
-        const service = new BasicInfoService();
-        const data = service.get();
+        const Repository = new BasicInfoRepository();
+        const data = Repository.get();
 
         // 画面にデータをセット
         this.setNameAndPhonetic(data);

@@ -1,7 +1,7 @@
 /**
  * 機種関連のサービス（ダミー）
  */
-class DeviceService {
+class DeviceRepository {
     /**
      * 機種データを取得する
      * @return {Array<Object>} 全ての機種データ

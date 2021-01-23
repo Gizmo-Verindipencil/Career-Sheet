@@ -7,8 +7,8 @@ class DeviceHelpSetter {
      */
     execute = () => {
         // 機種データを取得
-        const service = new DeviceService();
-        const devices = service.getAll();
+        const Repository = new DeviceRepository();
+        const devices = Repository.getAll();
 
         // 名前の昇順で並べる
         devices.sort((a, b) => {
