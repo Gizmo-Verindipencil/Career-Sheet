@@ -25,4 +25,12 @@ class OsRepository {
             }
         ];
     }
+
+    /**
+     * OSデータを更新する
+     * @param {Object} os OSデータ
+     */
+    post = os => {
+        // dummy
+    }
 }

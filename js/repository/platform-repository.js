@@ -30,4 +30,12 @@ class PlatformRepository {
             }
         ];
     }
+
+    /**
+     * プラットフォームデータを更新する
+     * @param {Object} platform プラットフォームデータ
+     */
+    post = platform => {
+        // dummy
+    }
 }

@@ -25,4 +25,12 @@ class FrameworkRepository {
             }
         ];
     }
+
+    /**
+     * フレームワークデータを更新する
+     * @param {Object} framework フレームワークデータ
+     */
+    post = framework => {
+        // dummy
+    }
 }

@@ -1,5 +1,5 @@
 /**
- * 機種関連のリポジトリ（ダミー）
+ * 機種データ関連のリポジトリ（ダミー）
  */
 class DeviceRepository {
     /**
@@ -19,5 +19,13 @@ class DeviceRepository {
                 "description" : "小型で携帯性に優れたバーコード読込機能付きの端末。"
             }    
         ];
+    }
+
+    /**
+     * 機種データを更新する
+     * @param {Object} device 機種データ
+     */
+    post = device => {
+        // dummy
     }
 }

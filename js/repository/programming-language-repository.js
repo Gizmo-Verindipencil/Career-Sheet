@@ -65,4 +65,12 @@ class ProgrammingLanguageRepository {
             }
         ];
     }
+
+    /**
+     * プログラミング言語データを更新する
+     * @param {Object} programmingLanguage プログラミング言語データ
+     */
+    post = programmingLanguage => {
+        // dummy
+    }
 }

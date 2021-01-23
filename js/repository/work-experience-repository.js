@@ -1577,4 +1577,12 @@ class WorkExperienceRepository {
         experiences = experiences.filter(x => x.no === no);
         return experiences.length > 0 ? experiences[0] : null ;
     }
+
+    /**
+     * 職務経歴データを更新する
+     * @param {Object} experience 職務経歴データ
+     */
+    post = experience => {
+        // dummy
+    }
 }

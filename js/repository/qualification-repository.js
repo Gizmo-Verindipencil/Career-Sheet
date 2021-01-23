@@ -26,4 +26,12 @@ class QualificationRepository {
             }
         ];
     }
+
+    /**
+     * 資格データを更新する
+     * @param {Object} qualification 資格データ
+     */
+    post = qualification => {
+        // dummy
+    }
 }

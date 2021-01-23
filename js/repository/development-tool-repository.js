@@ -55,4 +55,12 @@ class DevelopmentToolRepository {
             }
         ];
     }
+
+    /**
+     * 開発ツールデータを更新する
+     * @param {Object} developmentTool 開発ツールデータ
+     */
+    post = developmentTool => {
+        // dummy
+    }
 }

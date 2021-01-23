@@ -30,4 +30,12 @@ class DbRepository {
             }
         ];
     }
+
+    /**
+     * DBデータを更新する
+     * @param {Object} db DBデータ
+     */
+    post = db => {
+        // dummy
+    }
 }

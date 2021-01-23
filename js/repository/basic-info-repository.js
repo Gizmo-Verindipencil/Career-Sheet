@@ -32,4 +32,12 @@ class BasicInfoRepository {
             }
         };
     }
+
+    /**
+     * 基礎データを更新する
+     * @param {Object} basicInfo 基礎データ
+     */
+    post = basicInfo => {
+        // dummy
+    }
 }

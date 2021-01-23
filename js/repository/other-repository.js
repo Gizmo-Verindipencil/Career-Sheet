@@ -50,4 +50,12 @@ class OtherRepository {
             }
         ];
     }
+
+    /**
+     * その他データを更新する
+     * @param {Object} other その他データ
+     */
+    post = other => {
+        // dummy
+    }
 }
