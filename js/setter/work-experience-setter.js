@@ -60,7 +60,7 @@ class WorkExperienceSetter {
         const base = "work-experience-number";
 
         // 詳細ページのリンク先を生成
-        const url = `work-experience-report\\report.html?no=${experience.no}`;
+        const url = `work-experience\\report.html?no=${experience.no}`;
         const linkClass = `${base}-link`;
 
         // td要素を生成して返す
