@@ -20,7 +20,7 @@ class BasicInfoSetter {
         this.setAcademicBackground(data);
 
         // セットした内容を表示
-        $("section#basic-info-container").show();
+        $("section#core-info-container").show();
     }
 
     /**
