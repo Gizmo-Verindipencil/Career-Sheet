@@ -1,5 +1,5 @@
 /**
- * プログラミング言語データ関連のサービス（ダミー）
+ * プログラミング言語データ関連のリポジトリ（ダミー）
  */
 class ProgrammingLanguageRepository {
     /**

@@ -1,5 +1,5 @@
 /**
- * 開発ツールデータ関連のサービス（ダミー）
+ * 開発ツールデータ関連のリポジトリ（ダミー）
  */
 class DevelopmentToolRepository {
     /**

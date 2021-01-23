@@ -1,5 +1,5 @@
 /**
- * 資格データ関連のサービス（ダミー）
+ * 資格データ関連のリポジトリ（ダミー）
  */
 class QualificationRepository {
     /**

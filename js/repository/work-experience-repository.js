@@ -1,5 +1,5 @@
 /**
- * 職務経歴データのサービス（ダミー）
+ * 職務経歴データのリポジトリ（ダミー）
  */
 class WorkExperienceRepository {
     /**
