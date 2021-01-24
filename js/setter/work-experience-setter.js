@@ -15,8 +15,8 @@ class WorkExperienceSetter {
      */
     execute = () => {
         // 職務経歴データを取得
-        const Repository = new WorkExperienceRepository();
-        const experiences = Repository.getAll();
+        const repository = new WorkExperienceRepository();
+        const experiences = repository.getAll();
 
         // 最近の職歴から並べる
         experiences.sort((a, b) => {

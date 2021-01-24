@@ -7,8 +7,8 @@ class TaskTypeListSetter {
      */
     execute = () => {
         // 作業データを取得
-        const Repository = new TaskRepository();
-        const types = Repository.getAllTypes();
+        const repository = new TaskRepository();
+        const types = repository.getAllTypes();
 
         // 設定されたソート順に並び替え
         types.sort((a, b) => {
@@ -17,7 +17,7 @@ class TaskTypeListSetter {
             return 0;
         });
 
-        const colors = Repository.getAllColors();
+        const colors = repository.getAllColors();
         for (const type of types) {
             // 対応する色を設定
             const color = colors.filter(x => x.id === type.colorId);

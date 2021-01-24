@@ -7,8 +7,8 @@ class CoreInfoSetter {
      */
     execute = () => {
         // 基本データを取得
-        const Repository = new CoreInfoRepository();
-        const data = Repository.get();
+        const repository = new CoreInfoRepository();
+        const data = repository.get();
 
         // 画面にデータをセット
         this.setNameAndPhonetic(data);
