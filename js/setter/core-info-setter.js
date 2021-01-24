@@ -1,13 +1,13 @@
 /**
  * 基本データのセッター
  */
-class BasicInfoSetter {
+class CoreInfoSetter {
     /**
      * セット処理の実行
      */
     execute = () => {
         // 基本データを取得
-        const Repository = new BasicInfoRepository();
+        const Repository = new CoreInfoRepository();
         const data = Repository.get();
 
         // 画面にデータをセット

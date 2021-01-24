@@ -1,7 +1,7 @@
 /**
  * 基礎データ関連のリポジトリ（ダミー）
  */
-class BasicInfoRepository {
+class CoreInfoRepository {
     /**
      * 基礎データを取得する
      * @return {Object} 基礎データ
