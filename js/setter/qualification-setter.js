@@ -11,7 +11,7 @@ class QualificationSetter {
         const qualifications = repository.getAll();
 
         for (const qualification of qualifications) {
-            $("#qualification").append(`<p>${qualification.name} ${qualification.score}</p>`);
+            $("div#qualification").append(`<p>${qualification.name} ${qualification.score}</p>`);
         }
 
         // セットした内容を表示

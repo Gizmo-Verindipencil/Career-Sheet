@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>職務経歴書</title>
+    <link rel="stylesheet" href="css/destyle.css">
+    <link rel="stylesheet" href="css/restyle.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/core-info.css">
+    <link rel="stylesheet" href="css/qualification.css">
+    <link rel="stylesheet" href="css/task-type-list.css">
+    <link rel="stylesheet" href="css/work-experience.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/repository/work-experience-repository.js"></script>
+    <script src="js/setter/work-experience-setter.js"></script>
+    <script>
+        $(document).ready(() => {
+            const setter = new WorkExperienceSetter();
+            setter.execute();
+        });
+    </script>
+</head>
+<body>
+    <noscript>
+        <p class="no-javascript-warning">内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <section id="work-experience-container">
+        <h1 class="section-title">Ⅱ. 経歴</h1>
+        <table id="work-experience">
+            <thead>
+                <th class="work-experience-header-number"><p>No.</p></th>
+                <th class="work-experience-header-business-type"><p>業種</p></th>
+                <th class="work-experience-header-working-period"><p>期間</p></th>
+                <th class="work-experience-header-technology">
+                    <a class="work-experience-technology-device" href="help/device.html" target="_blank">機種</a>
+                    <a class="work-experience-technology-os" href="help/os.html" target="_blank">OS</a>
+                    <a class="work-experience-technology-programming-language" href="help/programming-language.html" target="_blank">言語</a>
+                    <a class="work-experience-technology-development-tool" href="help/development-tool.html" target="_blank">DT</a>
+                    <a class="work-experience-technology-db" href="help/db.html" target="_blank">DB</a>
+                    <a class="work-experience-technology-framework" href="help/framework.html" target="_blank">FW</a>
+                    <a class="work-experience-technology-platform" href="help/platform.html" target="_blank">PF</a>
+                    <a class="work-experience-technology-other" href="help/other.html" target="_blank">他</a>
+                </th>
+                <th class="work-experience-header-main-task">
+                    <p class="work-experience-main-task-summary">概要</p>
+                    <p class="work-experience-main-task-name">作業</p>
+                </th>
+                <th class="work-experience-header-task-type"><p>作業内容</p></th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
