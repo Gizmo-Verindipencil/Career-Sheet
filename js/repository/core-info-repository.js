@@ -35,9 +35,9 @@ class CoreInfoRepository {
 
     /**
      * 基礎データを更新する
-     * @param {Object} basicInfo 基礎データ
+     * @param {Object} coreInfo 基礎データ
      */
-    post = basicInfo => {
+    post = coreInfo => {
         // dummy
     }
 }
