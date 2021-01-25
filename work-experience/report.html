@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>案件詳細</title>
+    <link rel="stylesheet" href="../css/destyle.css">
+    <link rel="stylesheet" href="../css/restyle.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/work-experience-report-header.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/repository/work-experience-repository.js"></script>
+    <script src="../js/setter/work-experience-report-header-setter.js"></script>
+    <script src="../js/setter/work-experience-report-detail-setter.js"></script>
+    <script>
+        $(document).ready(() => {
+            const setters = [];
+            setters.push(new WorkExperienceReportHeaderSetter());
+            setters.push(new WorkExperienceReportDetailSetter());
+            for (const setter of setters) {
+                setter.execute();
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="page-title">案件詳細</h1>
+        <button id="work-experience-report-jump-next">次へ</button>
+        <a id="work-experience-report-jump-back" href="../index.html">戻る</a>
+        <button id="work-experience-report-jump-prev">前へ</button>
+    </header>
+    <noscript>
+        <p class="no-javascript-warning">内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <table id="work-experience-report-summary">
+        <tbody>
+            <tr>
+                <td></td>
+                <td colspan="2" class="work-experience-report-summary-group">
+                    <label>対象期間</label>
+                </td>
+                <td colspan="3"></td>
+                <td colspan="8" class="work-experience-report-summary-group">
+                    <label>対象作業フェーズ</label>
+                </td>
+            </tr>
+            <tr>
+                <td id="work-experience-report-summary-item-name-number">
+                    <p>No.</p>
+                </td>
+                <td id="work-experience-report-summary-item-name-period">
+                    <p>開始年月<br>～<br>終了年月</p>
+                </td>
+                <td id="work-experience-report-summary-item-name-month">
+                    <p>月数</p>
+                </td>
+                <td id="work-experience-report-summary-item-name-task-and-system">
+                    <p>業務名<br>システム名</p>
+                </td>
+                <td id="work-experience-report-summary-item-name-project-peak-size">
+                    <p>PJ人員(ピーク)<br>部下人数</p>
+                </td>
+                <td id="work-experience-report-summary-item-name-technology">
+                    <p>技術関連</p>
+                </td>
+                <td class="work-experience-report-summary-item-name-phase">
+                    <label class="work-experience-report-summary-item-name-phase">管理・PM</label>
+                </td>
+                <td class="work-experience-report-summary-item-name-phase">
+                    <label class="work-experience-report-summary-item-name-phase">要件定義・分析</label>
+                </td>
+                <td class="work-experience-report-summary-item-name-phase">
+                    <label class="work-experience-report-summary-item-name-phase">基本設計</label>
+                </td>
+                <td class="work-experience-report-summary-item-name-phase">
+                    <label class="work-experience-report-summary-item-name-phase">詳細設計</label>
+                </td>
+                <td class="work-experience-report-summary-item-name-phase">
+                    <label class="work-experience-report-summary-item-name-phase">PG/UT</label>
+                </td>
+                <td class="work-experience-report-summary-item-name-phase">
+                    <label class="work-experience-report-summary-item-name-phase">結合試験</label>
+                </td>
+                <td class="work-experience-report-summary-item-name-phase">
+                    <label class="work-experience-report-summary-item-name-phase">総合試験</label>
+                </td>
+                <td class="work-experience-report-summary-item-name-phase">
+                    <label class="work-experience-report-summary-item-name-phase">維持管理業務</label>
+                </td>
+            </tr>
+            <tr>
+                <td id="work-experience-report-summary-item-value-number">
+                    <input type="text" class="work-experience-summary-value" name="number" value="{no}">
+                </td>
+                <td id="work-experience-report-summary-item-value-period">
+                    <input type="text" class="work-experience-summary-value" name="periodFrom" value="{periodFrom}">
+                    <input type="text" class="work-experience-summary-value" name="periodBetween" value="{periodBetween}">
+                    <input type="text" class="work-experience-summary-value" name="periodTo" value="{periodTo}">
+                </td>
+                <td id="work-experience-report-summary-item-value-month">
+                    <input type="text" class="work-experience-summary-value" name="month" value="{month}">
+                </td>
+                <td id="work-experience-report-summary-item-value-task-and-system">
+                    <input type="text" class="work-experience-summary-value" name="task" value="{task}">
+                    <input type="text" class="work-experience-summary-value" name="system" value="{system}">
+                </td>
+                <td id="work-experience-report-summary-item-value-project-peak-size">
+                    <input type="text" class="work-experience-summary-value" name="projectPeakSize" value="{projectPeakSize}">
+                    <input type="text" class="work-experience-summary-value" name="subordinate" value="{subordinate}">
+                </td>
+                <td id="work-experience-report-summary-item-value-technology">
+                    <input type="text" class="work-experience-summary-value" name="technology" value="{technology}">
+                </td>
+                <td class="work-experience-report-summary-item-value-phase">
+                    <input type="text" class="work-experience-summary-value" name="phase1" value="{phase1}">
+                </td>
+                <td class="work-experience-report-summary-item-value-phase">
+                    <input type="text" class="work-experience-summary-value" name="phase2" value="{phase2}">
+                </td>
+                <td class="work-experience-report-summary-item-value-phase">
+                    <input type="text" class="work-experience-summary-value" name="phase3" value="{phase3}">
+                </td>
+                <td class="work-experience-report-summary-item-value-phase">
+                    <input type="text" class="work-experience-summary-value" name="phase4" value="{phase4}">
+                </td>
+                <td class="work-experience-report-summary-item-value-phase">
+                    <input type="text" class="work-experience-summary-value" name="phase5" value="{phase5}">
+                </td>
+                <td class="work-experience-report-summary-item-value-phase">
+                    <input type="text" class="work-experience-summary-value" name="phase6" value="{phase6}">
+                </td>
+                <td class="work-experience-report-summary-item-value-phase">
+                    <input type="text" class="work-experience-summary-value" name="phase7" value="{phase7}">
+                </td>
+                <td class="work-experience-report-summary-item-value-phase">
+                    <input type="text" class="work-experience-summary-value" name="phase8" value="{phase8}">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <section id="work-experience-report-detail"></section>
+</body>
+</html>

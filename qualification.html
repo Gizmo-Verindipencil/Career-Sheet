@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>職務経歴書</title>
+    <link rel="stylesheet" href="css/destyle.css">
+    <link rel="stylesheet" href="css/restyle.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/qualification.css">
+    <link rel="stylesheet" href="css/task-type-list.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/repository/qualification-repository.js"></script>
+    <script src="js/repository/task-type-repository.js"></script>
+    <script src="js/setter/qualification-setter.js"></script>
+    <script src="js/setter/task-type-list-setter.js"></script>
+    <script>
+        $(document).ready(() => {
+            const setters = [];
+            setters.push(new QualificationSetter());
+            setters.push(new TaskTypeListSetter());
+            for (const setter of setters) {
+                setter.execute();
+            }
+        });
+    </script>
+</head>
+<body>
+    <noscript>
+        <p class="no-javascript-warning">内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <section id="qualification-container">
+        <h1 class="section-title">Ⅲ. 資格・免許</h1>
+        <div id="qualification"></div>
+        <div id="task-type-list"></div>
+    </section>
+    
+</body>
+</html>
