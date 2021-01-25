@@ -15,36 +15,31 @@ class OtherRepository {
             },
             {
                 "id" : "2",
-                "name" : "Biz Browser",
-                "description" : "OpenStream社が提供するWEBアプリケーションプラットフォーム。リッチクライアントが特徴。"
-            },
-            {
-                "id" : "3",
                 "name" : "Subversion",
                 "description" : "オープンソースのバージョン管理ツール。"
             },
             {
-                "id" : "4",
+                "id" : "3",
                 "name" : "Excel Creator",
                 "description" : "AdvanceSoftware社が提供するExcel操作ツール。パフォーマンスに優れるのがウリらしい。"
             },
             {
-                "id" : "5",
+                "id" : "4",
                 "name" : "Spread",
                 "description" : "GrapeCity社が提供するExcelライクな表コンポーネント。"
             },
             {
-                "id" : "6",
+                "id" : "5",
                 "name" : "Crystal Report",
                 "description" : "CrystalDecisions社が開発した帳票作成ツール。開発元はSAPに買収された。"
             },
             {
-                "id" : "7",
+                "id" : "6",
                 "name" : "Visual SourceSafe",
                 "description" : "Microsoft社が提供するバージョン管理ツール。ライセンス販売は終了している。後続製品はTeam Foundation Server。"
             },
             {
-                "id" : "8",
+                "id" : "7",
                 "name" : "JQuery",
                 "description" : "オープンソースのJavaScriptライブラリ。コードの記述を簡素化できる。"
             }

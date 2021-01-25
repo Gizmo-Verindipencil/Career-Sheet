@@ -241,12 +241,13 @@ class WorkExperienceRepository {
                     "Visual Studio"
                 ],
                 "framework" : [],
-                "platform" : [],
+                "platform" : [
+                    "Biz Browser"
+                ],
                 "db" : [
                     "SQL-Server"
                 ],
                 "other" : [
-                    "Biz Browser",
                     "Active Report",
                     "Subversion"
                 ],
@@ -307,12 +308,13 @@ class WorkExperienceRepository {
                     "Visual Studio"
                 ],
                 "framework" : [],
-                "platform" : [],
+                "platform" : [
+                    "Biz Browser"
+                ],
                 "db" : [
                     "SQL-Server"
                 ],
                 "other" : [
-                    "Biz Browser",
                     "Active Report",
                     "Subversion"
                 ],
