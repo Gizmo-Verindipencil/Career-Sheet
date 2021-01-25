@@ -55,7 +55,16 @@ table#work-experience {
 }
 
 a.work-experience-number-link {
-    font-size: 0.8rem;
+    background: linear-gradient(#e66465, #9198e5);
+    border: solid #000000 1px;
+    border-radius: 80%;
+    color: #ffffff;
+    display: block;
+    font-size: 0.75rem;
+    height: 1.5rem;
+    margin: 0.25rem;
+    text-align: center;
+    width: 1.5rem;
 }
 
 .work-experience-business-type {
