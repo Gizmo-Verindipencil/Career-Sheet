@@ -31,7 +31,7 @@ class DeviceHelpSetter {
         }
 
         // 生成した要素を表示
-        $("#help-wrapper").show();
+        $("#help-container").show();
     }
 
     /**

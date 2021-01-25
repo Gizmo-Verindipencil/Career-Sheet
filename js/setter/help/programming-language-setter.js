@@ -30,7 +30,7 @@ class ProgrammingLanguageHelpSetter {
             $("#help-info tr:last").after(row);
         }
 
-        $("#help-wrapper").show();
+        $("#help-container").show();
     }
 
     /**
