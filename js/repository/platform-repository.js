@@ -27,6 +27,11 @@ class PlatformRepository {
                 "id" : "4",
                 "name" : "intra-mart",
                 "description" : "NTTデータ社が提供するWEBアプリケーションプラットフォーム。開発言語はJava/JavaScript。"
+            },
+            {
+                "id" : "5",
+                "name" : "Biz Browser",
+                "description" : "OpenStream社が提供するWEBアプリケーションプラットフォーム。リッチクライアントが特徴。"
             }
         ];
     }
