@@ -167,7 +167,7 @@ class WorkExperienceReportHeaderSetter {
         const names = [];
         names.push(createP("device", "機種"));
         names.push(createP("os", "OS"));
-        names.push(createP("program-language", "言語"));
+        names.push(createP("programming-language", "言語"));
         names.push(createP("development-tool", "DT"));
         names.push(createP("db", "DB"));
         names.push(createP("framework", "FW"));
@@ -194,7 +194,7 @@ class WorkExperienceReportHeaderSetter {
         const values = [];
         values.push(createMultiP("device", data.device));
         values.push(createMultiP("os", data.os));
-        values.push(createMultiP("program-language", data.programLanguage));
+        values.push(createMultiP("programming-language", data.programLanguage));
         values.push(createMultiP("development-tool", data.developmentTool));
         values.push(createMultiP("db", data.db));
         values.push(createMultiP("framework", data.framework));
