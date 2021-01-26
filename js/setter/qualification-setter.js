@@ -13,8 +13,5 @@ class QualificationSetter {
         for (const qualification of qualifications) {
             $("div#qualification").append(`<p>${qualification.name} ${qualification.score}</p>`);
         }
-
-        // セットした内容を表示
-        $("section#qualification-container").show();
     }
 }

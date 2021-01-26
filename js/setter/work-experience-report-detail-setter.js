@@ -27,9 +27,6 @@ class WorkExperienceReportDetailSetter {
 
         // 詳細のセット
         this.setDetail(experience);
-
-        // セットした内容を表示
-        $("section#work-experience-report-detail").show();
     }
 
     /**

@@ -29,8 +29,6 @@ class ProgrammingLanguageHelpSetter {
             const row = `<tr>${cells.join("")}</tr>`;
             $("#help-info tr:last").after(row);
         }
-
-        $("#help-container").show();
     }
 
     /**
