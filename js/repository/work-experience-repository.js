@@ -1565,6 +1565,78 @@ class WorkExperienceRepository {
                         ]
                     }
                 ]
+            },
+            {
+                "no" : "25",
+                "businessType" : "業務委託サービス",
+                "period" : {
+                    "from" : "2020-9-1",
+                    "to" : "2021-1-20"
+                },
+                "device" : [
+                    "PC"
+                ],
+                "os" : [
+                    "Windows 10"
+                ],
+                "programLanguage" : [
+                    "VBScript",
+                    "VBA"
+                ],
+                "developmentTool" : [],
+                "framework" : [
+                    "Classic ASP"
+                ],
+                "platform" : [],
+                "db" : [
+                    "SQL-Server",
+                    "Access"
+                ],
+                "other" : [],
+                "projectSummary" : "システム改訂",
+                "projectPeakSize" : "6",
+                "subordinate" : "0",
+                "system" : [
+                    "業務ツール"
+                ],
+                "task" : [
+                    {
+                        "name" : "調査",
+                        "type" : [
+                            "C"
+                        ]
+                    },
+                    {
+                        "name" : "基本設計",
+                        "type" : [
+                            "HLD"
+                        ]
+                    },
+                    {
+                        "name" : "詳細設計",
+                        "type" : [
+                            "LLD"
+                        ]
+                    },
+                    {
+                        "name" : "実装",
+                        "type" : [
+                            "C"
+                        ]
+                    },
+                    {
+                        "name" : "単体テスト",
+                        "type" : [
+                            "UT"
+                        ]
+                    },
+                    {
+                        "name" : "結合テスト",
+                        "type" : [
+                            "IT"
+                        ]
+                    }
+                ]
             }
         ];
     }
