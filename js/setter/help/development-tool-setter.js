@@ -29,9 +29,6 @@ class DevelopmentToolHelpSetter {
             const row = `<tr>${cells.join("")}</tr>`;
             $("#help-info tr:last").after(row);
         }
-
-        // 生成した要素を表示
-        $("#help-container").show();
     }
 
     /**

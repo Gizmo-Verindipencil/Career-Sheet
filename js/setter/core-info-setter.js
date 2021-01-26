@@ -18,9 +18,6 @@ class CoreInfoSetter {
         this.setZipCodeAndAddress(data);
         this.setLocalStation(data);
         this.setAcademicBackground(data);
-
-        // セットした内容を表示
-        $("section#core-info-container").show();
     }
 
     /**

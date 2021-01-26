@@ -33,10 +33,6 @@ input[type="text"].value-right-aligned {
     text-align: right;
 }
 
-section#core-info-container {
-    display: none;
-}
-
 table#core-info {
     border-collapse: collapse;
     border-spacing: 0;
