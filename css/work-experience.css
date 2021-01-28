@@ -275,7 +275,8 @@ a.work-experience-number-link {
     font-size: 0.8rem;
     line-height: 1rem;
     margin: 0.1rem;
-    padding: 0.1rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
     text-align: center;
     width: 1.8rem;
 }
