@@ -51,7 +51,7 @@ table#work-experience {
 }
 
 a.work-experience-number-link {
-    background: linear-gradient(#e66465, #9198e5);
+    background: linear-gradient(124deg, #e66465 10%, #9198e5 60%, #6a5acd 90%)
     border: solid #000000 1px;
     border-radius: 80%;
     color: #ffffff;
