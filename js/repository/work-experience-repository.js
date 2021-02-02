@@ -235,7 +235,8 @@ class WorkExperienceRepository {
                 "programLanguage" : [
                     "VB6.0",
                     "VB.NET",
-                    "CRS"
+                    "CRS",
+                    "T-SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio"
@@ -302,7 +303,8 @@ class WorkExperienceRepository {
                 ],
                 "programLanguage" : [
                     "VB.NET",
-                    "CRS"
+                    "CRS",
+                    "T-SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio"
@@ -375,7 +377,8 @@ class WorkExperienceRepository {
                     "Windows 7"
                 ],
                 "programLanguage" : [
-                    "VB.NET"
+                    "VB.NET",
+                    "T-SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio"
@@ -434,7 +437,8 @@ class WorkExperienceRepository {
                     "Windows 7"
                 ],
                 "programLanguage" : [
-                    "VB.NET"
+                    "VB.NET",
+                    "T-SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio"
@@ -559,7 +563,9 @@ class WorkExperienceRepository {
                 ],
                 "programLanguage" : [
                     "VB.NET",
-                    "Java"
+                    "Java",
+                    "T-SQL",
+                    "PL/SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio"
@@ -692,7 +698,8 @@ class WorkExperienceRepository {
                     "Windows 7"
                 ],
                 "programLanguage" : [
-                    "VB.NET"
+                    "VB.NET",
+                    "PL/SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio",
@@ -843,7 +850,8 @@ class WorkExperienceRepository {
                 ],
                 "programLanguage" : [
                     "VB.NET",
-                    "JavaScript"
+                    "JavaScript",
+                    "T-SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio"
@@ -890,7 +898,8 @@ class WorkExperienceRepository {
                     "Windows 7"
                 ],
                 "programLanguage" : [
-                    "VB.NET"
+                    "VB.NET",
+                    "PL/SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio"
@@ -950,7 +959,8 @@ class WorkExperienceRepository {
                     "Windows 10"
                 ],
                 "programLanguage" : [
-                    "VB.NET"
+                    "VB.NET",
+                    "PL/SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio",
@@ -1118,7 +1128,9 @@ class WorkExperienceRepository {
                 ],
                 "programLanguage" : [
                     "Java",
-                    "JavaScript"
+                    "JavaScript",
+                    "T-SQL",
+                    "PL/SQL"
                 ],
                 "developmentTool" : [
                     "e-Builder(Eclipse)"
@@ -1222,7 +1234,8 @@ class WorkExperienceRepository {
                 ],
                 "programLanguage" : [
                     "VB.NET",
-                    "UWSC"
+                    "UWSC",
+                    "PL/SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio",
@@ -1301,7 +1314,9 @@ class WorkExperienceRepository {
                 "programLanguage" : [
                     "VB.NET",
                     "Java",
-                    "JavaScript"
+                    "JavaScript",
+                    "T-SQL",
+                    "PL/SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio",
@@ -1442,7 +1457,8 @@ class WorkExperienceRepository {
                 ],
                 "programLanguage" : [
                     "Java",
-                    "JavaScript"
+                    "JavaScript",
+                    "T-SQL"
                 ],
                 "developmentTool" : [
                     "e-Builder(Eclipse)",
@@ -1581,7 +1597,8 @@ class WorkExperienceRepository {
                 ],
                 "programLanguage" : [
                     "VBScript",
-                    "VBA"
+                    "VBA",
+                    "T-SQL"
                 ],
                 "developmentTool" : [],
                 "framework" : [
