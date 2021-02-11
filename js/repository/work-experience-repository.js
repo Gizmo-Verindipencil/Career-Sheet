@@ -1538,8 +1538,9 @@ class WorkExperienceRepository {
                     }
                 ]
             },
+            // no : 24
             {
-                "no" : "24",
+                "no" : "25",
                 "businessType" : "業務委託サービス",
                 "period" : {
                     "from" : "2020-8-21",
@@ -1583,7 +1584,7 @@ class WorkExperienceRepository {
                 ]
             },
             {
-                "no" : "25",
+                "no" : "26",
                 "businessType" : "カー用品メーカー",
                 "period" : {
                     "from" : "2020-9-1",
