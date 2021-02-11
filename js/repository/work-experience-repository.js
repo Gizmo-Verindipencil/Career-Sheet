@@ -1584,7 +1584,7 @@ class WorkExperienceRepository {
             },
             {
                 "no" : "25",
-                "businessType" : "業務委託サービス",
+                "businessType" : "カー用品メーカー",
                 "period" : {
                     "from" : "2020-9-1",
                     "to" : "2021-1-20"
