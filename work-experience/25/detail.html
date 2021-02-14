@@ -34,17 +34,17 @@
             ・メモリ不足による処理の中断<br>
             ・特定のクエリ発行が完了しない
         </p>
-        <!-- <img class="work-experience-report-detail-list-child-image" src="24\1.png" alt="プログラム解析"> -->
+        <!-- <img class="work-experience-report-detail-list-child-image" src="25\1.png" alt="プログラム解析"> -->
         <li class="work-experience-report-detail-list-child-title">不具合改修（メモリ不足）</li>
         <p class="work-experience-report-detail-list-child-text">
             メモリ不足に陥る原因については、結局のところ分かりませんでした。色々試した結果、マルチスレッドで処理を実行した場合にメモリリークを起こしているようなリソース消費を確認できたものの、何故それが急に発生するようになったのかは、Microsoftのみぞ知るというところでしょう。とりあえずは、問題の発生しないCPUマッピングを適用して、問題のAccessツールを起動するバッチファイルを作成して、運用チームに連携しました。
         </p>
-        <!-- <img class="work-experience-report-detail-list-child-image" src="24\2.png" alt="不具合改修（メモリ不足）"> -->
+        <!-- <img class="work-experience-report-detail-list-child-image" src="25\2.png" alt="不具合改修（メモリ不足）"> -->
         <li class="work-experience-report-detail-list-child-title">不具合改修（クエリが完了しない）</li>
         <p class="work-experience-report-detail-list-child-text">
             特定のクエリが完了しない原因については、結局のところ分かりませんでした。ほぼ全てのクエリが問題なく完了する中、一定以上のデータ量を超える場合にのみ、特定クエリがDBサーバー上で実行状態のまま数十時間経っても完了しないということが確認できました。これは、クエリを発行するプログラムによって異なり、ツールで使うライブラリを介してのみ発生する事象でした。結果的に、クエリを発行するのではなく、ストアドプロシージャに置き換えることで問題が解消することが確認できた為、その検証内容を運用チームに連携しました。
         </p>
-        <!-- <img class="work-experience-report-detail-list-child-image" src="24\3.png" alt="不具合改修（クエリが完了しない）"> -->
+        <!-- <img class="work-experience-report-detail-list-child-image" src="25\3.png" alt="不具合改修（クエリが完了しない）"> -->
         <li class="work-experience-report-detail-list-child-title">修正レビュー</li>
         <p class="work-experience-report-detail-list-child-text">
             不具合の解消方法を連携し、プログラムの修正は運用チームで行うことになりました。この修正した内容に関するレビューを行いました。修正自体は大変シンプルな内容でしたが、関連のない部分にもプログラム修正が発生しており、それによる仕様的な問題についてを指摘しました。あまり厳格な統制がとられていない職場ということもあり、レビュー完了前にリリースされていましたが、幸いにもこれによる本番障害は発生しませんでした。
