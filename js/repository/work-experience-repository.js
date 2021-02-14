@@ -1540,6 +1540,60 @@ class WorkExperienceRepository {
             },
             {
                 "no" : "24",
+                "businessType" : "自販機サービス",
+                "period" : {
+                    "from" : "2019-7-5",
+                    "to" : "2020-8-5"
+                },
+                "device" : [
+                    "PC"
+                ],
+                "os" : [
+                    "Windows 7",
+                    "Windows 10"
+                ],
+                "programLanguage" : [
+                    "VB.NET",
+                    "PL/SQL"
+                ],
+                "developmentTool" : [
+                    "Visual Studio",
+                    "SQL Developer"
+                ],
+                "framework" : [],
+                "platform" : [],
+                "db" : [
+                    "Oracle"
+                ],
+                "other" : [
+                    "Subversion",
+                    "Crystal Report"
+                ],
+                "projectSummary" : "業務引継/研修",
+                "projectPeakSize" : "2",
+                "subordinate" : "1",
+                "system" : [
+                    "販売管理システム"
+                ],
+                "task" : [
+                    {
+                        "name" : "要件定義",
+                        "type" : [
+                            "RD"
+                        ]
+                    },
+                    {
+                        "name" : "作業管理",
+                        "type" : []
+                    },
+                    {
+                        "name" : "レビュー",
+                        "type" : []
+                    }
+                ]
+            },
+            {
+                "no" : "25",
                 "businessType" : "業務委託サービス",
                 "period" : {
                     "from" : "2020-8-21",
@@ -1583,7 +1637,7 @@ class WorkExperienceRepository {
                 ]
             },
             {
-                "no" : "25",
+                "no" : "26",
                 "businessType" : "カー用品メーカー",
                 "period" : {
                     "from" : "2020-9-1",

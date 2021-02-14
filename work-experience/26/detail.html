@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>案件詳細</title>
+    <link rel="stylesheet" href="../css/work-experience-report-detail.css">
+</head>
+<body>
+    <strong>背景:</strong>
+    <p class="work-experience-report-detail-summary">
+        A社が2000年頃から開発している基幹システム（経理機能がメイン）のパッケージがあります。A社では最大の製品であり、多くの利益を生み出してきた仕組みでもありますが、最も大きな技術負債であるとも認識されています。「パッケージを導入先の会社に対してカスタマイズする」というのが一般的によく聞く方法ですが、「導入先の会社の業務を元のパッケージに取り込み、更に導入先の会社にあわせてカスタマイズする」というやり方を採用しており、それによってパッケージが肥大化して混沌の坩堝になったというのが実態のようでした。このシステムは2段階に分けて行うシステム改訂が行われていましたが、私はその2段階目の対応に参画しました。
+    </p>
+
+    <strong>概要:</strong>
+    <p class="work-experience-report-detail-summary">
+        システム改訂
+    </p>
+
+    <strong>役割:</strong>
+    <p class="work-experience-report-detail-summary-without-text-indent">
+        調査<br>
+        基本/詳細設計<br>
+        実装・単体テスト<br>
+        結合テスト実施<br>
+        基本/詳細設計レビュー
+    </p>
+
+    <strong>詳細:</strong>
+    <p class="work-experience-report-detail-summary">
+        本格的なプロジェクト参画は10月からで、9月は10月から始まるシステム改訂で行われるテーブルレイアウトの影響調査から始まりました。
+    </p>
+    <ul class="work-experience-report-detail-list">
+        <li class="work-experience-report-detail-list-child-title">調査・改修</li>
+        <p class="work-experience-report-detail-list-child-text">
+            テーブルレイアウト変更に伴う影響の調査でした。単に一つのテーブルに列を一つ追加する程度のものでしたが、このシステムはWEB機能と管理しきれなくなったジョブ処理・Accessなどで作成されたサブツールから構成されていました。結果的に、影響箇所を特定する為にはコードの3000箇所以上を確認する必要がありました。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            私の役割は、影響範囲をメインの設計者に報告しつつ問題が発生しないように改修を行うというものであり、特に他人への説明は困難を極めました。レイアウト変更のあったテーブルから派生する全てのデータフローを確認して、ひとつのDFDにまとめました。そのままだとボリュームがありすぎて、確認する側がどこを重点的に確認すればよいか分かりにくそうなので、レイアウト変更が齎すリスクを「エラーが発生する」「エラーは発生しないが修正する確認が必要」「影響がなし」の3種類に分類して、赤・黄・緑で色分けしました。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            調査結果の報告後、許可が降りたのでプログラムの改修を行いました。このシステムはWEBアプリケーションとバッチ処理、Accessなどで作られたツールから構成されていましたが、対象の範囲はバッチ処理とツールのみでした。その為、この改修ではVBAとT-SQLで細々とした処理を手広く修正することになりました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="26\1.png" alt="調査・改修"> -->
+        <li class="work-experience-report-detail-list-child-title">基本設計</li>
+        <p class="work-experience-report-detail-list-child-text">
+            要件定義は完了していましたが、細かい部分の仕様は基本設計時に確認するということになっていました。その為、設計をしながら疑問点は都度課題表に追加していき、定期的に開かれる顧客との打ち合わせで確認しました。名目上は基本設計となっていましたが、記述する内容的には、外部設計を意識した構成となっていました。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            この案件は、A社では珍しく技術系のドキュメントが豊富でした。これは技術負債の蓄積によって、ソースコードが難読化してしまったことへの対策でもあるのかもしれません（あるいは、単に参画した案件のメインの設計者が極めて几帳面な性格であったというのもあると思います）。その為、業務上起こりうるパターンや、その場合におけるデータフロー、新規開発部分におけるレイヤー設計の思想などをまとめた資料を読解するところから始まりました。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            自分が担当する基本設計の完了後は、他の担当者が作成した基本設計のレビューを行いました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="26\2.png" alt="基本設計"> -->
+        <li class="work-experience-report-detail-list-child-title">詳細設計</li>
+        <p class="work-experience-report-detail-list-child-text">
+            基本設計は要件の再確認を行いながら進められましたが、仕様が確定しないまま詳細設計のスケジュールが来てしまいました。その為、引き続き仕様を確認しながらの詳細設計となりました。基本設計が外部設計を意識した内容なので、こちらは内部設計的な観点での書き方を求められました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="26\3.png" alt="詳細設計"> -->
+        <li class="work-experience-report-detail-list-child-title">実装</li>
+        <p class="work-experience-report-detail-list-child-text">
+            ASPで作られたWEBアプリケーションの既存画面の改修と、新規画面の開発が私の担当範囲でした。新規画面については、事前にアーキテクトのような人が基本的なクラスを用意しており、ASPという2000年より前の技術でありながらレイヤー管理された構成での開発になりました。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            既存画面の改修については、過去の無法地帯だった頃にできたものであり、VBScript・html・JavaScriptが1ファイルに記述されていました。ASPにはこれといってIDEと呼べるものがない為、VSCodeで開発していました。既に提供されている拡張機能には、前述の3つの言語が混ざったファイルのシンタックスをハイライトできるものはなく、ハイライトが却って誤解を生むものになってしまうというような落とし穴がありました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="26\4.png" alt="実装"> -->
+        <li class="work-experience-report-detail-list-child-title">単体テスト</li>
+        <p class="work-experience-report-detail-list-child-text">
+            このシステムは伝統的に、単体テストを行う十分な工数が用意されておらず、どの程度確認するかというのは実装者に委ねられていました。とは言っても、テストデータを用意して一通りの動作を確認する以外に、プログラムの正当性を担保する方法は知らなかったので、結果的には「仕様書を作成して...テストデータを準備して...」というような普通の単体テスト実施となりました。とは言っても、かなり工数的に厳しい部分もあったので、一時的なスケジュール遅延も発生しました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="26\5.png" alt="単体テスト"> -->
+        <li class="work-experience-report-detail-list-child-title">結合テスト</li>
+        <p class="work-experience-report-detail-list-child-text">
+            システムの有識者が作成したシナリオに沿ったテストを行いました。前述のとおり、単体テストは個人の裁量にまかされており、また人手不足によりプロジェクト参画者の殆どが何らかのプロジェクトを兼務していました。結果的に、十分な単体テストが行われていないことが予見されており、その為に単体テストでさえもカバーするようなテストケースが用意されていました。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            結果として、単体テストレベルの粒度をもつ結合テストという見たこともないテストを実施することになりました。1日の消化ケース数もそれなりに厳しいものであり、残業をしながらスケジュール遅れに留まるという状態にありました。この期間はテレワークであり、終電が存在しないということで作業時間を確保でき、最終的にはスケジュール通りに作業を終わらせることができました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="26\6.png" alt="結合テスト"> -->
+        <li class="work-experience-report-detail-list-child-title">総合テスト</li>
+        <p class="work-experience-report-detail-list-child-text">
+            総合テスト実施予定でしたが、他に炎上中のプロジェクトがあり、そちらの遅延解消の私は担当が変わりました。その為、この作業は私は実施しませんでした。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="26\7.png" alt="総合テスト"> -->
+    </ul>
+</body>
+</html>
