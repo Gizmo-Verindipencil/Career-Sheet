@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="author" content="Nozomi Kawahata">
+    <meta name="description" content="">
+    <title>職務経歴書</title>
+    <link rel="stylesheet" href="css/destyle.css">
+    <link rel="stylesheet" href="css/restyle.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $("#core-info").load("core-info.html");
+            $("#work-experience").load("work-experience.html");
+            $("#qualification").load("qualification.html");
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="page-title">職務経歴書</h1>
+    </header>
+    <noscript>
+        <p class="no-javascript-warning">内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <section id="core-info"></section>
+    <section id="work-experience"></section>
+    <section id="qualification"></section>
+</body>
+</html>
