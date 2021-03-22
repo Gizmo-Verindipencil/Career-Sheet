@@ -1668,7 +1668,7 @@ class WorkExperienceRepository {
                 "projectPeakSize" : "6",
                 "subordinate" : "0",
                 "system" : [
-                    "業務ツール"
+                    "資産管理システム"
                 ],
                 "task" : [
                     {
