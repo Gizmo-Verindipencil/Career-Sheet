@@ -1708,6 +1708,76 @@ class WorkExperienceRepository {
                         ]
                     }
                 ]
+            },
+            {
+                "no" : "27",
+                "businessType" : "カー用品メーカー",
+                "period" : {
+                    "from" : "2021-2-1",
+                    "to" : "2021-3-31"
+                },
+                "device" : [
+                    "PC"
+                ],
+                "os" : [
+                    "Windows 10"
+                ],
+                "programLanguage" : [
+                    "C#",
+                    "T-SQL"
+                ],
+                "developmentTool" : [
+                    "Visual Studio"
+                ],
+                "framework" : [
+                    "MS Test"
+                ],
+                "platform" : [],
+                "db" : [
+                    "SQL-Server",
+                    "Access"
+                ],
+                "other" : [
+                    "Dapper"
+                ],
+                "projectSummary" : "システム新規開発",
+                "projectPeakSize" : "6",
+                "subordinate" : "0",
+                "system" : [
+                    "EDI"
+                ],
+                "task" : [
+                    {
+                        "name" : "調査",
+                        "type" : [
+                            "C"
+                        ]
+                    },
+                    {
+                        "name" : "詳細設計",
+                        "type" : [
+                            "LLD"
+                        ]
+                    },
+                    {
+                        "name" : "実装",
+                        "type" : [
+                            "C"
+                        ]
+                    },
+                    {
+                        "name" : "単体テスト",
+                        "type" : [
+                            "UT"
+                        ]
+                    },
+                    {
+                        "name" : "結合テスト",
+                        "type" : [
+                            "IT"
+                        ]
+                    }
+                ]
             }
         ];
     }

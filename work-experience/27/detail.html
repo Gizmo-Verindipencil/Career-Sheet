@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>案件詳細</title>
+    <link rel="stylesheet" href="../css/work-experience-report-detail.css">
+</head>
+<body>
+    <strong>背景:</strong>
+    <p class="work-experience-report-detail-summary">
+        A社の得意先であるP社とT社の間で手動で行っていた受発注をEDI化するという案件がありました。私が参画した時点では詳細設計までが暫定的に終わっており、人数を増やして実装以降を一気に進めるという話でした。「"暫定的に"終わっている」というのは、関連会社と調整中の出来事が複数あり、中々解決しないような状態でした。その為、プロジェクトは遅延していましたが、今回はユーザーの取引会社であるT社との兼ね合いもあり、納期を変更することが極めて難しい状況でした。
+    </p>
+
+    <strong>概要:</strong>
+    <p class="work-experience-report-detail-summary">
+        システム新規開発
+    </p>
+
+    <strong>役割:</strong>
+    <p class="work-experience-report-detail-summary-without-text-indent">
+        調査<br>
+        詳細設計(修正)<br>
+        実装・単体テスト<br>
+        結合テスト実施<br>
+        基本設計レビュー
+    </p>
+
+    <strong>詳細:</strong>
+    <p class="work-experience-report-detail-summary">
+        詳細設計フェーズの終わり頃にプロジェクトに参画しました。
+    </p>
+    <ul class="work-experience-report-detail-list">
+        <li class="work-experience-report-detail-list-child-title">要件確認</li>
+        <p class="work-experience-report-detail-list-child-text">
+            プロジェクト途中の参画なので、要件定義を確認するところから始まりました。参画直後はスケジュール調整中であり、作業に入るまでの数日間はどのような案件なのか把握する猶予がありました。EDIなので、メインはUIを伴わない機能でしたが、管理コンソールとしてのWEBアプリケーションの開発もありました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="27\1.png" alt="調査・改修"> -->
+        <li class="work-experience-report-detail-list-child-title">実装</li>
+        <p class="work-experience-report-detail-list-child-text">
+            スケジュールの整理後、私はEDI機能の実装作業に入りました。このシステムのアーキテクチャは、当初はとある既存システムを参考にしていましたが、一部に改善点があるということで、実装段階で思想の変更がありました。これによって、詳細設計と実際の実装には乖離が発生することになりました。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            この案件では仕様変更と設計変更が多発し、細かな仕様が週ごとに変わるような状態ではありました。しかしながら、今回のアプリケーションはクリーンアーキテクチャを参考とした構成で、かつ単体テスト自動化やDIパターンを利用していました。結果として、信じられない頻度の仕様変更が発生したものの、従来と比較するとその対応は驚くほど簡単でした。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="27\2.png" alt="実装"> -->
+        <li class="work-experience-report-detail-list-child-title">単体テスト</li>
+        <p class="work-experience-report-detail-list-child-text">
+            今回は「MS Test」を利用した単体テストの自動化が採用されました。これまで担当したシステムは古いということもあり、ロジックが適切に分離されておらず、それ故に単体テスト自動化を利用できる機会はありませんでした。初めての単体テスト自動化でしたが、これは本当に素晴らしいものでした。当然ながら、単体テストのコーディングを行う必要はありますが、一度作成した後のプログラム修正の影響管理は極めて容易になりました。今回の案件では、仕様変更が頻発したことで、それを強く実感しました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="27\3.png" alt="単体テスト"> -->
+        <li class="work-experience-report-detail-list-child-title">結合テスト</li>
+        <p class="work-experience-report-detail-list-child-text">
+            スケジュール上の工数はかなり厳しく、結合テストのシナリオ作成/実施が厳しいような状態でした。それに加えて、私を含めた案件途中からの参画メンバーは、運用パターンなどに関する知識が不足していました。結果的に、正式な運用に関するシナリオはプロジェクトの最初から参画していた有識者の方がシナリオ作成/テスト実施することになりました。私は、例外ケースに関するシナリオ作成/テスト実施を行いました。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            結合テスト中に何度か仕様変更が発生しました。正式な運用シナリオに基づく結合テストの実施後に仕様変更が発生した為、プログラム修正後に一部のシナリオを再度確認するということが、仕様変更の度に行われました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="27\4.png" alt="結合テスト"> -->
+    </ul>
+</body>
+</html>
