@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>案件詳細</title>
+    <link rel="stylesheet" href="../css/work-experience-report-detail.css">
+</head>
+<body>
+    <strong>背景:</strong>
+    <p class="work-experience-report-detail-summary">
+        A社の得意先であるP社にて、従業員を対象とした保険/年金の運営組織があります。そこでの会員募集業務は、昔ながらの紙やExcelを使った「よくある」方法で行われていました。紙が付随する業務であっても、データの管理などはコンピューターで行われます。であるがゆえに、この手の業務にはデータ入力や紙の申請内容の精査などの膨大な仕事が伴います。そういった業務を改善する為の提案として、WEBアプリケーションの新規開発の話を持ち掛けていました。この提案の技術調査と概算金額の見積を行うことになりました。
+    </p>
+
+    <strong>概要:</strong>
+    <p class="work-experience-report-detail-summary">
+        営業提案の概算見積
+    </p>
+
+    <strong>役割:</strong>
+    <p class="work-experience-report-detail-summary-without-text-indent">
+        技術調査<br>
+        概算見積
+    </p>
+
+    <strong>詳細:</strong>
+    <p class="work-experience-report-detail-summary">
+        ユーザーの業務内容や、システムの機能・画面などはある程度想定されており、それらの実現方法・工数見積、及び法律的な考慮を行いました。
+    </p>
+    <ul class="work-experience-report-detail-list">
+        <li class="work-experience-report-detail-list-child-title">技術調査</li>
+        <p class="work-experience-report-detail-list-child-text">
+            WEB画面でとある操作間の機能を実現する為のフロントエンドAPIを探しました。それらをリスト化して、ライセンス的に商業利用が問題ないか等を確認し、実際の実装イメージを作成して関係者間の認識を擦り合わせました。この実装は、A社で使っているグループウェア「サイボウズ」に組み込みされていた「TinyMCE」というOSSの利用を参考にしました。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            今回はクラウドを利用し、負荷に応じて自動的にスケールアウトする構成での提案になっていました。私はこの類の経験/知識がなかったので、当初想定していた「Azure」関連の製品/料金体系について調べました。また、チャットボットを利用する可能性もあり、そちらについても複数のサービスをピックアップして調査を行いました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="28\1.png" alt="技術調査"> -->
+        <li class="work-experience-report-detail-list-child-title">概算見積</li>
+        <p class="work-experience-report-detail-list-child-text">
+            技術調査の結果を基に作成した実装イメージを前提として、各工程の概算見積を作成しました。実際に一部機能はアジャイル的な開発手法をとることが予想されましたが、あくまで概算見積の段階ではウォーターフォールの工程で算出しました。提案段階で、まだまだ仕様が不確定なのでSRSS法を利用したリスクの可視化を行いました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="28\2.png" alt="概算見積"> -->
+        <li class="work-experience-report-detail-list-child-title">その他調査</li>
+        <p class="work-experience-report-detail-list-child-text">
+            一度内容を共有した後に、法律に関する考慮の不足を指摘されました。個人情報を扱うので個人情報保護法、WEB上で契約を行うので電子契約法、一般的なセキュリティ要項である「責任追及性」「否認防止」などを満たすためのログ機能、監査時に必要な機能を出力する為の機能、等についてを再度考慮し、概算見積に反映しました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="28\3.png" alt="その他調査"> -->
+    </ul>
+</body>
+</html>

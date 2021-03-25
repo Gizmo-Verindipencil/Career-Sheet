@@ -1778,6 +1778,49 @@ class WorkExperienceRepository {
                         ]
                     }
                 ]
+            },
+            {
+                "no" : "28",
+                "businessType" : "生命保険",
+                "period" : {
+                    "from" : "2021-3-15",
+                    "to" : "2021-3-22"
+                },
+                "device" : [
+                    "PC"
+                ],
+                "os" : [
+                    "Windows 10"
+                ],
+                "programLanguage" : [
+                    "JavaScript"
+                ],
+                "developmentTool" : [],
+                "framework" : [],
+                "platform" : [],
+                "db" : [],
+                "other" : [
+                    "GrapesJs",
+                    "Form.io",
+                    "JQuery.FormBuilder",
+                    "Packery",
+                    "shopify draggable",
+                    "interact.js"
+                ],
+                "projectSummary" : "概算見積",
+                "projectPeakSize" : "1",
+                "subordinate" : "0",
+                "system" : [
+                    "EDI"
+                ],
+                "task" : [
+                    {
+                        "name" : "概算見積",
+                        "type" : [
+                            "RE"
+                        ]
+                    }
+                ]
             }
         ];
     }
