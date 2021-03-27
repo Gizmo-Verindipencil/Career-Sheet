@@ -22,6 +22,11 @@ class FrameworkRepository {
                 "id" : "3",
                 "name" : "独自基盤2",
                 "description" : "B社の発注元の開発ベンダーであるN社由来の独自のアプリケーションフレームワーク。GUIアーキテクチャとしてMVVMを採用。"
+            },
+            {
+                "id" : "4",
+                "name" : "Dapper",
+                "description" : ".NETプラットフォーム用のオブジェクトマッパー。"
             }
         ];
     }

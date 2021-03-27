@@ -1730,6 +1730,7 @@ class WorkExperienceRepository {
                     "Visual Studio"
                 ],
                 "framework" : [
+                    "Dapper",
                     "MS Test"
                 ],
                 "platform" : [],
@@ -1737,9 +1738,7 @@ class WorkExperienceRepository {
                     "SQL-Server",
                     "Access"
                 ],
-                "other" : [
-                    "Dapper"
-                ],
+                "other" : [],
                 "projectSummary" : "システム新規開発",
                 "projectPeakSize" : "6",
                 "subordinate" : "0",
