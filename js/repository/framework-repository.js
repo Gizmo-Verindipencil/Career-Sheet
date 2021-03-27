@@ -26,12 +26,12 @@ class FrameworkRepository {
             {
                 "id" : "4",
                 "name" : "Dapper",
-                "description" : ".NETプラットフォーム用のオブジェクトマッパー。"
+                "description" : "Microsoft社が提供する.NETプラットフォーム用のオブジェクトマッパー。"
             },
             {
                 "id" : "5",
                 "name" : "GrapesJs",
-                "description" : "WEBブラウザ上で動作するWEB画面構築フレームワーク。"
+                "description" : "Artur Arseniev氏が提供するWEB画面構築フレームワーク。"
             }
         ];
     }
