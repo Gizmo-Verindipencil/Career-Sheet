@@ -1798,10 +1798,11 @@ class WorkExperienceRepository {
                 "framework" : [
                     "GrapesJs"
                 ],
-                "platform" : [],
+                "platform" : [
+                    "Form.io"
+                ],
                 "db" : [],
                 "other" : [
-                    "Form.io",
                     "JQuery.FormBuilder",
                     "Packery",
                     "shopify draggable",

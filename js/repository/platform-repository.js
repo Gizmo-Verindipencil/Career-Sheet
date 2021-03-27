@@ -32,6 +32,11 @@ class PlatformRepository {
                 "id" : "5",
                 "name" : "Biz Browser",
                 "description" : "OpenStream社が提供するWEBアプリケーションプラットフォーム。リッチクライアントが特徴。"
+            },
+            {
+                "id" : "6",
+                "name" : "Form.io",
+                "description" : "Form.io社が提供するWEB画面・データ管理のプラットフォーム。"
             }
         ];
     }
