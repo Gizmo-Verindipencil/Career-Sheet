@@ -27,6 +27,11 @@ class FrameworkRepository {
                 "id" : "4",
                 "name" : "Dapper",
                 "description" : ".NETプラットフォーム用のオブジェクトマッパー。"
+            },
+            {
+                "id" : "5",
+                "name" : "GrapesJs",
+                "description" : "WEBブラウザ上で動作するWEB画面構築フレームワーク。"
             }
         ];
     }

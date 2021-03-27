@@ -1795,11 +1795,12 @@ class WorkExperienceRepository {
                     "JavaScript"
                 ],
                 "developmentTool" : [],
-                "framework" : [],
+                "framework" : [
+                    "GrapesJs"
+                ],
                 "platform" : [],
                 "db" : [],
                 "other" : [
-                    "GrapesJs",
                     "Form.io",
                     "JQuery.FormBuilder",
                     "Packery",
