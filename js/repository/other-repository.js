@@ -40,8 +40,8 @@ class OtherRepository {
             },
             {
                 "id" : "7",
-                "name" : "JQuery",
-                "description" : "オープンソースのJavaScriptライブラリ。コードの記述を簡素化できる。"
+                "name" : "JQuery formBuilder",
+                "description" : "Kevin Chappell氏が提供するJQueryプラグイン。ドラッグ&ドロップでのWEB画面を作成する機能を提供。"
             }
         ];
     }

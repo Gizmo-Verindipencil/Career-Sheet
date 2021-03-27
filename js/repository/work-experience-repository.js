@@ -1803,7 +1803,7 @@ class WorkExperienceRepository {
                 ],
                 "db" : [],
                 "other" : [
-                    "JQuery.FormBuilder",
+                    "JQuery formBuilder",
                     "Packery",
                     "shopify draggable",
                     "interact.js"
