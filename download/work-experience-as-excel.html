@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.2/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+    <script src="../js/repository/work-experience-repository.js"></script>
+    <script src="../js/downloader/excel-downloader.js"></script>
+    <script src="../js/downloader/work-experience-excel-downloader.js"></script>
+</head>
+<body>
+    <input type="button" value="Download" onclick="download()">
+    <script language="javascript" type="text/javascript">
+        const download = () => {
+          const downloader = new WorkExperienceExcelDownloader();
+          downloader.download();
+        }
+    </script>
+  </body>
+</html>
