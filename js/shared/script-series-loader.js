@@ -1,9 +1,9 @@
 /**
- * スクリプトの直列ローダー
+ * スクリプトの直列ローダーを提供します。
  */
 class ScriptSeriesLoader {
     /**
-     * コンストラクタ
+     * インスタンスを初期化します。
      */
     constructor() {
         this.sources = [];
@@ -12,8 +12,8 @@ class ScriptSeriesLoader {
     }
 
     /**
-     * スクリプトの追加
-     * @param {String} source スクリプトのソース
+     * スクリプトの読込対象に追加します。既に存在する場合は無視されます。
+     * @param {String} source スクリプトのソース。
      */
     add = (source) => {
         // 既に追加済の場合は無視
@@ -24,9 +24,9 @@ class ScriptSeriesLoader {
     }
 
     /**
-     * スクリプトの読込
-     * @param {Function} onSuccess 成功時に実行される処理
-     * @param {Function} onFailure 失敗時に実行される処理
+     * スクリプトの読込を行います。
+     * @param {Function} onSuccess 成功時に実行される処理。
+     * @param {Function} onFailure 失敗時に実行される処理。
      */
     load = (onSuccess, onFailure) => {
         // 対象がひとつもなければ終了

@@ -1,10 +1,11 @@
 /**
- * その他データ関連のリポジトリ（ダミー）
+ * その他技術データのリポジトリを提供します。
+ * 現状はバックエンドを表すダミーです。
  */
 class OtherRepository {
     /**
-     * その他データを取得する
-     * @return {Array<Object>} 全てのその他データ
+     * その他技術データを取得します。
+     * @return {Array<Object>} その他技術データを返します。
      */
     getAll = () => {
         return [
@@ -62,8 +63,8 @@ class OtherRepository {
     }
 
     /**
-     * その他データを更新する
-     * @param {Object} other その他データ
+     * その他技術データを更新します。
+     * @param {Object} other その他技術データ。
      */
     post = other => {
         // dummy

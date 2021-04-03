@@ -3,11 +3,11 @@ import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * フレームワークデータ（ヘルプ）のセッター
+ * ヘルプ(フレームワーク)の設定処理を提供します。
  */
 class FrameworkHelpSetter {
     /**
-     * コンストラクタ
+     * インスタンスを初期化します。
      */
     constructor() {
         // 必要なソースを読込
@@ -17,8 +17,8 @@ class FrameworkHelpSetter {
     }
 
     /**
-     * インスタンスの生成
-     * @returns {FrameworkHelpSetter} 新しいインスタンス
+     * インスタンスの生成し、必要なモジュールを読込します。
+     * @returns {FrameworkHelpSetter} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
@@ -32,12 +32,12 @@ class FrameworkHelpSetter {
     }
 
     /**
-     * セット処理の実行
+     * ヘルプの設定を実行します。
      */
     execute = () => {
-        // OSデータを取得
-        const Repository = new FrameworkRepository();
-        const frameworks = Repository.getAll();
+        // フレームワークデータを取得
+        const repository = new FrameworkRepository();
+        const frameworks = repository.getAll();
 
         // 名前の昇順で並べる
         frameworks.sort((a, b) => {
@@ -61,16 +61,16 @@ class FrameworkHelpSetter {
     }
 
     /**
-     * td要素を生成
-     * @param {String} innerHtml
-     * @return {String} td要素を表すhtml 
+     * td要素を生成します。
+     * @param {String} innerHtml td要素の内部html。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createTd = innerHtml => `<td class="help-info-cell">${innerHtml}</td>`;
 
     /**
-     * No.のtd要素を生成
-     * @param {Number} index インデックス
-     * @return {String} td要素を表すhtml
+     * No.のtd要素を生成します。
+     * @param {Number} index td要素に設定する番号。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createNoTd = index => {
         const number = index + 1;
@@ -79,9 +79,9 @@ class FrameworkHelpSetter {
     }
 
     /**
-     * 名称のtd要素を生成
-     * @param {Object} framework フレームワークデータ
-     * @return {String} td要素を表すhtml
+     * 名称のtd要素を生成します。
+     * @param {Object} framework フレームワークデータ。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createNameTd = framework => {
         const classPrefix = "work-experience-technology";
@@ -90,9 +90,9 @@ class FrameworkHelpSetter {
     }
 
     /**
-     * 説明のtd要素を生成
-     * @param {Object} framework フレームワーク
-     * @return {String} td要素を表すhtml
+     * 説明のtd要素を生成します。
+     * @param {Object} framework フレームワークデータ。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createDescriptionTd = framework => {
         return this.createTd(`<p>${framework.description}</p>`);

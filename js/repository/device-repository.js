@@ -1,10 +1,11 @@
 /**
- * 機種データ関連のリポジトリ（ダミー）
+ * 機種データのリポジトリを提供します。
+ * 現状はバックエンドを表すダミーです。
  */
 class DeviceRepository {
     /**
-     * 機種データを取得する
-     * @return {Array<Object>} 全ての機種データ
+     * 機種データを取得します。
+     * @return {Array<Object>} 機種データを返します。
      */
     getAll = () => {
         return [
@@ -22,8 +23,8 @@ class DeviceRepository {
     }
 
     /**
-     * 機種データを更新する
-     * @param {Object} device 機種データ
+     * 機種データを更新します。
+     * @param {Object} device 機種データ。
      */
     post = device => {
         // dummy

@@ -3,11 +3,11 @@ import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
- * 経歴(ヘッダー)のセッター
+ * 職務経歴レポート(ヘッダー)の設定処理を提供します。
  */
 class WorkExperienceReportHeaderSetter {
     /**
-     * コンストラクタ
+     * インスタンスを初期化します。
      */
     constructor() {
         // 必要なソースを読込
@@ -17,8 +17,8 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * インスタンスの生成
-     * @returns {WorkExperienceReportHeaderSetter} 新しいインスタンス
+     * インスタンスの生成し、必要なモジュールを読込します。
+     * @returns {WorkExperienceReportHeaderSetter} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
@@ -32,7 +32,7 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * セット処理の実行
+     * 職務経歴レポート(ヘッダー)の設定を実行します。
      */
     execute = () => {
         // 職務経歴データを取得
@@ -69,16 +69,16 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * No.のセット
-     * @param {Object} data 経歴データ
+     * No.の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setNo = data => {
         $("input[name='number']").val(data.no);
     }
 
     /**
-     * 期間のセット
-     * @param {object} data 経歴データ
+     * 期間の設定を行います。
+     * @param {object} data 職務経歴データ。
      */
     setPeriod = data => {
         // 年月表現の取得
@@ -100,8 +100,8 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 月数のセット
-     * @param {Object} data 経歴データ
+     * 月数の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setMonth = data => {
         // 年月を表す数値の取得
@@ -124,16 +124,16 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 業務名のセット
-     * @param {Object} data 経歴データ
+     * 業務名の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setTask = data => {
         $("input[name='task']").val(data.projectSummary);
     }
 
     /**
-     * システム名のセット
-     * @param {Object} data 経歴データ
+     * システム名の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setSystem = data => {
         // データがない場合の表示
@@ -159,24 +159,24 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * プロジェクトのピーク人数のセット
-     * @param {Object} data 経歴データ
+     * プロジェクトのピーク人数の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setProjectPeakSize = data => {
         $("input[name='projectPeakSize']").val(data.projectPeakSize);
     }
 
     /**
-     * 部下人数のセット
-     * @param {Object} data 経歴データ
+     * 部下人数の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setSubordinate = data => {
         $("input[name='subordinate']").val(data.subordinate);
     }
 
     /**
-     * 技術関連のセット
-     * @param {Object} data 経歴データ 
+     * 技術関連の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setTechnology = data => {
         // この情報に対応するクラス名
@@ -231,10 +231,10 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 作業フェーズのセット
-     * @param {Object} data 経歴データ
-     * @param {Number} targetPhase 対象フェーズ（1～8）
-     * @param {Array} targetTypes 対象作業タイプ
+     * 作業フェーズの設定を行います。
+     * @param {Object} data 職務経歴データ。
+     * @param {Number} targetPhase 対象フェーズ（1～8）。
+     * @param {Array} targetTypes 対象作業タイプ。
      */
     setPhase = (data, targetPhase, targetTypes) => {
         // データがない場合の表示
@@ -264,8 +264,8 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 作業フェーズの管理・PMのセット
-     * @param {Object} data 経歴データ
+     * 作業フェーズ(管理・PM)の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setPhase1 = data => {
         const targetTypes = [ ];
@@ -273,8 +273,8 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 作業フェーズの要件定義・分析のセット
-     * @param {Object} data 経歴データ
+     * 作業フェーズ(要件定義・分析)の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setPhase2 = data => {
         const targetTypes = [ "BA", "SA", "RD", "E" ];
@@ -282,8 +282,8 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 作業フェーズの基本設計のセット
-     * @param {Object} data 経歴データ
+     * 作業フェーズ(基本設計)の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setPhase3 = data => {
         const targetTypes = [ "FD", "HLD" ];
@@ -291,8 +291,8 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 作業フェーズの詳細設計のセット
-     * @param {Object} data 経歴データ
+     * 作業フェーズ(詳細設計)の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setPhase4 = data => {
         const targetTypes = [ "LLD" ];
@@ -300,8 +300,8 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 作業フェーズのPG/UTのセット
-     * @param {Object} data 経歴データ
+     * 作業フェーズ(PG/UT)の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setPhase5 = data => {
         const targetTypes = [ "C", "UT" ];
@@ -309,8 +309,8 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 作業フェーズの結合試験のセット
-     * @param {Object} data 経歴データ
+     * 作業フェーズ(結合試験)の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setPhase6 = data => {
         const targetTypes = [ "IT" ];
@@ -318,8 +318,8 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 作業フェーズの総合試験のセット
-     * @param {Object} data 経歴データ
+     * 作業フェーズ(総合試験)の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setPhase7 = data => {
         const targetTypes = [ "ST" ];
@@ -327,8 +327,8 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 作業フェーズの維持管理業務のセット
-     * @param {Object} data 経歴データ
+     * 作業フェーズ(維持管理業務)の設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setPhase8 = data => {
         const targetTypes = [ "SM", "SO", "HD" ];
@@ -336,8 +336,8 @@ class WorkExperienceReportHeaderSetter {
     }
 
     /**
-     * 前へ/次へボタン押下時の動作のセット
-     * @param {Object} data 経歴データ
+     * 前へ/次へボタン押下時の動作設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setPrevAndNextButtonAction = data => {
         // ページ遷移の処理

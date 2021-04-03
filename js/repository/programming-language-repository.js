@@ -1,10 +1,11 @@
 /**
- * プログラミング言語データ関連のリポジトリ（ダミー）
+ * プログラミング言語データのリポジトリを提供します。
+ * 現状はバックエンドを表すダミーです。
  */
 class ProgrammingLanguageRepository {
     /**
-     * プログラミング言語データを取得する
-     * @return {Array<Object>} 全てのプログラミング言語データ
+     * プログラミング言語データを取得します。
+     * @return {Array<Object>} プログラミング言語データを返します。
      */
     getAll = () => {
         return [
@@ -67,8 +68,8 @@ class ProgrammingLanguageRepository {
     }
 
     /**
-     * プログラミング言語データを更新する
-     * @param {Object} programmingLanguage プログラミング言語データ
+     * プログラミング言語データを更新します。
+     * @param {Object} programmingLanguage プログラミング言語データ。
      */
     post = programmingLanguage => {
         // dummy

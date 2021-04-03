@@ -3,26 +3,22 @@ import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
- * 経歴(詳細)のセッター
+ * 職務経歴レポート(詳細)の設定処理を提供します。
  */
 class WorkExperienceReportDetailSetter {
     /**
-     * コンストラクタ
-     * @param {Object} dataList 経歴データ
+     * インスタンスを初期化します。
      */
-    constructor(data) {
+    constructor() {
         // 必要なソースを読込
         this.loader = ScriptSeriesLoader;
         this.loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         this.loader.load();
-
-        // 反映内容のセット
-        this.data = data;
     }
 
     /**
-     * インスタンスの生成
-     * @returns {WorkExperienceReportDetailSetter} 新しいインスタンス
+     * インスタンスの生成し、必要なモジュールを読込します。
+     * @returns {WorkExperienceReportDetailSetter} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
@@ -36,7 +32,7 @@ class WorkExperienceReportDetailSetter {
     }
 
     /**
-     * セット処理の実行
+     * 職務経歴レポート(詳細)の設定を実行します。
      */
     execute = () => {
         // 職務経歴データを取得
@@ -55,8 +51,8 @@ class WorkExperienceReportDetailSetter {
     }
 
     /**
-     * 詳細のセット
-     * @param {Object} data 経歴データ
+     * 詳細ページの設定を行います。
+     * @param {Object} data 職務経歴データ。
      */
     setDetail = data => {
         $("#work-experience-report-detail").load(`${data.no}\\detail.html`);

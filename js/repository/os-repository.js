@@ -1,10 +1,11 @@
 /**
- * OSデータ関連のリポジトリ（ダミー）
+ * OSデータのリポジトリを提供します。
+ * 現状はバックエンドを表すダミーです。
  */
 class OsRepository {
     /**
-     * OSデータを取得する
-     * @return {Array<Object>} 全てのOSデータ
+     * OSデータを取得します。
+     * @return {Array<Object>} OSデータを返します。
      */
     getAll = () => {
         return [
@@ -27,8 +28,8 @@ class OsRepository {
     }
 
     /**
-     * OSデータを更新する
-     * @param {Object} os OSデータ
+     * OSデータを更新します。
+     * @param {Object} os OSデータ。
      */
     post = os => {
         // dummy
