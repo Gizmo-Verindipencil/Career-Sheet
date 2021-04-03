@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/help.css">
     <link rel="stylesheet" href="../css/work-experience.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/repository/programming-language-repository.js"></script>
-    <script src="../js/setter/help/programming-language-setter.js"></script>
-    <script>
-        $(document).ready(() => {
-            const setter = new ProgrammingLanguageHelpSetter();
-            setter.execute();
+    <script language="javascript" type="module">
+        import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
+        import { ProgrammingLanguageHelpSetter } from "../js/setter/help/programming-language-setter.js";
+
+        const loader = ScriptSeriesLoader;
+        loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        loader.load(() => {
+            $(document).ready(async() => {
+                const setter = await ProgrammingLanguageHelpSetter.build();
+                setter.execute();
+            });
         });
     </script>
 </head>

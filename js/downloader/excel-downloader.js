@@ -1,3 +1,6 @@
+import { Utility } from "../shared/utility.js";
+import ScriptSeriesLoader from "../shared/script-series-loader.js";
+
 /**
  * Excelファイルの生成・出力
  */
@@ -6,10 +9,32 @@ class ExcelDownloader {
      * コンストラクタ
      */
     constructor() {
+        // 必要なソースを読込
+        this.loader = ScriptSeriesLoader;
+        this.loader.add("https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.2/xlsx.full.min.js");
+        this.loader.add("https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js");
+        this.loader.load();
+
+        // 空のブックを作成
         this.workbook = {
             sheetNames: [],
             sheets: {}
         };
+    }
+
+    /**
+     * インスタンスの生成
+     * @returns 新しいインスタンス
+     */
+    static build = async() => {
+        // インスタンスを作成
+        const downloader = new ExcelDownloader();
+
+        // スクリプトの読込完了後にインスタンスを返す
+        while(downloader.loader.running){
+            await Utility.sleep(2000);
+        }
+        return downloader;
     }
 
     /**
@@ -108,3 +133,5 @@ class ExcelDownloader {
         saveAs(blob, `${fileName}.xlsx`);
     }
 }
+
+export { ExcelDownloader };

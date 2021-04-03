@@ -1,7 +1,36 @@
+import { TaskRepository } from "../repository/task-type-repository.js";
+import { Utility } from "../shared/utility.js";
+import ScriptSeriesLoader from "../shared/script-series-loader.js"
+
 /**
  * 作業種類一覧のセッター
  */
 class TaskTypeListSetter {
+    /**
+     * コンストラクタ
+     */
+    constructor() {
+        // 必要なソースを読込
+        this.loader = ScriptSeriesLoader;
+        this.loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        this.loader.load();
+    }
+
+    /**
+     * インスタンスの生成
+     * @returns 新しいインスタンス
+     */
+    static build = async() => {
+        // インスタンスを作成
+        const setter = new TaskTypeListSetter();
+
+        // スクリプトの読込完了後にインスタンスを返す
+        while(setter.loader.running){
+            await Utility.sleep(2000);
+        }
+        return setter;
+    }
+
     /**
      * セット処理の実行
      */
@@ -37,3 +66,5 @@ class TaskTypeListSetter {
         }
     }
 }
+
+export { TaskTypeListSetter };

@@ -364,3 +364,5 @@ class TaskRepository {
         ];
     }
 }
+
+export { TaskRepository };

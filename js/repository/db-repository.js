@@ -39,3 +39,5 @@ class DbRepository {
         // dummy
     }
 }
+
+export { DbRepository };

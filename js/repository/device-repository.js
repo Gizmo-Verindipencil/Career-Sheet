@@ -29,3 +29,5 @@ class DeviceRepository {
         // dummy
     }
 }
+
+export { DeviceRepository };

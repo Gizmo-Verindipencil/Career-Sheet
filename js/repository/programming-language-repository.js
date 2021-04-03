@@ -74,3 +74,5 @@ class ProgrammingLanguageRepository {
         // dummy
     }
 }
+
+export { ProgrammingLanguageRepository };

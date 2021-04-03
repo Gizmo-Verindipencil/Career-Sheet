@@ -1439,3 +1439,5 @@ class WorkHoursRepository {
         // dummy
     }
 }
+
+export { WorkHoursRepository };

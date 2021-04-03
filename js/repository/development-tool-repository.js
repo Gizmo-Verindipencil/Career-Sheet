@@ -64,3 +64,5 @@ class DevelopmentToolRepository {
         // dummy
     }
 }
+
+export { DevelopmentToolRepository };

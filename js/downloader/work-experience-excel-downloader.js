@@ -1,3 +1,6 @@
+import { ExcelDownloader } from "./excel-downloader.js";
+import { WorkExperienceRepository } from "../repository/work-experience-repository.js";
+
 /**
  * 職務経歴Excelファイルの生成・出力
  */
@@ -5,7 +8,7 @@ class WorkExperienceExcelDownloader {
     /**
      * Excelファイルのダウンロード
      */
-    download = () => {
+    download = async() => {
           // 職務経歴データを取得
           const repository = new WorkExperienceRepository();
           const experiences = repository.getAll();
@@ -65,8 +68,10 @@ class WorkExperienceExcelDownloader {
           }
 
           // ファイルをダウンロード
-          const downloader = new ExcelDownloader();
+          const downloader = await ExcelDownloader.build();
           downloader.addAoaToWorkbook(excel, "data");
           downloader.download("work-experience");
     }
 }
+
+export { WorkExperienceExcelDownloader };

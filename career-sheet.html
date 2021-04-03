@@ -9,12 +9,17 @@
     <link rel="stylesheet" href="css/destyle.css">
     <link rel="stylesheet" href="css/restyle.css">
     <link rel="stylesheet" href="css/common.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(() => {
-            $("#core-info").load("core-info.html");
-            $("#work-experience").load("work-experience.html");
-            $("#qualification").load("qualification.html");
+    <script language="javascript" type="module">
+        import ScriptSeriesLoader from "./js/shared/script-series-loader.js";
+
+        const loader = ScriptSeriesLoader;
+        loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        loader.load(() => {
+            $(document).ready(() => {
+                $("#core-info").load("core-info.html");
+                $("#work-experience").load("work-experience.html");
+                $("#qualification").load("qualification.html");
+            });
         });
     </script>
 </head>

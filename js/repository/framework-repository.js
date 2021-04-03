@@ -44,3 +44,5 @@ class FrameworkRepository {
         // dummy
     }
 }
+
+export { FrameworkRepository };

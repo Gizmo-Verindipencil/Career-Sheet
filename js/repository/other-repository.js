@@ -69,3 +69,5 @@ class OtherRepository {
         // dummy
     }
 }
+
+export { OtherRepository };
