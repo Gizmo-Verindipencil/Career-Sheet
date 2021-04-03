@@ -18,7 +18,7 @@ class QualificationSetter {
 
     /**
      * インスタンスの生成
-     * @returns 新しいインスタンス
+     * @returns {QualificationSetter} 新しいインスタンス
      */
     static build = async() => {
         // インスタンスを作成

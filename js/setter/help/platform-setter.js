@@ -18,7 +18,7 @@ class PlatformHelpSetter {
 
     /**
      * インスタンスの生成
-     * @returns 新しいインスタンス
+     * @returns {PlatformHelpSetter} 新しいインスタンス
      */
     static build = async() => {
         // インスタンスを作成

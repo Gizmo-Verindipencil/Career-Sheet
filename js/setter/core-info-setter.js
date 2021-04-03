@@ -18,7 +18,7 @@ class CoreInfoSetter {
 
     /**
      * インスタンスの生成
-     * @returns 新しいインスタンス
+     * @returns {CoreInfoSetter} 新しいインスタンス
      */
     static build = async() => {
         // インスタンスを作成

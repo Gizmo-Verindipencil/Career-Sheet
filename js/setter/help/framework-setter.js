@@ -18,7 +18,7 @@ class FrameworkHelpSetter {
 
     /**
      * インスタンスの生成
-     * @returns 新しいインスタンス
+     * @returns {FrameworkHelpSetter} 新しいインスタンス
      */
     static build = async() => {
         // インスタンスを作成

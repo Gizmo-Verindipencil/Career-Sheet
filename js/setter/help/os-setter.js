@@ -18,7 +18,7 @@ class OsHelpSetter {
 
     /**
      * インスタンスの生成
-     * @returns 新しいインスタンス
+     * @returns {OsHelpSetter} 新しいインスタンス
      */
     static build = async() => {
         // インスタンスを作成
