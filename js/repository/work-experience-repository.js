@@ -1845,3 +1845,5 @@ class WorkExperienceRepository {
         // dummy
     }
 }
+
+export { WorkExperienceRepository };

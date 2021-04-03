@@ -34,3 +34,5 @@ class OsRepository {
         // dummy
     }
 }
+
+export { OsRepository };

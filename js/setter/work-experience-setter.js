@@ -1,3 +1,7 @@
+import { WorkExperienceRepository } from "../repository/work-experience-repository.js";
+import { Utility } from "../shared/utility.js";
+import ScriptSeriesLoader from "../shared/script-series-loader.js"
+
 /**
  * 職務経歴データのセッター
  */
@@ -6,8 +10,29 @@ class WorkExperienceSetter {
      * コンストラクタ
      * @param {Array<Object>} experienceList 職務経歴データのリスト
      */
-    constructor(experienceList) {
+     constructor(experienceList) {
+        // 必要なソースを読込
+        this.loader = ScriptSeriesLoader;
+        this.loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        this.loader.load();
+
+        // 反映内容をセット
         this.experienceList = experienceList;
+    }
+
+    /**
+     * インスタンスの生成
+     * @returns {WorkExperienceSetter} 新しいインスタンス
+     */
+    static build = async() => {
+        // インスタンスを作成
+        const setter = new WorkExperienceSetter();
+
+        // スクリプトの読込完了後にインスタンスを返す
+        while(setter.loader.running){
+            await Utility.sleep(2000);
+        }
+        return setter;
     }
 
     /**
@@ -240,3 +265,5 @@ class WorkExperienceSetter {
         return this.createTd(base, innerHtml.join(""));
     }
 }
+
+export { WorkExperienceSetter };

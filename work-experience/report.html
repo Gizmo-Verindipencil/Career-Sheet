@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="../css/restyle.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/work-experience-report-header.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/repository/work-experience-repository.js"></script>
-    <script src="../js/setter/work-experience-report-header-setter.js"></script>
-    <script src="../js/setter/work-experience-report-detail-setter.js"></script>
-    <script>
-        $(document).ready(() => {
-            const setters = [];
-            setters.push(new WorkExperienceReportHeaderSetter());
-            setters.push(new WorkExperienceReportDetailSetter());
-            for (const setter of setters) {
-                setter.execute();
-            }
+    <script language="javascript" type="module">
+        import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
+        import { WorkExperienceReportHeaderSetter } from "../js/setter/work-experience-report-header-setter.js";
+        import { WorkExperienceReportDetailSetter } from "../js/setter/work-experience-report-detail-setter.js";
+
+        const loader = ScriptSeriesLoader;
+        loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        loader.load(() => {
+            $(document).ready(async() => {
+                const setters = [];
+                setters.push(await WorkExperienceReportHeaderSetter.build());
+                setters.push(await WorkExperienceReportDetailSetter.build());
+                for (const setter of setters) {
+                    setter.execute();
+                }
+            });
         });
     </script>
 </head>

@@ -49,3 +49,5 @@ class PlatformRepository {
         // dummy
     }
 }
+
+export { PlatformRepository };

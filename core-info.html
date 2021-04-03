@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="css/restyle.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/core-info.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/repository/core-info-repository.js"></script>
-    <script src="js/setter/core-info-setter.js"></script>
-    <script>
-        $(document).ready(() => {
-            const setter = new CoreInfoSetter();
-            setter.execute();
+    <script language="javascript" type="module">
+        import ScriptSeriesLoader from "./js/shared/script-series-loader.js";
+        import { CoreInfoSetter } from "./js/setter/core-info-setter.js";
+
+        const loader = ScriptSeriesLoader;
+        loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        loader.load(() => {
+            $(document).ready(async() => {
+                const setter = await CoreInfoSetter.build();
+                setter.execute();
+            });
         });
     </script>
 </head>

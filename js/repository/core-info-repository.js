@@ -41,3 +41,5 @@ class CoreInfoRepository {
         // dummy
     }
 }
+
+export { CoreInfoRepository };

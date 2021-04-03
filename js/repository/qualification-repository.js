@@ -35,3 +35,5 @@ class QualificationRepository {
         // dummy
     }
 }
+
+export { QualificationRepository };
