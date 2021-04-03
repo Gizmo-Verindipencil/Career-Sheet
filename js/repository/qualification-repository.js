@@ -3,8 +3,8 @@
  */
 class QualificationRepository {
     /**
-     * 資格データを取得する
-     * @return {Array<Object>} 資格データ
+     * 資格データを取得します。
+     * @return {Array<Object>} 資格データを返します。
      */
     getAll = () => {
         return [
@@ -28,8 +28,8 @@ class QualificationRepository {
     }
 
     /**
-     * 資格データを更新する
-     * @param {Object} qualification 資格データ
+     * 資格データを更新します。
+     * @param {Object} qualification 資格データ。
      */
     post = qualification => {
         // dummy

@@ -3,11 +3,11 @@ import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
- * 基本データのセッター
+ * 基本情報の設定処理を提供します。
  */
 class CoreInfoSetter {
     /**
-     * コンストラクタ
+     * インスタンスを初期化します。
      */
     constructor() {
         // 必要なソースを読込
@@ -17,8 +17,8 @@ class CoreInfoSetter {
     }
 
     /**
-     * インスタンスの生成
-     * @returns {CoreInfoSetter} 新しいインスタンス
+     * インスタンスの生成し、必要なモジュールを読込します。
+     * @returns {CoreInfoSetter} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
@@ -32,7 +32,7 @@ class CoreInfoSetter {
     }
 
     /**
-     * セット処理の実行
+     * 基本情報の設定を実行します。
      */
     execute = () => {
         // 基本データを取得
@@ -50,8 +50,8 @@ class CoreInfoSetter {
     }
 
     /**
-     * 氏名・フリガナのセット
-     * @param {Object} data 基本データ
+     * 氏名・フリガナをセットします。
+     * @param {Object} data 基本データ。
      */
     setNameAndPhonetic = data => {
         // 漢字表記とフリガナ表記にて、姓と名でそれぞれの大きい方の文字長をセット

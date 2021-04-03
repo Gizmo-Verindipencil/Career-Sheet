@@ -1,10 +1,11 @@
 /**
- * DBデータ関連のリポジトリ（ダミー）
+ * DBデータのリポジトリを提供します。
+ * 現状はバックエンドを表すダミーです。
  */
 class DbRepository {
     /**
-     * DBデータを取得する
-     * @return {Array<Object>} 全てのDBデータ
+     * DBデータを取得します。
+     * @return {Array<Object>} DBデータを返します。
      */
     getAll = () => {
         return [
@@ -32,8 +33,8 @@ class DbRepository {
     }
 
     /**
-     * DBデータを更新する
-     * @param {Object} db DBデータ
+     * DBデータを更新します。
+     * @param {Object} db DBデータ。
      */
     post = db => {
         // dummy

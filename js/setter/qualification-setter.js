@@ -3,11 +3,11 @@ import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
- * 資格・免許のセッター
+ * 資格・免許の設定処理を提供します。
  */
 class QualificationSetter {
     /**
-     * コンストラクタ
+     * インスタンスを初期化します。
      */
     constructor() {
         // 必要なソースを読込
@@ -17,8 +17,8 @@ class QualificationSetter {
     }
 
     /**
-     * インスタンスの生成
-     * @returns {QualificationSetter} 新しいインスタンス
+     * インスタンスの生成し、必要なモジュールを読込します。
+     * @returns {QualificationSetter} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
@@ -32,7 +32,7 @@ class QualificationSetter {
     }
     
     /**
-     * セット処理の実行
+     * 資格・免許の設定を実行します。
      */
     execute = () => {
         // 資格データを取得

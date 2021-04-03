@@ -1,10 +1,11 @@
 /**
- * 基礎データ関連のリポジトリ（ダミー）
+ * 基本情報データのリポジトリを提供します。
+ * 現状はバックエンドを表すダミーです。
  */
 class CoreInfoRepository {
     /**
-     * 基礎データを取得する
-     * @return {Object} 基礎データ
+     * 基本情報データを取得します。
+     * @return {Object} 基本情報データを返します。
      */
     get = () => {
         return {
@@ -34,8 +35,8 @@ class CoreInfoRepository {
     }
 
     /**
-     * 基礎データを更新する
-     * @param {Object} coreInfo 基礎データ
+     * 基本情報データを更新します。
+     * @param {Object} coreInfo 基本情報データ。
      */
     post = coreInfo => {
         // dummy

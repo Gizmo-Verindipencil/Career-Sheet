@@ -1,10 +1,11 @@
 /**
- * 作業データ関連のリポジトリ（ダミー）
+ * 作業データ関連のリポジトリを提供します。
+ * 現状はバックエンドを表すダミーです。
  */
 class TaskRepository {
     /**
-     * 作業種類データを取得する
-     * @return {Array<Object>} 作業種類データ
+     * 作業種類データを取得します。
+     * @return {Array<Object>} 作業種類データを返します。
      */
     getAllTypes = () => {
         return [
@@ -232,8 +233,8 @@ class TaskRepository {
     }
 
     /**
-     * 作業の色データを取得する
-     * @return {Array<Object>} 作業の色データ
+     * 作業の色データを取得します。
+     * @return {Array<Object>} 作業の色データを返します。
      */
     getAllColors = () => {
         return [
@@ -316,8 +317,8 @@ class TaskRepository {
     }
 
     /**
-     * 作業分類データを取得する
-     * @return {Array<Object>}　作業分類データ
+     * 作業分類データを取得します。
+     * @return {Array<Object>}　作業分類データを返します。
      */
     getAllCategories = () => {
         return [

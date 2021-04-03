@@ -3,11 +3,11 @@ import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * 開発ツールデータ（ヘルプ）のセッター
+ * ヘルプ(開発ツール)の設定処理を提供します。
  */
 class DevelopmentToolHelpSetter {
     /**
-     * コンストラクタ
+     * インスタンスを初期化します。
      */
     constructor() {
         // 必要なソースを読込
@@ -17,8 +17,8 @@ class DevelopmentToolHelpSetter {
     }
 
     /**
-     * インスタンスの生成
-     * @returns {DevelopmentToolHelpSetter} 新しいインスタンス
+     * インスタンスの生成し、必要なモジュールを読込します。
+     * @returns {DevelopmentToolHelpSetter} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
@@ -32,12 +32,12 @@ class DevelopmentToolHelpSetter {
     }
 
     /**
-     * セット処理の実行
+     * ヘルプの設定を実行します。
      */
     execute = () => {
-        // 機種データを取得
-        const Repository = new DevelopmentToolRepository();
-        const tools = Repository.getAll();
+        // 開発ツールデータを取得
+        const repository = new DevelopmentToolRepository();
+        const tools = repository.getAll();
 
         // 名前の昇順で並べる
         tools.sort((a, b) => {
@@ -61,16 +61,16 @@ class DevelopmentToolHelpSetter {
     }
 
     /**
-     * td要素を生成
-     * @param {String} innerHtml
-     * @return {String} td要素を表すhtml 
+     * td要素を生成します。
+     * @param {String} innerHtml td要素の内部html。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createTd = innerHtml => `<td class="help-info-cell">${innerHtml}</td>`;
 
     /**
-     * No.のtd要素を生成
-     * @param {Number} index インデックス
-     * @return {String} td要素を表すhtml
+     * No.のtd要素を生成します。
+     * @param {Number} index td要素に設定する番号。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createNoTd = index => {
         const number = index + 1;
@@ -79,9 +79,9 @@ class DevelopmentToolHelpSetter {
     }
 
     /**
-     * 名称のtd要素を生成
-     * @param {Object} developmentTool 開発ツールデータ
-     * @return {String} td要素を表すhtml
+     * 名称のtd要素を生成します。
+     * @param {Object} developmentTool 開発ツールデータ。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createNameTd = developmentTool => {
         const classPrefix = "work-experience-technology";
@@ -90,9 +90,9 @@ class DevelopmentToolHelpSetter {
     }
 
     /**
-     * 説明のtd要素を生成
-     * @param {Object} developmentTool 開発ツールデータ
-     * @return {String} td要素を表すhtml
+     * 説明のtd要素を生成します。
+     * @param {Object} developmentTool 開発ツールデータ。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createDescriptionTd = developmentTool => {
         return this.createTd(`<p>${developmentTool.description}</p>`);

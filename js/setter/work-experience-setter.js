@@ -3,26 +3,22 @@ import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
- * 職務経歴データのセッター
+ * 職務経歴の設定処理を提供します。
  */
 class WorkExperienceSetter {
     /**
-     * コンストラクタ
-     * @param {Array<Object>} experienceList 職務経歴データのリスト
+     * インスタンスを初期化します。
      */
-     constructor(experienceList) {
+     constructor() {
         // 必要なソースを読込
         this.loader = ScriptSeriesLoader;
         this.loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         this.loader.load();
-
-        // 反映内容をセット
-        this.experienceList = experienceList;
     }
 
     /**
-     * インスタンスの生成
-     * @returns {WorkExperienceSetter} 新しいインスタンス
+     * インスタンスの生成し、必要なモジュールを読込します。
+     * @returns {WorkExperienceSetter} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
@@ -36,7 +32,7 @@ class WorkExperienceSetter {
     }
 
     /**
-     * セット処理の実行
+     * 職務経歴の設定を実行します。
      */
     execute = () => {
         // 職務経歴データを取得
@@ -65,17 +61,17 @@ class WorkExperienceSetter {
     }
 
     /**
-     * td要素を生成
-     * @param {String} tdClass
-     * @param {String} innerHtml
-     * @return {String} td要素を表すhtml
+     * td要素を生成します。
+     * @param {String} tdClass td要素のクラス。
+     * @param {String} innerHtml td要素の内部html。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createTd = (tdClass, innerHtml) => `<td class='${tdClass}'>${innerHtml}</td>`;
 
     /**
-     * No.のtd要素を生成
+     * No.のtd要素を生成します。
      * @param {Object} experience 職務経歴データ
-     * @return {String} td要素を表すhtml
+     * @return {String} td要素を表すhtmlを返します。
      */
     createNoTd = experience => {
         // この情報に対応するクラス名
@@ -90,9 +86,9 @@ class WorkExperienceSetter {
     }
 
     /**
-     * 業種のtd要素を生成
-     * @param {Object} experience 職務経歴データ
-     * @return {String} td要素を表すhtml
+     * 業種のtd要素を生成します。
+     * @param {Object} experience 職務経歴データ。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createBusinessTypeTd = experience => {
         // この情報に対応するクラス名
@@ -117,9 +113,9 @@ class WorkExperienceSetter {
     }
 
     /**
-     * 期間のtd要素を生成
-     * @param {Object} experience 職務経歴データ
-     * @return {String} td要素を表すhtml
+     * 期間のtd要素を生成します。
+     * @param {Object} experience 職務経歴データ。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createWorkingPeriodTd = experience => {
         // この情報に対応するクラス名
@@ -160,9 +156,9 @@ class WorkExperienceSetter {
     }
 
     /**
-     * 機種とOSのtd要素を生成
-     * @param {Object} experience 職務経歴データ
-     * @return {String} td要素を表すhtml
+     * 機種とOSのtd要素を生成します。
+     * @param {Object} experience 職務経歴データ。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createTechnologyTd = experience => {
         // この情報に対応するクラス名
@@ -199,9 +195,9 @@ class WorkExperienceSetter {
     }
 
     /**
-     * 対象業務のtd要素を生成
-     * @param {Object} experience 職務経歴データ
-     * @return {String} td要素を表すhtml
+     * 対象業務のtd要素を生成します。
+     * @param {Object} experience 職務経歴データ。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createMainTask = experience => {
         // この情報に対応するクラス名
@@ -229,9 +225,9 @@ class WorkExperienceSetter {
     }
 
     /**
-     * 作業内容のtd要素を生成
-     * @param {Object} experience 職務経歴データ
-     * @return {String} td要素を表すhtml
+     * 作業内容のtd要素を生成します。
+     * @param {Object} experience 職務経歴データ。
+     * @return {String} td要素を表すhtmlを返します。
      */
     createTaskType = experience => {
         // この情報に対応するクラス名

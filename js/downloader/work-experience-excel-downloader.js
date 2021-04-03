@@ -2,11 +2,11 @@ import { ExcelDownloader } from "./excel-downloader.js";
 import { WorkExperienceRepository } from "../repository/work-experience-repository.js";
 
 /**
- * 職務経歴Excelファイルの生成・出力
+ * 職務経歴Excelファイルの生成・出力処理を提供します。
  */
 class WorkExperienceExcelDownloader {
     /**
-     * Excelファイルのダウンロード
+     * Excelファイルをダウンロードします。
      */
     download = async() => {
           // 職務経歴データを取得

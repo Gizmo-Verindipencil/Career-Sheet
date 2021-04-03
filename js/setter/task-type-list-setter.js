@@ -3,11 +3,11 @@ import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
- * 作業種類一覧のセッター
+ * 作業種類一覧の設定処理を提供します。
  */
 class TaskTypeListSetter {
     /**
-     * コンストラクタ
+     * インスタンスを初期化します。
      */
     constructor() {
         // 必要なソースを読込
@@ -17,8 +17,8 @@ class TaskTypeListSetter {
     }
 
     /**
-     * インスタンスの生成
-     * @returns {TaskTypeListSetter} 新しいインスタンス
+     * インスタンスの生成し、必要なモジュールを読込します。
+     * @returns {TaskTypeListSetter} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
@@ -32,7 +32,7 @@ class TaskTypeListSetter {
     }
 
     /**
-     * セット処理の実行
+     * 作業種類一覧の設定を実行します。
      */
     execute = () => {
         // 作業データを取得

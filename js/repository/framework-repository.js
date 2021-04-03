@@ -1,10 +1,11 @@
 /**
- * フレームワークデータ関連のリポジトリ（ダミー）
+ * フレームワークデータのリポジトリを提供します。
+ * 現状はバックエンドを表すダミーです。
  */
 class FrameworkRepository {
     /**
-     * フレームワークデータを取得する
-     * @return {Array<Object>} 全てのフレームワークデータ
+     * フレームワークデータを取得します。
+     * @return {Array<Object>} フレームワークデータを返します。
      */
     getAll = () => {
         return [
@@ -37,8 +38,8 @@ class FrameworkRepository {
     }
 
     /**
-     * フレームワークデータを更新する
-     * @param {Object} framework フレームワークデータ
+     * フレームワークデータを更新します。
+     * @param {Object} framework フレームワークデータ。
      */
     post = framework => {
         // dummy

@@ -1,10 +1,11 @@
 /**
- * 労働時間関連のリポジトリ（ダミー）
+ * 労働時間データのリポジトリを提供します。
+ * 現状はバックエンドを表すダミーです。
  */
 class WorkHoursRepository {
     /**
-     * 労働時間データを取得する
-     * @return {Array<Object>} 全てのDBデータ
+     * 労働時間データを取得します。
+     * @return {Array<Object>} 労働時間データを返します。
      */
     getAll = () => {
         return [
@@ -1432,8 +1433,8 @@ class WorkHoursRepository {
     }
 
     /**
-     * 労働時間データを更新する
-     * @param {Object} workingHours DBデータ
+     * 労働時間データを更新します。
+     * @param {Object} workingHours 労働時間データ。
      */
     post = workingHours => {
         // dummy

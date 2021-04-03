@@ -1,10 +1,11 @@
 /**
- * 開発ツールデータ関連のリポジトリ（ダミー）
+ * 開発ツールデータのリポジトリを提供します。
+ * 現状はバックエンドを表すダミーです。
  */
 class DevelopmentToolRepository {
     /**
-     * 開発ツールデータを取得する
-     * @return {Array<Object>} 全ての開発ツールデータ
+     * 開発ツールデータを取得します。
+     * @return {Array<Object>} 開発ツールデータを返します。
      */
     getAll = () => {
         return [
@@ -57,8 +58,8 @@ class DevelopmentToolRepository {
     }
 
     /**
-     * 開発ツールデータを更新する
-     * @param {Object} developmentTool 開発ツールデータ
+     * 開発ツールデータを更新します。
+     * @param {Object} developmentTool 開発ツールデータ。
      */
     post = developmentTool => {
         // dummy

@@ -1,10 +1,11 @@
 /**
- * 職務経歴データのリポジトリ（ダミー）
+ * 職務経歴データのリポジトリを提供します。
+ * 現状はバックエンドを表すダミーです。
  */
 class WorkExperienceRepository {
     /**
-     * 職務経歴データを取得する
-     * @return {Array<Object>} 職務経歴データ
+     * 職務経歴データを取得します。
+     * @return {Array<Object>} 職務経歴データを返します。
      */
     getAll = () => {
         return [
@@ -1827,9 +1828,9 @@ class WorkExperienceRepository {
     }
 
     /**
-     * 特定の職務経歴データを取得する
-     * @param {String} no 経歴番号
-     * @return {Object} 職務経歴データ
+     * 特定の職務経歴データを取得します。
+     * @param {String} no 経歴番号。
+     * @return {Object} 職務経歴データを返します。該当の情報がない場合はnullを返します。
      */
     getByNo = no => {
         let experiences = this.getAll();
@@ -1838,8 +1839,8 @@ class WorkExperienceRepository {
     }
 
     /**
-     * 職務経歴データを更新する
-     * @param {Object} experience 職務経歴データ
+     * 職務経歴データを更新します。
+     * @param {Object} experience 職務経歴データ。
      */
     post = experience => {
         // dummy
