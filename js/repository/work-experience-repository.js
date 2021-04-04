@@ -1673,7 +1673,7 @@ class WorkExperienceRepository {
                 ],
                 "task" : [
                     {
-                        "name" : "調査",
+                        "name" : "影響調査",
                         "type" : [
                             "C"
                         ]
