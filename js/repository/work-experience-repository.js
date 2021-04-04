@@ -1776,6 +1776,12 @@ class WorkExperienceRepository {
                         "type" : [
                             "IT"
                         ]
+                    },
+                    {
+                        "name" : "マニュアル修正",
+                        "type" : [
+                            "D"
+                        ]
                     }
                 ]
             },
