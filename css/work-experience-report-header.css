@@ -62,14 +62,14 @@ td#work-experience-report-summary-item-name-period {
     border: solid 0.01rem #000;
     text-align: center;
     vertical-align: middle;
-    width: 14%;
+    width: 13%;
 }
 
 td#work-experience-report-summary-item-value-period {
     border: solid 0.01rem #000;
     text-align: center;
     vertical-align: middle;
-    width: 14%;
+    width: 13%;
 }
 
 td#work-experience-report-summary-item-name-month {
@@ -77,14 +77,14 @@ td#work-experience-report-summary-item-name-month {
     border: solid 0.01rem #000;
     text-align: center;
     vertical-align: middle;
-    width: 3%;
+    width: 4%;
 }
 
 td#work-experience-report-summary-item-value-month {
     border: solid 0.01rem #000;
     text-align: center;
     vertical-align: middle;
-    width: 3%;
+    width: 4%;
 }
 
 td#work-experience-report-summary-item-name-task-and-system {
