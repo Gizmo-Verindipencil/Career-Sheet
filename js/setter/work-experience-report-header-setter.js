@@ -41,13 +41,14 @@ class WorkExperienceReportHeaderSetter {
         const no = params.get("no");
         const experience = repositry.getByNo(no);
 
+        // ボタン処理のセット
+        this.setPrevAndNextButtonAction(no);
+
         // データがなければ終了
         if (!experience) {
+            this.clear();
             return;
         }
-
-        // ボタン処理のセット
-        this.setPrevAndNextButtonAction(experience);
 
         //　サマリ情報のセット
         this.setNo(experience);
@@ -345,13 +346,13 @@ class WorkExperienceReportHeaderSetter {
 
     /**
      * 前へ/次へボタン押下時の動作設定を行います。
-     * @param {Object} data 職務経歴データ。
+     * @param {String} no 職務経歴データの番号。
      */
-    setPrevAndNextButtonAction = data => {
+    setPrevAndNextButtonAction = no => {
         // ページ遷移の処理
         const jump = isNext => {
             const direction = isNext ? 1 : -1;
-            const url = `report.html?no=${Number(data.no)+direction}`;
+            const url = `report.html?no=${Number(no)+direction}`;
             window.location = url;
         }
 
@@ -362,6 +363,39 @@ class WorkExperienceReportHeaderSetter {
         // 次へボタンの動作をセット
         const jumpNext = () => jump(true);
         $(`button#work-experience-report-jump-next`).click(jumpNext);
+    }
+
+    /**
+     * 職務経歴レポート(ヘッダー)の全項目をクリアします。
+     */
+    clear = () => {
+        // No.のクリア
+        $("input[name='number']").val("");
+
+        // 期間のクリア
+        $("input[name='periodFrom']").val("");
+        $("input[name='periodBetween']").val("");
+        $("input[name='periodTo']").val("");
+        
+        // 月数のクリア
+        $("input[name='month']").val("");
+
+        // 業務名・システム名のクリア
+        $("input[name='task']").val("");
+        $("input[name='system']").val("");
+
+        // PJ人員・部下人数のクリア
+        $("input[name='projectPeakSize']").val("");
+        $("input[name='subordinate']").val("");
+
+        // 技術関連のクリア
+        $("#work-experience-report-summary-item-name-technology").empty();
+        $("#work-experience-report-summary-item-value-technology").empty();
+
+        // 作業フェーズのクリア
+        for (let i = 1; i < 9; i++) {
+            $(`input[name='phase${i}']`).val("");
+        }
     }
 }
 

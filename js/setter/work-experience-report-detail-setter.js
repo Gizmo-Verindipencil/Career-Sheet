@@ -43,6 +43,7 @@ class WorkExperienceReportDetailSetter {
 
         // データがなければ終了
         if (!experience) {
+            this.setNoDataNotification();
             return;
         }
 
@@ -56,6 +57,13 @@ class WorkExperienceReportDetailSetter {
      */
     setDetail = data => {
         $("#work-experience-report-detail").load(`${data.no}\\detail.html`);
+    }
+
+    /**
+     * データなしを示す表示の設定を行います。
+     */
+    setNoDataNotification = () => {
+        $("#work-experience-report-detail").html("<p>NO DATA</p>");
     }
 }
 
