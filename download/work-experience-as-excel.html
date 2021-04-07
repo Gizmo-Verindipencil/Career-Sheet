@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title></title>
-  <script language="javascript" type="module">
-    import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
-    import { WorkExperienceExcelDownloader } from "../js/downloader/work-experience-excel-downloader.js";
+    <meta charset="UTF-8">
+    <title></title>
+    <script language="javascript" type="module">
+        import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
+        import { WorkExperienceExcelDownloader } from "../js/downloader/work-experience-excel-downloader.js";
 
-    const loader = ScriptSeriesLoader;
-    loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-    loader.load(() => {
-      $(document).ready(() => {
-        $("#download").on("click", () => {
-          const downloader = new WorkExperienceExcelDownloader();
-          downloader.download();
+        const loader = ScriptSeriesLoader;
+        loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        loader.load(() => {
+            $(document).ready(() => {
+                $("#download").on("click", () => {
+                    const downloader = new WorkExperienceExcelDownloader();
+                    downloader.download();
+                });
+            });
         });
-      });
-    });
-  </script>
+    </script>
 </head>
 <body>
-  <input type="button" id="download" value="Download">
+    <input type="button" id="download" value="Download">
 </body>
 </html>
