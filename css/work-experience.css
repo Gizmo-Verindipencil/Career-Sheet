@@ -119,7 +119,7 @@ a.work-experience-number-link {
     text-align: center;
 }
 
-.work-experience-technology-os {
+.work-experience-technology-operating-system {
     border: solid 0.08rem #222222;
     border-radius: 20%;
     background: linear-gradient(#ff457a, #ff798f);
@@ -161,7 +161,7 @@ a.work-experience-number-link {
     text-align: center;
 }
 
-.work-experience-technology-db {
+.work-experience-technology-database {
     border: solid 0.08rem #222222;
     border-radius: 20%;
     background: linear-gradient(#2088ff, #95c6ff);

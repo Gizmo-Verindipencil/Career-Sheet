@@ -2,7 +2,7 @@
  * DBデータのリポジトリを提供します。
  * 現状はバックエンドを表すダミーです。
  */
-class DbRepository {
+class DatabaseRepository {
     /**
      * DBデータを取得します。
      * @return {Array<Object>} DBデータを返します。
@@ -41,4 +41,4 @@ class DbRepository {
     }
 }
 
-export { DbRepository };
+export { DatabaseRepository };

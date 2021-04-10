@@ -1,11 +1,11 @@
-import { DbRepository } from "../../repository/db-repository.js";
+import { OperatingSystemRepository } from "../../repository/operating-system-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * ヘルプ(データベース)の設定処理を提供します。
+ * ヘルプ(OS)の設定処理を提供します。
  */
-class DbHelpSetter {
+class OsHelpSetter {
     /**
      * インスタンスを初期化します。
      */
@@ -18,11 +18,11 @@ class DbHelpSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {DbHelpSetter} 新しいインスタンスを返します。
+     * @returns {OsHelpSetter} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new DbHelpSetter();
+        const setter = new OsHelpSetter();
 
         // スクリプトの読込完了後にインスタンスを返す
         while(setter.loader.running){
@@ -35,24 +35,24 @@ class DbHelpSetter {
      * ヘルプの設定を実行します。
      */
     execute = () => {
-        // DBデータを取得
-        const repository = new DbRepository();
-        const dbs = repository.getAll();
+        // OSデータを取得
+        const repository = new OperatingSystemRepository();
+        const oss = repository.getAll();
 
         // 名前の昇順で並べる
-        dbs.sort((a, b) => {
+        oss.sort((a, b) => {
             return a.name > b.name ? 1 : -1;
         });
 
         // データ毎の処理
-        for (let i = 0; i < dbs.length;  i++) {
-            const db = dbs[i];
+        for (let i = 0; i < oss.length;  i++) {
+            const os = oss[i];
 
             // td要素を生成
             const cells = [];
             cells.push(this.createNoTd(i));
-            cells.push(this.createNameTd(db));
-            cells.push(this.createDescriptionTd(db));
+            cells.push(this.createNameTd(os));
+            cells.push(this.createDescriptionTd(os));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
@@ -80,23 +80,23 @@ class DbHelpSetter {
 
     /**
      * 名称のtd要素を生成します。
-     * @param {Object} db DBデータ。
+     * @param {Object} os OSデータ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createNameTd = db => {
+    createNameTd = os => {
         const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p class="${classPrefix}-db" style="${noWrap}">${db.name}</p>`);
+        return this.createTd(`<p class="${classPrefix}-operating-system" style="${noWrap}">${os.name}</p>`);
     }
 
     /**
      * 説明のtd要素を生成します。
-     * @param {Object} db DBデータ。
+     * @param {Object} os OSデータ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createDescriptionTd = db => {
-        return this.createTd(`<p>${db.description}</p>`);
+    createDescriptionTd = os => {
+        return this.createTd(`<p>${os.description}</p>`);
     }
 }
 
-export { DbHelpSetter };
+export { OsHelpSetter };
