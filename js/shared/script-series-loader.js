@@ -9,6 +9,13 @@ class ScriptSeriesLoader {
         this.sources = [];
         this.importedSources = [];
         this.running = false;
+
+        // 既に読込されているスクリプトを記録
+        for(let script of document.getElementsByTagName("script")) { 
+            if (script.src) {
+                this.importedSources.push(script.src);
+            }
+        }
     }
 
     /**
