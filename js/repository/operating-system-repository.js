@@ -2,7 +2,7 @@
  * OSデータのリポジトリを提供します。
  * 現状はバックエンドを表すダミーです。
  */
-class OsRepository {
+class OperatingSystemRepository {
     /**
      * OSデータを取得します。
      * @return {Array<Object>} OSデータを返します。
@@ -36,4 +36,4 @@ class OsRepository {
     }
 }
 
-export { OsRepository };
+export { OperatingSystemRepository };

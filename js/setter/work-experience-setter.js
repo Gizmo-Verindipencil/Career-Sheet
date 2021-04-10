@@ -182,10 +182,10 @@ class WorkExperienceSetter {
         // p要素を生成
         const innerHtml = [];
         innerHtml.push(createMultiP("device", experience.device));
-        innerHtml.push(createMultiP("os", experience.os));
+        innerHtml.push(createMultiP("operating-system", experience.os));
         innerHtml.push(createMultiP("programming-language", experience.programLanguage));
         innerHtml.push(createMultiP("development-tool", experience.developmentTool));
-        innerHtml.push(createMultiP("db", experience.db));
+        innerHtml.push(createMultiP("database", experience.db));
         innerHtml.push(createMultiP("framework", experience.framework));
         innerHtml.push(createMultiP("platform", experience.platform));
         innerHtml.push(createMultiP("other", experience.other));

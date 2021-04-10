@@ -201,10 +201,10 @@ class WorkExperienceReportHeaderSetter {
         // 凡例を生成
         const names = [];
         names.push(createP("device", "機種"));
-        names.push(createP("os", "OS"));
+        names.push(createP("operating-system", "OS"));
         names.push(createP("programming-language", "言語"));
         names.push(createP("development-tool", "DT"));
-        names.push(createP("db", "DB"));
+        names.push(createP("database", "DB"));
         names.push(createP("framework", "FW"));
         names.push(createP("platform", "PF"));
         names.push(createP("other", "他"));
@@ -228,10 +228,10 @@ class WorkExperienceReportHeaderSetter {
         // 内容を生成
         const values = [];
         values.push(createMultiP("device", data.device));
-        values.push(createMultiP("os", data.os));
+        values.push(createMultiP("operating-system", data.os));
         values.push(createMultiP("programming-language", data.programLanguage));
         values.push(createMultiP("development-tool", data.developmentTool));
-        values.push(createMultiP("db", data.db));
+        values.push(createMultiP("database", data.db));
         values.push(createMultiP("framework", data.framework));
         values.push(createMultiP("platform", data.platform));
         values.push(createMultiP("other", data.other));
