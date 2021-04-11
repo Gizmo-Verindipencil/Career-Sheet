@@ -23,7 +23,7 @@ class ScriptSeriesLoader {
 
     /**
      * スクリプトの読込対象に追加します。既に存在する場合は無視されます。
-     * @param {String} source スクリプトのソース。相対パスの場合は
+     * @param {String} source スクリプトのソース。絶対URI、またはルートからの相対パスである必要があります。
      */
     add = source => {
         // 相対パスの場合は絶対URIへ変換
