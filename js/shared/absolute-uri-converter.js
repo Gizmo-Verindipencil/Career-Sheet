@@ -7,12 +7,7 @@ class AbsoluteURIConverter {
      */
     constructor() {
         // スキーム + オーソリティをルートとして記録
-        let index = 0;
-        const url = location.href;
-        for(let i = 0; i < 3; i++) {
-            index = url.indexOf("/", index + 1);
-        }
-        this.root = url.substring(0, index-1);
+        this.root = location.origin;
     }
 
     /**
