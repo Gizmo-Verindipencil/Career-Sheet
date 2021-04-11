@@ -25,7 +25,7 @@ class ScriptSeriesLoader {
      * スクリプトの読込対象に追加します。既に存在する場合は無視されます。
      * @param {String} source スクリプトのソース。相対パスの場合は
      */
-    add = (source) => {
+    add = source => {
         // 相対パスの場合は絶対URIへ変換
         let ref = source;
         if (!this.absoluteURIConverter.isAbsoluteURI(ref)) {
