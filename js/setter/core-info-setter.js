@@ -169,7 +169,7 @@ class CoreInfoSetter {
      * @param {Object} data 基本データ
      */
     setAcademicBackground = data => {
-        const set = (mainOrSub) => {
+        const set = mainOrSub => {
             // 学歴をセット
             $(`input[name='${mainOrSub}']`).val(data.academicBackground[mainOrSub]);
             

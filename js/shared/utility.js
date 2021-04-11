@@ -7,7 +7,7 @@ class Utility {
      * @param {Number} millisecond 待機時間(ミリ秒)
      * @returns {Promise} ダミー。
      */
-    static sleep = (millisecond) => {
+    static sleep = millisecond => {
         return new Promise(resolve => setTimeout(resolve, millisecond));
     }
 }
