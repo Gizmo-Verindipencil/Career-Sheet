@@ -1,6 +1,7 @@
 import { WorkExperienceRepository } from "../repository/work-experience-repository.js";
 import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
+import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.js";
 
 /**
  * 職務経歴レポート(ヘッダー)の設定処理を提供します。
@@ -10,10 +11,15 @@ class WorkExperienceReportHeaderSetter {
      * インスタンスを初期化します。
      */
     constructor() {
-        // 必要なソースを読込
-        this.loader = ScriptSeriesLoader;
-        this.loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        this.loader.load();
+        // 必要なスタイルシートを読込
+        this.stylesheetLoader = StylesheetSeriesLoader;
+        this.stylesheetLoader.add("css/work-experience.css");
+        this.stylesheetLoader.load();
+
+        // 必要なスクリプトを読込
+        this.scriptLoader = ScriptSeriesLoader;
+        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        this.scriptLoader.load();
     }
 
     /**
@@ -25,7 +31,7 @@ class WorkExperienceReportHeaderSetter {
         const setter = new WorkExperienceReportHeaderSetter();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.loader.running){
+        while(setter.scriptLoader.running) {
             await Utility.sleep(2000);
         }
         return setter;
@@ -193,10 +199,6 @@ class WorkExperienceReportHeaderSetter {
         
         // 単一のp要素の生成
         const createP = (classSuffix, innerHtml) => `<p class='${base}-${classSuffix}'>${innerHtml}</p>`;
-        
-        // このスタイルは職務経歴を利用する
-        const style = "<link rel='stylesheet' href='../css/work-experience.css'></link>"
-        $("head link:last").after(style);
 
         // 凡例を生成
         const names = [];

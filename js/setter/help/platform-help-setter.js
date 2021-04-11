@@ -10,10 +10,10 @@ class PlatformHelpSetter {
      * インスタンスを初期化します。
      */
     constructor() {
-        // 必要なソースを読込
-        this.loader = ScriptSeriesLoader;
-        this.loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        this.loader.load();
+        // 必要なスクリプトを読込
+        this.scriptLoader = ScriptSeriesLoader;
+        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        this.scriptLoader.load();
     }
 
     /**
@@ -25,7 +25,7 @@ class PlatformHelpSetter {
         const setter = new PlatformHelpSetter();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.loader.running){
+        while(setter.scriptLoader.running){
             await Utility.sleep(2000);
         }
         return setter;

@@ -9,11 +9,11 @@ class ExcelDownloader {
      * インスタンスを初期化します。
      */
     constructor() {
-        // 必要なソースを読込
-        this.loader = ScriptSeriesLoader;
-        this.loader.add("https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.2/xlsx.full.min.js");
-        this.loader.add("https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js");
-        this.loader.load();
+        // 必要なスクリプトを読込
+        this.scriptLoader = ScriptSeriesLoader;
+        this.scriptLoader.add("https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.2/xlsx.full.min.js");
+        this.scriptLoader.add("https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js");
+        this.scriptLoader.load();
 
         // 空のブックを作成
         this.workbook = {
@@ -31,7 +31,7 @@ class ExcelDownloader {
         const downloader = new ExcelDownloader();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(downloader.loader.running){
+        while(downloader.scriptLoader.running){
             await Utility.sleep(2000);
         }
         return downloader;
