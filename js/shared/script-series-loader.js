@@ -1,3 +1,5 @@
+import { AbsoluteURIConverter } from "./absolute-uri-converter.js"
+
 /**
  * スクリプトの直列ローダーを提供します。
  */
@@ -9,6 +11,7 @@ class ScriptSeriesLoader {
         this.sources = [];
         this.importedSources = [];
         this.running = false;
+        this.absoluteURIConverter = new AbsoluteURIConverter();
 
         // 既に読込されているスクリプトを記録
         for(let script of document.getElementsByTagName("script")) { 
@@ -20,14 +23,20 @@ class ScriptSeriesLoader {
 
     /**
      * スクリプトの読込対象に追加します。既に存在する場合は無視されます。
-     * @param {String} source スクリプトのソース。
+     * @param {String} source スクリプトのソース。相対パスの場合は
      */
     add = (source) => {
+        // 相対パスの場合は絶対URIへ変換
+        let ref = source;
+        if (!this.absoluteURIConverter.isAbsoluteURI(ref)) {
+            ref = this.absoluteURIConverter.convert(ref);
+        }
+
         // 既に追加済の場合は無視
-        if (this.sources.includes(source) || this.importedSources.includes(source)) return;
+        if (this.sources.includes(ref) || this.importedSources.includes(ref)) return;
 
         // 読込ソースに追加
-        this.sources.push(source)
+        this.sources.push(ref);
     }
 
     /**
