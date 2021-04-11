@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="../css/destyle.css">
     <link rel="stylesheet" href="../css/restyle.css">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/work-experience-report-header.css">
+    <link rel="stylesheet" href="../css/work-experience-report.css">
     <script language="javascript" type="module">
         import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
-        import { WorkExperienceReportHeaderSetter } from "../js/setter/work-experience-report-header-setter.js";
+        import { WorkExperienceReportSetter } from "../js/setter/work-experience-report-setter.js";
         import { WorkExperienceReportDetailSetter } from "../js/setter/work-experience-report-detail-setter.js";
 
         const loader = ScriptSeriesLoader;
@@ -17,7 +17,7 @@
         loader.load(() => {
             $(document).ready(async() => {
                 const setters = [];
-                setters.push(await WorkExperienceReportHeaderSetter.build());
+                setters.push(await WorkExperienceReportSetter.build());
                 setters.push(await WorkExperienceReportDetailSetter.build());
                 for (const setter of setters) {
                     setter.execute();
