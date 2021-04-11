@@ -1815,7 +1815,7 @@ class WorkExperienceRepository {
                     "shopify draggable",
                     "interact.js"
                 ],
-                "projectSummary" : "概算見積",
+                "projectSummary" : "システム新規開発",
                 "projectPeakSize" : "1",
                 "subordinate" : "0",
                 "system" : [
