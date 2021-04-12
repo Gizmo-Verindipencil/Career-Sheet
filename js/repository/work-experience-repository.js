@@ -1829,6 +1829,48 @@ class WorkExperienceRepository {
                         ]
                     }
                 ]
+            },
+            {
+                "no" : "29",
+                "businessType" : "卸販売",
+                "period" : {
+                    "from" : "2021-3-29",
+                    "to" : "2021-4-12"
+                },
+                "device" : [
+                    "PC"
+                ],
+                "os" : [
+                    "Windows 10"
+                ],
+                "programLanguage" : [
+                    "VBA",
+                    "T-SQL"
+                ],
+                "developmentTool" : [
+                    "SQL Server Management Studio"
+                ],
+                "framework" : [],
+                "platform" : [],
+                "db" : [
+                    "SQL-Server",
+                    "Access"
+                ],
+                "other" : [],
+                "projectSummary" : "システム改訂",
+                "projectPeakSize" : "5",
+                "subordinate" : "0",
+                "system" : [
+                    "業務ツール群"
+                ],
+                "task" : [
+                    {
+                        "name" : "基本設計",
+                        "type" : [
+                            "HLD"
+                        ]
+                    }
+                ]
             }
         ];
     }
