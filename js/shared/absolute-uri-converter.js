@@ -13,10 +13,8 @@ class AbsoluteURIConverter {
         // リポジトリ名を表すディレクトリまでをルートとする
         if (root.endsWith("github.io")) {
             // ディレクトリの検索
-            let index = 0;
-            for (let i = 0; i < 2; i++) {
-                index = location.pathname.indexOf("/", index);
-            }
+            let index = location.pathname.indexOf("/", 0);
+            index = location.pathname.indexOf("/", index + 1);
 
             // ディレクトリが見つかった場合はルートに加える
             if (index !== -1) {
