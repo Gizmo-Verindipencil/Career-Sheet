@@ -7,7 +7,24 @@ class AbsoluteURIConverter {
      */
     constructor() {
         // スキーム + オーソリティをルートとして記録
-        this.root = location.origin;
+        let root = location.origin;
+
+        // github.io の場合、スキーム + オーソリティ に加えて
+        // リポジトリ名を表すディレクトリまでをルートとする
+        if (root.endsWith("github.io")) {
+            // ディレクトリの検索
+            let index = 0;
+            for (let i = 0; i < 2; i++) {
+                index = location.pathname.indexOf("/", index);
+            }
+
+            // ディレクトリが見つかった場合はルートに加える
+            if (index !== -1) {
+                const repository = location.pathname.substring(index);
+                root = `${root}${repository}`;
+            }
+        }
+        this.root = root;
     }
 
     /**
