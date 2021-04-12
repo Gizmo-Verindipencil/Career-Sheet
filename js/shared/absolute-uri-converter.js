@@ -18,8 +18,8 @@ class AbsoluteURIConverter {
 
             // ディレクトリが見つかった場合はルートに加える
             if (index !== -1) {
-                const repository = location.pathname.substring(0, index);
-                root = `${root}${repository}`;
+                const firstDir = location.pathname.substring(0, index + 1);
+                root = `${root}${firstDir}`;
             }
         }
         this.root = root;
