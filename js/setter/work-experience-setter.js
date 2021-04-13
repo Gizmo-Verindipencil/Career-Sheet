@@ -53,6 +53,7 @@ class WorkExperienceSetter {
             cells.push(this.createTechnologyTd(experience));
             cells.push(this.createMainTask(experience));
             cells.push(this.createTaskType(experience));
+            cells.push(this.createReportLinkTd(experience));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
@@ -77,12 +78,8 @@ class WorkExperienceSetter {
         // この情報に対応するクラス名
         const base = "work-experience-number";
 
-        // 詳細ページのリンク先を生成
-        const url = `work-experience\\report.html?no=${experience.no}`;
-        const linkClass = `${base}-link`;
-
         // td要素を生成して返す
-        return this.createTd(base, `<a class='${linkClass}' href='${url}'>${experience.no}</a>`);
+        return this.createTd(base, `<p>${experience.no}</p>`);
     }
 
     /**
@@ -259,6 +256,23 @@ class WorkExperienceSetter {
 
         // td要素を生成して返す
         return this.createTd(base, innerHtml.join(""));
+    }
+
+    /**
+     * 詳細リンクのtd要素を生成します。
+     * @param {Object} experience 職務経歴データ。
+     * @return {String} td要素を表すhtmlを返します。
+     */
+    createReportLinkTd = experience => {
+        // この情報に対応するクラス名
+        const base = "work-experience-report-link";
+
+        // 詳細ページのリンク先を生成
+        const url = `work-experience\\report.html?no=${experience.no}`;
+
+        // td要素を生成して返す
+        const icon = `<img style='width:90%;' src='icon/top-to-right-arrow-in-box.svg'>`;
+        return this.createTd(base, `<a href='${url}'>${icon}</a>`);
     }
 }
 
