@@ -1428,6 +1428,26 @@ class WorkHoursRepository {
                     "hours" : "0",
                     "comment" : ""
                 }
+            },
+            {
+                "year" : "2021",
+                "month" : "4",
+                "period" : {
+                    "from" : "2021-3-21",
+                    "to" : "2021-4-20"
+                },
+                "prescribedWorkingDays" : "22",
+                "prescribedWorkingHours" : "165.00",
+                "actualWorkingDays" : "21",
+                "actualWorkingHours" : "175.15",
+                "overtimeHours" : "17.45",
+                "holidayWorkingDays" : "0",
+                "paidLeave" : "29",
+                "beingLate": {
+                    "count" : "0",
+                    "hours" : "0",
+                    "comment" : ""
+                }
             }
         ];
     }
