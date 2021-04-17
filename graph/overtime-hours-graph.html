@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>残業時間グラフ</title>
+    <link rel="stylesheet" href="../css/destyle.css">
+    <link rel="stylesheet" href="../css/restyle.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/graph.css">
+    <script language="javascript" type="module">
+        import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
+        import { OvertimeHoursGraphSetter } from "../js/setter/graph/overtime-hours-graph-setter.js";
+
+        const loader = ScriptSeriesLoader;
+        loader.add("https://cdn.plot.ly/plotly-latest.min.js");
+        loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        loader.load(() => {
+            $(document).ready(() => {
+                const setter = new OvertimeHoursGraphSetter();
+                setter.execute();    
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="page-title">残業時間</h1>
+    </header>
+    <noscript>
+        <p class="no-javascript-warning">内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <div id="graph-container"></div>
+</body>
+</html>
