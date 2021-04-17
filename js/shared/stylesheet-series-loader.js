@@ -69,7 +69,7 @@ class StylesheetSeriesLoader {
         } 
 
         // スタイルシートの追加
-        document.body.appendChild(link);
+        document.head.appendChild(link);
 
         // 追加済ソースとして記録
         this.importedSources.push(link.href);
