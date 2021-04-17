@@ -1,4 +1,4 @@
-import { TaskRepository } from "../../repository/task-type-repository.js";
+import { TaskTypeRepository } from "../../repository/task-type-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
@@ -36,8 +36,8 @@ class TaskTypeHelpSetter {
      */
     execute = () => {
         // 作業分類データを取得
-        const repository = new TaskRepository();
-        const types = repository.getAllTypes();
+        const repository = new TaskTypeRepository();
+        const types = repository.getAll();
 
         // ソート順で並べる
         types.sort((a, b) => {
