@@ -68,7 +68,7 @@ class ScriptSeriesLoader {
         } 
 
         // スクリプトの追加
-        document.body.appendChild(script);
+        document.head.appendChild(script);
 
         // 追加済ソースとして記録
         this.importedSources.push(script.src);
