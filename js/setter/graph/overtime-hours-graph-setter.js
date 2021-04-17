@@ -3,9 +3,9 @@ import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * 労働時間グラフの設定処理を提供します。
+ * 残業時間グラフの設定処理を提供します。
  */
-class WorkingHoursGraphSetter {
+class OvertimeHoursGraphSetter {
     /**
      * インスタンスを初期化します。
      */
@@ -18,11 +18,11 @@ class WorkingHoursGraphSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {WorkingHoursGraphSetter} 新しいインスタンスを返します。
+     * @returns {OvertimeHoursGraphSetter} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new WorkingHoursGraphSetter();
+        const setter = new OvertimeHoursGraphSetter();
 
         // スクリプトの読込完了後にインスタンスを返す
         while(setter.scriptLoader.running) {
@@ -32,17 +32,17 @@ class WorkingHoursGraphSetter {
     }
 
     /**
-     * 労働時間グラフの設定を実行します。
+     * 残業時間グラフの設定を実行します。
      */
     execute = () => {
-        // 労働時間データを取得
+        // 残業時間データを取得
         const repository = new WorkingHoursRepository();
         const records = repository.getAll();
 
         // 残業時間の推移を作成
         const overtimeHours = {
             mode: "scatter",
-            name: "残業時間",
+            name: "実績(h)",
             x: records.map(x => `${x.year}-${x.month}`),
             y: records.map(x => x.overtimeHours)
         };
@@ -50,7 +50,7 @@ class WorkingHoursGraphSetter {
         // 残業時間(移動平均)の推移を作成
         const eMAOvertimeHours = {
             mode : "scatter",
-            name : "残業時間(移動平均)",
+            name : "移動平均(h)",
             x: records.map(x => `${x.year}-${x.month}`),
             y: Utility.calculateEMA(records.map(x => x.overtimeHours), 12)
         };
@@ -70,20 +70,18 @@ class WorkingHoursGraphSetter {
         };
         const averageOvertimeHours = {
             mode : "scatter",
-            name : "残業時間(平均)",
+            name : "平均(h)",
             x: records.map(x => `${x.year}-${x.month}`),
             y: getAverageArray(records.map(x => x.overtimeHours))
         };
 
         // 画面にデータをセット
         const layout = {
-            title : "労働時間"
+            title : "残業時間"
         };
         const data = [ overtimeHours, eMAOvertimeHours, averageOvertimeHours ];
         Plotly.newPlot("graph", data);
     }
-
-    
 }
 
-export { WorkingHoursGraphSetter };
+export { OvertimeHoursGraphSetter };

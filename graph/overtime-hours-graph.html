@@ -2,17 +2,17 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>残業時間グラフ</title>
     <script language="javascript" type="module">
         import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
-        import { WorkingHoursGraphSetter } from "../js/setter/graph/working-hours-graph-setter.js";
+        import { OvertimeHoursGraphSetter } from "../js/setter/graph/overtime-hours-graph-setter.js";
 
         const loader = ScriptSeriesLoader;
         loader.add("https://cdn.plot.ly/plotly-latest.min.js");
         loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         loader.load(() => {
             $(document).ready(() => {
-                const setter = new WorkingHoursGraphSetter();
+                const setter = new OvertimeHoursGraphSetter();
                 setter.execute();    
             });
         });
