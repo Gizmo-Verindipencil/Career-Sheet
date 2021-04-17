@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script language="javascript" type="module">
+        import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
+        import { WorkingHoursGraphSetter } from "../js/setter/graph/working-hours-graph-setter.js";
+
+        const loader = ScriptSeriesLoader;
+        loader.add("https://cdn.plot.ly/plotly-latest.min.js");
+        loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        loader.load(() => {
+            $(document).ready(() => {
+                const setter = new WorkingHoursGraphSetter();
+                setter.execute();    
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="graph" style="width: 1000px; height: 800px;">
+</body>
+</html>
