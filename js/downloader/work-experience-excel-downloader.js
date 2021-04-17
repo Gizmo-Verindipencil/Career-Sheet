@@ -13,9 +13,9 @@ class WorkExperienceExcelDownloader {
           const repository = new WorkExperienceRepository();
           const experiences = repository.getAll();
 
-          // 最近の職歴から並べる
+          // 時系列順で並べる
           experiences.sort((a, b) => {
-              return b.no - a.no;
+              return b.no < a.no;
           });
 
           // 出力Excelを生成
