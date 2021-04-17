@@ -2,7 +2,7 @@
  * 労働時間データのリポジトリを提供します。
  * 現状はバックエンドを表すダミーです。
  */
-class WorkHoursRepository {
+class WorkingHoursRepository {
     /**
      * 労働時間データを取得します。
      * @return {Array<Object>} 労働時間データを返します。
@@ -1461,4 +1461,4 @@ class WorkHoursRepository {
     }
 }
 
-export { WorkHoursRepository };
+export { WorkingHoursRepository };
