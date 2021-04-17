@@ -9,20 +9,20 @@ class WorkExperienceExcelDownloader {
      * Excelファイルをダウンロードします。
      */
     download = async() => {
-          // 職務経歴データを取得
-          const repository = new WorkExperienceRepository();
-          const experiences = repository.getAll();
+        // 職務経歴データを取得
+        const repository = new WorkExperienceRepository();
+        const experiences = repository.getAll();
 
-          // 時系列順で並べる
-          experiences.sort((a, b) => {
-              return b.no < a.no;
-          });
+        // 時系列順で並べる
+        experiences.sort((a, b) => {
+            return b.no < a.no;
+        });
 
-          // 出力Excelを生成
-          const excel = [];
+        // 出力Excelを生成
+        const excel = [];
 
-          // ヘッダーを追加
-          const header = [
+        // ヘッダーを追加
+        const header = [
             "no",
             "businessType",
             "period-from",
@@ -40,12 +40,12 @@ class WorkExperienceExcelDownloader {
             "subordinate",
             "system",
             "task"
-          ];
-          excel.push(header);
+        ];
+        excel.push(header);
 
-          // データを追加
-          for (const experience of experiences) {
-              const values = [
+        // データを追加
+        for (const experience of experiences) {
+            const values = [
                 experience.no,
                 experience.businessType,
                 experience.period.from,
@@ -63,14 +63,14 @@ class WorkExperienceExcelDownloader {
                 experience.subordinate,
                 experience.system,
                 experience.task.map(x => x.name).join(", "),
-              ];
-              excel.push(values);
-          }
+            ];
+            excel.push(values);
+        }
 
-          // ファイルをダウンロード
-          const downloader = await ExcelDownloader.build();
-          downloader.addAoaToWorkbook(excel, "data");
-          downloader.download("work-experience");
+        // ファイルをダウンロード
+        const downloader = await ExcelDownloader.build();
+        downloader.addAoaToWorkbook(excel, "data");
+        downloader.download("work-experience");
     }
 }
 
