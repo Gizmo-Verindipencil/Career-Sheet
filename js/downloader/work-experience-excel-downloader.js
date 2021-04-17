@@ -62,7 +62,7 @@ class WorkExperienceExcelDownloader {
                 experience.projectPeakSize,
                 experience.subordinate,
                 experience.system,
-                experience.task.map(x => x.name).join(", "),
+                experience.task.map(x => x.name).join(", ")
             ];
             excel.push(values);
         }
