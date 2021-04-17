@@ -15,8 +15,8 @@
         loader.add("https://cdn.plot.ly/plotly-latest.min.js");
         loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         loader.load(() => {
-            $(document).ready(() => {
-                const setter = new OvertimeHoursGraphSetter();
+            $(document).ready(async() => {
+                const setter = await OvertimeHoursGraphSetter.build();
                 setter.execute();    
             });
         });
