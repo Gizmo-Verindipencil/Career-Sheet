@@ -1,4 +1,5 @@
-import { TaskRepository } from "../repository/task-type-repository.js";
+import { TaskTypeRepository } from "../repository/task-type-repository.js";
+import { TaskColorRepository } from "../repository/task-color-repository.js";
 import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
@@ -35,9 +36,9 @@ class TaskTypeListSetter {
      * 作業種類一覧の設定を実行します。
      */
     execute = () => {
-        // 作業データを取得
-        const repository = new TaskRepository();
-        const types = repository.getAllTypes();
+        // 作業種類データを取得
+        const typeRepository = new TaskTypeRepository();
+        const types = typeRepository.getAll();
 
         // 設定されたソート順に並び替え
         types.sort((a, b) => {
@@ -46,7 +47,11 @@ class TaskTypeListSetter {
             return 0;
         });
 
-        const colors = repository.getAllColors();
+        // 作業テーマ色データを取得
+        const colorRepository = new TaskColorRepository();
+        const colors = colorRepository.getAll();
+
+        // 作業種類毎のデザインを適用
         for (const type of types) {
             // 対応する色を設定
             const color = colors.filter(x => x.id === type.colorId);
