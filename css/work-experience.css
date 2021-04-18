@@ -280,3 +280,11 @@ table#work-experience {
     text-align: center;
     width: 3%;
 }
+
+#work-experience-additional-loading-bar {
+    background: linear-gradient(to bottom, #000000, #333333);
+    border: solid 0.01rem #000000;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+}

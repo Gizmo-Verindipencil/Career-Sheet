@@ -20,6 +20,10 @@
             $(document).ready(async() => {
                 const setter = await WorkExperienceSetter.build();
                 setter.execute();
+
+                $("#work-experience-additional-loading-bar").on("click", () => {
+                    setter.execute();
+                });
             });
         });
     </script>
@@ -59,6 +63,7 @@
             <tbody>
             </tbody>
         </table>
+        <div id="work-experience-additional-loading-bar">MORE</div>
     </section>
 </body>
 </html>
