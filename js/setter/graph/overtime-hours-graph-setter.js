@@ -70,7 +70,7 @@ class OvertimeHoursGraphSetter {
         };
         const averageOvertimeHours = {
             mode : "scatter",
-            name : "平均(h)",
+            name : "全体平均(h)",
             x: records.map(x => `${x.year}-${x.month}`),
             y: getAverageArray(records.map(x => x.overtimeHours))
         };
