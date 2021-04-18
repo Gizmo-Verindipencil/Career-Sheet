@@ -6,16 +6,20 @@
     <meta name="author" content="Nozomi Kawahata">
     <meta name="description" content="">
     <title>職務経歴書</title>
-    <link rel="stylesheet" href="css/destyle.css">
-    <link rel="stylesheet" href="css/restyle.css">
-    <link rel="stylesheet" href="css/common.css">
     <script language="javascript" type="module">
+        import StylesheetSeriesLoader from "./js/shared/stylesheet-series-loader.js";
         import ScriptSeriesLoader from "./js/shared/script-series-loader.js";
         import { CareerSheetSetter } from "./js/setter/career-sheet-setter.js";
 
-        const loader = ScriptSeriesLoader;
-        loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        loader.load(() => {
+        const stylesheetLoader = StylesheetSeriesLoader;
+        stylesheetLoader.add("css/destyle.css");
+        stylesheetLoader.add("css/restyle.css");
+        stylesheetLoader.add("css/common.css");
+        stylesheetLoader.load();
+
+        const scriptLoader = ScriptSeriesLoader;
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        scriptLoader.load(() => {
             $(document).ready(async() => {
                 const setter = await CareerSheetSetter.build();
                 setter.execute();

@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>案件詳細</title>
-    <link rel="stylesheet" href="../css/destyle.css">
-    <link rel="stylesheet" href="../css/restyle.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/work-experience-report.css">
     <script language="javascript" type="module">
+        import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.js";
         import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
         import { WorkExperienceReportSetter } from "../js/setter/work-experience-report-setter.js";
         import { WorkExperienceReportDetailSetter } from "../js/setter/work-experience-report-detail-setter.js";
 
-        const loader = ScriptSeriesLoader;
-        loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        loader.load(() => {
+        const stylesheetLoader = StylesheetSeriesLoader;
+        stylesheetLoader.add("css/destyle.css");
+        stylesheetLoader.add("css/restyle.css");
+        stylesheetLoader.add("css/common.css");
+        stylesheetLoader.add("css/work-experience-report.css");
+        stylesheetLoader.load();
+
+        const scriptLoader = ScriptSeriesLoader;
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        scriptLoader.load(() => {
             $(document).ready(async() => {
                 const setters = [];
                 setters.push(await WorkExperienceReportSetter.build());

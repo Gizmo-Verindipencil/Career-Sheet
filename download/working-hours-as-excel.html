@@ -7,9 +7,9 @@
         import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
         import { WorkingHoursExcelDownloader } from "../js/downloader/working-hours-excel-downloader.js";
 
-        const loader = ScriptSeriesLoader;
-        loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        loader.load(() => {
+        const scriptLoader = ScriptSeriesLoader;
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        scriptLoader.load(() => {
             $(document).ready(() => {
                 $("#download").on("click", () => {
                     const downloader = new WorkingHoursExcelDownloader();

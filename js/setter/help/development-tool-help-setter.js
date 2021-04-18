@@ -1,6 +1,7 @@
 import { DevelopmentToolRepository } from "../../repository/development-tool-repository.js";
 import { Utility } from "../../shared/utility.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.js"
+import ScriptSeriesLoader from "../../shared/script-series-loader.js";
+import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.js";
 
 /**
  * ヘルプ(開発ツール)の設定処理を提供します。
@@ -10,6 +11,11 @@ class DevelopmentToolHelpSetter {
      * インスタンスを初期化します。
      */
     constructor() {
+        // 必要なスタイルシートを読込
+        this.stylesheetLoader = StylesheetSeriesLoader;
+        this.stylesheetLoader.add("css/work-experience.css");
+        this.stylesheetLoader.load();
+        
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");

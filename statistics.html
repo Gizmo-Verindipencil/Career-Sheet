@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>統計</title>
-    <link rel="stylesheet" href="css/destyle.css">
-    <link rel="stylesheet" href="css/restyle.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/statistics.css">
+    <script language="javascript" type="module">
+        import StylesheetSeriesLoader from "./js/shared/stylesheet-series-loader.js";
+
+        const stylesheetLoader = StylesheetSeriesLoader;
+        stylesheetLoader.add("css/destyle.css");
+        stylesheetLoader.add("css/restyle.css");
+        stylesheetLoader.add("css/common.css");
+        stylesheetLoader.add("css/statistics.css");
+        stylesheetLoader.load();
+    </script>
 </head>
 <body>
     <noscript>
