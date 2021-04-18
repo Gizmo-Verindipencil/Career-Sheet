@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>遅刻回数グラフ</title>
+    <script language="javascript" type="module">
+        import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.js";
+        import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
+        import { BeingLateNumberGraphSetter } from "../js/setter/graph/being-late-number-graph-setter.js";
+
+        const stylesheetLoader = StylesheetSeriesLoader;
+        stylesheetLoader.add("css/destyle.css");
+        stylesheetLoader.add("css/restyle.css");
+        stylesheetLoader.add("css/common.css");
+        stylesheetLoader.add("css/graph.css");
+        stylesheetLoader.load();
+
+        const scriptLoader = ScriptSeriesLoader;
+        scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        scriptLoader.load(() => {
+            $(document).ready(async() => {
+                const setter = await BeingLateNumberGraphSetter.build();
+                setter.execute();    
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="page-title">遅刻回数</h1>
+    </header>
+    <noscript>
+        <p class="no-javascript-warning">内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <div id="graph-container"></div>
+</body>
+</html>
