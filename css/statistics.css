@@ -3,3 +3,11 @@ div#statistics {
     padding-left: 1rem;
     width: 100%;
 }
+
+a.statistics-link {
+    display: flex;
+}
+
+img.statistics-link-icon {
+    width: 1.2rem;
+}
