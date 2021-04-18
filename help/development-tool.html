@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>開発ツールの説明</title>
-    <link rel="stylesheet" href="../css/destyle.css">
-    <link rel="stylesheet" href="../css/restyle.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/help.css">
-    <link rel="stylesheet" href="../css/work-experience.css">
     <script language="javascript" type="module">
+        import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.js";
         import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
         import { DevelopmentToolHelpSetter } from "../js/setter/help/development-tool-help-setter.js";
 
-        const loader = ScriptSeriesLoader;
-        loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        loader.load(() => {
+        const stylesheetLoader = StylesheetSeriesLoader;
+        stylesheetLoader.add("css/destyle.css");
+        stylesheetLoader.add("css/restyle.css");
+        stylesheetLoader.add("css/common.css");
+        stylesheetLoader.add("css/help.css");
+        stylesheetLoader.load();
+
+        const scriptLoader = ScriptSeriesLoader;
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        scriptLoader.load(() => {
             $(document).ready(async() => {
                 const setter = await DevelopmentToolHelpSetter.build();
                 setter.execute();
