@@ -37,7 +37,34 @@ class WorkExperienceSetter {
     execute = () => {
         // 職務経歴データを取得
         const repository = new WorkExperienceRepository();
-        const experiences = repository.getAll();
+        let experiences = repository.getAll();
+
+        // 読込開始の基準となる経歴番号を取得
+        let lastNumber = this.getLoadedMinNumber();
+        let firstLoading = false;
+        if (!lastNumber) {
+            // 初回取込時は直近の番号+1を開始位置とする
+            const max = experiences.map(x => x.no).reduce((a, b) => {
+                return Math.max(a, b);
+            });
+            lastNumber = max + 1;
+            firstLoading = true;
+        }
+
+        // 読込対象の番号を取得
+        const loadingNumbers = this.getNextLoadingNumbers(lastNumber, 5);
+
+        // 読込対象の最小値が1ならば、追加の読込対象が
+        // 存在しないので追加読込バーを非表示にする
+        const loadingMin = loadingNumbers.reduce((a, b) => {
+            return Math.min(a, b);
+        });
+        if (loadingMin === 1) {
+            $("#work-experience-additional-loading-bar").hide();
+        }
+
+        // 読込対象の職務経歴に絞る
+        experiences = experiences.filter(x => loadingNumbers.includes(Number(x.no)));
 
         // 最近の職歴から並べる
         experiences.sort((a, b) => {
@@ -56,9 +83,68 @@ class WorkExperienceSetter {
             cells.push(this.createReportLinkTd(experience));
 
             // tr要素を生成してテーブルに追加
-            const row = `<tr>${cells.join("")}</tr>`;
-            $("#work-experience tr:last").after(row);
+            if (firstLoading) {
+                // 初回の読込
+                const row = `<tr>${cells.join("")}</tr>`;
+                $("#work-experience tr:last").after(row);
+            }
+            else
+            {
+                // 追加の読込
+                const row = $(`<tr>${cells.join("")}</tr>`).hide();
+                $("#work-experience tr:last").after(row);
+                row.show("slow");
+            }
         }
+    }
+
+    /**
+     * 配置済の職務経歴の最小番号を取得します。
+     * @returns {Number} 最小番号を返します。対象が存在しない場合はnullを返します。
+     */
+    getLoadedMinNumber = () => {
+        // 配置済の職務経歴の番号を取得
+        const loaded = [];
+        for(let e of $(".work-experience-number")) {
+            const no = Number(e.outerText);
+            loaded.push(no); 
+        };
+
+        // 職務経歴が未配置の場合はnullを返す
+        if (loaded.length === 0) {
+            return null;
+        }
+
+        // 最小の番号を取得
+        const min = loaded.reduce((a, b) => {
+            return Math.min(a, b);
+        });
+        return min;
+    }
+
+    /**
+     * 読込対象の職務経歴の番号を取得します。
+     * @param {Number} currentMin 配置済職務経歴の最小番号。この番号より小さい
+     * @param {Number} loadingSize 一度の読込する職務経歴の数。
+     * @returns {Array<Number>} 配置対象の職務経歴番号を返します。
+     */
+    getNextLoadingNumbers = (currentMin, loadingSize) => {
+        let list = [];
+        
+        for(let i = 0; i < loadingSize; i++) {
+            const number = currentMin - (i + 1);
+            
+            // 番号が全体の最小番号を下回っていれば
+            // 読込対象のデータが存在しないので中断
+            const actualMin = 1;
+            if (number < actualMin) {
+                break;
+            }
+
+            list.push(number);
+        }
+
+        return list;
     }
 
     /**
