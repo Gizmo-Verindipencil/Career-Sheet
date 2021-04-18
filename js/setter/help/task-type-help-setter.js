@@ -1,7 +1,7 @@
 import { TaskTypeRepository } from "../../repository/task-type-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
-import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.js";
+import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
  * ヘルプ(作業分類)の設定処理を提供します。

@@ -1,7 +1,7 @@
 import { DeviceRepository } from "../../repository/device-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
-import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.js";
+import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 
 /**

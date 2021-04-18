@@ -1,7 +1,7 @@
 import { OperatingSystemRepository } from "../../repository/operating-system-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
-import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.js";
+import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
  * ヘルプ(OS)の設定処理を提供します。
