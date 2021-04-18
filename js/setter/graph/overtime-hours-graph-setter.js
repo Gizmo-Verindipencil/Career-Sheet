@@ -80,7 +80,7 @@ class OvertimeHoursGraphSetter {
             title : "残業時間"
         };
         const data = [ overtimeHours, eMAOvertimeHours, averageOvertimeHours ];
-        Plotly.newPlot("graph-container", data);
+        Plotly.newPlot("graph-container", data, layout);
     }
 }
 
