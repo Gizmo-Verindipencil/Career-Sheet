@@ -56,23 +56,12 @@ class OvertimeHoursGraphSetter {
         };
 
         // 残業時間(平均)の推移を作成
-        const getAverageArray = array => {
-            // 合計を算出
-            const total = array.reduce((sum, number) => {
-                return Number(sum) + Number(number);
-            });
-
-            // 平均を算出
-            const average = total / array.length;
-
-            // 元配列と同じ要素数の配列で返す
-            return array.map(x => average);
-        };
+        const average = Utility.calculateAverage(records.map(x => x.overtimeHours));
         const averageOvertimeHours = {
             mode : "scatter",
             name : "全体平均(h)",
             x: records.map(x => `${x.year}-${x.month}`),
-            y: getAverageArray(records.map(x => x.overtimeHours))
+            y: records.map(x => average)
         };
 
         // 画面にデータをセット
