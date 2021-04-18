@@ -5,7 +5,8 @@ div#statistics {
 }
 
 a.statistics-link {
-    display: flex;
+    display: inline-flex;
+    padding: 0.5rem;
 }
 
 img.statistics-link-icon {

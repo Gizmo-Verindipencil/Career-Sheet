@@ -26,6 +26,21 @@ class Utility {
         }
         return eMA;
     }
+
+    /**
+     * 平均を計算します。
+     * @param {Array<Number>} array 計算元の数値。
+     * @returns 平均を返します。
+     */
+    static calculateAverage = array => {
+        // 合計を算出
+        const total = array.reduce((sum, number) => {
+            return Number(sum) + Number(number);
+        });
+
+        // 平均を算出
+        return total / array.length;
+    }
 }
 
 export { Utility };
