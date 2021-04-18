@@ -11,15 +11,14 @@
     <link rel="stylesheet" href="css/common.css">
     <script language="javascript" type="module">
         import ScriptSeriesLoader from "./js/shared/script-series-loader.js";
+        import { CareerSheetSetter } from "./js/setter/career-sheet-setter.js";
 
         const loader = ScriptSeriesLoader;
         loader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         loader.load(() => {
-            $(document).ready(() => {
-                $("#core-info").load("core-info.html");
-                $("#work-experience").load("work-experience.html");
-                $("#qualification").load("qualification.html");
-                $("#statistics").load("statistics.html");
+            $(document).ready(async() => {
+                const setter = await CareerSheetSetter.build();
+                setter.execute();
             });
         });
     </script>
@@ -31,9 +30,5 @@
     <noscript>
         <p class="no-javascript-warning">内容を閲覧をするにはJavascriptを有効にしてください</p>
     </noscript>
-    <section id="core-info"></section>
-    <section id="work-experience"></section>
-    <section id="qualification"></section>
-    <section id="statistics"></section>
 </body>
 </html>
