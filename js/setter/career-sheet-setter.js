@@ -34,29 +34,44 @@ class CareerSheetSetter {
      * 職務経歴書の設定を実行します。
      */
     execute = () => {
-        // 画面にデータをセット
-        this.appendPage("core-info.html");
-        this.appendPage("work-experience.html");
-        this.appendPage("qualification.html");
-        this.appendPage("statistics.html");
+        // ページを読込してセット
+        let urls = [];
+        urls.push("core-info.html");
+        urls.push("work-experience.html");
+        urls.push("qualification.html");
+        urls.push("statistics.html");
+        this.appendPages(urls);
     }
 
     /**
      * ページを読込・追加します。
-     * @param {String} url 読込ページ。
+     * @param {Array<String>} urls 読込ページ。
      */
-    appendPage = url => {
-        let response;
-        $.ajax({ 
-            type: "GET",   
-            url: url,   
-            async: false,
-            success : function(text)
-            {
-                response= text;
+    appendPages = urls => {
+        // ページの読込・追加
+        const append = () => {
+            // 読込対象がなければ終了
+            if (urls.length === 0) {
+                return;
             }
-        });
-        $("body").append(response);
+
+            // ページを読込
+            const url = urls.shift();
+            $.ajax({ 
+                type: "GET",   
+                url: url,   
+                async: true,
+                success : function(response)
+                {
+                    // ページを追加
+                    $("body").append(response);
+
+                    // 次のページを読込
+                    append();
+                }
+            });
+        }
+        append();
     } 
 }
 
