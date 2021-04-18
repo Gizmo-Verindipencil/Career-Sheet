@@ -1,7 +1,7 @@
 import { FrameworkRepository } from "../../repository/framework-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
-import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.js";
+import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
  * ヘルプ(フレームワーク)の設定処理を提供します。

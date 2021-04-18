@@ -1,7 +1,7 @@
 import { ProgrammingLanguageRepository } from "../../repository/programming-language-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
-import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.js";
+import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
  * ヘルプ(プログラミング言語)の設定処理を提供します。
