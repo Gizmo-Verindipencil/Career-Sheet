@@ -196,22 +196,25 @@ class WorkExperienceReportSetter {
     setTechnology = data => {
         // この情報に対応するクラス名
         const base = "work-experience-technology";
-        
-        // 単一のp要素の生成
-        const createP = (classSuffix, innerHtml) => `<p class='${base}-${classSuffix}'>${innerHtml}</p>`;
+
+        // 単一のa要素の生成
+        const createA = (classSuffix, innerHtml) => `<a class='${base}-${classSuffix}' href='../help/${classSuffix}.html' target='_blank'>${innerHtml}</p>`;
 
         // 凡例を生成
         const names = [];
-        names.push(createP("device", "機種"));
-        names.push(createP("operating-system", "OS"));
-        names.push(createP("programming-language", "言語"));
-        names.push(createP("development-tool", "DT"));
-        names.push(createP("database", "DB"));
-        names.push(createP("framework", "FW"));
-        names.push(createP("platform", "PF"));
-        names.push(createP("other", "他"));
+        names.push(createA("device", "機種"));
+        names.push(createA("operating-system", "OS"));
+        names.push(createA("programming-language", "言語"));
+        names.push(createA("development-tool", "DT"));
+        names.push(createA("database", "DB"));
+        names.push(createA("framework", "FW"));
+        names.push(createA("platform", "PF"));
+        names.push(createA("other", "他"));
         $("#work-experience-report-summary-item-name-technology").empty();
         $("#work-experience-report-summary-item-name-technology").append(names.join(""));
+
+        // 単一のp要素の生成
+        const createP = (classSuffix, innerHtml) => `<p class='${base}-${classSuffix}'>${innerHtml}</p>`;
 
         // 複数のp要素の生成
         const createMultiP = (classSuffix, list) => {
