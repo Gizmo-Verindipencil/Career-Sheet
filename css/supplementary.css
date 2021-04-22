@@ -1,0 +1,14 @@
+div#supplementary {
+    border: solid 0.01rem #000000;
+    padding-left: 1rem;
+    width: 100%;
+}
+
+a.supplementary-link {
+    display: inline-flex;
+    padding: 0.5rem;
+}
+
+img.supplementary-link-icon {
+    width: 1.2rem;
+}
