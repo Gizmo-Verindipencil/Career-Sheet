@@ -1787,7 +1787,7 @@ class WorkExperienceRepository {
             },
             {
                 "no" : "28",
-                "businessType" : "生命保険",
+                "businessType" : "保険",
                 "period" : {
                     "from" : "2021-3-15",
                     "to" : "2021-3-22"
@@ -1819,7 +1819,7 @@ class WorkExperienceRepository {
                 "projectPeakSize" : "1",
                 "subordinate" : "0",
                 "system" : [
-                    "EDI"
+                    "WEBアプリケーション"
                 ],
                 "task" : [
                     {
