@@ -1,0 +1,12 @@
+#chart-container {
+    width: 100%;
+}
+
+.chart-wrapper {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+}
+
+.chart-image {
+    width: 50%;
+}

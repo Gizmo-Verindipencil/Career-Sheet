@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>補足資料</title>
+    <script language="javascript" type="module">
+        import StylesheetSeriesLoader from "./js/shared/stylesheet-series-loader.js";
+
+        const stylesheetLoader = StylesheetSeriesLoader;
+        stylesheetLoader.add("css/destyle.css");
+        stylesheetLoader.add("css/restyle.css");
+        stylesheetLoader.add("css/common.css");
+        stylesheetLoader.add("css/supplementary.css");
+        stylesheetLoader.load();
+    </script>
+</head>
+<body>
+    <noscript>
+        <p class="no-javascript-warning">内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <section>
+        <h1 class="section-title">Ⅴ. 補足</h1>
+        <div id="supplementary">
+            <a class="supplementary-link" href="supplementary/relationship-chart/report.html" target="_blank">
+                <p>関係図</p>
+                <img class="supplementary-link-icon" src='icon/top-to-right-arrow-in-box.svg'>
+            </a>
+        </div>
+    </section>
+</body>
+</html>

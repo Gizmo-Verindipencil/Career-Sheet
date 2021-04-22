@@ -40,6 +40,7 @@ class CareerSheetSetter {
         urls.push("work-experience.html");
         urls.push("qualification.html");
         urls.push("statistics.html");
+        urls.push("supplementary.html");
         this.appendPages(urls);
     }
 

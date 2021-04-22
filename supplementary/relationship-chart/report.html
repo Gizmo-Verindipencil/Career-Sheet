@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>関係図</title>
+    <script language="javascript" type="module">
+        import StylesheetSeriesLoader from "../../js/shared/stylesheet-series-loader.js";
+
+        const stylesheetLoader = StylesheetSeriesLoader;
+        stylesheetLoader.add("css/destyle.css");
+        stylesheetLoader.add("css/restyle.css");
+        stylesheetLoader.add("css/common.css");
+        stylesheetLoader.add("css/supplementary/relationship-chart-report.css");
+        stylesheetLoader.load();
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="page-title">関係図</h1>
+    </header>
+    <noscript>
+        <p class="no-javascript-warning">内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <div id="chart-container">
+        <div class="chart-wrapper">
+            <p>No.1-2 - N:所属会社、me:自分</p>
+            <img class="chart-image" src="1.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.3 - M:ユーザー、NS:業務委託の元請、T:2次請(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="2.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.4 - N:所属会社、me:自分</p>
+            <img class="chart-image" src="1.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.5-6 - S:ユーザー、A:開発ベンダー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="3.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.7-8 - P:ユーザー、A:開発ベンダー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="4.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.9 - A:ユーザー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="5.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.10 - SN:ユーザー、A:開発ベンダー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="6.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.11 - D:ユーザー、A:開発ベンダー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="7.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.12 - H:ユーザー、A:開発ベンダー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="8.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.13 - P:ユーザー、A:開発ベンダー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="4.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.14 - ?:ユーザー、A:開発ベンダー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="9.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.15 - NC:開発ベンダー(1次請)、B:開発ベンダー(2次請)(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="10.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.16-23 - H:ユーザー、NE:関連システムの開発ベンダー、T:Hと別れた開発ベンダー、A:開発ベンダー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="11.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.24-25 - A:ユーザー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="5.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.26 - P:ユーザー、A:開発ベンダー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="4.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.27 - P:ユーザー、TM:Pの取引先、A:開発ベンダー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="12.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.28 - A:ユーザー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="5.svg">
+        </div>
+        <div class="chart-wrapper">
+            <p>No.29 - P:ユーザー、A:開発ベンダー(常駐先)、N:所属会社、me:自分</p>
+            <img class="chart-image" src="4.svg">
+        </div>
+    </div>
+</body>
+</html>
