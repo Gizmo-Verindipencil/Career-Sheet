@@ -1,4 +1,5 @@
 import { TaskCategoryRepository } from "../../repository/task-category-repository.js";
+import { TaskTypeRepository } from "../../repository/task-type-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
@@ -60,6 +61,7 @@ class TaskCategoryHelpSetter {
             cells.push(this.createCodeTd(type));
             cells.push(this.createNamesTd(type));
             cells.push(this.createDescriptionTd(type));
+            cells.push(this.createChildTaskTd(type));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
@@ -114,6 +116,27 @@ class TaskCategoryHelpSetter {
      */
     createDescriptionTd = category => {
         return this.createTd(`<p>${category.description}</p>`);
+    }
+
+    /**
+     * 所属作業のtd要素を生成します。
+     * @param {Object} category 作業カテゴリデータ。
+     * @return {String} td要素を表すhtmlを返します。
+     */
+    createChildTaskTd = category => {
+        // 作業データを取得
+        const repository = new TaskTypeRepository();
+        const types = repository.getAll().filter(x => x.categoryId === category.id);
+
+        // カテゴリに属する作業データを並べる
+        const displayTypes = [];
+        for(let type of types) {
+            const style = "work-experience-task-type-unknown";
+            console.log(type);
+            const p = `<p class="${style}">${type.id}</p>`;
+            displayTypes.push(p);
+        }
+        return this.createTd(displayTypes.join(""));
     }
 }
 
