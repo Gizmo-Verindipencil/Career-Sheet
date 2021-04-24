@@ -113,7 +113,6 @@ class TaskCategoryHelpSetter {
      * @return {String} td要素を表すhtmlを返します。
      */
     createDescriptionTd = category => {
-        // TODO：説明の追加
         return this.createTd(`<p>${category.description}</p>`);
     }
 }
