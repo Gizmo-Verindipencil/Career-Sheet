@@ -173,3 +173,13 @@ section#work-experience-report-supplementary {
     border-top: none;
     padding: 1rem;
 }
+
+a.work-experience-report-supplementary-link {
+    display: inline-flex;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+}
+
+img.work-experience-report-supplementary-link-icon {
+    width: 1.2rem;
+}

@@ -431,8 +431,8 @@ class WorkExperienceReportSetter {
      */
     setBusinessRelationshipChart = data => {
         const source = `../supplementary/business-relationship-chart/report.html?id=${data.businessRelationshipId}`;
-        const image = `<img style='width:1.2rem' src='../icon/top-to-right-arrow-in-box.svg'>`;
-        const link = `<a style='font-size:0.8rem;' href='${source}' target='_blank'>ビジネス関係図${image}</a>`;
+        const image = `<img class='work-experience-report-supplementary-link-icon' src='../icon/top-to-right-arrow-in-box.svg'>`;
+        const link = `<a class='work-experience-report-supplementary-link' href='${source}' target='_blank'>ビジネス関係図${image}</a>`;
         $("#work-experience-report-supplementary").append(link);
     }
 }
