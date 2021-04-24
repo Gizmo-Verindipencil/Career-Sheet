@@ -56,7 +56,7 @@ class BusinessRelationshipChartSetter {
             nodes: relationship.nodes.map(x => ({ 
                 id: x.id,
                 fill: {
-                    src: `node-image/${x.id}.png`
+                    src: `node-image/${x.id}.svg`
                 }
             })),
             edges: relationship.edges
