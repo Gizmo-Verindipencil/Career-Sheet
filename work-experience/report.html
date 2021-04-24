@@ -7,7 +7,6 @@
         import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.js";
         import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
         import { WorkExperienceReportSetter } from "../js/setter/work-experience-report-setter.js";
-        import { WorkExperienceReportDetailSetter } from "../js/setter/work-experience-report-detail-setter.js";
 
         const stylesheetLoader = StylesheetSeriesLoader;
         stylesheetLoader.add("css/destyle.css");
@@ -20,12 +19,8 @@
         scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         scriptLoader.load(() => {
             $(document).ready(async() => {
-                const setters = [];
-                setters.push(await WorkExperienceReportSetter.build());
-                setters.push(await WorkExperienceReportDetailSetter.build());
-                for (const setter of setters) {
-                    setter.execute();
-                }
+                const setter = await WorkExperienceReportSetter.build();
+                setter.execute();
             });
         });
     </script>
@@ -147,5 +142,6 @@
         </tbody>
     </table>
     <section id="work-experience-report-detail"></section>
+    <section id="work-experience-report-supplementary"></section>
 </body>
 </html>

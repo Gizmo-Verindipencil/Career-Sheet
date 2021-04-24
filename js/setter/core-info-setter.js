@@ -84,8 +84,8 @@ class CoreInfoSetter {
     }
 
     /**
-     * 生年月日と年齢のセット
-     * @param {Object} data 基本データ
+     * 生年月日と年齢をセットします。
+     * @param {Object} data 基本データ。
      */
     setBirthAndAge = data => {
         const delimiter = "-";
@@ -115,8 +115,8 @@ class CoreInfoSetter {
     }
 
     /**
-     * 入社年月日のセット
-     * @param {Object} data 基本データ
+     * 入社年月日をセットします。
+     * @param {Object} data 基本データ。
      */
     setJoiningCurrentCompany = data => {
         const delimiter = "-";
@@ -134,16 +134,16 @@ class CoreInfoSetter {
     }
 
     /**
-     * 性別のセット
-     * @param {Object} data 基本データ
+     * 性別をセットします。
+     * @param {Object} data 基本データ。
      */
     setSex = data => {
         $("input[name='sex']").val(data.sex);
     }
 
     /**
-     * 郵便番号と住所のセット
-     * @param {Object} data 基本データ
+     * 郵便番号と住所をセットします。
+     * @param {Object} data 基本データ。
      */
     setZipCodeAndAddress = data => {
         // 郵便番号のセット
@@ -156,8 +156,8 @@ class CoreInfoSetter {
     }
 
     /**
-     * 最寄り駅のセット
-     * @param {Object} data 基本データ
+     * 最寄り駅をセットします。
+     * @param {Object} data 基本データ。
      */
     setLocalStation = data => {
         $("input[name='localLine']").val(`${data.localStation.line}  線`);
@@ -165,8 +165,8 @@ class CoreInfoSetter {
     }
 
     /**
-     * 最終学歴と各種学校のセット
-     * @param {Object} data 基本データ
+     * 最終学歴と各種学校をセットします。
+     * @param {Object} data 基本データ。
      */
     setAcademicBackground = data => {
         const set = mainOrSub => {
