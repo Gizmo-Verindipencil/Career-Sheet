@@ -59,7 +59,8 @@ class WorkExperienceRepository {
                             "CL"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N"
             },
             {
                 "no" : "2",
@@ -95,7 +96,8 @@ class WorkExperienceRepository {
                             "T"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N"
             },
             {
                 "no" : "3",
@@ -158,7 +160,8 @@ class WorkExperienceRepository {
                             "D"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-T-NS-M"
             },
             {
                 "no" : "4",
@@ -217,7 +220,8 @@ class WorkExperienceRepository {
                         "name" : "資料雛形整備",
                         "type" : []
                     }
-                ]
+                ],
+                "business-relationship" : "me-N"
             },
             {
                 "no" : "5",
@@ -287,7 +291,8 @@ class WorkExperienceRepository {
                             "C"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A-S"
             },
             {
                 "no" : "6",
@@ -362,7 +367,8 @@ class WorkExperienceRepository {
                         "name" : "調査",
                         "type" : []
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A-S"
             },
             {
                 "no" : "7",
@@ -422,7 +428,8 @@ class WorkExperienceRepository {
                             "UT"
                         ]
                     },
-                ]
+                ],
+                "business-relationship" : "me-N-A-P"
             },
             {
                 "no" : "8",
@@ -503,7 +510,8 @@ class WorkExperienceRepository {
                             "C"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A-P"
             },
             {
                 "no" : "9",
@@ -547,7 +555,8 @@ class WorkExperienceRepository {
                             "UT"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A"
             },
             {
                 "no" : "10",
@@ -617,7 +626,8 @@ class WorkExperienceRepository {
                         "name" : "設計レビュー",
                         "type" : []
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A-SN"
             },
             {
                 "no" : "11",
@@ -683,7 +693,8 @@ class WorkExperienceRepository {
                         "name" : "ツールに関する調査",
                         "type" : []
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A-D"
             },
             {
                 "no" : "12",
@@ -760,7 +771,8 @@ class WorkExperienceRepository {
                             "IT"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A-H"
             },
             {
                 "no" : "13",
@@ -834,7 +846,8 @@ class WorkExperienceRepository {
                             "IT"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A-P"
             },
             {
                 "no" : "14",
@@ -883,7 +896,8 @@ class WorkExperienceRepository {
                         "name" : "調査",
                         "type" : []
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A-?"
             },
             {
                 "no" : "15",
@@ -942,7 +956,8 @@ class WorkExperienceRepository {
                             "ST"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-B-NC-?"
             },
             {
                 "no" : "16",
@@ -1029,7 +1044,8 @@ class WorkExperienceRepository {
                             "DP"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "17",
@@ -1112,7 +1128,8 @@ class WorkExperienceRepository {
                             "DP"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "18",
@@ -1166,7 +1183,8 @@ class WorkExperienceRepository {
                         "name" : "開発環境構築",
                         "type" : []
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "19",
@@ -1218,7 +1236,8 @@ class WorkExperienceRepository {
                             "DP"
                         ]
                     },
-                ]
+                ],
+                "business-relationship" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "20",
@@ -1296,7 +1315,8 @@ class WorkExperienceRepository {
                             "DP"
                         ]
                     },
-                ]
+                ],
+                "business-relationship" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "21",
@@ -1398,7 +1418,8 @@ class WorkExperienceRepository {
                         "name" : "作業管理",
                         "type" : []
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "22",
@@ -1440,7 +1461,8 @@ class WorkExperienceRepository {
                             "RE"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "23",
@@ -1537,7 +1559,8 @@ class WorkExperienceRepository {
                         "name" : "作業管理",
                         "type" : []
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "24",
@@ -1591,7 +1614,8 @@ class WorkExperienceRepository {
                         "name" : "レビュー",
                         "type" : []
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A"
             },
             {
                 "no" : "25",
@@ -1635,7 +1659,8 @@ class WorkExperienceRepository {
                             "C"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A"
             },
             {
                 "no" : "26",
@@ -1708,7 +1733,8 @@ class WorkExperienceRepository {
                             "IT"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A-P"
             },
             {
                 "no" : "27",
@@ -1783,7 +1809,8 @@ class WorkExperienceRepository {
                             "D"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A-P-TM"
             },
             {
                 "no" : "28",
@@ -1828,7 +1855,8 @@ class WorkExperienceRepository {
                             "RE"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A"
             },
             {
                 "no" : "29",
@@ -1870,7 +1898,8 @@ class WorkExperienceRepository {
                             "HLD"
                         ]
                     }
-                ]
+                ],
+                "business-relationship" : "me-N-A-P"
             }
         ];
     }
