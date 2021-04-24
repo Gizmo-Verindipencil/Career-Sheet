@@ -52,7 +52,8 @@ class WorkExperienceReportSetter {
 
         // データがなければ終了
         if (!experience) {
-            this.clear();
+            this.clearHeader();
+            this.setNoDataNotification();
             return;
         }
 
@@ -73,6 +74,9 @@ class WorkExperienceReportSetter {
         this.setPhase6(experience);
         this.setPhase7(experience);
         this.setPhase8(experience);
+
+        // 詳細のセット
+        this.setDetail(experience);
 
         // ビジネス関係図のセット
         this.setBusinessRelationshipChart(experience);
@@ -376,7 +380,7 @@ class WorkExperienceReportSetter {
     /**
      * 職務経歴レポート(ヘッダー)の全項目をクリアします。
      */
-    clear = () => {
+    clearHeader = () => {
         // No.のクリア
         $("input[name='number']").val("");
 
@@ -404,6 +408,21 @@ class WorkExperienceReportSetter {
         for (let i = 1; i < 9; i++) {
             $(`input[name='phase${i}']`).val("");
         }
+    }
+
+    /**
+     * 詳細ページの設定を行います。
+     * @param {Object} data 職務経歴データ。
+     */
+     setDetail = data => {
+        $("#work-experience-report-detail").load(`${data.no}\\detail.html`);
+    }
+
+    /**
+     * データなしを示す表示の設定を行います。
+     */
+    setNoDataNotification = () => {
+        $("#work-experience-report-detail").html("<p>NO DATA</p>");
     }
 
     /**
