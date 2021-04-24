@@ -430,7 +430,7 @@ class WorkExperienceReportSetter {
      * @param {Object}} data 職務経歴データ。
      */
     setBusinessRelationshipChart = data => {
-        const source = `../supplementary/business-relationship-chart/report.html?id=${data.businessRelationshipId}`;
+        const source = `../supplementary/business-relationship-chart.html?id=${data.businessRelationshipId}`;
         const image = `<img class='work-experience-report-supplementary-link-icon' src='../icon/top-to-right-arrow-in-box.svg'>`;
         const link = `<a class='work-experience-report-supplementary-link' href='${source}' target='_blank'>ビジネス関係図${image}</a>`;
         $("#work-experience-report-supplementary").append(link);
