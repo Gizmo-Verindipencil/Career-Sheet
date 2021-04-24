@@ -35,7 +35,7 @@ class CareerSheetSetter {
      */
     execute = () => {
         // ページを読込してセット
-        let urls = [];
+        const urls = [];
         urls.push("core-info.html");
         urls.push("work-experience.html");
         urls.push("qualification.html");
