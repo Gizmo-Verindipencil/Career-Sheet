@@ -73,6 +73,9 @@ class WorkExperienceReportSetter {
         this.setPhase6(experience);
         this.setPhase7(experience);
         this.setPhase8(experience);
+
+        // ビジネス関係図のセット
+        this.setBusinessRelationshipChart(experience);
     }
 
     /**
@@ -401,6 +404,17 @@ class WorkExperienceReportSetter {
         for (let i = 1; i < 9; i++) {
             $(`input[name='phase${i}']`).val("");
         }
+    }
+
+    /**
+     * ビジネス関係図の設定を行います。
+     * @param {Object}} data 職務経歴データ。
+     */
+    setBusinessRelationshipChart = data => {
+        const source = `../supplementary/business-relationship-chart/report.html?${data.businessRelationshipId}`;
+        const image = `<img style='width:1.2rem' src='../icon/top-to-right-arrow-in-box.svg'>`;
+        const link = `<a style='font-size:0.8rem;' href='${source}' target='_blank'>ビジネス関係図${image}</a>`;
+        $("#work-experience-report-supplementary").append(link);
     }
 }
 

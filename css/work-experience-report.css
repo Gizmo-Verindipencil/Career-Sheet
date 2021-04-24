@@ -167,3 +167,9 @@ section#work-experience-report-detail {
     border-top: none;
     padding: 1rem;
 }
+
+section#work-experience-report-supplementary {
+    border: solid 0.01rem #000;
+    border-top: none;
+    padding: 1rem;
+}
