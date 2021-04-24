@@ -35,7 +35,7 @@ class BusinessRelationshipChartSetter {
     }
 
     /**
-     * 関係図の設定を実行します。
+     * ビジネス関係図の設定を実行します。
      */
     execute = () => {
         // ビジネス関係データを取得
@@ -81,7 +81,7 @@ class BusinessRelationshipChartSetter {
     }
 
     /**
-     * ノード説明を設定します。
+     * ノード説明の設定を行います。
      * @param {Object} relationship ビジネス関係データ
      */
     setNodeDescription = relationship => {
