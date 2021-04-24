@@ -44,24 +44,24 @@ class TaskCategoryHelpSetter {
     execute = () => {
         // 作業カテゴリデータを取得
         const repository = new TaskCategoryRepository();
-        const types = repository.getAll();
+        const categories = repository.getAll();
 
         // ソート順で並べる
-        types.sort((a, b) => {
+        categories.sort((a, b) => {
             return a.sort > b.sort ? 1 : -1;
         });
 
         // データ毎の処理
-        for (let i = 0; i < types.length;  i++) {
-            const type = types[i];
+        for (let i = 0; i < categories.length;  i++) {
+            const category = categories[i];
 
             // td要素を生成
             const cells = [];
             cells.push(this.createNoTd(i));
-            cells.push(this.createCodeTd(type));
-            cells.push(this.createNamesTd(type));
-            cells.push(this.createDescriptionTd(type));
-            cells.push(this.createChildTaskTd(type));
+            cells.push(this.createCodeTd(category));
+            cells.push(this.createNamesTd(category));
+            cells.push(this.createDescriptionTd(category));
+            cells.push(this.createChildTaskTd(category));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
