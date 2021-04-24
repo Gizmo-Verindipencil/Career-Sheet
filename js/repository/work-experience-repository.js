@@ -60,7 +60,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N"
+                "businessRelationshipId" : "me-N"
             },
             {
                 "no" : "2",
@@ -97,7 +97,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N"
+                "businessRelationshipId" : "me-N"
             },
             {
                 "no" : "3",
@@ -161,7 +161,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-T-NS-M"
+                "businessRelationshipId" : "me-N-T-NS-M"
             },
             {
                 "no" : "4",
@@ -221,7 +221,7 @@ class WorkExperienceRepository {
                         "type" : []
                     }
                 ],
-                "business-relationship" : "me-N"
+                "businessRelationshipId" : "me-N"
             },
             {
                 "no" : "5",
@@ -292,7 +292,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-A-S"
+                "businessRelationshipId" : "me-N-A-S"
             },
             {
                 "no" : "6",
@@ -368,7 +368,7 @@ class WorkExperienceRepository {
                         "type" : []
                     }
                 ],
-                "business-relationship" : "me-N-A-S"
+                "businessRelationshipId" : "me-N-A-S"
             },
             {
                 "no" : "7",
@@ -429,7 +429,7 @@ class WorkExperienceRepository {
                         ]
                     },
                 ],
-                "business-relationship" : "me-N-A-P"
+                "businessRelationshipId" : "me-N-A-P"
             },
             {
                 "no" : "8",
@@ -511,7 +511,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-A-P"
+                "businessRelationshipId" : "me-N-A-P"
             },
             {
                 "no" : "9",
@@ -556,7 +556,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-A"
+                "businessRelationshipId" : "me-N-A"
             },
             {
                 "no" : "10",
@@ -627,7 +627,7 @@ class WorkExperienceRepository {
                         "type" : []
                     }
                 ],
-                "business-relationship" : "me-N-A-SN"
+                "businessRelationshipId" : "me-N-A-SN"
             },
             {
                 "no" : "11",
@@ -694,7 +694,7 @@ class WorkExperienceRepository {
                         "type" : []
                     }
                 ],
-                "business-relationship" : "me-N-A-D"
+                "businessRelationshipId" : "me-N-A-D"
             },
             {
                 "no" : "12",
@@ -772,7 +772,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-A-H"
+                "businessRelationshipId" : "me-N-A-H"
             },
             {
                 "no" : "13",
@@ -847,7 +847,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-A-P"
+                "businessRelationshipId" : "me-N-A-P"
             },
             {
                 "no" : "14",
@@ -897,7 +897,7 @@ class WorkExperienceRepository {
                         "type" : []
                     }
                 ],
-                "business-relationship" : "me-N-A-?"
+                "businessRelationshipId" : "me-N-A-?"
             },
             {
                 "no" : "15",
@@ -957,7 +957,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-B-NC-?"
+                "businessRelationshipId" : "me-N-B-NC-?"
             },
             {
                 "no" : "16",
@@ -1045,7 +1045,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-(A,NE,T)-H"
+                "businessRelationshipId" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "17",
@@ -1129,7 +1129,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-(A,NE,T)-H"
+                "businessRelationshipId" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "18",
@@ -1184,7 +1184,7 @@ class WorkExperienceRepository {
                         "type" : []
                     }
                 ],
-                "business-relationship" : "me-N-(A,NE,T)-H"
+                "businessRelationshipId" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "19",
@@ -1237,7 +1237,7 @@ class WorkExperienceRepository {
                         ]
                     },
                 ],
-                "business-relationship" : "me-N-(A,NE,T)-H"
+                "businessRelationshipId" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "20",
@@ -1316,7 +1316,7 @@ class WorkExperienceRepository {
                         ]
                     },
                 ],
-                "business-relationship" : "me-N-(A,NE,T)-H"
+                "businessRelationshipId" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "21",
@@ -1419,7 +1419,7 @@ class WorkExperienceRepository {
                         "type" : []
                     }
                 ],
-                "business-relationship" : "me-N-(A,NE,T)-H"
+                "businessRelationshipId" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "22",
@@ -1462,7 +1462,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-(A,NE,T)-H"
+                "businessRelationshipId" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "23",
@@ -1560,7 +1560,7 @@ class WorkExperienceRepository {
                         "type" : []
                     }
                 ],
-                "business-relationship" : "me-N-(A,NE,T)-H"
+                "businessRelationshipId" : "me-N-(A,NE,T)-H"
             },
             {
                 "no" : "24",
@@ -1615,7 +1615,7 @@ class WorkExperienceRepository {
                         "type" : []
                     }
                 ],
-                "business-relationship" : "me-N-A"
+                "businessRelationshipId" : "me-N-A"
             },
             {
                 "no" : "25",
@@ -1660,7 +1660,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-A"
+                "businessRelationshipId" : "me-N-A"
             },
             {
                 "no" : "26",
@@ -1734,7 +1734,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-A-P"
+                "businessRelationshipId" : "me-N-A-P"
             },
             {
                 "no" : "27",
@@ -1810,7 +1810,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-A-P-TM"
+                "businessRelationshipId" : "me-N-A-P-TM"
             },
             {
                 "no" : "28",
@@ -1856,7 +1856,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-A"
+                "businessRelationshipId" : "me-N-A"
             },
             {
                 "no" : "29",
@@ -1899,7 +1899,7 @@ class WorkExperienceRepository {
                         ]
                     }
                 ],
-                "business-relationship" : "me-N-A-P"
+                "businessRelationshipId" : "me-N-A-P"
             }
         ];
     }
