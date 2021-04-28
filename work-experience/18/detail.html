@@ -8,7 +8,7 @@
 <body>
     <strong>背景:</strong>
     <p class="work-experience-report-detail-summary">
-        （引き続きA社で）ソースコードや開発環境がどうなっているのか不明なシステムの保守契約が結ばれていたのですが、このシステムで修正が発生する為、保守チームで状況の調査をしていました。しかしながら、何も分からないとのことで、調査をこちらが引継することになりました。
+        （引き続きA社で）今後の改訂等にも対応するというような前提で保守契約が結ばれていたシステムがありました。このシステムについて、消費税対応を行う必要があるものの、ソースコードや開発環境などがどこにあるか不明な状態でした。これに関して、当時の担当者は既にいない中で保守チームが調査をしていましたが、手に負えないという事で私が仕事を引き取ることになりました。
     </p>
 
     <strong>概要:</strong>
@@ -26,19 +26,26 @@
         このシステムは次の経緯から、既に開発できる状態ではありませんでした。
     </p>
     <ul class="work-experience-report-detail-list">
-        <li class="work-experience-report-detail-list-child-title">経緯</li>
+        <li class="work-experience-report-detail-list-child-title">経緯確認</li>
         <p class="work-experience-report-detail-list-child-text">
-            顧客が開発ベンダーと喧嘩別れした。開発環境は当時の開発ベンダーにしかなく、詳細が分からない。色々なOSSを使っていた形跡があるが、詳細は分からない。またソースコードを受領していませんでした。（これは後に当時の開発ベンダーに問い合せて、ソースコードの "一部" を貰うことができました。）
+            ユーザーはこのシステムを構築した開発ベンダーと喧嘩別れをしていました。開発環境自体は、痕跡や資料から見るに、Jenkinsを使った単体テストの自動化等を採用したものでしたが、そういったものはユーザーの資材には見当たりませんでした。当時の資料などを調べることで、どうやら開発環境は当時の開発ベンダーの社内環境であることが分かりました。またソースコードも受領していませんでした。結局のところ、当時の開発ベンダーに問い合わせを行い、ソースコードの一部は入手することができました。
         </p>
-        <!-- <img class="work-experience-report-detail-list-child-image" src="18\1.png" alt="経緯"> -->
-        <li class="work-experience-report-detail-list-child-title">課題</li>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="18\1.png" alt="経緯確認"> -->
+        <li class="work-experience-report-detail-list-child-title">技術調査</li>
         <p class="work-experience-report-detail-list-child-text">
-            ・ソースコードが足りない為、intra-martというプラットフォームを使って開発していましたが、正規の手順でデプロイすることができない。（intra-mart自体のデプロイ用中間ファイルはコンパイルはソースコードやフレームワークが不足しても出力することができるようでした。）<br>
-            <br>
-            ・ドキュメント類は全て正しくないように思われました。2015～2017年にかけて開発されたプロジェクトではありますが、最終納品されたドキュメントの更新日は2015年であった。当時の作業記録を見る限り、それはモック作成時のもので、その後の20数回の改訂が反映されていないように見えました。
+            intra-martというWEBプラットフォームを利用してシステムを構築していました。ソースコード等が足りない為、公式ドキュメントに記載のある正規の方法でデプロイすることが困難でした。正規手段以外での手動デプロイは、サポートの対象外となるので、システム改修はできそうにないという結論に至りました。
         </p>
-        <!-- <img class="work-experience-report-detail-list-child-image" src="18\2.png" alt="課題"> -->
-        上記から、改訂を行う事は難しいという結論に到達し、実態を顧客にご説明しました。
+        <!-- <img class="work-experience-report-detail-list-child-image" src="18\2.png" alt="技術調査"> -->
+        <li class="work-experience-report-detail-list-child-title">資料捜索</li>
+        <p class="work-experience-report-detail-list-child-text">
+            ユーザーが提供したドキュメント類は全てが最新版ではないように思いました。2015～2017年にかけて開発されたシステムでしたが、渡されたドキュメントの更新日は2015年でした。当時の作業記録を調べましたが、その資料はモック作成時点のものであり、その後の20数回の改訂が反映されていないようでした。ユーザー担当者に、当時の作業フォルダを教えてもらい、そこで比較的タイムスタンプが新しそうなドキュメントを探しました。結果的に、喧嘩別れで中断することになった改訂の設計書を見つけることができ、こちらの方がマシだと思い、それを採用することにしました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="18\3.png" alt="資料捜索"> -->
+        <li class="work-experience-report-detail-list-child-title">顧客説明</li>
+        <p class="work-experience-report-detail-list-child-text">
+            A社側にこのシステムの有識者がいないこと、参考になりそうなドキュメントもないこと、完全な状態のソースコードを所有していないこと、等を理由にプログラムの改修が難しいことをご説明しました。一先ずは納得してもらいましたが、ユーザーもこの改修なしでは運用業務が停止してしまう為、ユーザー内部で運用対応を検討するということになりました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="18\4.png" alt="顧客説明"> -->
     </ul>
 </body>
 </html>
