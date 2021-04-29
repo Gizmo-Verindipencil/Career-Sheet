@@ -71,6 +71,8 @@ class WorkExperienceSetter {
             return b.no - a.no;
         });
 
+        // 追加するtr要素を生成
+        const rows = [];
         for (const experience of experiences) {
             // td要素を生成
             const cells = [];
@@ -82,20 +84,52 @@ class WorkExperienceSetter {
             cells.push(this.createTaskType(experience));
             cells.push(this.createReportLinkTd(experience));
 
-            // tr要素を生成してテーブルに追加
-            if (firstLoading) {
-                // 初回の読込
-                const row = `<tr>${cells.join("")}</tr>`;
-                $("#work-experience tr:last").after(row);
-            }
-            else
-            {
-                // 追加の読込
-                const row = $(`<tr>${cells.join("")}</tr>`).hide();
-                $("#work-experience tr:last").after(row);
-                row.show("slow");
-            }
+            // tr要素を追加
+            const row = $(`<tr>${cells.join("")}</tr>`);
+            rows.push(row);
         }
+        
+        if (firstLoading) {
+            // 初回はアニメーションなしで追加
+            rows.forEach(x => $("#work-experience tr:last").after(x));
+        }
+        else
+        {
+            // 2回目以降はアニメーションありで追加
+            this.appendRowsWithAnimation(rows);
+        }
+    }
+
+    /**
+     * アニメーション付きの行追加を行います。
+     * @param {Array<Object>} rows 追加する行。
+     */
+    appendRowsWithAnimation = rows => {
+        // 行を追加する処理
+        const appendRow = () => {
+            // tr要素がなければ終了
+            if (rows.length === 0) {
+                return;
+            }
+
+            // tr要素を追加
+            const row = rows.shift();
+            $("#work-experience tr:last").after(row);
+
+            // 初回以降はアニメーションさせる
+            row.find("td")
+            .wrapInner("<div style='display:none;' />")
+            .parent()
+            .find("td > div")
+            .slideDown("slow", function() {
+                const cell = $(this);
+                cell.replaceWith(cell.contents());
+                appendRow();
+            });
+        }
+
+        // 処理を実行
+        appendRow();
     }
 
     /**
