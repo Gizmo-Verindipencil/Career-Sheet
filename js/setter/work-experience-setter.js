@@ -82,18 +82,20 @@ class WorkExperienceSetter {
             cells.push(this.createTaskType(experience));
             cells.push(this.createReportLinkTd(experience));
 
-            // tr要素を生成してテーブルに追加
-            if (firstLoading) {
-                // 初回の読込
-                const row = `<tr>${cells.join("")}</tr>`;
-                $("#work-experience tr:last").after(row);
-            }
-            else
-            {
-                // 追加の読込
-                const row = $(`<tr>${cells.join("")}</tr>`).hide();
-                $("#work-experience tr:last").after(row);
-                row.show("slow");
+            // tr要素を追加
+            const row = $(`<tr>${cells.join("")}</tr>`);
+            $("#work-experience tr:last").after(row);
+
+            // 初回以降はアニメーションさせる
+            if (!firstLoading) {
+                row.find("td")
+                .wrapInner("<div style='display:none;' />")
+                .parent()
+                .find("td > div")
+                .slideDown("slow", () => {
+                    const cell = $(this);
+                    cell.replaceWith(cell.contents());
+                });
             }
         }
     }
