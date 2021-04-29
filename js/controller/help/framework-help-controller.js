@@ -1,12 +1,12 @@
-import { DatabaseRepository } from "../../repository/database-repository.js";
+import { FrameworkRepository } from "../../repository/framework-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(データベース)の設定処理を提供します。
+ * ヘルプ(フレームワーク)の設定処理を提供します。
  */
-class DbHelpSetter {
+class FrameworkHelpController {
     /**
      * インスタンスを初期化します。
      */
@@ -15,7 +15,7 @@ class DbHelpSetter {
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
         this.stylesheetLoader.load();
-
+        
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
@@ -24,41 +24,41 @@ class DbHelpSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {DbHelpSetter} 新しいインスタンスを返します。
+     * @returns {FrameworkHelpController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new DbHelpSetter();
+        const controller = new FrameworkHelpController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
      * ヘルプの設定を実行します。
      */
     execute = () => {
-        // DBデータを取得
-        const repository = new DatabaseRepository();
-        const dbs = repository.getAll();
+        // フレームワークデータを取得
+        const repository = new FrameworkRepository();
+        const frameworks = repository.getAll();
 
         // 名前の昇順で並べる
-        dbs.sort((a, b) => {
+        frameworks.sort((a, b) => {
             return a.name > b.name ? 1 : -1;
         });
 
         // データ毎の処理
-        for (let i = 0; i < dbs.length;  i++) {
-            const db = dbs[i];
+        for (let i = 0; i < frameworks.length;  i++) {
+            const framework = frameworks[i];
 
             // td要素を生成
             const cells = [];
             cells.push(this.createNoTd(i));
-            cells.push(this.createNameTd(db));
-            cells.push(this.createDescriptionTd(db));
+            cells.push(this.createNameTd(framework));
+            cells.push(this.createDescriptionTd(framework));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
@@ -86,23 +86,23 @@ class DbHelpSetter {
 
     /**
      * 名称のtd要素を生成します。
-     * @param {Object} db DBデータ。
+     * @param {Object} framework フレームワークデータ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createNameTd = db => {
+    createNameTd = framework => {
         const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p class="${classPrefix}-database" style="${noWrap}">${db.name}</p>`);
+        return this.createTd(`<p class="${classPrefix}-framework" style="${noWrap}">${framework.name}</p>`);
     }
 
     /**
      * 説明のtd要素を生成します。
-     * @param {Object} db DBデータ。
+     * @param {Object} framework フレームワークデータ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createDescriptionTd = db => {
-        return this.createTd(`<p>${db.description}</p>`);
+    createDescriptionTd = framework => {
+        return this.createTd(`<p>${framework.description}</p>`);
     }
 }
 
-export { DbHelpSetter };
+export { FrameworkHelpController };

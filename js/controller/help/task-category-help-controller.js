@@ -7,7 +7,7 @@ import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 /**
  * ヘルプ(作業カテゴリ)の設定処理を提供します。
  */
-class TaskCategoryHelpSetter {
+class TaskCategoryHelpController {
     /**
      * インスタンスを初期化します。
      */
@@ -25,17 +25,17 @@ class TaskCategoryHelpSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {TaskCategoryHelpSetter} 新しいインスタンスを返します。
+     * @returns {TaskCategoryHelpController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new TaskCategoryHelpSetter();
+        const controller = new TaskCategoryHelpController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
@@ -140,4 +140,4 @@ class TaskCategoryHelpSetter {
     }
 }
 
-export { TaskCategoryHelpSetter };
+export { TaskCategoryHelpController };

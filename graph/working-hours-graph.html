@@ -6,7 +6,7 @@
     <script language="javascript" type="module">
         import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.js";
         import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
-        import { WorkingHoursGraphSetter } from "../js/setter/graph/working-hours-graph-setter.js";
+        import { WorkingHoursGraphController } from "../js/controller/graph/working-hours-graph-controller.js";
 
         const stylesheetLoader = StylesheetSeriesLoader;
         stylesheetLoader.add("css/destyle.css");
@@ -20,8 +20,8 @@
         scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         scriptLoader.load(() => {
             $(document).ready(async() => {
-                const setter = await WorkingHoursGraphSetter.build();
-                setter.execute();    
+                const controller = await WorkingHoursGraphController.build();
+                controller.execute();    
             });
         });
     </script>

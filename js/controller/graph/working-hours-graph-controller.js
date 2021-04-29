@@ -5,7 +5,7 @@ import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 /**
  * 実働時間グラフの設定処理を提供します。
  */
-class WorkingHoursGraphSetter {
+class WorkingHoursGraphController {
     /**
      * インスタンスを初期化します。
      */
@@ -18,17 +18,17 @@ class WorkingHoursGraphSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {WorkingHoursGraphSetter} 新しいインスタンスを返します。
+     * @returns {WorkingHoursGraphController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new WorkingHoursGraphSetter();
+        const controller = new WorkingHoursGraphController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running) {
+        while(controller.scriptLoader.running) {
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
@@ -123,4 +123,4 @@ class WorkingHoursGraphSetter {
     }
 }
 
-export { WorkingHoursGraphSetter };
+export { WorkingHoursGraphController };

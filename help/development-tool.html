@@ -6,7 +6,7 @@
     <script language="javascript" type="module">
         import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.js";
         import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
-        import { DevelopmentToolHelpSetter } from "../js/setter/help/development-tool-help-setter.js";
+        import { DevelopmentToolHelpController } from "../js/controller/help/development-tool-help-controller.js";
 
         const stylesheetLoader = StylesheetSeriesLoader;
         stylesheetLoader.add("css/destyle.css");
@@ -19,8 +19,8 @@
         scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         scriptLoader.load(() => {
             $(document).ready(async() => {
-                const setter = await DevelopmentToolHelpSetter.build();
-                setter.execute();
+                const controller = await DevelopmentToolHelpController.build();
+                controller.execute();
             });
         });
     </script>

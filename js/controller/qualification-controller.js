@@ -5,7 +5,7 @@ import ScriptSeriesLoader from "../shared/script-series-loader.js"
 /**
  * 資格・免許の設定処理を提供します。
  */
-class QualificationSetter {
+class QualificationController {
     /**
      * インスタンスを初期化します。
      */
@@ -18,17 +18,17 @@ class QualificationSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {QualificationSetter} 新しいインスタンスを返します。
+     * @returns {QualificationController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new QualificationSetter();
+        const controller = new QualificationController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
     
     /**
@@ -45,4 +45,4 @@ class QualificationSetter {
     }
 }
 
-export { QualificationSetter };
+export { QualificationController };

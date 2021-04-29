@@ -4,7 +4,7 @@ import ScriptSeriesLoader from "../shared/script-series-loader.js"
 /**
  * 職務経歴書の設定処理を提供します。
  */
-class CareerSheetSetter {
+class CareerSheetController {
     /**
      * インスタンスを初期化します。
      */
@@ -17,17 +17,17 @@ class CareerSheetSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {CareerSheetSetter} 新しいインスタンスを返します。
+     * @returns {CareerSheetController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new CareerSheetSetter();
+        const controller = new CareerSheetController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
@@ -76,4 +76,4 @@ class CareerSheetSetter {
     } 
 }
 
-export { CareerSheetSetter };
+export { CareerSheetController };

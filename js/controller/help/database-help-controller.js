@@ -1,12 +1,12 @@
-import { TaskTypeRepository } from "../../repository/task-type-repository.js";
+import { DatabaseRepository } from "../../repository/database-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(作業分類)の設定処理を提供します。
+ * ヘルプ(データベース)の設定処理を提供します。
  */
-class TaskTypeHelpSetter {
+class DbHelpController {
     /**
      * インスタンスを初期化します。
      */
@@ -15,7 +15,7 @@ class TaskTypeHelpSetter {
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
         this.stylesheetLoader.load();
-        
+
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
@@ -24,42 +24,41 @@ class TaskTypeHelpSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {TaskTypeHelpSetter} 新しいインスタンスを返します。
+     * @returns {DbHelpController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new TaskTypeHelpSetter();
+        const controller = new DbHelpController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
      * ヘルプの設定を実行します。
      */
     execute = () => {
-        // 作業分類データを取得
-        const repository = new TaskTypeRepository();
-        const types = repository.getAll();
+        // DBデータを取得
+        const repository = new DatabaseRepository();
+        const dbs = repository.getAll();
 
-        // ソート順で並べる
-        types.sort((a, b) => {
-            return a.sort > b.sort ? 1 : -1;
+        // 名前の昇順で並べる
+        dbs.sort((a, b) => {
+            return a.name > b.name ? 1 : -1;
         });
 
         // データ毎の処理
-        for (let i = 0; i < types.length;  i++) {
-            const type = types[i];
+        for (let i = 0; i < dbs.length;  i++) {
+            const db = dbs[i];
 
             // td要素を生成
             const cells = [];
             cells.push(this.createNoTd(i));
-            cells.push(this.createCodeTd(type));
-            cells.push(this.createNamesTd(type));
-            cells.push(this.createDescriptionTd(type));
+            cells.push(this.createNameTd(db));
+            cells.push(this.createDescriptionTd(db));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
@@ -86,37 +85,24 @@ class TaskTypeHelpSetter {
     }
 
     /**
-     * コードのtd要素を生成します。
-     * @param {Object} type 作業分類データ。
+     * 名称のtd要素を生成します。
+     * @param {Object} db DBデータ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createCodeTd = type => {
-        const style = "work-experience-task-type-unknown";
-        return this.createTd(`<p class="${style}">${type.id}</p>`);
-    }
-
-    /**
-     * 名称(日本語/英語)のtd要素を生成します。
-     * @param {Object} type 作業分類データ。
-     * @return {String} td要素を表すhtmlを返します。
-     */
-    createNamesTd = type => {
+    createNameTd = db => {
+        const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        const tds = [];
-        tds.push(this.createTd(`<p style="${noWrap}">${type.name.ja}</p>`));
-        tds.push(this.createTd(`<p style="${noWrap}">${type.name.en}</p>`));
-        return tds.join("");
+        return this.createTd(`<p class="${classPrefix}-database" style="${noWrap}">${db.name}</p>`);
     }
 
     /**
      * 説明のtd要素を生成します。
-     * @param {Object} type 作業分類データ。
+     * @param {Object} db DBデータ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createDescriptionTd = type => {
-        // TODO：説明の追加
-        return this.createTd(`<p></p>`);
+    createDescriptionTd = db => {
+        return this.createTd(`<p>${db.description}</p>`);
     }
 }
 
-export { TaskTypeHelpSetter };
+export { DbHelpController };

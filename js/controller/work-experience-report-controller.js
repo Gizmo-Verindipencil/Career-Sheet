@@ -6,7 +6,7 @@ import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.js";
 /**
  * 職務経歴レポート(ヘッダー)の設定処理を提供します。
  */
-class WorkExperienceReportSetter {
+class WorkExperienceReportController {
     /**
      * インスタンスを初期化します。
      */
@@ -24,17 +24,17 @@ class WorkExperienceReportSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {WorkExperienceReportSetter} 新しいインスタンスを返します。
+     * @returns {WorkExperienceReportController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new WorkExperienceReportSetter();
+        const controller = new WorkExperienceReportController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running) {
+        while(controller.scriptLoader.running) {
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
@@ -437,4 +437,4 @@ class WorkExperienceReportSetter {
     }
 }
 
-export { WorkExperienceReportSetter };
+export { WorkExperienceReportController };

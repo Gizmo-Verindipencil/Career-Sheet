@@ -1,12 +1,12 @@
-import { OtherRepository } from "../../repository/other-repository.js";
+import { PlatformRepository } from "../../repository/platform-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(その他技術)の設定処理を提供します。
+ * ヘルプ(プラットフォーム)の設定処理を提供します。
  */
-class OtherHelpSetter {
+class PlatformHelpController {
     /**
      * インスタンスを初期化します。
      */
@@ -24,41 +24,41 @@ class OtherHelpSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {OtherHelpSetter} 新しいインスタンスします。
+     * @returns {PlatformHelpController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new OtherHelpSetter();
+        const controller = new PlatformHelpController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
-
+    
     /**
      * ヘルプの設定を実行します。
      */
     execute = () => {
-        // その他技術データを取得
-        const repository = new OtherRepository();
-        const others = repository.getAll();
+        // プラットフォームデータを取得
+        const repository = new PlatformRepository();
+        const platforms = repository.getAll();
 
         // 名前の昇順で並べる
-        others.sort((a, b) => {
+        platforms.sort((a, b) => {
             return a.name > b.name ? 1 : -1;
         });
 
         // データ毎の処理
-        for (let i = 0; i < others.length;  i++) {
-            const other = others[i];
+        for (let i = 0; i < platforms.length;  i++) {
+            const platform = platforms[i];
 
             // td要素を生成
             const cells = [];
             cells.push(this.createNoTd(i));
-            cells.push(this.createNameTd(other));
-            cells.push(this.createDescriptionTd(other));
+            cells.push(this.createNameTd(platform));
+            cells.push(this.createDescriptionTd(platform));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
@@ -86,23 +86,23 @@ class OtherHelpSetter {
 
     /**
      * 名称のtd要素を生成します。
-     * @param {Object} other その他技術データ。
+     * @param {Object} platform プラットフォームデータ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createNameTd = other => {
+    createNameTd = platform => {
         const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p class="${classPrefix}-other" style="${noWrap}">${other.name}</p>`);
+        return this.createTd(`<p class="${classPrefix}-platform" style="${noWrap}">${platform.name}</p>`);
     }
 
     /**
      * 説明のtd要素を生成します。
-     * @param {Object} other その他技術データ。
+     * @param {Object} platform プラットフォームデータ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createDescriptionTd = other => {
-        return this.createTd(`<p>${other.description}</p>`);
+    createDescriptionTd = platform => {
+        return this.createTd(`<p>${platform.description}</p>`);
     }
 }
 
-export { OtherHelpSetter };
+export { PlatformHelpController };

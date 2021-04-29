@@ -6,7 +6,7 @@ import ScriptSeriesLoader from "../shared/script-series-loader.js"
 /**
  * 作業種類一覧の設定処理を提供します。
  */
-class TaskTypeListSetter {
+class TaskTypeListController {
     /**
      * インスタンスを初期化します。
      */
@@ -19,17 +19,17 @@ class TaskTypeListSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {TaskTypeListSetter} 新しいインスタンスを返します。
+     * @returns {TaskTypeListController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new TaskTypeListSetter();
+        const controller = new TaskTypeListController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
@@ -72,4 +72,4 @@ class TaskTypeListSetter {
     }
 }
 
-export { TaskTypeListSetter };
+export { TaskTypeListController };
