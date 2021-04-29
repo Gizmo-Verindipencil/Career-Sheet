@@ -5,7 +5,7 @@ import ScriptSeriesLoader from "../shared/script-series-loader.js"
 /**
  * 基本情報の設定処理を提供します。
  */
-class CoreInfoSetter {
+class CoreInfoController {
     /**
      * インスタンスを初期化します。
      */
@@ -18,17 +18,17 @@ class CoreInfoSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {CoreInfoSetter} 新しいインスタンスを返します。
+     * @returns {CoreInfoController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new CoreInfoSetter();
+        const controller = new CoreInfoController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
@@ -193,4 +193,4 @@ class CoreInfoSetter {
     }
 }
 
-export { CoreInfoSetter };
+export { CoreInfoController };

@@ -6,7 +6,7 @@ import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 /**
  * ヘルプ(開発ツール)の設定処理を提供します。
  */
-class DevelopmentToolHelpSetter {
+class DevelopmentToolHelpController {
     /**
      * インスタンスを初期化します。
      */
@@ -24,17 +24,17 @@ class DevelopmentToolHelpSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {DevelopmentToolHelpSetter} 新しいインスタンスを返します。
+     * @returns {DevelopmentToolHelpController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new DevelopmentToolHelpSetter();
+        const controller = new DevelopmentToolHelpController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
@@ -105,4 +105,4 @@ class DevelopmentToolHelpSetter {
     }
 }
 
-export { DevelopmentToolHelpSetter };
+export { DevelopmentToolHelpController };

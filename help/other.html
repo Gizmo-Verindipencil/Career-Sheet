@@ -6,7 +6,7 @@
     <script language="javascript" type="module">
         import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.js";
         import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
-        import { OtherHelpSetter } from "../js/setter/help/other-help-setter.js";
+        import { OtherHelpController } from "../js/controller/help/other-help-controller.js";
 
         const stylesheetLoader = StylesheetSeriesLoader;
         stylesheetLoader.add("css/destyle.css");
@@ -19,8 +19,8 @@
         scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         scriptLoader.load(() => {
             $(document).ready(async() => {
-                const setter = await OtherHelpSetter.build();
-                setter.execute();
+                const controller = await OtherHelpController.build();
+                controller.execute();
             });
         });
     </script>

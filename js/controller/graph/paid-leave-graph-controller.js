@@ -5,7 +5,7 @@ import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 /**
  * 有給休暇グラフの設定処理を提供します。
  */
-class PaidLeaveGraphSetter {
+class PaidLeaveGraphController {
     /**
      * インスタンスを初期化します。
      */
@@ -18,17 +18,17 @@ class PaidLeaveGraphSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {PaidLeaveGraphSetter} 新しいインスタンスを返します。
+     * @returns {PaidLeaveGraphController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new PaidLeaveGraphSetter();
+        const controller = new PaidLeaveGraphController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running) {
+        while(controller.scriptLoader.running) {
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
@@ -56,4 +56,4 @@ class PaidLeaveGraphSetter {
     }
 }
 
-export { PaidLeaveGraphSetter };
+export { PaidLeaveGraphController };

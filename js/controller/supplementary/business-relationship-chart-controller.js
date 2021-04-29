@@ -5,7 +5,7 @@ import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 /**
  * ビジネス関係図の設定処理を提供します。
  */
-class BusinessRelationshipChartSetter {
+class BusinessRelationshipChartController {
     /**
      * インスタンスを初期化します。
      */
@@ -21,17 +21,17 @@ class BusinessRelationshipChartSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {BusinessRelationshipChartSetter} 新しいインスタンスを返します。
+     * @returns {BusinessRelationshipChartController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new BusinessRelationshipChartSetter();
+        const controller = new BusinessRelationshipChartController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
@@ -93,4 +93,4 @@ class BusinessRelationshipChartSetter {
     }
 }
 
-export { BusinessRelationshipChartSetter };
+export { BusinessRelationshipChartController };

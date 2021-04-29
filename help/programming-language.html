@@ -11,7 +11,7 @@
     <script language="javascript" type="module">
         import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.js";
         import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
-        import { ProgrammingLanguageHelpSetter } from "../js/setter/help/programming-language-help-setter.js";
+        import { ProgrammingLanguageHelpController } from "../js/controller/help/programming-language-help-controller.js";
 
         const stylesheetLoader = StylesheetSeriesLoader;
         stylesheetLoader.add("css/destyle.css");
@@ -24,8 +24,8 @@
         scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         scriptLoader.load(() => {
             $(document).ready(async() => {
-                const setter = await ProgrammingLanguageHelpSetter.build();
-                setter.execute();
+                const controller = await ProgrammingLanguageHelpController.build();
+                controller.execute();
             });
         });
     </script>

@@ -6,8 +6,8 @@
     <script language="javascript" type="module">
         import StylesheetSeriesLoader from "./js/shared/stylesheet-series-loader.js";
         import ScriptSeriesLoader from "./js/shared/script-series-loader.js";
-        import { QualificationSetter } from "./js/setter/qualification-setter.js";
-        import { TaskTypeListSetter } from "./js/setter/task-type-list-setter.js";
+        import { QualificationController } from "./js/controller/qualification-controller.js";
+        import { TaskTypeListController } from "./js/controller/task-type-list-controller.js";
 
         const stylesheetLoader = StylesheetSeriesLoader;
         stylesheetLoader.add("css/destyle.css");
@@ -21,11 +21,11 @@
         scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         scriptLoader.load(() => {
             $(document).ready(async() => {
-                const setters = [];
-                setters.push(await QualificationSetter.build());
-                setters.push(await TaskTypeListSetter.build());
-                for (const setter of setters) {
-                    setter.execute();
+                const controllers = [];
+                controllers.push(await QualificationController.build());
+                controllers.push(await TaskTypeListController.build());
+                for (const controller of controllers) {
+                    controller.execute();
                 }
             });
         });

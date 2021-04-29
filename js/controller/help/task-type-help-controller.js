@@ -1,12 +1,12 @@
-import { FrameworkRepository } from "../../repository/framework-repository.js";
+import { TaskTypeRepository } from "../../repository/task-type-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(フレームワーク)の設定処理を提供します。
+ * ヘルプ(作業分類)の設定処理を提供します。
  */
-class FrameworkHelpSetter {
+class TaskTypeHelpController {
     /**
      * インスタンスを初期化します。
      */
@@ -24,41 +24,42 @@ class FrameworkHelpSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {FrameworkHelpSetter} 新しいインスタンスを返します。
+     * @returns {TaskTypeHelpController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new FrameworkHelpSetter();
+        const controller = new TaskTypeHelpController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
      * ヘルプの設定を実行します。
      */
     execute = () => {
-        // フレームワークデータを取得
-        const repository = new FrameworkRepository();
-        const frameworks = repository.getAll();
+        // 作業分類データを取得
+        const repository = new TaskTypeRepository();
+        const types = repository.getAll();
 
-        // 名前の昇順で並べる
-        frameworks.sort((a, b) => {
-            return a.name > b.name ? 1 : -1;
+        // ソート順で並べる
+        types.sort((a, b) => {
+            return a.sort > b.sort ? 1 : -1;
         });
 
         // データ毎の処理
-        for (let i = 0; i < frameworks.length;  i++) {
-            const framework = frameworks[i];
+        for (let i = 0; i < types.length;  i++) {
+            const type = types[i];
 
             // td要素を生成
             const cells = [];
             cells.push(this.createNoTd(i));
-            cells.push(this.createNameTd(framework));
-            cells.push(this.createDescriptionTd(framework));
+            cells.push(this.createCodeTd(type));
+            cells.push(this.createNamesTd(type));
+            cells.push(this.createDescriptionTd(type));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
@@ -85,24 +86,37 @@ class FrameworkHelpSetter {
     }
 
     /**
-     * 名称のtd要素を生成します。
-     * @param {Object} framework フレームワークデータ。
+     * コードのtd要素を生成します。
+     * @param {Object} type 作業分類データ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createNameTd = framework => {
-        const classPrefix = "work-experience-technology";
+    createCodeTd = type => {
+        const style = "work-experience-task-type-unknown";
+        return this.createTd(`<p class="${style}">${type.id}</p>`);
+    }
+
+    /**
+     * 名称(日本語/英語)のtd要素を生成します。
+     * @param {Object} type 作業分類データ。
+     * @return {String} td要素を表すhtmlを返します。
+     */
+    createNamesTd = type => {
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p class="${classPrefix}-framework" style="${noWrap}">${framework.name}</p>`);
+        const tds = [];
+        tds.push(this.createTd(`<p style="${noWrap}">${type.name.ja}</p>`));
+        tds.push(this.createTd(`<p style="${noWrap}">${type.name.en}</p>`));
+        return tds.join("");
     }
 
     /**
      * 説明のtd要素を生成します。
-     * @param {Object} framework フレームワークデータ。
+     * @param {Object} type 作業分類データ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createDescriptionTd = framework => {
-        return this.createTd(`<p>${framework.description}</p>`);
+    createDescriptionTd = type => {
+        // TODO：説明の追加
+        return this.createTd(`<p></p>`);
     }
 }
 
-export { FrameworkHelpSetter };
+export { TaskTypeHelpController };

@@ -6,7 +6,7 @@
     <script language="javascript" type="module">
         import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.js";
         import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
-        import { FrameworkHelpSetter } from "../js/setter/help/framework-help-setter.js";
+        import { FrameworkHelpController } from "../js/controller/help/framework-help-controller.js";
 
         const stylesheetLoader = StylesheetSeriesLoader;
         stylesheetLoader.add("css/destyle.css");
@@ -19,8 +19,8 @@
         scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         scriptLoader.load(() => {
             $(document).ready(async() => {
-                const setter = await FrameworkHelpSetter.build();
-                setter.execute();
+                const controller = await FrameworkHelpController.build();
+                controller.execute();
             });
         });
     </script>

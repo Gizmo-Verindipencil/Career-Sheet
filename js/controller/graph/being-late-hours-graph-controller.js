@@ -3,9 +3,9 @@ import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * 遅刻回数グラフの設定処理を提供します。
+ * 遅刻時間グラフの設定処理を提供します。
  */
-class BeingLateNumberGraphSetter {
+class BeingLateHoursGraphController {
     /**
      * インスタンスを初期化します。
      */
@@ -18,59 +18,59 @@ class BeingLateNumberGraphSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {BeingLateNumberGraphSetter} 新しいインスタンスを返します。
+     * @returns {BeingLateHoursGraphController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new BeingLateNumberGraphSetter();
+        const controller = new BeingLateHoursGraphController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running) {
+        while(controller.scriptLoader.running) {
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
-     * 遅刻回数グラフの設定を実行します。
+     * 遅刻時間グラフの設定を実行します。
      */
     execute = () => {
-        // 遅刻回数データを取得
+        // 遅刻時間データを取得
         const repository = new WorkingHoursRepository();
         const records = repository.getAll();
 
-        // 遅刻回数の推移を作成
+        // 遅刻時間の推移を作成
         const paidLeave = {
             mode: "scatter",
-            name: "実績",
+            name: "実績(h)",
             x: records.map(x => `${x.year}-${x.month}`),
-            y: records.map(x => x.beingLate.count)
+            y: records.map(x => x.beingLate.hours)
         };
 
-        // 遅刻回数(移動平均)の推移を作成
+        // 遅刻時間(移動平均)の推移を作成
         const eMAPaidLeave = {
             mode : "scatter",
-            name : "移動平均",
+            name : "移動平均(h)",
             x: records.map(x => `${x.year}-${x.month}`),
-            y: Utility.calculateEMA(records.map(x => x.beingLate.count), 12)
+            y: Utility.calculateEMA(records.map(x => x.beingLate.hours), 12)
         };
 
         // 残業時間(平均)の推移を作成
-        const average = Utility.calculateAverage(records.map(x => x.beingLate.count));
+        const average = Utility.calculateAverage(records.map(x => x.beingLate.hours));
         const averagePaidLeave = {
             mode : "scatter",
-            name : "月平均",
+            name : "月平均(h)",
             x: records.map(x => `${x.year}-${x.month}`),
             y: records.map(x => average)
         };
 
         // 画面にデータをセット
         const layout = {
-            title : "遅刻回数"
+            title : "遅刻時間"
         };
         const data = [ paidLeave, eMAPaidLeave, averagePaidLeave ];
         Plotly.newPlot("graph-container", data, layout);
     }
 }
 
-export { BeingLateNumberGraphSetter };
+export { BeingLateHoursGraphController };

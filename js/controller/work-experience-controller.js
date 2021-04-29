@@ -5,7 +5,7 @@ import ScriptSeriesLoader from "../shared/script-series-loader.js"
 /**
  * 職務経歴の設定処理を提供します。
  */
-class WorkExperienceSetter {
+class WorkExperienceController {
     /**
      * インスタンスを初期化します。
      */
@@ -18,17 +18,17 @@ class WorkExperienceSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {WorkExperienceSetter} 新しいインスタンスを返します。
+     * @returns {WorkExperienceController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new WorkExperienceSetter();
+        const controller = new WorkExperienceController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
@@ -396,4 +396,4 @@ class WorkExperienceSetter {
     }
 }
 
-export { WorkExperienceSetter };
+export { WorkExperienceController };

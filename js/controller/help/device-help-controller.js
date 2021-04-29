@@ -1,12 +1,13 @@
-import { OperatingSystemRepository } from "../../repository/operating-system-repository.js";
+import { DeviceRepository } from "../../repository/device-repository.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
+
 /**
- * ヘルプ(OS)の設定処理を提供します。
+ * ヘルプ(機種)の設定処理を提供します。
  */
-class OsHelpSetter {
+class DeviceHelpController {
     /**
      * インスタンスを初期化します。
      */
@@ -24,41 +25,41 @@ class OsHelpSetter {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {OsHelpSetter} 新しいインスタンスを返します。
+     * @returns {DeviceHelpController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const setter = new OsHelpSetter();
+        const controller = new DeviceHelpController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(setter.scriptLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-        return setter;
+        return controller;
     }
 
     /**
      * ヘルプの設定を実行します。
      */
     execute = () => {
-        // OSデータを取得
-        const repository = new OperatingSystemRepository();
-        const oss = repository.getAll();
+        // 機種データを取得
+        const repository = new DeviceRepository();
+        const devices = repository.getAll();
 
         // 名前の昇順で並べる
-        oss.sort((a, b) => {
+        devices.sort((a, b) => {
             return a.name > b.name ? 1 : -1;
         });
 
         // データ毎の処理
-        for (let i = 0; i < oss.length;  i++) {
-            const os = oss[i];
+        for (let i = 0; i < devices.length;  i++) {
+            const device = devices[i];
 
             // td要素を生成
             const cells = [];
             cells.push(this.createNoTd(i));
-            cells.push(this.createNameTd(os));
-            cells.push(this.createDescriptionTd(os));
+            cells.push(this.createNameTd(device));
+            cells.push(this.createDescriptionTd(device));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
@@ -86,23 +87,23 @@ class OsHelpSetter {
 
     /**
      * 名称のtd要素を生成します。
-     * @param {Object} os OSデータ。
+     * @param {Object} device 機種データ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createNameTd = os => {
+    createNameTd = device => {
         const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p class="${classPrefix}-operating-system" style="${noWrap}">${os.name}</p>`);
+        return this.createTd(`<p class="${classPrefix}-device" style="${noWrap}">${device.name}</p>`);
     }
 
     /**
      * 説明のtd要素を生成します。
-     * @param {Object} os OSデータ。
-     * @return {String} td要素を表すhtmlを返します。
+     * @param {Object} device 機種データ。
+     * @return {String} td要素を表すhtml
      */
-    createDescriptionTd = os => {
-        return this.createTd(`<p>${os.description}</p>`);
+    createDescriptionTd = device => {
+        return this.createTd(`<p>${device.description}</p>`);
     }
 }
 
-export { OsHelpSetter };
+export { DeviceHelpController };
