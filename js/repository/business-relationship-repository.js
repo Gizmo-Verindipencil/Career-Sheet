@@ -403,6 +403,65 @@ class BusinessRelationshipRepository {
                 ]
             },
             {
+                "id" : "me-N-(A,NE,T,F)-H",
+                "nodes" : [
+                    {
+                        "id" : "me",
+                        "description" : "自分"
+                    },
+                    {
+                        "id" : "N",
+                        "description" : "所属会社"
+                    },
+                    {
+                        "id" : "A",
+                        "description" : "元請(常駐先)"
+                    },
+                    {
+                        "id" : "NE",
+                        "description" : "関連システム保守"
+                    },
+                    {
+                        "id" : "T",
+                        "description" : "関連システム保守(過去)"
+                    },
+                    {
+                        "id" : "F",
+                        "description" : "取引先"
+                    },
+                    {
+                        "id" : "H",
+                        "description" : "ユーザー"
+                    }
+                ],
+                "edges" : [
+                    {
+                        "from" : "me",
+                        "to" : "N"
+                    },
+                    {
+                        "from" : "N",
+                        "to" : "A"
+                    },
+                    {
+                        "from" : "A",
+                        "to" : "H"
+                    },
+                    {
+                        "from" : "NE",
+                        "to" : "H"
+                    },
+                    {
+                        "from" : "T",
+                        "to" : "H"
+                    },
+                    {
+                        "from" : "F",
+                        "to" : "H"
+                    }
+                ]
+            },
+            {
                 "id" : "me-N-A-P-TM",
                 "nodes" : [
                     {
