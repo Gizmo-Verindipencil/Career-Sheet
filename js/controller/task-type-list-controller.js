@@ -1,16 +1,18 @@
-import { TaskTypeRepository } from "../repository/task-type-repository.js";
-import { TaskColorRepository } from "../repository/task-color-repository.js";
+import { TaskTypeListModel } from "../model/task-type-list-model.js";
 import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
- * 作業種類一覧の設定処理を提供します。
+ * 作業種類一覧のコントローラーを提供します。
  */
 class TaskTypeListController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new TaskTypeListModel();
+
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
@@ -37,8 +39,7 @@ class TaskTypeListController {
      */
     execute = () => {
         // 作業種類データを取得
-        const typeRepository = new TaskTypeRepository();
-        const types = typeRepository.getAll();
+        const types = this.model.getTaskTypes();
 
         // 設定されたソート順に並び替え
         types.sort((a, b) => {
@@ -47,18 +48,14 @@ class TaskTypeListController {
             return 0;
         });
 
-        // 作業テーマ色データを取得
-        const colorRepository = new TaskColorRepository();
-        const colors = colorRepository.getAll();
-
         // 作業種類毎のデザインを適用
         for (const type of types) {
             // 対応する色を設定
-            const color = colors.filter(x => x.id === type.colorId);
+            const color = this.model.getTaskColorById(type.colorId);
             const createLinearGradient = (start, end) => ` style='background:linear-gradient(${start},${end});'`;;
             let style = "";
-            if (color.length > 0) {
-                style =  createLinearGradient(color[0].start, color[0].end);
+            if (color) {
+                style =  createLinearGradient(color.start, color.end);
             } else {
                 style = createLinearGradient("#cecece", "#ffffff");
             }

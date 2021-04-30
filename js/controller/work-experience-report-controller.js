@@ -1,16 +1,19 @@
-import { WorkExperienceRepository } from "../repository/work-experience-repository.js";
+import { WorkExperienceReportModel } from "../model/work-experience-report-model.js";
 import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.js";
 
 /**
- * 職務経歴レポート(ヘッダー)の設定処理を提供します。
+ * 職務経歴レポートのコントローラーを提供します。
  */
 class WorkExperienceReportController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new WorkExperienceReportModel();
+
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
@@ -42,10 +45,9 @@ class WorkExperienceReportController {
      */
     execute = () => {
         // 職務経歴データを取得
-        const repositry = new WorkExperienceRepository();
         const params = new URLSearchParams(document.location.search.substring(1));
         const no = params.get("no");
-        const experience = repositry.getByNo(no);
+        const experience = this.model.getWorkExperienceByNo(no);
 
         // ボタン処理のセット
         this.setPrevAndNextButtonAction(no);

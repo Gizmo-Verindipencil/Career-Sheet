@@ -1,15 +1,18 @@
-import { QualificationRepository } from "../repository/qualification-repository.js";
+import { QualificationModel } from "../model/qualification-model.js";
 import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
- * 資格・免許の設定処理を提供します。
+ * 資格・免許のコントローラーを提供します。
  */
 class QualificationController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new QualificationModel();
+
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
@@ -36,8 +39,7 @@ class QualificationController {
      */
     execute = () => {
         // 資格データを取得
-        const repository = new QualificationRepository();
-        const qualifications = repository.getAll();
+        const qualifications = this.model.getQualifications();
 
         for (const qualification of qualifications) {
             $("div#qualification").append(`<p>${qualification.name} ${qualification.score}</p>`);

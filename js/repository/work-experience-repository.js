@@ -1936,7 +1936,7 @@ class WorkExperienceRepository {
     /**
      * 特定の職務経歴データを取得します。
      * @param {String} no 経歴番号。
-     * @return {Object} 職務経歴データを返します。該当の情報がない場合はnullを返します。
+     * @return {Object} 職務経歴データを返します。該当データがない場合、nullを返します。
      */
     getByNo = no => {
         let experiences = this.getAll();
