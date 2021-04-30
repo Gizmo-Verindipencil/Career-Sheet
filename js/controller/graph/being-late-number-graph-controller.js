@@ -39,7 +39,7 @@ class BeingLateNumberGraphController {
     execute = () => {
         // 遅刻回数の推移を作成
         const actual = this.model.getActual();
-        const paidLeave = {
+        const count = {
             mode: "scatter",
             name: "実績(h)",
             x: actual.map(x => x.yearMonth),
@@ -48,7 +48,7 @@ class BeingLateNumberGraphController {
 
         // 遅刻回数(移動平均)の推移を作成
         const eMA = this.model.getEMA();
-        const eMAPaidLeave = {
+        const countEMA = {
             mode : "scatter",
             name : "移動平均(h)",
             x: eMA.map(x => x.yearMonth),
@@ -57,7 +57,7 @@ class BeingLateNumberGraphController {
 
         // 残業時間(平均)の推移を作成
         const average = this.model.getAverage();
-        const averagePaidLeave = {
+        const countAverage = {
             mode : "scatter",
             name : "月平均(h)",
             x: average.map(x => x.yearMonth),
@@ -68,7 +68,7 @@ class BeingLateNumberGraphController {
         const layout = {
             title : "遅刻回数"
         };
-        const data = [ paidLeave, eMAPaidLeave, averagePaidLeave ];
+        const data = [ count, countEMA, countAverage ];
         Plotly.newPlot("graph-container", data, layout);
     }
 }
