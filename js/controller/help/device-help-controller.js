@@ -1,17 +1,20 @@
-import { DeviceRepository } from "../../repository/device-repository.js";
+import { DeviceHelpModel } from "../../model/help/device-help-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 
 /**
- * ヘルプ(機種)の設定処理を提供します。
+ * ヘルプ(機種)のコントローラーを提供します。
  */
 class DeviceHelpController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new DeviceHelpModel();
+
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
@@ -43,13 +46,7 @@ class DeviceHelpController {
      */
     execute = () => {
         // 機種データを取得
-        const repository = new DeviceRepository();
-        const devices = repository.getAll();
-
-        // 名前の昇順で並べる
-        devices.sort((a, b) => {
-            return a.name > b.name ? 1 : -1;
-        });
+        const devices = this.model.getDevices();
 
         // データ毎の処理
         for (let i = 0; i < devices.length;  i++) {

@@ -1,16 +1,19 @@
-import { PlatformRepository } from "../../repository/platform-repository.js";
+import { PlatformHelpModel } from "../../model/help/platform-help-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(プラットフォーム)の設定処理を提供します。
+ * ヘルプ(プラットフォーム)のコントローラーを提供します。
  */
 class PlatformHelpController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new PlatformHelpModel();
+
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
@@ -42,13 +45,7 @@ class PlatformHelpController {
      */
     execute = () => {
         // プラットフォームデータを取得
-        const repository = new PlatformRepository();
-        const platforms = repository.getAll();
-
-        // 名前の昇順で並べる
-        platforms.sort((a, b) => {
-            return a.name > b.name ? 1 : -1;
-        });
+        const platforms = this.model.getPlatforms();
 
         // データ毎の処理
         for (let i = 0; i < platforms.length;  i++) {

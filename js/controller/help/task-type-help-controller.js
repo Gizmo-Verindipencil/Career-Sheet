@@ -1,16 +1,19 @@
-import { TaskTypeRepository } from "../../repository/task-type-repository.js";
+import { TaskTypeHelpModel } from "../../model/help/task-type-help-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(作業分類)の設定処理を提供します。
+ * ヘルプ(作業種類)のコントローラーを提供します。
  */
 class TaskTypeHelpController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new TaskTypeHelpModel();
+
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
@@ -41,14 +44,8 @@ class TaskTypeHelpController {
      * ヘルプの設定を実行します。
      */
     execute = () => {
-        // 作業分類データを取得
-        const repository = new TaskTypeRepository();
-        const types = repository.getAll();
-
-        // ソート順で並べる
-        types.sort((a, b) => {
-            return a.sort > b.sort ? 1 : -1;
-        });
+        // 作業種類データを取得
+        const types = this.model.getTaskTypes();
 
         // データ毎の処理
         for (let i = 0; i < types.length;  i++) {
@@ -87,7 +84,7 @@ class TaskTypeHelpController {
 
     /**
      * コードのtd要素を生成します。
-     * @param {Object} type 作業分類データ。
+     * @param {Object} type 作業種類データ。
      * @return {String} td要素を表すhtmlを返します。
      */
     createCodeTd = type => {
@@ -97,7 +94,7 @@ class TaskTypeHelpController {
 
     /**
      * 名称(日本語/英語)のtd要素を生成します。
-     * @param {Object} type 作業分類データ。
+     * @param {Object} type 作業種類データ。
      * @return {String} td要素を表すhtmlを返します。
      */
     createNamesTd = type => {
@@ -110,7 +107,7 @@ class TaskTypeHelpController {
 
     /**
      * 説明のtd要素を生成します。
-     * @param {Object} type 作業分類データ。
+     * @param {Object} type 作業種類データ。
      * @return {String} td要素を表すhtmlを返します。
      */
     createDescriptionTd = type => {

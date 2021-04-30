@@ -1,16 +1,19 @@
-import { ProgrammingLanguageRepository } from "../../repository/programming-language-repository.js";
+import { ProgrammingLanguageHelpModel } from "../../model/help/programming-language-help-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(プログラミング言語)の設定処理を提供します。
+ * ヘルプ(プログラミング言語)のコントローラーを提供します。
  */
 class ProgrammingLanguageHelpController {
     /**
      * コンストラクタ
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new ProgrammingLanguageHelpModel();
+
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
@@ -42,13 +45,7 @@ class ProgrammingLanguageHelpController {
      */
     execute = () => {
         // プログラミング言語データを取得
-        const repository = new ProgrammingLanguageRepository();
-        const languages = repository.getAll();
-
-        // 名前の昇順で並べる
-        languages.sort((a, b) => {
-            return a.name > b.name ? 1 : -1;
-        });
+        const languages = this.model.getProgrammingLanguages();
 
         // データ毎の処理
         for (let i = 0; i < languages.length;  i++) {

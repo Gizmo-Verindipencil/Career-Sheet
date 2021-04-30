@@ -1,16 +1,19 @@
-import { DatabaseRepository } from "../../repository/database-repository.js";
+import { DatabaseHelpModel } from "../../model/help/database-help-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(データベース)の設定処理を提供します。
+ * ヘルプ(データベース)のコントローラーを提供します。
  */
 class DbHelpController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new DatabaseHelpModel();
+
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
@@ -42,13 +45,7 @@ class DbHelpController {
      */
     execute = () => {
         // DBデータを取得
-        const repository = new DatabaseRepository();
-        const dbs = repository.getAll();
-
-        // 名前の昇順で並べる
-        dbs.sort((a, b) => {
-            return a.name > b.name ? 1 : -1;
-        });
+        const dbs = this.model.getDatabases();
 
         // データ毎の処理
         for (let i = 0; i < dbs.length;  i++) {

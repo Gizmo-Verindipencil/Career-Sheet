@@ -1,16 +1,19 @@
-import { DevelopmentToolRepository } from "../../repository/development-tool-repository.js";
+import { DevelopmentToolHelpModel } from "../../model/help/development-tool-help-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(開発ツール)の設定処理を提供します。
+ * ヘルプ(開発ツール)のコントローラーを提供します。
  */
 class DevelopmentToolHelpController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new DevelopmentToolHelpModel();
+
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
@@ -42,13 +45,7 @@ class DevelopmentToolHelpController {
      */
     execute = () => {
         // 開発ツールデータを取得
-        const repository = new DevelopmentToolRepository();
-        const tools = repository.getAll();
-
-        // 名前の昇順で並べる
-        tools.sort((a, b) => {
-            return a.name > b.name ? 1 : -1;
-        });
+        const tools = this.model.getDevelopmentTools();
 
         // データ毎の処理
         for (let i = 0; i < tools.length;  i++) {

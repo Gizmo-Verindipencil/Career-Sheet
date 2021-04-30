@@ -1,16 +1,19 @@
-import { OperatingSystemRepository } from "../../repository/operating-system-repository.js";
+import { OperatingSystemHelpModel } from "../../model/help/operating-system-help-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(OS)の設定処理を提供します。
+ * ヘルプ(OS)のコントローラーを提供します。
  */
 class OsHelpController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new OperatingSystemHelpModel();
+
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
@@ -42,13 +45,7 @@ class OsHelpController {
      */
     execute = () => {
         // OSデータを取得
-        const repository = new OperatingSystemRepository();
-        const oss = repository.getAll();
-
-        // 名前の昇順で並べる
-        oss.sort((a, b) => {
-            return a.name > b.name ? 1 : -1;
-        });
+        const oss = this.model.getOperatingSystems();
 
         // データ毎の処理
         for (let i = 0; i < oss.length;  i++) {
