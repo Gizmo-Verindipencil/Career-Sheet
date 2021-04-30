@@ -9,6 +9,7 @@ class CoreInfoRepository {
      */
     get = () => {
         return {
+            "userId" : "1",
             "familyName" : "Ｋ",
             "lastName" : "Ｎ",
             "phoneticFamilyName" : "カ＊＊＊",

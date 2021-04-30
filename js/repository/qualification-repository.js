@@ -9,18 +9,22 @@ class QualificationRepository {
     getAll = () => {
         return [
             {
+                "userId" : "1",
                 "name" : "基本情報技術者",
                 "score" : ""
             },
             {
+                "userId" : "1",
                 "name" : "TOEIC",
                 "score" : "625"
             },
             {
+                "userId" : "1",
                 "name" : "Microsoft Office Specialist Excel 2007",
                 "score" : ""
             },
             {
+                "userId" : "1",
                 "name" : "Microsoft Office Specialist Access 2010",
                 "score" : ""
             }
