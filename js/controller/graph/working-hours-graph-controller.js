@@ -3,7 +3,7 @@ import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * 実働時間グラフの設定処理を提供します。
+ * 実働時間グラフのコントローラーを提供します。
  */
 class WorkingHoursGraphController {
     /**

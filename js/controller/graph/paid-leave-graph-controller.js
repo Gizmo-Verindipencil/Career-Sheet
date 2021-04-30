@@ -3,7 +3,7 @@ import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * 有給休暇グラフの設定処理を提供します。
+ * 有給休暇グラフのコントローラーを提供します。
  */
 class PaidLeaveGraphController {
     /**
