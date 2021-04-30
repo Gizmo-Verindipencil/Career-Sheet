@@ -37,38 +37,30 @@ class OvertimeHoursGraphController {
      * 残業時間グラフの設定を実行します。
      */
     execute = () => {
+        // グラフ用データの作成処理
+        const createGraphData = (name, data) => {
+            return {
+                mode: "scatter",
+                name: name,
+                x: data.map(x => x.yearMonth),
+                y: data.map(x => x.value)
+            };
+        }
+
         // 残業時間の推移を作成
-        const actual = this.model.getActual();
-        const overtimeHours = {
-            mode: "scatter",
-            name: "実績(h)",
-            x: actual.map(x => x.yearMonth),
-            y: actual.map(x => x.value)
-        };
+        const actual = createGraphData("実績(h)", this.model.getActual());
 
         // 残業時間(移動平均)の推移を作成
-        const eMA = this.model.getEMA();
-        const eMAOvertimeHours = {
-            mode : "scatter",
-            name : "移動平均(h)",
-            x: eMA.map(x => x.yearMonth),
-            y: eMA.map(x => x.value)
-        };
+        const eMA = createGraphData("移動平均(h)", this.model.getEMA());
 
         // 残業時間(平均)の推移を作成
-        const average = this.model.getAverage();
-        const averageOvertimeHours = {
-            mode : "scatter",
-            name : "全体平均(h)",
-            x: average.map(x => x.yearMonth),
-            y: average.map(x => x.value)
-        };
+        const average = createGraphData("月平均(h)", this.model.getAverage());
 
         // 画面にデータをセット
         const layout = {
             title : "残業時間"
         };
-        const data = [ overtimeHours, eMAOvertimeHours, averageOvertimeHours ];
+        const data = [ actual, eMA, average ];
         Plotly.newPlot("graph-container", data, layout);
     }
 }

@@ -38,89 +38,48 @@ class WorkingHoursGraphController {
      * 残業時間グラフの設定を実行します。
      */
     execute = () => {
-        // 実働時間の推移を作成
-        const actual = this.model.getActual();
-        const actualWorkingHours = {
-            mode: "scatter",
-            name: "実績(h)",
-            line: {
-                color: "rgb(255,0,0)"
-            },
-            x: actual.map(x => x.yearMonth),
-            y: actual.map(x => x.value)
-        };
-
-        // 実働時間(移動平均)の推移を作成
-        const actualEMA = this.model.getActualEMA();
-        const actualWorkingHoursEMA = {
-            mode : "scatter",
-            name : "実働移動平均(h)",
-            line: {
-                color: "rgb(255,130,130)"
-            },
-            x: actualEMA.map(x => x.yearMonth),
-            y: actualEMA.map(x => x.value)
-        };
-
-        // 実働時間(平均)の推移を作成
-        const actualAverage = this.model.getActualAverage();
-        const actualWorkingHoursAverage = {
-            mode : "scatter",
-            name : "実働全体平均(h)",
-            line: {
-                color: "rgb(255,160,160)"
-            },
-            x: actualAverage.map(x => x.yearMonth),
-            y: actualAverage.map(x => x.value)
-        };
-
-        // 計画時間の推移を作成
-        const prescribed = this.model.getPrescribed();
-        const prescribedWorkingHours = {
-            mode: "scatter",
-            name: "計画(h)",
-            line: {
-                color: "rgb(0,0,255)"
-            },
-            x: prescribed.map(x => x.yearMonth),
-            y: prescribed.map(x => x.value)
+        // グラフ用データの作成処理
+        const createGraphData = (name, color, data) => {
+            return {
+                mode: "scatter",
+                name: name,
+                line: {
+                    color: color
+                },
+                x: data.map(x => x.yearMonth),
+                y: data.map(x => x.value)
+            };
         }
 
+        // 実働時間の推移を作成
+        const actual = createGraphData("実績(h)", "rgb(255,0,0)", this.model.getActual());
+
+        // 実働時間(移動平均)の推移を作成
+        const actualEMA = createGraphData("実働移動平均(h)", "rgb(255,130,130)", this.model.getActualEMA());
+
+        // 実働時間(平均)の推移を作成
+        const actualAverage = createGraphData("実働全体平均(h)", "rgb(255,160,160)", this.model.getActualAverage());
+
+        // 計画時間の推移を作成
+        const prescribed = createGraphData("計画(h)", "rgb(0,0,255)", this.model.getPrescribed());
+
         // 計画時間(移動平均)の推移を作成
-        const prescribedEMA = this.model.getPrescribedEMA();
-        const prescribedWorkingHoursEMA = {
-            mode : "scatter",
-            name : "計画移動平均(h)",
-            line: {
-                color: "rgb(130,130,255)"
-            },
-            x: prescribedEMA.map(x => x.yearMonth),
-            y: prescribedEMA.map(x => x.value)
-        };
+        const prescribedEMA = createGraphData("計画移動平均(h)", "rgb(130,130,255)", this.model.getPrescribedEMA());
 
         // 計画時間(平均)の推移を作成
-        const prescribedAverage = this.model.getPrescribedAverage();
-        const prescribedWorkingHoursAverage = {
-            mode : "scatter",
-            name : "計画全体平均(h)",
-            line: {
-                color: "rgb(160,160,255)"
-            },
-            x: prescribedAverage.map(x => x.yearMonth),
-            y: prescribedAverage.map(x => x.value)
-        };
+        const prescribedAverage = createGraphData("計画全体平均(h)", "rgb(160,160,255)", this.model.getPrescribedAverage());
 
         // 画面にデータをセット
         const layout = {
             title : "実働/計画時間"
         };
         const data = [ 
-            actualWorkingHours, 
-            actualWorkingHoursEMA,
-            actualWorkingHoursAverage,
-            prescribedWorkingHours,
-            prescribedWorkingHoursEMA,
-            prescribedWorkingHoursAverage
+            actual, 
+            actualEMA,
+            actualAverage,
+            prescribed,
+            prescribedEMA,
+            prescribedAverage
         ];
         Plotly.newPlot("graph-container", data, layout);
     }
