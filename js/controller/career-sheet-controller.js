@@ -1,14 +1,18 @@
+import { CareerSheetModel } from "../model/career-sheet-model.js";
 import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
- * 職務経歴書の設定処理を提供します。
+ * 職務経歴書のコントローラーを提供します。
  */
 class CareerSheetController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new CareerSheetModel();
+
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");

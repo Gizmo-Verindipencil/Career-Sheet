@@ -1,16 +1,19 @@
-import { OtherRepository } from "../../repository/other-repository.js";
+import { OtherHelpModel } from "../../model/help/other-help-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(その他技術)の設定処理を提供します。
+ * ヘルプ(その他技術)のコントローラーを提供します。
  */
 class OtherHelpController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new OtherHelpModel();
+
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
@@ -42,13 +45,7 @@ class OtherHelpController {
      */
     execute = () => {
         // その他技術データを取得
-        const repository = new OtherRepository();
-        const others = repository.getAll();
-
-        // 名前の昇順で並べる
-        others.sort((a, b) => {
-            return a.name > b.name ? 1 : -1;
-        });
+        const others = this.model.getOthers();
 
         // データ毎の処理
         for (let i = 0; i < others.length;  i++) {

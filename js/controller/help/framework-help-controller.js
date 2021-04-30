@@ -1,16 +1,19 @@
-import { FrameworkRepository } from "../../repository/framework-repository.js";
+import { FrameworkHelpModel } from "../../model/help/framework-help-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(フレームワーク)の設定処理を提供します。
+ * ヘルプ(フレームワーク)のコントローラーを提供します。
  */
 class FrameworkHelpController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new FrameworkHelpModel();
+
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
@@ -42,13 +45,7 @@ class FrameworkHelpController {
      */
     execute = () => {
         // フレームワークデータを取得
-        const repository = new FrameworkRepository();
-        const frameworks = repository.getAll();
-
-        // 名前の昇順で並べる
-        frameworks.sort((a, b) => {
-            return a.name > b.name ? 1 : -1;
-        });
+        const frameworks = this.model.getFrameworks();
 
         // データ毎の処理
         for (let i = 0; i < frameworks.length;  i++) {

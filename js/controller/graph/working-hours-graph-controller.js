@@ -1,15 +1,18 @@
-import { WorkingHoursRepository } from "../../repository/working-hours-repository.js";
+import { WorkingHoursGraphModel } from "../../model/graph/working-hours-graph-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * 実働時間グラフの設定処理を提供します。
+ * 実働時間グラフのコントローラーを提供します。
  */
 class WorkingHoursGraphController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new WorkingHoursGraphModel();
+
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
@@ -35,89 +38,48 @@ class WorkingHoursGraphController {
      * 残業時間グラフの設定を実行します。
      */
     execute = () => {
-        // 勤務時間データを取得
-        const repository = new WorkingHoursRepository();
-        const records = repository.getAll();
-
-        // 実働時間の推移を作成
-        const actualWorkingHours = {
-            mode: "scatter",
-            name: "実績(h)",
-            line: {
-                color: "rgb(255,0,0)"
-            },
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: records.map(x => x.actualWorkingHours)
-        };
-
-        // 実働時間(移動平均)の推移を作成
-        const eMAActualWorkingHours = {
-            mode : "scatter",
-            name : "実働移動平均(h)",
-            line: {
-                color: "rgb(255,130,130)"
-            },
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: Utility.calculateEMA(records.map(x => x.actualWorkingHours), 12)
-        };
-
-        // 実働時間(平均)の推移を作成
-        const averageForAct = Utility.calculateAverage(records.map(x => x.actualWorkingHours));
-        const averageActualWorkingHours = {
-            mode : "scatter",
-            name : "実働全体平均(h)",
-            line: {
-                color: "rgb(255,160,160)"
-            },
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: records.map(x => averageForAct)
-        };
-
-        // 計画時間の推移を作成
-        const prescribedWorkingHours = {
-            mode: "scatter",
-            name: "計画(h)",
-            line: {
-                color: "rgb(0,0,255)"
-            },
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: records.map(x => x.prescribedWorkingHours)
+        // グラフ用データの作成処理
+        const createGraphData = (name, color, data) => {
+            return {
+                mode: "scatter",
+                name: name,
+                line: {
+                    color: color
+                },
+                x: data.map(x => x.yearMonth),
+                y: data.map(x => x.value)
+            };
         }
 
+        // 実働時間の推移を作成
+        const actual = createGraphData("実績(h)", "rgb(255,0,0)", this.model.getActual());
+
+        // 実働時間(移動平均)の推移を作成
+        const actualEMA = createGraphData("実働移動平均(h)", "rgb(255,130,130)", this.model.getActualEMA());
+
+        // 実働時間(平均)の推移を作成
+        const actualAverage = createGraphData("実働全体平均(h)", "rgb(255,160,160)", this.model.getActualAverage());
+
+        // 計画時間の推移を作成
+        const prescribed = createGraphData("計画(h)", "rgb(0,0,255)", this.model.getPrescribed());
+
         // 計画時間(移動平均)の推移を作成
-        const eMAPrescribedWorkingHours = {
-            mode : "scatter",
-            name : "計画移動平均(h)",
-            line: {
-                color: "rgb(130,130,255)"
-            },
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: Utility.calculateEMA(records.map(x => x.prescribedWorkingHours), 12)
-        };
+        const prescribedEMA = createGraphData("計画移動平均(h)", "rgb(130,130,255)", this.model.getPrescribedEMA());
 
         // 計画時間(平均)の推移を作成
-        const averageForPrescription = Utility.calculateAverage(records.map(x => x.prescribedWorkingHours));
-        const averagePrescribedWorkingHours = {
-            mode : "scatter",
-            name : "計画全体平均(h)",
-            line: {
-                color: "rgb(160,160,255)"
-            },
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: records.map(x => averageForPrescription)
-        };
+        const prescribedAverage = createGraphData("計画全体平均(h)", "rgb(160,160,255)", this.model.getPrescribedAverage());
 
         // 画面にデータをセット
         const layout = {
             title : "実働/計画時間"
         };
         const data = [ 
-            actualWorkingHours, 
-            eMAActualWorkingHours,
-            averageActualWorkingHours,
-            prescribedWorkingHours,
-            eMAPrescribedWorkingHours,
-            averagePrescribedWorkingHours
+            actual, 
+            actualEMA,
+            actualAverage,
+            prescribed,
+            prescribedEMA,
+            prescribedAverage
         ];
         Plotly.newPlot("graph-container", data, layout);
     }

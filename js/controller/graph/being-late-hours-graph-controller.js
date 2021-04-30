@@ -1,15 +1,17 @@
-import { WorkingHoursRepository } from "../../repository/working-hours-repository.js";
-import { Utility } from "../../shared/utility.js";
+import { BeingLateHoursGraphModel } from "../../model/graph/being-late-hours-graph-model.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * 遅刻時間グラフの設定処理を提供します。
+ * 遅刻時間グラフのコントローラーを提供します。
  */
 class BeingLateHoursGraphController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new BeingLateHoursGraphModel();
+
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
@@ -35,40 +37,30 @@ class BeingLateHoursGraphController {
      * 遅刻時間グラフの設定を実行します。
      */
     execute = () => {
-        // 遅刻時間データを取得
-        const repository = new WorkingHoursRepository();
-        const records = repository.getAll();
+        // グラフ用データの作成処理
+        const createGraphData = (name, data) => {
+            return {
+                mode: "scatter",
+                name: name,
+                x: data.map(x => x.yearMonth),
+                y: data.map(x => x.value)
+            };
+        }
 
         // 遅刻時間の推移を作成
-        const paidLeave = {
-            mode: "scatter",
-            name: "実績(h)",
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: records.map(x => x.beingLate.hours)
-        };
+        const actual = createGraphData("実績(h)", this.model.getActual());
 
         // 遅刻時間(移動平均)の推移を作成
-        const eMAPaidLeave = {
-            mode : "scatter",
-            name : "移動平均(h)",
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: Utility.calculateEMA(records.map(x => x.beingLate.hours), 12)
-        };
+        const eMA = createGraphData("移動平均(h)", this.model.getEMA());
 
         // 残業時間(平均)の推移を作成
-        const average = Utility.calculateAverage(records.map(x => x.beingLate.hours));
-        const averagePaidLeave = {
-            mode : "scatter",
-            name : "月平均(h)",
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: records.map(x => average)
-        };
+        const average = createGraphData("月平均(h)", this.model.getAverage());
 
         // 画面にデータをセット
         const layout = {
             title : "遅刻時間"
         };
-        const data = [ paidLeave, eMAPaidLeave, averagePaidLeave ];
+        const data = [ actual, eMA, average ];
         Plotly.newPlot("graph-container", data, layout);
     }
 }

@@ -1,15 +1,18 @@
-import { BusinessRelationshipRepository } from "../../repository/business-relationship-repository.js";
+import { BusinessRelationshipChartModel } from "../../model/supplementary/business-relationship-chart-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * ビジネス関係図の設定処理を提供します。
+ * ビジネス関係図のコントローラーを提供します。
  */
 class BusinessRelationshipChartController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new BusinessRelationshipChartModel();
+
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
@@ -41,17 +44,15 @@ class BusinessRelationshipChartController {
         // ビジネス関係データを取得
         const params = new URLSearchParams(document.location.search.substring(1));
         const id = params.get("id");
-        const repository = new BusinessRelationshipRepository();
-        const relationships = repository.getAll().filter(x => x.id === id);
+        const relationship = this.model.getBusinessRelationshipById(id);
 
         // データがなければその旨を表示
-        if (relationships.length === 0) {
+        if (!relationship) {
             $("#chart-node-description").append("<p>NO DATA</p>");
             return;
         }
         
         // 表示用のデータをセット
-        const relationship = relationships[0];
         const data = {
             nodes: relationship.nodes.map(x => ({ 
                 id: x.id,

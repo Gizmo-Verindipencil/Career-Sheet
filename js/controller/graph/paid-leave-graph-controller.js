@@ -1,15 +1,18 @@
-import { WorkingHoursRepository } from "../../repository/working-hours-repository.js";
+import { PaidLeaveGraphModel } from "../../model/graph/paid-leave-graph-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * 有給休暇グラフの設定処理を提供します。
+ * 有給休暇グラフのコントローラーを提供します。
  */
 class PaidLeaveGraphController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new PaidLeaveGraphModel();
+
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
@@ -35,16 +38,13 @@ class PaidLeaveGraphController {
      * 有給休暇グラフの設定を実行します。
      */
     execute = () => {
-        // 有給休暇データを取得
-        const repository = new WorkingHoursRepository();
-        const records = repository.getAll();
-
         // 有給休暇の推移を作成
+        const actual = this.model.getActual();
         const paidLeave = {
             mode: "scatter",
             name: "実績",
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: records.map(x => x.paidLeave)
+            x: actual.map(x => x.yearMonth),
+            y: actual.map(x => x.value)
         };
 
         // 画面にデータをセット

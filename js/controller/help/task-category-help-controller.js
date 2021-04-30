@@ -1,17 +1,19 @@
-import { TaskCategoryRepository } from "../../repository/task-category-repository.js";
-import { TaskTypeRepository } from "../../repository/task-type-repository.js";
+import { TaskCategoryHelpModel } from "../../model/help/task-category-help-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 
 /**
- * ヘルプ(作業カテゴリ)の設定処理を提供します。
+ * ヘルプ(作業カテゴリ)のコントローラーを提供します。
  */
 class TaskCategoryHelpController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new TaskCategoryHelpModel();
+
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
         this.stylesheetLoader.add("css/work-experience.css");
@@ -43,8 +45,7 @@ class TaskCategoryHelpController {
      */
     execute = () => {
         // 作業カテゴリデータを取得
-        const repository = new TaskCategoryRepository();
-        const categories = repository.getAll();
+        const categories = this.model.getTaskCategories();
 
         // ソート順で並べる
         categories.sort((a, b) => {
@@ -125,8 +126,7 @@ class TaskCategoryHelpController {
      */
     createChildTaskTd = category => {
         // 作業データを取得
-        const repository = new TaskTypeRepository();
-        const types = repository.getAll().filter(x => x.categoryId === category.id);
+        const types = this.model.getTaskTypesByCategoryId(category.id);
 
         // カテゴリに属する作業データを並べる
         const displayTypes = [];

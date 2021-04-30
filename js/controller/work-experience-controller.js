@@ -1,15 +1,18 @@
-import { WorkExperienceRepository } from "../repository/work-experience-repository.js";
+import { WorkExperienceModel } from "../model/work-experience-model.js";
 import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
- * 職務経歴の設定処理を提供します。
+ * 職務経歴のコントローラーを提供します。
  */
 class WorkExperienceController {
     /**
      * インスタンスを初期化します。
      */
      constructor() {
+        // 対応するモデルをセット
+        this.model = new WorkExperienceModel();
+
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
@@ -36,8 +39,7 @@ class WorkExperienceController {
      */
     execute = () => {
         // 職務経歴データを取得
-        const repository = new WorkExperienceRepository();
-        let experiences = repository.getAll();
+        let experiences = this.model.getWorkExperiences();
 
         // 読込開始の基準となる経歴番号を取得
         let lastNumber = this.getLoadedMinNumber();
@@ -65,11 +67,6 @@ class WorkExperienceController {
 
         // 読込対象の職務経歴に絞る
         experiences = experiences.filter(x => loadingNumbers.includes(Number(x.no)));
-
-        // 最近の職歴から並べる
-        experiences.sort((a, b) => {
-            return b.no - a.no;
-        });
 
         // 追加するtr要素を生成
         const rows = [];
@@ -134,7 +131,7 @@ class WorkExperienceController {
 
     /**
      * 配置済の職務経歴の最小番号を取得します。
-     * @returns {Number} 最小番号を返します。対象が存在しない場合はnullを返します。
+     * @returns {Number} 最小番号を返します。未配置の場合、nullを返します。
      */
     getLoadedMinNumber = () => {
         // 配置済の職務経歴の番号を取得

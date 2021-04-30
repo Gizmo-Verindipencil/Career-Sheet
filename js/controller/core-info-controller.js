@@ -1,15 +1,18 @@
-import { CoreInfoRepository } from "../repository/core-info-repository.js";
+import { CoreInfoModel } from "../model/core-info-model.js";
 import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
- * 基本情報の設定処理を提供します。
+ * 基本情報のコントローラーを提供します。
  */
 class CoreInfoController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new CoreInfoModel();
+
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
@@ -36,8 +39,7 @@ class CoreInfoController {
      */
     execute = () => {
         // 基本データを取得
-        const repository = new CoreInfoRepository();
-        const data = repository.get();
+        const data = this.model.getCoreInformation();
 
         // 画面にデータをセット
         this.setNameAndPhonetic(data);
