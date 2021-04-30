@@ -1,15 +1,17 @@
-import { WorkingHoursRepository } from "../../repository/working-hours-repository.js";
-import { Utility } from "../../shared/utility.js";
+import { BeingLateNumberGraphModel } from "../../model/graph/being-late-number-graph-model.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js"
 
 /**
- * 遅刻回数グラフの設定処理を提供します。
+ * 遅刻回数グラフのコントローラーを提供します。
  */
 class BeingLateNumberGraphController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        // 対応するモデルをセット
+        this.model = new BeingLateNumberGraphModel();
+
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
@@ -35,33 +37,31 @@ class BeingLateNumberGraphController {
      * 遅刻回数グラフの設定を実行します。
      */
     execute = () => {
-        // 遅刻回数データを取得
-        const repository = new WorkingHoursRepository();
-        const records = repository.getAll();
-
         // 遅刻回数の推移を作成
+        const actual = this.model.getActual();
         const paidLeave = {
             mode: "scatter",
-            name: "実績",
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: records.map(x => x.beingLate.count)
+            name: "実績(h)",
+            x: actual.map(x => x.yearMonth),
+            y: actual.map(x => x.value)
         };
 
         // 遅刻回数(移動平均)の推移を作成
+        const eMA = this.model.getEMA();
         const eMAPaidLeave = {
             mode : "scatter",
-            name : "移動平均",
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: Utility.calculateEMA(records.map(x => x.beingLate.count), 12)
+            name : "移動平均(h)",
+            x: eMA.map(x => x.yearMonth),
+            y: eMA.map(x => x.value)
         };
 
         // 残業時間(平均)の推移を作成
-        const average = Utility.calculateAverage(records.map(x => x.beingLate.count));
+        const average = this.model.getAverage();
         const averagePaidLeave = {
             mode : "scatter",
-            name : "月平均",
-            x: records.map(x => `${x.year}-${x.month}`),
-            y: records.map(x => average)
+            name : "月平均(h)",
+            x: average.map(x => x.yearMonth),
+            y: average.map(x => x.value)
         };
 
         // 画面にデータをセット
