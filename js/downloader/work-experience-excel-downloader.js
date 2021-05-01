@@ -28,7 +28,7 @@ class WorkExperienceExcelDownloader {
             "period-from",
             "period-to",
             "device",
-            "operating-system",
+            "operatingSystem",
             "programLanguage",
             "developmentTool",
             "framework",
