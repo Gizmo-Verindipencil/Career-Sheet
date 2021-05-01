@@ -113,7 +113,12 @@ class WorkExperienceController {
             const row = rows.shift();
             $("#work-experience tr:last").after(row);
 
-            // 初回以降はアニメーションさせる
+            /**
+             * 初回以降はアニメーションさせる
+             * テーブルのtr要素やtd要素をアニメーションさせることができないので
+             * 内部にdiv要素を生成し、それをアニメーションさせる。アニメーション
+             * 完了後に、div要素を削除する。
+             */
             row.find("td")
             .wrapInner("<div style='display:none;' />")
             .parent()
