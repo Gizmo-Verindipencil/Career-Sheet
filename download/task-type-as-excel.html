@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>作業種類ダウンロード</title>
+    <script language="javascript" type="module">
+        import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
+        import { TaskTypeExcelDownloader } from "../js/downloader/task-type-excel-downloader.js";
+
+        const scriptLoader = ScriptSeriesLoader;
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        scriptLoader.load(() => {
+            $(document).ready(() => {
+                $("#download").on("click", () => {
+                    const downloader = new TaskTypeExcelDownloader();
+                    downloader.download();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="download" value="Download">
+</body>
+</html>
