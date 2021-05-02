@@ -132,7 +132,6 @@ class TaskCategoryHelpController {
         const displayTypes = [];
         for(let type of types) {
             const style = "work-experience-task-type-unknown";
-            console.log(type);
             const p = `<p class="${style}">${type.id}</p>`;
             displayTypes.push(p);
         }
