@@ -69,7 +69,7 @@ class TaskTypeHelpController {
      * @param {String} innerHtml td要素の内部html。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createTd = innerHtml => `<td class="help-info-cell">${innerHtml}</td>`;
+    createTd = innerHtml => `<td class='help-info-cell'>${innerHtml}</td>`;
 
     /**
      * No.のtd要素を生成します。
@@ -79,7 +79,7 @@ class TaskTypeHelpController {
     createNoTd = index => {
         const number = index + 1;
         const centering = "text-align:center;";
-        return this.createTd(`<p style="${centering}">${number}</p>`);
+        return this.createTd(`<p style='${centering}'>${number}</p>`);
     }
 
     /**
@@ -99,7 +99,7 @@ class TaskTypeHelpController {
         styles.push(theme ? `background-color:${theme.backgroundColor}` : "");
 
         // 要素を生成して返す
-        return this.createTd(`<p class="${className}" style="${styles.join(";")}">${type.id}</p>`);
+        return this.createTd(`<p class='${className}' style='${styles.join(";")}'>${type.id}</p>`);
     }
 
     /**
@@ -110,8 +110,8 @@ class TaskTypeHelpController {
     createNamesTd = type => {
         const noWrap = "white-space:nowrap;";
         const tds = [];
-        tds.push(this.createTd(`<p style="${noWrap}">${type.name.ja}</p>`));
-        tds.push(this.createTd(`<p style="${noWrap}">${type.name.en}</p>`));
+        tds.push(this.createTd(`<p style='${noWrap}'>${type.name.ja}</p>`));
+        tds.push(this.createTd(`<p style='${noWrap}'>${type.name.en}</p>`));
         return tds.join("");
     }
 

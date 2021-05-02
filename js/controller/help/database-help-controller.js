@@ -68,7 +68,7 @@ class DbHelpController {
      * @param {String} innerHtml td要素の内部html。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createTd = innerHtml => `<td class="help-info-cell">${innerHtml}</td>`;
+    createTd = innerHtml => `<td class='help-info-cell'>${innerHtml}</td>`;
 
     /**
      * No.のtd要素を生成します。
@@ -78,7 +78,7 @@ class DbHelpController {
     createNoTd = index => {
         const number = index + 1;
         const centering = "text-align:center;";
-        return this.createTd(`<p style="${centering}">${number}</p>`);
+        return this.createTd(`<p style='${centering}'>${number}</p>`);
     }
 
     /**
@@ -89,7 +89,7 @@ class DbHelpController {
     createNameTd = db => {
         const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p class="${classPrefix}-database" style="${noWrap}">${db.name}</p>`);
+        return this.createTd(`<p class='${classPrefix}-database' style='${noWrap}'>${db.name}</p>`);
     }
 
     /**

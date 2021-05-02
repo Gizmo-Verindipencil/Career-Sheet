@@ -75,7 +75,7 @@ class TaskCategoryHelpController {
      * @param {String} innerHtml td要素の内部html。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createTd = innerHtml => `<td class="help-info-cell">${innerHtml}</td>`;
+    createTd = innerHtml => `<td class='help-info-cell'>${innerHtml}</td>`;
 
     /**
      * No.のtd要素を生成します。
@@ -85,7 +85,7 @@ class TaskCategoryHelpController {
     createNoTd = index => {
         const number = index + 1;
         const centering = "text-align:center;";
-        return this.createTd(`<p style="${centering}">${number}</p>`);
+        return this.createTd(`<p style='${centering}'>${number}</p>`);
     }
 
     /**
@@ -105,8 +105,8 @@ class TaskCategoryHelpController {
     createNamesTd = category => {
         const noWrap = "white-space:nowrap;";
         const tds = [];
-        tds.push(this.createTd(`<p style="${noWrap}">${category.name.ja}</p>`));
-        tds.push(this.createTd(`<p style="${noWrap}">${category.name.en}</p>`));
+        tds.push(this.createTd(`<p style='${noWrap}'>${category.name.ja}</p>`));
+        tds.push(this.createTd(`<p style='${noWrap}'>${category.name.en}</p>`));
         return tds.join("");
     }
 
@@ -139,7 +139,7 @@ class TaskCategoryHelpController {
 
             // 要素を生成して追加
             const className = "work-experience-task-type-unknown";
-            const p = `<p class="${className}" style="${styles.join(";")}">${type.id}</p>`;
+            const p = `<p class='${className}' style='${styles.join(";")}'>${type.id}</p>`;
             displayTypes.push(p);
         }
         return this.createTd(displayTypes.join(""));
