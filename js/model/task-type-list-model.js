@@ -15,11 +15,11 @@ class TaskTypeListModel {
     }
 
     /**
-     * 作業色データを取得します。
+     * 作業テーマデータを取得します。
      * @param {String} id 識別子。
-     * @returns {Object} 作業色データを返します。該当データがない場合、nullを返します。
+     * @returns {Object} 作業テーマデータを返します。該当データがない場合、nullを返します。
      */
-    getTaskColorById = id => {
+    getTaskThemeById = id => {
         const repository = new TaskThemeRepository();
         const colors = repository.getAll().filter(x => x.id === id);
         return colors.length > 0 ? colors[0] : null;
