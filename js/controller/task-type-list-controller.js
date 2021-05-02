@@ -51,7 +51,7 @@ class TaskTypeListController {
         // 作業種類毎のデザインを適用
         for (const type of types) {
             // 対応する色を設定
-            const theme = this.model.getTaskThemeById(type.colorId);
+            const theme = this.model.getTaskThemeById(type.themeId);
             const createStyle = (foreColor, backgroundColor) => `style='color:${foreColor};background-color:${backgroundColor};'`;
             let style = "";
             if (theme) {
