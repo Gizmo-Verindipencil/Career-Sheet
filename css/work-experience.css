@@ -272,7 +272,6 @@ table#work-experience {
 .work-experience-task-type-unknown {
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    background: linear-gradient(#cecece, #ffffff);
     color: #333333;
     display: table-cell;
     float: left;

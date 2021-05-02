@@ -51,17 +51,17 @@ class TaskTypeListController {
         // 作業種類毎のデザインを適用
         for (const type of types) {
             // 対応する色を設定
-            const color = this.model.getTaskColorById(type.colorId);
-            const createLinearGradient = (start, end) => ` style='background:linear-gradient(${start},${end});'`;;
+            const theme = this.model.getTaskThemeById(type.themeId);
+            const createStyle = (foreColor, backgroundColor) => `style='color:${foreColor};background-color:${backgroundColor};'`;
             let style = "";
-            if (color) {
-                style =  createLinearGradient(color.start, color.end);
+            if (theme) {
+                style = createStyle(theme.foreColor, theme.backgroundColor);
             } else {
-                style = createLinearGradient("#cecece", "#ffffff");
+                style = createStyle("#cecece", "#ffffff");
             }
 
             // 要素を生成して画面に追加
-            const idP = `<p class='task-type-list-task-symbol'${style}>${type.id}</p>`;
+            const idP = `<p class='task-type-list-task-symbol' ${style}>${type.id}</p>`;
             const nameP = `<p class='task-type-list-task-description'>${type.name.ja}</p>`;
             const wrapper = `<div class='task-type-list-task-wrapper'>${idP}${nameP}</div>`;
             $("#task-type-list").append(wrapper);

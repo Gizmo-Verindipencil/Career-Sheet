@@ -16,7 +16,7 @@ class TaskTypeRepository {
                     "ja" : "システム企画"
                 },
                 "categoryId" : "DevUP",
-                "colorId" : "DevUP1",
+                "themeId" : "DevUP",
                 "sort" : 1
             },
             {
@@ -26,7 +26,7 @@ class TaskTypeRepository {
                     "ja" : "業務分析"
                 },
                 "categoryId" : "DevUP",
-                "colorId" : "DevUP2",
+                "themeId" : "DevUP",
                 "sort" : 2
             },
             {
@@ -36,7 +36,7 @@ class TaskTypeRepository {
                     "ja" : "システム分析"
                 },
                 "categoryId" : "DevUP",
-                "colorId" : "DevUP3",
+                "themeId" : "DevUP",
                 "sort" : 3
             },
             {
@@ -46,7 +46,7 @@ class TaskTypeRepository {
                     "ja" : "要件定義"
                 },
                 "categoryId" : "DevUP",
-                "colorId" : "DevUP4",
+                "themeId" : "DevUP",
                 "sort" : 4
             },
             {
@@ -56,7 +56,7 @@ class TaskTypeRepository {
                     "ja" : "概算見積"
                 },
                 "categoryId" : "DevUP",
-                "colorId" : "DevUP5",
+                "themeId" : "DevUP",
                 "sort" : 5
             },
             {
@@ -66,7 +66,7 @@ class TaskTypeRepository {
                     "ja" : "見積"
                 },
                 "categoryId" : "DevUP",
-                "colorId" : "DevUP6",
+                "themeId" : "DevUP",
                 "sort" : 6
             },
             {
@@ -76,7 +76,7 @@ class TaskTypeRepository {
                     "ja" : "機能設計"
                 },
                 "categoryId" : "DevUP",
-                "colorId" : "DevUP7",
+                "themeId" : "DevUP",
                 "sort" : 7
             },
             {
@@ -86,7 +86,7 @@ class TaskTypeRepository {
                     "ja" : "基本設計"
                 },
                 "categoryId" : "DevMP",
-                "colorId" : "DevMP1",
+                "themeId" : "DevMP",
                 "sort" : 8
             },
             {
@@ -96,7 +96,7 @@ class TaskTypeRepository {
                     "ja" : "詳細設計"
                 },
                 "categoryId" : "DevMP",
-                "colorId" : "DevMP2",
+                "themeId" : "DevMP",
                 "sort" : 9
             },
             {
@@ -106,7 +106,7 @@ class TaskTypeRepository {
                     "ja" : "製造"
                 },
                 "categoryId" : "DevMP",
-                "colorId" : "DevMP3",
+                "themeId" : "DevMP",
                 "sort" : 10
             },
             {
@@ -116,7 +116,7 @@ class TaskTypeRepository {
                     "ja" : "単体テスト"
                 },
                 "categoryId" : "DevMP",
-                "colorId" : "DevMP4",
+                "themeId" : "DevMP",
                 "sort" : 11
             },
             {
@@ -126,7 +126,7 @@ class TaskTypeRepository {
                     "ja" : "結合テスト"
                 },
                 "categoryId" : "DevLP",
-                "colorId" : "DevLP1",
+                "themeId" : "DevLP",
                 "sort" : 12
             },
             {
@@ -136,7 +136,7 @@ class TaskTypeRepository {
                     "ja" : "システムテスト"
                 },
                 "categoryId" : "DevLP",
-                "colorId" : "DevLP2",
+                "themeId" : "DevLP",
                 "sort" : 13
             },
             {
@@ -146,7 +146,7 @@ class TaskTypeRepository {
                     "ja" : "ユーザー受入テスト"
                 },
                 "categoryId" : "DevLP",
-                "colorId" : "DevLP3",
+                "themeId" : "DevLP",
                 "sort" : 14
             },
             {
@@ -156,7 +156,7 @@ class TaskTypeRepository {
                     "ja" : "本番リリース"
                 },
                 "categoryId" : "DevLP",
-                "colorId" : "DevLP4",
+                "themeId" : "DevLP",
                 "sort" : 15
             },
             {
@@ -166,7 +166,7 @@ class TaskTypeRepository {
                     "ja" : "システム保守"
                 },
                 "categoryId" : "RW",
-                "colorId" : "",
+                "themeId" : "RW",
                 "sort" : 16
             },
             {
@@ -176,7 +176,7 @@ class TaskTypeRepository {
                     "ja" : "システム運用"
                 },
                 "categoryId" : "RW",
-                "colorId" : "",
+                "themeId" : "RW",
                 "sort" : 17
             },
             {
@@ -186,7 +186,7 @@ class TaskTypeRepository {
                     "ja" : "ヘルプデスク"
                 },
                 "categoryId" : "RW",
-                "colorId" : "",
+                "themeId" : "RW",
                 "sort" : 995
             },
             {
@@ -196,7 +196,7 @@ class TaskTypeRepository {
                     "ja" : "モニタリング"
                 },
                 "categoryId" : "RW",
-                "colorId" : "",
+                "themeId" : "RW",
                 "sort" : 996
             },    
             {
@@ -206,7 +206,7 @@ class TaskTypeRepository {
                     "ja" : "研修"
                 },
                 "categoryId" : "O",
-                "colorId" : "",
+                "themeId" : "O",
                 "sort" : 997
             },
             {
@@ -215,8 +215,8 @@ class TaskTypeRepository {
                     "en" : "Cleaning",
                     "ja" : "清掃"
                 },
-                "categoryId" : "RW",
-                "colorId" : "",
+                "categoryId" : "O",
+                "themeId" : "O",
                 "sort" : 998
             },
             {
@@ -226,7 +226,7 @@ class TaskTypeRepository {
                     "ja" : "資料作成"
                 },
                 "categoryId" : "O",
-                "colorId" : "",
+                "themeId" : "O",
                 "sort" : 999
             }
         ];
