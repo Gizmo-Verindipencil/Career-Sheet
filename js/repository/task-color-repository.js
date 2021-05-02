@@ -11,28 +11,28 @@ class TaskColorRepository {
         return [
             {
                 "id" : "DevUP",
-                "start" : "#CCFFCC",
-                "end" : "#7CAF7C"
+                "start" : "#7cff7c",
+                "end" : "#2caf2c"
             },
             {
                 "id" : "DevMP",
-                "start" : "#CCECFF",
-                "end" : "#7C9CAF"
+                "start" : "#89d2ff",
+                "end" : "#3982af"
             },
             {
                 "id" : "DevLP",
-                "start" : "#FFFFCC",
-                "end" : "#AFAF7C"
+                "start" : "#ffff4b",
+                "end" : "#afaf00"
             },
             {
                 "id" : "RW",
-                "start" : "#FCD5B4",
-                "end" : "#AC8564"
+                "start" : "#f89949",
+                "end" : "#a84900"
             },
             {
                 "id" : "O",
-                "start" : "#D9D9D9",
-                "end" : "#898989"
+                "start" : "#ffffff",
+                "end" : "#afafaf"
             }
         ];
     }
