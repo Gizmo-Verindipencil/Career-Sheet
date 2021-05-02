@@ -21,8 +21,8 @@ class TaskTypeListModel {
      */
     getTaskThemeById = id => {
         const repository = new TaskThemeRepository();
-        const colors = repository.getAll().filter(x => x.id === id);
-        return colors.length > 0 ? colors[0] : null;
+        const themes = repository.getAll().filter(x => x.id === id);
+        return themes.length > 0 ? themes[0] : null;
     }
 }
 
