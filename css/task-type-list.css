@@ -18,13 +18,13 @@ div.task-type-list-task-wrapper{
 p.task-type-list-task-symbol {
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    color: #333333;
     float: left;
     font-size: 0.8rem;
     line-height: 1.3rem;
     margin: 0.1rem;
     padding: 0.1rem;
     text-align: center;
+    width: 1.8rem;
 }
 
 p.task-type-list-task-description {
