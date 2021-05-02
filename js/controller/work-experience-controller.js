@@ -364,7 +364,7 @@ class WorkExperienceController {
         types.sort();
 
         // p要素の生成
-        const createP = (classSuffix, innerHtml) => `<p class='${base}-${classSuffix}'>${innerHtml}</p>`;
+        const createP = (classSuffix, style, innerHtml) => `<p class='${base}-${classSuffix}' style='${style}'>${innerHtml}</p>`;
 
         // p要素を生成
         const innerHtml = [];
@@ -373,7 +373,13 @@ class WorkExperienceController {
             if (type === "") {
                 continue;
             }
-            innerHtml.push(createP("unknown", type));
+
+            // 作業テーマを反映
+            const theme = this.model.getTaskThemeByTaskTypeId(type);
+            const styles = [];
+            styles.push(theme ? `color:${theme.foreColor}` : "");
+            styles.push(theme ? `background-color:${theme.backgroundColor}` : "");
+            innerHtml.push(createP("unknown", styles.join(";"), type));
         }
 
         // td要素を生成して返す

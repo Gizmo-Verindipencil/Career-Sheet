@@ -88,8 +88,18 @@ class TaskTypeHelpController {
      * @return {String} td要素を表すhtmlを返します。
      */
     createCodeTd = type => {
-        const style = "work-experience-task-type-unknown";
-        return this.createTd(`<p class="${style}">${type.id}</p>`);
+        const className = "work-experience-task-type-unknown";
+
+        // 作業テーマデータを取得
+        const theme = this.model.getTaskThemeById(type.themeId);
+
+        // 作業テーマに沿ったデザインを設定
+        const styles = [];
+        styles.push(theme ? `color:${theme.foreColor}` : "");
+        styles.push(theme ? `background-color:${theme.backgroundColor}` : "");
+
+        // 要素を生成して返す
+        return this.createTd(`<p class="${className}" style="${styles.join(";")}">${type.id}</p>`);
     }
 
     /**

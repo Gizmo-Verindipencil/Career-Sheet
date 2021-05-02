@@ -131,8 +131,15 @@ class TaskCategoryHelpController {
         // カテゴリに属する作業データを並べる
         const displayTypes = [];
         for(let type of types) {
-            const style = "work-experience-task-type-unknown";
-            const p = `<p class="${style}">${type.id}</p>`;
+            // 作業テーマを反映
+            const theme = this.model.getTaskThemeById(type.themeId);
+            const styles = [];
+            styles.push(theme ? `color:${theme.foreColor}` : "");
+            styles.push(theme ? `background-color:${theme.backgroundColor}` : "");
+
+            // 要素を生成して追加
+            const className = "work-experience-task-type-unknown";
+            const p = `<p class="${className}" style="${styles.join(";")}">${type.id}</p>`;
             displayTypes.push(p);
         }
         return this.createTd(displayTypes.join(""));
