@@ -2,7 +2,7 @@
  * 作業テーマ色データのリポジトリを提供します。
  * 現状はバックエンドを表すダミーです。
  */
-class TaskColorRepository {
+class TaskThemeRepository {
     /**
      * 作業テーマ色データを取得します。
      * @return {Array<Object>} 作業テーマ色データを返します。
@@ -11,31 +11,31 @@ class TaskColorRepository {
         return [
             {
                 "id" : "DevUP",
-                "start" : "#7cff7c",
-                "end" : "#2caf2c"
+                "foreColor" : "#7cff7c",
+                "backgroundColor" : "#005009"
             },
             {
                 "id" : "DevMP",
-                "start" : "#89d2ff",
-                "end" : "#3982af"
+                "foreColor" : "#89d2ff",
+                "backgroundColor" : "#00629e"
             },
             {
                 "id" : "DevLP",
-                "start" : "#ffff4b",
-                "end" : "#afaf00"
+                "foreColor" : "#ffff4b",
+                "backgroundColor" : "#565e00"
             },
             {
                 "id" : "RW",
-                "start" : "#f89949",
-                "end" : "#a84900"
+                "foreColor" : "#f89949",
+                "backgroundColor" : "#753850"
             },
             {
                 "id" : "O",
-                "start" : "#ffffff",
-                "end" : "#afafaf"
+                "foreColor" : "#ffffff",
+                "backgroundColor" : "#474747"
             }
         ];
     }
 }
 
-export { TaskColorRepository };
+export { TaskThemeRepository };
