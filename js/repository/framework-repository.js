@@ -15,6 +15,17 @@ class FrameworkRepository {
     }
 
     /**
+     * フレームワークデータを取得します。
+     * @param {String} id 識別子。
+     * @return {Object} フレームワークデータを返します。該当データがない場合、nullを返します。
+     */
+    getById = id => {
+        const dataStore = new FrameworkDataStore();
+        const frameworks = dataStore.get().filter(x => x.id === id);
+        return frameworks.length > 0 ? frameworks[0] : null;
+    }
+
+    /**
      * フレームワークデータを更新します。
      * @param {Object} framework フレームワークデータ。
      */

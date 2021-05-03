@@ -13,6 +13,17 @@ class TaskCategoryRepository {
         const dataStore = new TaskCategoryDataStore();
         return dataStore.get();
     }
+
+    /**
+     * 作業分類データを取得します。
+     * @param {String} id 識別子。
+     * @return {Object} 作業分類データを返します。該当データがない場合、nullを返します。
+     */
+    getById = id => {
+        const dataStore = new TaskCategoryDataStore();
+        const cagoteries = dataStore.get().filter(x => x.id === id);
+        return cagoteries.length > 0 ? cagoteries[0] : null;
+    }
 }
 
 export { TaskCategoryRepository };

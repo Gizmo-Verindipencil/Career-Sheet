@@ -15,6 +15,17 @@ class BusinessRelationshipRepository {
     }
 
     /**
+     * ビジネス関係データを取得します。
+     * @param {String} id 識別子。
+     * @return {Object} ビジネス関係データを返します。該当データがない場合、nullを返します。
+     */
+    getById = id => {
+        const dataStore = new BusinessRelationshipDataStore();
+        const relationships = dataStore.get().filter(x => x.id === id);
+        return relationships.length > 0 ? relationships[0] : null;
+    }
+
+    /**
      * ビジネス関係データを更新します。
      * @param {Object} businessRelationship ビジネス関係データ。
      */
