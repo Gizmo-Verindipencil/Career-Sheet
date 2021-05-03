@@ -21,8 +21,7 @@ class TaskTypeListModel {
      */
     getTaskThemeById = id => {
         const repository = new TaskThemeRepository();
-        const themes = repository.getAll().filter(x => x.id === id);
-        return themes.length > 0 ? themes[0] : null;
+        return repository.getById(id);
     }
 }
 

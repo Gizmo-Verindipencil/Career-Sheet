@@ -27,12 +27,8 @@ class TaskTypeHelpModel {
      * @returns {Object} 作業テーマデータを返します。該当データがない場合、nullを返します。
      */
      getTaskThemeById = id => {
-        // データを取得
-        const themeRepository = new TaskThemeRepository();
-        const themes = themeRepository.getAll().filter(x => x.id === id);
-
-        // 該当の作業テーマデータを返す
-        return themes.length > 0 ? themes[0] : null;
+        const repository = new TaskThemeRepository();
+        return repository.getById(id);
     }
 }
 

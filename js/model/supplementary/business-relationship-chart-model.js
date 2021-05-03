@@ -10,12 +10,8 @@ class BusinessRelationshipChartModel {
      * @returns {Object} ビジネス関係を返します。該当データがない場合、nullを返します。
      */
     getBusinessRelationshipById = id => {
-        // データを取得
         const repository = new BusinessRelationshipRepository();
-        const relationships = repository.getAll().filter(x => x.id === id);
-
-        // データがなければnullを返す
-        return relationships.length > 0 ? relationships[0] : null;
+        return repository.getById(id);
     }
 }
 
