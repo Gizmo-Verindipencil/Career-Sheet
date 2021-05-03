@@ -1,3 +1,5 @@
+import { OperatingSystemDataStore } from "../data-store/operating-system-data-store.js";
+
 /**
  * OSデータのリポジトリを提供します。
  * 現状はバックエンドを表すダミーです。
@@ -8,23 +10,8 @@ class OperatingSystemRepository {
      * @return {Array<Object>} OSデータを返します。
      */
     getAll = () => {
-        return [
-            {
-                "id" : "1",
-                "name" : "Windows 7",
-                "description" : "Microsoft社の提供するWindowsシリーズのOS。2009年リリース。"
-            },
-            {
-                "id" : "2",
-                "name" : "Windows 8",
-                "description" : "Microsoft社の提供するWindowsシリーズのOS。2012年リリース。"
-            },
-            {
-                "id" : "3",
-                "name" : "Windows 10",
-                "description" : "Microsoft社の提供するWindowsシリーズのOS。2015年リリース。"
-            }
-        ];
+        const dataStore = new OperatingSystemDataStore();
+        return dataStore.get();
     }
 
     /**
