@@ -11,7 +11,7 @@ class DevelopmentToolHelpModel {
     getDevelopmentTools = () => {
         // データを取得
         const repository = new DevelopmentToolRepository();
-        const data = this.records = repository.getAll();
+        const data = repository.getAll();
 
         // 名前の昇順で並べる
         data.sort((a, b) => {
