@@ -361,7 +361,7 @@ class WorkExperienceController {
         let types = [];
         experience.task.forEach(x => types = types.concat(x.type));
         types = types.filter((x, i, self) => self.indexOf(x) === i);
-        types.sort();
+        types = this.model.getSortedTaskTypeIds(types);
 
         // p要素の生成
         const createP = (classSuffix, style, innerHtml) => `<p class='${base}-${classSuffix}' style='${style}'>${innerHtml}</p>`;

@@ -629,7 +629,7 @@ class WorkExperienceDataStore {
                     {
                         "name" : "結合テスト",
                         "type" : [
-                            "CD"
+                            "IT"
                         ]
                     },
                     {
@@ -825,9 +825,7 @@ class WorkExperienceDataStore {
                 "task" : [
                     {
                         "name" : "要件調査",
-                        "type" : [
-                            "BS"
-                        ]
+                        "type" : []
                     },
                     {
                         "name" : "基本設計",
@@ -1318,15 +1316,13 @@ class WorkExperienceDataStore {
                     {
                         "name" : "単体テスト",
                         "type" : [
-                            "UD",
-                            "CD"
+                            "UT"
                         ]
                     },
                     {
                         "name" : "結合テスト",
                         "type" : [
-                            "UD",
-                            "CD"
+                            "IT"
                         ]
                     },
                     {
