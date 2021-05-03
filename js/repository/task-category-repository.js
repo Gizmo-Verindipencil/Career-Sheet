@@ -24,6 +24,14 @@ class TaskCategoryRepository {
         const cagoteries = dataStore.get().filter(x => x.id === id);
         return cagoteries.length > 0 ? cagoteries[0] : null;
     }
+
+    /**
+     * 作業分類データを更新します。
+     * @param {Object} category 作業分類データ。
+     */
+    post = category => {
+        // dummy
+    }
 }
 
 export { TaskCategoryRepository };

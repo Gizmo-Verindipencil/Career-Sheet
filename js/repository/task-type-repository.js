@@ -24,6 +24,14 @@ class TaskTypeRepository {
         const types = dataStore.get().filter(x => x.id === id);
         return types.length > 0 ? types[0] : null;
     }
+
+    /**
+     * 作業種類データを更新します。
+     * @param {Object} type 作業種類データ。
+     */
+    post = type => {
+        // dummy
+    }
 }
 
 export { TaskTypeRepository };

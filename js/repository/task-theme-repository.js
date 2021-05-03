@@ -24,6 +24,14 @@ class TaskThemeRepository {
         const themes = dataStore.get().filter(x => x.id === id);
         return themes.length > 0 ? themes[0] : null;
     }
+
+    /**
+     * 作業テーマデータを更新します。
+     * @param {Object} theme 作業テーマデータ。
+     */
+    post = theme => {
+        // dummy
+    }
 }
 
 export { TaskThemeRepository };
