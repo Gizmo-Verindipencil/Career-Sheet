@@ -1,3 +1,5 @@
+import { DatabaseDataStore } from "../data-store/database-data-store";
+
 /**
  * DBデータのリポジトリを提供します。
  * 現状はバックエンドを表すダミーです。
@@ -8,28 +10,19 @@ class DatabaseRepository {
      * @return {Array<Object>} DBデータを返します。
      */
     getAll = () => {
-        return [
-            {
-                "id" : "1",
-                "name" : "Access",
-                "description" : "Microsoft社の提供するデータベース管理ツール。小規模なシステム向け。"
-            },
-            {
-                "id" : "2",
-                "name" : "SQL-Server",
-                "description" : "Microsoft社の提供するデータベース管理システム。"
-            },
-            {
-                "id" : "3",
-                "name" : "Oracle",
-                "description" : "Oracle社の提供するデータベース管理システム。"
-            },
-            {
-                "id" : "4",
-                "name" : "SQLite",
-                "description" : "パブリックドメインのデータベース。軽量でサーバー不要。"
-            }
-        ];
+        const dataStore = new DatabaseDataStore();
+        return dataStore.get();
+    }
+
+    /**
+     * DBデータを取得します。
+     * @param {String} id 識別子。
+     * @return {Object} DBデータを返します。該当データがない場合、nullを返します。
+     */
+    getById = id => {
+        const dataStore = new DatabaseDataStore();
+        const dbs = dataStore.get().filter(x => x.id === id);
+        return dbs.length > 0 ? dbs[0] : null;
     }
 
     /**

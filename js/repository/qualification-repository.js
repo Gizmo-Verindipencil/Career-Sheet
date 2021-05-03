@@ -1,3 +1,5 @@
+import { QualificationDataStore } from "../data-store/qualification-data-store.js";
+
 /**
  * 資格データデータのリポジトリを提供します。
  * 現状はバックエンドを表すダミーです。
@@ -8,28 +10,19 @@ class QualificationRepository {
      * @return {Array<Object>} 資格データを返します。
      */
     getAll = () => {
-        return [
-            {
-                "userId" : "1",
-                "name" : "基本情報技術者",
-                "score" : ""
-            },
-            {
-                "userId" : "1",
-                "name" : "TOEIC",
-                "score" : "625"
-            },
-            {
-                "userId" : "1",
-                "name" : "Microsoft Office Specialist Excel 2007",
-                "score" : ""
-            },
-            {
-                "userId" : "1",
-                "name" : "Microsoft Office Specialist Access 2010",
-                "score" : ""
-            }
-        ];
+        const dataStore = new QualificationDataStore();
+        return dataStore.get();
+    }
+
+    /**
+     * 資格データを取得します。
+     * @param {String} id 識別子。
+     * @return {Object} 資格データを返します。該当データがない場合、nullを返します。
+     */
+    getById = id => {
+        const dataStore = new QualificationDataStore();
+        const qualifications = dataStore.get().filter(x => x.id === id);
+        return qualifications.length > 0 ? qualifications[0] : null;
     }
 
     /**
