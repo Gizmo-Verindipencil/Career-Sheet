@@ -218,7 +218,7 @@ class WorkExperienceReportController {
         names.push(createA("database", "DB"));
         names.push(createA("framework", "FW"));
         names.push(createA("platform", "PF"));
-        names.push(createA("other", "他"));
+        names.push(createA("uncategorized", "他"));
         $("#work-experience-report-summary-item-name-technology").empty();
         $("#work-experience-report-summary-item-name-technology").append(names.join(""));
 
@@ -248,7 +248,7 @@ class WorkExperienceReportController {
         values.push(createMultiP("database", data.db));
         values.push(createMultiP("framework", data.framework));
         values.push(createMultiP("platform", data.platform));
-        values.push(createMultiP("other", data.other));
+        values.push(createMultiP("uncategorized", data.uncategorizedTechnology));
         $("#work-experience-report-summary-item-value-technology").empty();
         $("#work-experience-report-summary-item-value-technology").append(values.join(""));
     }

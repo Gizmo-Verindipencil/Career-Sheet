@@ -30,7 +30,7 @@ class WorkExperienceDataStore {
                 "framework" : [],
                 "platform" : [],
                 "db" : [],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "インターンシップ",
                 "projectPeakSize" : "40",
                 "subordinate" : "0",
@@ -86,7 +86,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "Access"
                 ],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "新人研修",
                 "projectPeakSize" : "5",
                 "subordinate" : "0",
@@ -125,7 +125,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "Access"
                 ],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "監視作業",
                 "projectPeakSize" : "15",
                 "subordinate" : "0",
@@ -189,7 +189,7 @@ class WorkExperienceDataStore {
                 "framework" : [],
                 "platform" : [],
                 "db" : [],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "社内研修＋雑務",
                 "projectPeakSize" : "3",
                 "subordinate" : "0",
@@ -258,7 +258,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "SQL-Server"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Active Report",
                     "Subversion"
                 ],
@@ -328,7 +328,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "SQL-Server"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Active Report",
                     "Subversion"
                 ],
@@ -404,7 +404,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "SQL-Server"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Excel Creator",
                     "Subversion"
                 ],
@@ -466,7 +466,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "SQL-Server"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "SPREAD",
                     "Subversion"
                 ],
@@ -546,7 +546,7 @@ class WorkExperienceDataStore {
                     "xCute"
                 ],
                 "db" : [],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Subversion"
                 ],
                 "projectSummary" : "技術検証",
@@ -598,7 +598,7 @@ class WorkExperienceDataStore {
                     "SQL-Server",
                     "Oracle"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Subversion"
                 ],
                 "projectSummary" : "システム新規開発",
@@ -666,7 +666,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "SQLite"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Subversion"
                 ],
                 "projectSummary" : "システム新規開発",
@@ -736,7 +736,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "Oracle"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Crystal Report",
                     "Subversion"
                 ],
@@ -813,7 +813,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "SQL-Server"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Subversion"
                 ],
                 "projectSummary" : "システム改訂",
@@ -890,7 +890,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "SQL-Server"
                 ],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "SQL-Serverアップグレード対応",
                 "projectPeakSize" : "3",
                 "subordinate" : "0",
@@ -939,7 +939,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "Oracle(AWS)"
                 ],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "システム改訂（消費税対応）",
                 "projectPeakSize" : "5",
                 "subordinate" : "0",
@@ -1003,7 +1003,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "Oracle"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Crystal Report",
                     "Subversion",
                     "Visual SourceSafe"
@@ -1089,7 +1089,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "Oracle"
                 ],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "消費税改正の応急対応",
                 "projectPeakSize" : "1",
                 "subordinate" : "0",
@@ -1177,7 +1177,7 @@ class WorkExperienceDataStore {
                     "SQL-Server",
                     "Oracle"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Subversion"
                 ],
                 "projectSummary" : "開発環境構築/調査",
@@ -1233,7 +1233,7 @@ class WorkExperienceDataStore {
                     "SQL-Server",
                     "Oracle"
                 ],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "保守（本番障害対応）",
                 "projectPeakSize" : "2",
                 "subordinate" : "0",
@@ -1284,7 +1284,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "Oracle"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Crystal Report",
                     "Visual SourceSafe"
                 ],
@@ -1371,7 +1371,7 @@ class WorkExperienceDataStore {
                     "SQL-Server",
                     "Oracle"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Crystal Report",
                     "Subversion"
                 ],
@@ -1464,7 +1464,7 @@ class WorkExperienceDataStore {
                     "SQL-Server",
                     "Oracle"
                 ],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "基幹マイグレーションに伴う調査",
                 "projectPeakSize" : "2",
                 "subordinate" : "0",
@@ -1515,7 +1515,7 @@ class WorkExperienceDataStore {
                     "SQL-Server",
                     "Oracle"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "JQuery",
                     "Subversion"
                 ],
@@ -1609,7 +1609,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "Oracle"
                 ],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "Subversion",
                     "Crystal Report"
                 ],
@@ -1660,7 +1660,7 @@ class WorkExperienceDataStore {
                 "db" : [
                     "Access"
                 ],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "不具合調査",
                 "projectPeakSize" : "1",
                 "subordinate" : "0",
@@ -1711,7 +1711,7 @@ class WorkExperienceDataStore {
                     "SQL-Server",
                     "Access"
                 ],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "システム改訂",
                 "projectPeakSize" : "6",
                 "subordinate" : "0",
@@ -1788,7 +1788,7 @@ class WorkExperienceDataStore {
                     "SQL-Server",
                     "Access"
                 ],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "システム新規開発",
                 "projectPeakSize" : "6",
                 "subordinate" : "0",
@@ -1860,7 +1860,7 @@ class WorkExperienceDataStore {
                     "Form.io"
                 ],
                 "db" : [],
-                "other" : [
+                "uncategorizedTechnology" : [
                     "JQuery formBuilder",
                     "Packery",
                     "shopify draggable",
@@ -1909,7 +1909,7 @@ class WorkExperienceDataStore {
                     "SQL-Server",
                     "Access"
                 ],
-                "other" : [],
+                "uncategorizedTechnology" : [],
                 "projectSummary" : "システム改訂",
                 "projectPeakSize" : "5",
                 "subordinate" : "0",

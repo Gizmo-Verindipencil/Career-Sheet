@@ -2,7 +2,7 @@
  * その他技術データのデータストアを提供します。
  * データベース等のデータストアを表すダミーです。
  */
-class OtherDataStore {
+class UncategorizedTechnologyDataStore {
     /**
      * その他技術データを取得します。
      * @return {Array<Object>} その他技術データを返します。
@@ -63,4 +63,4 @@ class OtherDataStore {
     }
 }
 
-export { OtherDataStore };
+export { UncategorizedTechnologyDataStore };

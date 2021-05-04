@@ -1,4 +1,4 @@
-import { OtherHelpModel } from "../../model/help/other-help-model.js";
+import { UncategorizedTechnologyHelpModel } from "../../model/help/uncategorized-techology-help-model.js";
 import { Utility } from "../../shared/utility.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
@@ -6,13 +6,13 @@ import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
 /**
  * ヘルプ(その他技術)のコントローラーを提供します。
  */
-class OtherHelpController {
+class UncategorizedTechnologyHelpController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
         // 対応するモデルをセット
-        this.model = new OtherHelpModel();
+        this.model = new UncategorizedTechnologyHelpModel();
 
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
@@ -27,11 +27,11 @@ class OtherHelpController {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {OtherHelpController} 新しいインスタンスします。
+     * @returns {UncategorizedTechnologyHelpController} 新しいインスタンスします。
      */
     static build = async() => {
         // インスタンスを作成
-        const controller = new OtherHelpController();
+        const controller = new UncategorizedTechnologyHelpController();
 
         // スクリプトの読込完了後にインスタンスを返す
         while(controller.scriptLoader.running){
@@ -45,17 +45,17 @@ class OtherHelpController {
      */
     execute = () => {
         // その他技術データを取得
-        const others = this.model.getOthers();
+        const technologies = this.model.getOthers();
 
         // データ毎の処理
-        for (let i = 0; i < others.length;  i++) {
-            const other = others[i];
+        for (let i = 0; i < technologies.length;  i++) {
+            const technology = technologies[i];
 
             // td要素を生成
             const cells = [];
             cells.push(this.createNoTd(i));
-            cells.push(this.createNameTd(other));
-            cells.push(this.createDescriptionTd(other));
+            cells.push(this.createNameTd(technology));
+            cells.push(this.createDescriptionTd(technology));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
@@ -83,23 +83,23 @@ class OtherHelpController {
 
     /**
      * 名称のtd要素を生成します。
-     * @param {Object} other その他技術データ。
+     * @param {Object} technology その他技術データ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createNameTd = other => {
+    createNameTd = technology => {
         const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p class="${classPrefix}-other" style="${noWrap}">${other.name}</p>`);
+        return this.createTd(`<p class="${classPrefix}-uncategorized" style="${noWrap}">${technology.name}</p>`);
     }
 
     /**
      * 説明のtd要素を生成します。
-     * @param {Object} other その他技術データ。
+     * @param {Object} technology その他技術データ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createDescriptionTd = other => {
-        return this.createTd(`<p>${other.description}</p>`);
+    createDescriptionTd = technology => {
+        return this.createTd(`<p>${technology.description}</p>`);
     }
 }
 
-export { OtherHelpController };
+export { UncategorizedTechnologyHelpController };

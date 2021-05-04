@@ -206,7 +206,7 @@ table#work-experience {
     text-align: center;
 }
 
-.work-experience-technology-other {
+.work-experience-technology-uncategorized {
     border: solid 0.08rem #222222;
     border-radius: 20%;
     background: linear-gradient(#cecece, #ffffff);

@@ -307,7 +307,7 @@ class WorkExperienceController {
         innerHtml.push(createMultiP("database", experience.db));
         innerHtml.push(createMultiP("framework", experience.framework));
         innerHtml.push(createMultiP("platform", experience.platform));
-        innerHtml.push(createMultiP("other", experience.other));
+        innerHtml.push(createMultiP("uncategorized", experience.uncategorizedTechnology));
 
         // td要素を生成して返す
         return this.createTd(base, innerHtml.join(""));
