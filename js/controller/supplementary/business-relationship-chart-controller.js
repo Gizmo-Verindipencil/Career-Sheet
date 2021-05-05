@@ -83,7 +83,7 @@ class BusinessRelationshipChartController {
 
     /**
      * ノード説明の設定を行います。
-     * @param {Object} relationship ビジネス関係データ
+     * @param {Object} relationship ビジネス関係データ。
      */
     setNodeDescription = relationship => {
         for(let node of relationship.nodes) {
