@@ -1,12 +1,16 @@
-#chart-container {
+#list-container {
     width: 100%;
 }
 
-.chart-wrapper {
+.list-child {
+    background-color: #565656;
     border: 1px solid #000000;
-    background-color: #ffffff;
+    color: #ffffff;
+    width: 100%;
 }
 
-.chart-image {
-    width: 50%;
+.list-child-chart {
+    height: 500px;
+    padding-bottom: 3rem;
+    width: 100%;
 }
