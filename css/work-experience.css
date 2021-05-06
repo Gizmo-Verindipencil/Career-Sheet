@@ -102,9 +102,9 @@ table#work-experience {
 }
 
 .work-experience-technology-device {
+    background: linear-gradient(#2bc704, #01ffb3);
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    background: linear-gradient(#2bc704, #01ffb3);
     color: #333333;
     display: table-cell;
     float: left;
@@ -117,9 +117,9 @@ table#work-experience {
 }
 
 .work-experience-technology-operating-system {
+    background: linear-gradient(#ff457a, #ff798f);
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    background: linear-gradient(#ff457a, #ff798f);
     color: #333333;
     display: table-cell;
     float: left;
@@ -132,9 +132,9 @@ table#work-experience {
 }
 
 .work-experience-technology-programming-language {
+    background: linear-gradient(#e6c613, #ffdf2a);
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    background: linear-gradient(#e6c613, #ffdf2a);
     color: #333333;
     display: table-cell;
     float: left;
@@ -147,9 +147,9 @@ table#work-experience {
 }
 
 .work-experience-technology-development-tool {
+    background: linear-gradient(#272727, #7e7e7e);
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    background: linear-gradient(#272727, #7e7e7e);
     color: #eeeeee;
     display: table-cell;
     float: left;
@@ -162,9 +162,9 @@ table#work-experience {
 }
 
 .work-experience-technology-database {
+    background: linear-gradient(#2088ff, #95c6ff);
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    background: linear-gradient(#2088ff, #95c6ff);
     color: #333333;
     display: table-cell;
     float: left;
@@ -177,9 +177,9 @@ table#work-experience {
 }
 
 .work-experience-technology-framework {
+    background: linear-gradient(#f8882d, #ffb477);
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    background: linear-gradient(#f8882d, #ffb477);
     color: #333333;
     display: table-cell;
     float: left;
@@ -192,9 +192,9 @@ table#work-experience {
 }
 
 .work-experience-technology-platform {
+    background: linear-gradient(#83ffc5, #0affa1);
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    background: linear-gradient(#83ffc5, #0affa1);
     color: #333333;
     display: table-cell;
     float: left;
@@ -207,9 +207,9 @@ table#work-experience {
 }
 
 .work-experience-technology-uncategorized {
+    background: linear-gradient(#cecece, #ffffff);
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    background: linear-gradient(#cecece, #ffffff);
     color: #333333;
     display: table-cell;
     float: left;
@@ -231,9 +231,9 @@ table#work-experience {
 }
 
 .work-experience-main-task-summary {
+    background: linear-gradient(#cecece, #ffffff);
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    background: linear-gradient(#cecece, #ffffff);
     color: #333333;
     display: table-cell;
     float: left;
@@ -246,9 +246,9 @@ table#work-experience {
 }
 
 .work-experience-main-task-name {
+    background: linear-gradient(#cecece, #ffffff);
     border: solid 0.08rem #222222;
     border-radius: 20%;
-    background: linear-gradient(#cecece, #ffffff);
     color: #333333;
     display: table-cell;
     float: left;
