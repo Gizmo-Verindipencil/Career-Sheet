@@ -22,7 +22,7 @@ class OvertimeHoursGraphModel {
         for(const record of this.records) {
             data.push({
                 yearMonth: `${record.year}-${record.month}`,
-                value: record.beingLate.count
+                value: record.overtimeHours
             });
         }
         return data;
@@ -33,7 +33,7 @@ class OvertimeHoursGraphModel {
      * @returns {Array<Object>} 残業時間の移動平均を返します。
      */
     getEMA = () => {
-        const eMAs = Utility.calculateEMA(this.records.map(x => x.beingLate.count), 12);
+        const eMAs = Utility.calculateEMA(this.records.map(x => x.overtimeHours), 12);
         const data = [];
         for(let i = 0; i < this.records.length; i++) {
             data.push({
@@ -49,7 +49,7 @@ class OvertimeHoursGraphModel {
      * @returns {Array<Object>} 残業時間の平均を返します。
      */
     getAverage = () => {
-        const average = Utility.calculateAverage(this.records.map(x => x.beingLate.count));
+        const average = Utility.calculateAverage(this.records.map(x => x.overtimeHours));
         const data = [];
         for(const record of this.records) {
             data.push({
