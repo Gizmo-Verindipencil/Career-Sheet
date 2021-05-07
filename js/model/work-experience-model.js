@@ -44,7 +44,6 @@ class WorkExperienceModel {
         // ソートの最大を取得
         const maxSort = Math.max(...cachedTypes.map(x => Number(x.sort)));
 
-        console.log(maxSort);
         // 作業種類データのソートを設定
         const sortOrder = [];
         for(const id of taskTypeIds) {
