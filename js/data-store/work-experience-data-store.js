@@ -1702,7 +1702,9 @@ class WorkExperienceDataStore {
                     "VBA",
                     "T-SQL"
                 ],
-                "developmentTool" : [],
+                "developmentTool" : [
+                    "Visual Studio Code"
+                ],
                 "framework" : [
                     "Classic ASP"
                 ],
