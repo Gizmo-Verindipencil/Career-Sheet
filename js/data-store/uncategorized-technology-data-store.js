@@ -58,6 +58,11 @@ class UncategorizedTechnologyDataStore {
                 "id" : "10",
                 "name" : "interact.js",
                 "description" : "taye氏が提供するJavaScriptライブラリ。ドラッグ&ドロップを利用する為のものだが、APIを通してイベント・ポイントが提供される為「より自由度が高い」と謳っている。"
+            },
+            {
+                "id" : "11",
+                "name" : "Autofac",
+                "description" : ".NET Framework用のIoCコンテナ。"
             }
         ];
     }

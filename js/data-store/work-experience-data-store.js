@@ -1790,7 +1790,9 @@ class WorkExperienceDataStore {
                     "SQL-Server",
                     "Access"
                 ],
-                "uncategorizedTechnology" : [],
+                "uncategorizedTechnology" : [
+                    "Autofac"
+                ],
                 "projectSummary" : "システム新規開発",
                 "projectPeakSize" : "6",
                 "subordinate" : "0",
