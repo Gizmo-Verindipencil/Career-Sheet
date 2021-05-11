@@ -3,7 +3,7 @@ import { UserRepository } from "../repository/user-repository.js";
 /**
  * 基本情報のモデルを提供します。
  */
-class CoreInfoModel {
+class CoreInformationModel {
     /**
      * ユーザーデータを取得します。
      * @returns {Object} ユーザーデータを返します。
@@ -14,4 +14,4 @@ class CoreInfoModel {
     }
 }
 
-export { CoreInfoModel };
+export { CoreInformationModel };

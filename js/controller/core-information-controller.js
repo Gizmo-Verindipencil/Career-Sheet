@@ -1,17 +1,17 @@
-import { CoreInfoModel } from "../model/core-info-model.js";
+import { CoreInformationModel } from "../model/core-information-model.js";
 import { Utility } from "../shared/utility.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.js"
 
 /**
  * 基本情報のコントローラーを提供します。
  */
-class CoreInfoController {
+class CoreInformationController {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
         // 対応するモデルをセット
-        this.model = new CoreInfoModel();
+        this.model = new CoreInformationModel();
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
@@ -21,11 +21,11 @@ class CoreInfoController {
 
     /**
      * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {CoreInfoController} 新しいインスタンスを返します。
+     * @returns {CoreInformationController} 新しいインスタンスを返します。
      */
     static build = async() => {
         // インスタンスを作成
-        const controller = new CoreInfoController();
+        const controller = new CoreInformationController();
 
         // スクリプトの読込完了後にインスタンスを返す
         while(controller.scriptLoader.running){
@@ -195,4 +195,4 @@ class CoreInfoController {
     }
 }
 
-export { CoreInfoController };
+export { CoreInformationController };
