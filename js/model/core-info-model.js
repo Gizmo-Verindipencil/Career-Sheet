@@ -1,15 +1,15 @@
-import { CoreInfoRepository } from "../repository/core-info-repository.js";
+import { UserRepository } from "../repository/user-repository.js";
 
 /**
  * 基本情報のモデルを提供します。
  */
 class CoreInfoModel {
     /**
-     * 基本情報データを取得します。
-     * @returns {Object} 基本情報データを返します。
+     * ユーザーデータを取得します。
+     * @returns {Object} ユーザーデータを返します。
      */
     getCoreInformation = () => {
-        const repository = new CoreInfoRepository();
+        const repository = new UserRepository();
         return repository.get();
     }
 }

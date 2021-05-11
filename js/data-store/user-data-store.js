@@ -1,11 +1,11 @@
 /**
- * 基本情報データのデータストアを提供します。
+ * ユーザーデータのデータストアを提供します。
  * データベース等のデータストアを表すダミーです。
  */
-class CoreInfoDataStore {
+class UserDataStore {
     /**
-     * 基本情報データを取得します。
-     * @return {Object} 基本情報データを返します。
+     * ユーザーデータを取得します。
+     * @return {Object} ユーザーデータを返します。
      */
     get = () => {
         return {
@@ -36,4 +36,4 @@ class CoreInfoDataStore {
     }
 }
 
-export { CoreInfoDataStore };
+export { UserDataStore };
