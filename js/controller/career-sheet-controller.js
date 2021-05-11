@@ -40,7 +40,7 @@ class CareerSheetController {
     execute = () => {
         // ページを読込してセット
         const urls = [];
-        urls.push("core-info.html");
+        urls.push("core-information.html");
         urls.push("work-experience.html");
         urls.push("qualification.html");
         urls.push("statistics.html");

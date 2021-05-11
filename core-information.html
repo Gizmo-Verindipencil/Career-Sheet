@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>基本情報</title>
+    <script language="javascript" type="module">
+        import StylesheetSeriesLoader from "./js/shared/stylesheet-series-loader.js";
+        import ScriptSeriesLoader from "./js/shared/script-series-loader.js";
+        import { CoreInformationController } from "./js/controller/core-information-controller.js";
+
+        const stylesheetLoader = StylesheetSeriesLoader;
+        stylesheetLoader.add("css/destyle.css");
+        stylesheetLoader.add("css/restyle.css");
+        stylesheetLoader.add("css/common.css");
+        stylesheetLoader.add("css/core-information.css");
+        stylesheetLoader.load();
+
+        const scriptLoader = ScriptSeriesLoader;
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        scriptLoader.load(() => {
+            $(document).ready(async() => {
+                const controller = await CoreInformationController.build();
+                controller.execute();
+            });
+        });
+    </script>
+</head>
+<body>
+    <noscript>
+        <p>内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <section>
+        <h1 class="section-title">Ⅰ. 基本情報</h1>
+        <table id="core-information">
+            <thead>
+                <th id="core-information-column-1"></th>
+                <th id="core-information-column-2"></th>
+                <th id="core-information-column-3"></th>
+                <th id="core-information-column-4"></th>
+                <th id="core-information-column-5"></th>
+                <th id="core-information-column-6"></th>
+                <th id="core-information-column-7"></th>
+                <th id="core-information-column-8"></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="core-information-item-name-phonetic">
+                        <label class="core-information-item-name" for="phonetic">フリガナ</label>
+                    </td>
+                    <td id="core-information-item-value-phonetic">
+                        <input type="text" class="core-information-item-value" name="phonetic" value="{phonetic}">
+                    </td>
+                    <td id="core-information-item-name-birth">
+                        <label class="core-information-item-name" for="birth">生年月日</label>
+                    </td>
+                    <td id="core-information-item-value-birth" colspan="2">
+                        <input type="text" class="core-information-item-value" name="birth" value="{birth}">
+                    </td>
+                    <td id="core-information-item-name-age" colspan="2">
+                        <label class="core-information-item-name" for="age">年齢</label>
+                    </td>
+                    <td id="core-information-item-name-sex">
+                        <label class="core-information-item-name" for="sex">性別</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="core-information-item-name-full-name">
+                        <label class="core-information-item-name" for="fullName">氏　名</label>
+                    </td>
+                    <td id="core-information-item-value-full-name">
+                        <input type="text" class="core-information-item-value" name="fullName" value="{fullName}">
+                    </td>
+                    <td id="core-information-item-name-joining-current-company">
+                        <label class="core-information-item-name" for="joiningCurrentCompany">入社年月日</label>
+                    </td>
+                    <td id="core-information-item-value-joining-current-company" colspan="2">
+                        <input type="text" class="core-information-item-value" name="joiningCurrentCompany" value="{joiningCurrentCompany}">
+                    </td>
+                    <td id="core-information-item-value-age" colspan="2">
+                        <input type="text" class="core-information-item-value value-centering" name="age" value="{age}">
+                    </td>
+                    <td id="core-information-item-value-sex">
+                        <input type="text" class="core-information-item-value value-centering" name="sex" value="{sex}">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="core-information-item-name-address" rowspan="2">
+                        <label class="core-information-item-name" for="address">住　所</label>
+                    </td>
+                    <td id="core-information-item-value-address" rowspan="2" colspan="5">
+                        <input type="text" class="core-information-item-value" name="zipCode" value="{zipCode}">
+                        <input type="text" class="core-information-item-value" name="address" value="{address}">
+                    </td>
+                    <td id="core-information-item-name-local-station" colspan="2">
+                        <label class="core-information-item-name" for="localStation">最寄り駅</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="core-information-item-value-local-station" colspan="2">
+                        <input type="text" class="core-information-item-value value-right-aligned" name="localLine" value="{localLine}">
+                        <input type="text" class="core-information-item-value value-right-aligned" name="localStation" value="{localStation}">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="core-information-item-name-academic-background-education">
+                        <label class="core-information-item-name" for="education">最終学歴</label>
+                    </td>
+                    <td id="core-information-item-value-academic-background-education" colspan="3">
+                        <input type="text" class="core-information-item-value" name="education" value="{education}">
+                    </td>
+                    <td id="core-information-item-value-academic-background-education-date" colspan="4">
+                        <input type="text" class="core-information-item-value" name="educationDate" value="{educationDate}">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="core-information-item-name-academic-background-other">
+                        <label class="core-information-item-name" for="other">各種学校</label>
+                    </td>
+                    <td id="core-information-item-value-academic-background-other" colspan="3">
+                        <input type="text" class="core-information-item-value" name="other" value="{other}">
+                    </td>
+                    <td id="core-information-item-value-academic-background-other-date" colspan="4">
+                        <input type="text" class="core-information-item-value" name="otherDate" value="{otherDate}">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

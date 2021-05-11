@@ -1,4 +1,4 @@
-label.core-info-item-name {
+label.core-information-item-name {
     font-size: 0.8rem;
     height: 100%;
     overflow-x: hidden;
@@ -7,7 +7,7 @@ label.core-info-item-name {
     width: 100%;
 }
 
-input[type="text"].core-info-item-value {
+input[type="text"].core-information-item-value {
     background: none;
     border: none;
     border-radius: 0;
@@ -33,178 +33,178 @@ input[type="text"].value-right-aligned {
     text-align: right;
 }
 
-table#core-info {
+table#core-information {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
 }
 
-th#core-info-column-1 {
+th#core-information-column-1 {
     width: 10%;
 }
 
-th#core-info-column-2 {
+th#core-information-column-2 {
     width: 30%;
 }
 
-th#core-info-column-3 {
+th#core-information-column-3 {
     width: 10%;
 }
 
-th#core-info-column-4 {
+th#core-information-column-4 {
     width: 17%;
 }
 
-th#core-info-column-5 {
+th#core-information-column-5 {
     width: 13%;
 }
 
-th#core-info-column-6 {
+th#core-information-column-6 {
     width: 4%;
 }
 
-th#core-info-column-7 {
+th#core-information-column-7 {
     width: 6%;
 }
 
-th#core-info-column-8 {
+th#core-information-column-8 {
     width: 10%;
 }
 
-td#core-info-item-name-phonetic {
+td#core-information-item-name-phonetic {
     border: solid 0.01rem #000000;
     border-bottom: none;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-value-phonetic {
+td#core-information-item-value-phonetic {
     border: solid 0.01rem #000000;
     border-bottom: dashed 0.01em #000000;
     text-align: left;
     vertical-align: middle;
 }
 
-td#core-info-item-name-birth {
+td#core-information-item-name-birth {
     border: solid 0.01rem #000000;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-value-birth {
+td#core-information-item-value-birth {
     border: solid 0.01rem #000000;
     text-align: left;
     vertical-align: middle;
 }
 
-td#core-info-item-name-age {
+td#core-information-item-name-age {
     border: solid 0.01rem #000000;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-name-sex {
+td#core-information-item-name-sex {
     border: solid 0.01rem #000000;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-name-full-name {
+td#core-information-item-name-full-name {
     border: solid 0.01rem #000000;
     border-top: none;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-value-full-name {
+td#core-information-item-value-full-name {
     border: solid 0.01rem #000000;
     border-top: none;
     text-align: left;
     vertical-align: middle;
 }
 
-td#core-info-item-name-joining-current-company {
+td#core-information-item-name-joining-current-company {
     border: solid 0.01rem #000000;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-value-joining-current-company {
+td#core-information-item-value-joining-current-company {
     border: solid 0.01rem #000000;
     text-align: left;
     vertical-align: middle;
 }
 
-td#core-info-item-value-age {
+td#core-information-item-value-age {
     border: solid 0.01rem #000000;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-value-sex {
+td#core-information-item-value-sex {
     border: solid 0.01rem #000000;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-name-address {
+td#core-information-item-name-address {
     border: solid 0.01rem #000000;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-value-address {
+td#core-information-item-value-address {
     border: solid 0.01rem #000000;
     text-align: left;
     vertical-align: top;
 }
 
-td#core-info-item-name-local-station {
+td#core-information-item-name-local-station {
     border: solid 0.01rem #000000;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-value-local-station {
+td#core-information-item-value-local-station {
     border: solid 0.01rem #000000;
     text-align: right;
     vertical-align: top;
 }
 
-td#core-info-item-name-academic-background-education {
+td#core-information-item-name-academic-background-education {
     border: solid 0.01rem #000000;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-value-academic-background-education {
+td#core-information-item-value-academic-background-education {
     border: solid 0.01rem #000000;
     border-right: none;
     text-align: left;
     vertical-align: middle;
 }
 
-td#core-info-item-value-academic-background-education-date {
+td#core-information-item-value-academic-background-education-date {
     border: solid 0.01rem #000000;
     border-left: none;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-name-academic-background-other {
+td#core-information-item-name-academic-background-other {
     border: solid 0.01rem #000000;
     text-align: center;
     vertical-align: middle;
 }
 
-td#core-info-item-value-academic-background-other {
+td#core-information-item-value-academic-background-other {
     border: solid 0.01rem #000000;
     border-right: none;
     text-align: left;
     vertical-align: middle;
 }
 
-td#core-info-item-value-academic-background-other-date {
+td#core-information-item-value-academic-background-other-date {
     border: solid 0.01rem #000000;
     border-left: none;
     text-align: center;
