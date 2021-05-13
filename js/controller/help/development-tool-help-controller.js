@@ -16,7 +16,7 @@ class DevelopmentToolHelpController {
 
         // 必要なスタイルシートを読込
         this.stylesheetLoader = StylesheetSeriesLoader;
-        this.stylesheetLoader.add("css/work-experience.css");
+        this.stylesheetLoader.add("css/work-experience.min.css");
         this.stylesheetLoader.load();
         
         // 必要なスクリプトを読込
