@@ -1892,7 +1892,7 @@ class WorkExperienceDataStore {
                 "businessType" : "卸販売",
                 "period" : {
                     "from" : "2021-3-29",
-                    "to" : "2021-4-12"
+                    "to" : "2021-4-19"
                 },
                 "device" : [
                     "PC"
@@ -1925,6 +1925,12 @@ class WorkExperienceDataStore {
                         "name" : "基本設計",
                         "type" : [
                             "HLD"
+                        ]
+                    },
+                    {
+                        "name" : "チューニング",
+                        "type" : [
+                            "C"
                         ]
                     }
                 ],
