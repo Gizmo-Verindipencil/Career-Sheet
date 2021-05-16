@@ -22,7 +22,7 @@ class DeviceHelpController {
         
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.min.js");
+        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         this.scriptLoader.load();
     }
 

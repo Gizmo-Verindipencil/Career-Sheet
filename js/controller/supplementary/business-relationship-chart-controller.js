@@ -15,10 +15,10 @@ class BusinessRelationshipChartController {
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.min.js");
-        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-core.min.min.js");
-        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-graph.min.min.js");
-        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.min.js");
+        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-core.min.js");
+        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-graph.min.js");
+        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.js");
         this.scriptLoader.load();
     }
 

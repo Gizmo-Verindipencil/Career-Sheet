@@ -16,7 +16,7 @@
         stylesheetLoader.load();
 
         const scriptLoader = ScriptSeriesLoader;
-        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.min.js");
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         scriptLoader.load(() => {
             $(document).ready(async() => {
                 const controller = await WorkExperienceReportController.build();

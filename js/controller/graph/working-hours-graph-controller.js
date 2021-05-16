@@ -15,7 +15,7 @@ class WorkingHoursGraphController {
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.min.js");
+        this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
         this.scriptLoader.load();
     }
 
