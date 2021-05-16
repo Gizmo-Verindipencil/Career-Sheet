@@ -1,5 +1,5 @@
-import { BeingLateNumberGraphModel } from "../../model/graph/being-late-number-graph-model.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.js"
+import { BeingLateNumberGraphModel } from "../../model/graph/being-late-number-graph-model.min.js";
+import ScriptSeriesLoader from "../../shared/script-series-loader.min.js"
 
 /**
  * 遅刻回数グラフのコントローラーを提供します。
@@ -14,7 +14,7 @@ class BeingLateNumberGraphController {
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
+        this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.min.js");
         this.scriptLoader.load();
     }
 

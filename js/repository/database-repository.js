@@ -1,4 +1,4 @@
-import { DatabaseDataStore } from "../data-store/database-data-store.js";
+import { DatabaseDataStore } from "../data-store/database-data-store.min.js";
 
 /**
  * DBデータのリポジトリを提供します。

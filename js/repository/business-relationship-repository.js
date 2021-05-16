@@ -1,4 +1,4 @@
-import { BusinessRelationshipDataStore } from "../data-store/business-relationship-data-store.js";
+import { BusinessRelationshipDataStore } from "../data-store/business-relationship-data-store.min.js";
 
 /**
  * ビジネス関係データのリポジトリを提供します。

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>機種の説明</title>
     <script language="javascript" type="module">
-        import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.js";
-        import ScriptSeriesLoader from "../js/shared/script-series-loader.js";
-        import { DeviceHelpController } from "../js/controller/help/device-help-controller.js";
+        import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.min.js";
+        import ScriptSeriesLoader from "../js/shared/script-series-loader.min.js";
+        import { DeviceHelpController } from "../js/controller/help/device-help-controller.min.js";
 
         const stylesheetLoader = StylesheetSeriesLoader;
         stylesheetLoader.add("css/destyle.min.css");
@@ -16,7 +16,7 @@
         stylesheetLoader.load();
 
         const scriptLoader = ScriptSeriesLoader;
-        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.min.js");
         scriptLoader.load(() => {
             $(document).ready(async() => {
                 const controller = await DeviceHelpController.build();

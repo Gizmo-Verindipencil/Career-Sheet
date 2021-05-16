@@ -1,6 +1,6 @@
-import { TaskCategoryRepository } from "../../repository/task-category-repository.js";
-import { TaskTypeRepository } from "../../repository/task-type-repository.js";
-import { TaskThemeRepository } from "../../repository/task-theme-repository.js";
+import { TaskCategoryRepository } from "../../repository/task-category-repository.min.js";
+import { TaskTypeRepository } from "../../repository/task-type-repository.min.js";
+import { TaskThemeRepository } from "../../repository/task-theme-repository.min.js";
 
 /**
  * ヘルプ(作業カテゴリ)のモデルを提供します。

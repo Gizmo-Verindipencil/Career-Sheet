@@ -1,4 +1,4 @@
-import { TaskThemeDataStore } from "../data-store/task-theme-data-store.js";
+import { TaskThemeDataStore } from "../data-store/task-theme-data-store.min.js";
 
 /**
  * 作業テーマデータのリポジトリを提供します。

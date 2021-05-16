@@ -1,4 +1,4 @@
-import { UserDataStore } from "../data-store/user-data-store.js";
+import { UserDataStore } from "../data-store/user-data-store.min.js";
 
 /**
  * ユーザーデータのリポジトリを提供します。

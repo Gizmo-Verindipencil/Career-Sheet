@@ -1,5 +1,5 @@
-import { OvertimeHoursGraphModel } from "../../model/graph/overtime-hours-graph-model.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.js"
+import { OvertimeHoursGraphModel } from "../../model/graph/overtime-hours-graph-model.min.js";
+import ScriptSeriesLoader from "../../shared/script-series-loader.min.js"
 
 /**
  * 残業時間グラフのコントローラーを提供します。
@@ -14,7 +14,7 @@ class OvertimeHoursGraphController {
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
+        this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.min.js");
         this.scriptLoader.load();
     }
 

@@ -1,5 +1,5 @@
-import { Utility } from "../shared/utility.js";
-import ScriptSeriesLoader from "../shared/script-series-loader.js";
+import { Utility } from "../shared/utility.min.js";
+import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
  * Excelファイルの生成・出力処理を提供します。
@@ -11,8 +11,8 @@ class ExcelDownloader {
     constructor() {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.2/xlsx.full.min.js");
-        this.scriptLoader.add("https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js");
+        this.scriptLoader.add("https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.2/xlsx.full.min.min.js");
+        this.scriptLoader.add("https://cdnjs.cloudflare.com/ajax/libs/FileSaver.min.js/1.3.8/FileSaver.min.min.js");
         this.scriptLoader.load();
 
         // 空のブックを作成

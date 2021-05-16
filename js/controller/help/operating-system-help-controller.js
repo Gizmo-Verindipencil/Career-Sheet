@@ -1,7 +1,7 @@
-import { OperatingSystemHelpModel } from "../../model/help/operating-system-help-model.js";
-import { Utility } from "../../shared/utility.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.js";
-import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
+import { OperatingSystemHelpModel } from "../../model/help/operating-system-help-model.min.js";
+import { Utility } from "../../shared/utility.min.js";
+import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
+import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.min.js";
 
 /**
  * ヘルプ(OS)のコントローラーを提供します。
@@ -21,7 +21,7 @@ class OsHelpController {
         
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.min.js");
         this.scriptLoader.load();
     }
 

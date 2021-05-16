@@ -1,4 +1,4 @@
-import { TaskTypeDataStore } from "../data-store/task-type-data-store.js";
+import { TaskTypeDataStore } from "../data-store/task-type-data-store.min.js";
 
 /**
  * 作業種類データのリポジトリを提供します。

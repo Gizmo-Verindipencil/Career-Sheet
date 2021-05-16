@@ -1,4 +1,4 @@
-import { QualificationDataStore } from "../data-store/qualification-data-store.js";
+import { QualificationDataStore } from "../data-store/qualification-data-store.min.js";
 
 /**
  * 資格データデータのリポジトリを提供します。

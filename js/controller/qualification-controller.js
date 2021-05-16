@@ -1,6 +1,6 @@
-import { QualificationModel } from "../model/qualification-model.js";
-import { Utility } from "../shared/utility.js";
-import ScriptSeriesLoader from "../shared/script-series-loader.js"
+import { QualificationModel } from "../model/qualification-model.min.js";
+import { Utility } from "../shared/utility.min.js";
+import ScriptSeriesLoader from "../shared/script-series-loader.min.js"
 
 /**
  * 資格・免許のコントローラーを提供します。
@@ -15,7 +15,7 @@ class QualificationController {
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.min.js");
         this.scriptLoader.load();
     }
 

@@ -1,5 +1,5 @@
-import { ExcelDownloader } from "./excel-downloader.js";
-import { WorkingHoursRepository } from "../repository/working-hours-repository.js";
+import { ExcelDownloader } from "./excel-downloader.min.js";
+import { WorkingHoursRepository } from "../repository/working-hours-repository.min.js";
 
 /**
  * 労働時間Excelファイルの生成・出力処理を提供します。

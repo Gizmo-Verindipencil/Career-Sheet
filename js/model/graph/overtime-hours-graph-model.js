@@ -1,5 +1,5 @@
-import { WorkingHoursRepository } from "../../repository/working-hours-repository.js";
-import { Utility } from "../../shared/utility.js";
+import { WorkingHoursRepository } from "../../repository/working-hours-repository.min.js";
+import { Utility } from "../../shared/utility.min.js";
 
 /**
  * 残業時間グラフのモデルを提供します。

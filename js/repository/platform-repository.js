@@ -1,4 +1,4 @@
-import { PlatformDataStore } from "../data-store/platform-data-store.js";
+import { PlatformDataStore } from "../data-store/platform-data-store.min.js";
 
 /**
  * プラットフォームデータのリポジトリを提供します。

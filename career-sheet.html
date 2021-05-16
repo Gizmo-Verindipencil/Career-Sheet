@@ -7,9 +7,9 @@
     <meta name="description" content="">
     <title>職務経歴書</title>
     <script language="javascript" type="module">
-        import StylesheetSeriesLoader from "./js/shared/stylesheet-series-loader.js";
-        import ScriptSeriesLoader from "./js/shared/script-series-loader.js";
-        import { CareerSheetController } from "./js/controller/career-sheet-controller.js";
+        import StylesheetSeriesLoader from "./js/shared/stylesheet-series-loader.min.js";
+        import ScriptSeriesLoader from "./js/shared/script-series-loader.min.js";
+        import { CareerSheetController } from "./js/controller/career-sheet-controller.min.js";
 
         const stylesheetLoader = StylesheetSeriesLoader;
         stylesheetLoader.add("css/destyle.min.css");
@@ -18,7 +18,7 @@
         stylesheetLoader.load();
 
         const scriptLoader = ScriptSeriesLoader;
-        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.min.js");
         scriptLoader.load(() => {
             $(document).ready(async() => {
                 const controller = await CareerSheetController.build();

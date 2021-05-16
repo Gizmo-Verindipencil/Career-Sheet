@@ -1,4 +1,4 @@
-import { ProgrammingLanguageDataStore } from "../data-store/programming-language-data-store.js";
+import { ProgrammingLanguageDataStore } from "../data-store/programming-language-data-store.min.js";
 
 /**
  * プログラミング言語データのリポジトリを提供します。

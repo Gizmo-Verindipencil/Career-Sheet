@@ -1,4 +1,4 @@
-import { UncategorizedTechnologyDataStore } from "../data-store/uncategorized-technology-data-store.js";
+import { UncategorizedTechnologyDataStore } from "../data-store/uncategorized-technology-data-store.min.js";
 
 /**
  * その他技術データのリポジトリを提供します。

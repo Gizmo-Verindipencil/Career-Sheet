@@ -1,6 +1,6 @@
-import { CareerSheetModel } from "../model/career-sheet-model.js";
-import { Utility } from "../shared/utility.js";
-import ScriptSeriesLoader from "../shared/script-series-loader.js"
+import { CareerSheetModel } from "../model/career-sheet-model.min.js";
+import { Utility } from "../shared/utility.min.js";
+import ScriptSeriesLoader from "../shared/script-series-loader.min.js"
 
 /**
  * 職務経歴書のコントローラーを提供します。
@@ -15,7 +15,7 @@ class CareerSheetController {
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.min.js");
         this.scriptLoader.load();
     }
 

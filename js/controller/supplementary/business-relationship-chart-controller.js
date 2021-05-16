@@ -1,6 +1,6 @@
-import { BusinessRelationshipChartModel } from "../../model/supplementary/business-relationship-chart-model.js";
-import { Utility } from "../../shared/utility.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.js"
+import { BusinessRelationshipChartModel } from "../../model/supplementary/business-relationship-chart-model.min.js";
+import { Utility } from "../../shared/utility.min.js";
+import ScriptSeriesLoader from "../../shared/script-series-loader.min.js"
 
 /**
  * ビジネス関係図のコントローラーを提供します。
@@ -15,10 +15,10 @@ class BusinessRelationshipChartController {
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-core.min.js");
-        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-graph.min.js");
-        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.js");
+        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.min.js");
+        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-core.min.min.js");
+        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-graph.min.min.js");
+        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.min.js");
         this.scriptLoader.load();
     }
 

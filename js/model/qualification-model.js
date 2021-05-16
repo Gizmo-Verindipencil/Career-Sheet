@@ -1,4 +1,4 @@
-import { QualificationRepository } from "../repository/qualification-repository.js";
+import { QualificationRepository } from "../repository/qualification-repository.min.js";
 
 /**
  * 資格・免許のモデルを提供します。

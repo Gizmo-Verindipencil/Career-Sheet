@@ -1,4 +1,4 @@
-import { UserRepository } from "../repository/user-repository.js";
+import { UserRepository } from "../repository/user-repository.min.js";
 
 /**
  * 基本情報のモデルを提供します。

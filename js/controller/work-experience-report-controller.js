@@ -1,7 +1,7 @@
-import { WorkExperienceReportModel } from "../model/work-experience-report-model.js";
-import { Utility } from "../shared/utility.js";
-import ScriptSeriesLoader from "../shared/script-series-loader.js"
-import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.js";
+import { WorkExperienceReportModel } from "../model/work-experience-report-model.min.js";
+import { Utility } from "../shared/utility.min.js";
+import ScriptSeriesLoader from "../shared/script-series-loader.min.js"
+import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.min.js";
 
 /**
  * 職務経歴レポートのコントローラーを提供します。
@@ -21,7 +21,7 @@ class WorkExperienceReportController {
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.min.js");
         this.scriptLoader.load();
     }
 
