@@ -1,5 +1,5 @@
-import { OvertimeHoursGraphModel } from "../../model/graph/overtime-hours-graph-model.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.js"
+import { OvertimeHoursGraphModel } from "../../model/graph/overtime-hours-graph-model.min.js";
+import ScriptSeriesLoader from "../../shared/script-series-loader.min.js"
 
 /**
  * 残業時間グラフのコントローラーを提供します。

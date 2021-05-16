@@ -1,6 +1,6 @@
-import { WorkExperienceRepository } from "../repository/work-experience-repository.js";
-import { TaskTypeRepository } from "../repository/task-type-repository.js";
-import { TaskThemeService } from "../service/task-theme-service.js";
+import { WorkExperienceRepository } from "../repository/work-experience-repository.min.js";
+import { TaskTypeRepository } from "../repository/task-type-repository.min.js";
+import { TaskThemeService } from "../service/task-theme-service.min.js";
 
 /**
  * 職務経歴のモデルを提供します。

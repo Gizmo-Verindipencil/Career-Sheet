@@ -1,4 +1,4 @@
-import { DevelopmentToolRepository } from "../../repository/development-tool-repository.js";
+import { DevelopmentToolRepository } from "../../repository/development-tool-repository.min.js";
 
 /**
  * ヘルプ(開発ツール)のモデルを提供します。

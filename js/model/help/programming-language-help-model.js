@@ -1,4 +1,4 @@
-import { ProgrammingLanguageRepository } from "../../repository/programming-language-repository.js";
+import { ProgrammingLanguageRepository } from "../../repository/programming-language-repository.min.js";
 
 /**
  * ヘルプ(プログラミング言語)のモデルを提供します。

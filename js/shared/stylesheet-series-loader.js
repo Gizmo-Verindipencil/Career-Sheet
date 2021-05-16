@@ -1,4 +1,4 @@
-import { AbsoluteURIConverter } from "./absolute-uri-converter.js"
+import { AbsoluteURIConverter } from "./absolute-uri-converter.min.js"
 
 /**
  * スタイルシートの直列ローダーを提供します。

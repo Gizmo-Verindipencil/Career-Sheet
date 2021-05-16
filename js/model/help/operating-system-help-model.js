@@ -1,4 +1,4 @@
-import { OperatingSystemRepository } from "../../repository/operating-system-repository.js";
+import { OperatingSystemRepository } from "../../repository/operating-system-repository.min.js";
 
 /**
  * ヘルプ(OS)のモデルを提供します。

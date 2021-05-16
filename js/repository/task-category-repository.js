@@ -1,4 +1,4 @@
-import { TaskCategoryDataStore } from "../data-store/task-category-data-store.js";
+import { TaskCategoryDataStore } from "../data-store/task-category-data-store.min.js";
 
 /**
  * 作業分類データのリポジトリを提供します。

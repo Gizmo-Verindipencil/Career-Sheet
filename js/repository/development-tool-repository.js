@@ -1,4 +1,4 @@
-import { DevelopmentToolDataStore } from "../data-store/development-tool-data-store.js";
+import { DevelopmentToolDataStore } from "../data-store/development-tool-data-store.min.js";
 
 /**
  * 開発ツールデータのリポジトリを提供します。

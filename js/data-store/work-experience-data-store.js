@@ -1868,7 +1868,7 @@ class WorkExperienceDataStore {
                     "JQuery formBuilder",
                     "Packery",
                     "shopify draggable",
-                    "interact.js"
+                    "interact.min.js"
                 ],
                 "projectSummary" : "システム新規開発",
                 "projectPeakSize" : "1",

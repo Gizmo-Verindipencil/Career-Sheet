@@ -1,7 +1,7 @@
-import { FrameworkHelpModel } from "../../model/help/framework-help-model.js";
-import { Utility } from "../../shared/utility.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.js";
-import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
+import { FrameworkHelpModel } from "../../model/help/framework-help-model.min.js";
+import { Utility } from "../../shared/utility.min.js";
+import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
+import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.min.js";
 
 /**
  * ヘルプ(フレームワーク)のコントローラーを提供します。

@@ -1,7 +1,7 @@
-import { DevelopmentToolHelpModel } from "../../model/help/development-tool-help-model.js";
-import { Utility } from "../../shared/utility.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.js";
-import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.js";
+import { DevelopmentToolHelpModel } from "../../model/help/development-tool-help-model.min.js";
+import { Utility } from "../../shared/utility.min.js";
+import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
+import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.min.js";
 
 /**
  * ヘルプ(開発ツール)のコントローラーを提供します。

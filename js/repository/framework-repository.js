@@ -1,4 +1,4 @@
-import { FrameworkDataStore } from "../data-store/framework-data-store.js";
+import { FrameworkDataStore } from "../data-store/framework-data-store.min.js";
 
 /**
  * フレームワークデータのリポジトリを提供します。

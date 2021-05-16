@@ -1,5 +1,5 @@
-import { BeingLateNumberGraphModel } from "../../model/graph/being-late-number-graph-model.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.js"
+import { BeingLateNumberGraphModel } from "../../model/graph/being-late-number-graph-model.min.js";
+import ScriptSeriesLoader from "../../shared/script-series-loader.min.js"
 
 /**
  * 遅刻回数グラフのコントローラーを提供します。

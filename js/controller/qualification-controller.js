@@ -1,6 +1,6 @@
-import { QualificationModel } from "../model/qualification-model.js";
-import { Utility } from "../shared/utility.js";
-import ScriptSeriesLoader from "../shared/script-series-loader.js"
+import { QualificationModel } from "../model/qualification-model.min.js";
+import { Utility } from "../shared/utility.min.js";
+import ScriptSeriesLoader from "../shared/script-series-loader.min.js"
 
 /**
  * 資格・免許のコントローラーを提供します。

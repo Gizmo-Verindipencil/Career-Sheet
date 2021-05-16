@@ -1,4 +1,4 @@
-import { DeviceDataStore } from "../data-store/device-data-store.js";
+import { DeviceDataStore } from "../data-store/device-data-store.min.js";
 
 /**
  * 機種データのリポジトリを提供します。

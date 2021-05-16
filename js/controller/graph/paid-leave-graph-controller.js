@@ -1,6 +1,6 @@
-import { PaidLeaveGraphModel } from "../../model/graph/paid-leave-graph-model.js";
-import { Utility } from "../../shared/utility.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.js"
+import { PaidLeaveGraphModel } from "../../model/graph/paid-leave-graph-model.min.js";
+import { Utility } from "../../shared/utility.min.js";
+import ScriptSeriesLoader from "../../shared/script-series-loader.min.js"
 
 /**
  * 有給休暇グラフのコントローラーを提供します。

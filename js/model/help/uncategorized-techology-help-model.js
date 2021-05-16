@@ -1,4 +1,4 @@
-import { UncategorizedTechnologyRepository } from "../../repository/uncategorized-technology-repository.js";
+import { UncategorizedTechnologyRepository } from "../../repository/uncategorized-technology-repository.min.js";
 
 /**
  * ヘルプ(その他技術)のモデルを提供します。

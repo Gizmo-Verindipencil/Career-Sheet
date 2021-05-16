@@ -1,4 +1,4 @@
-import { DatabaseRepository } from "../../repository/database-repository.js";
+import { DatabaseRepository } from "../../repository/database-repository.min.js";
 
 /**
  * ヘルプ(データベース)のモデルを提供します。

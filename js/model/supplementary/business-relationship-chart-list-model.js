@@ -1,4 +1,4 @@
-import { BusinessRelationshipRepository } from "../../repository/business-relationship-repository.js";
+import { BusinessRelationshipRepository } from "../../repository/business-relationship-repository.min.js";
 
 /**
  * ビジネス関係図リストのモデルを提供します。

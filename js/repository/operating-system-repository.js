@@ -1,4 +1,4 @@
-import { OperatingSystemDataStore } from "../data-store/operating-system-data-store.js";
+import { OperatingSystemDataStore } from "../data-store/operating-system-data-store.min.js";
 
 /**
  * OSデータのリポジトリを提供します。

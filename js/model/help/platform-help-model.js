@@ -1,4 +1,4 @@
-import { PlatformRepository } from "../../repository/platform-repository.js";
+import { PlatformRepository } from "../../repository/platform-repository.min.js";
 
 /**
  * ヘルプ(プラットフォーム)のモデルを提供します。

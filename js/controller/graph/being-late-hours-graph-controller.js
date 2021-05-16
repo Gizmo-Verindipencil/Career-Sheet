@@ -1,5 +1,5 @@
-import { BeingLateHoursGraphModel } from "../../model/graph/being-late-hours-graph-model.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.js"
+import { BeingLateHoursGraphModel } from "../../model/graph/being-late-hours-graph-model.min.js";
+import ScriptSeriesLoader from "../../shared/script-series-loader.min.js"
 
 /**
  * 遅刻時間グラフのコントローラーを提供します。

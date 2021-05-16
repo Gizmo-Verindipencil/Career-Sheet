@@ -1,4 +1,4 @@
-import { FrameworkRepository } from "../../repository/framework-repository.js";
+import { FrameworkRepository } from "../../repository/framework-repository.min.js";
 
 /**
  * ヘルプ(フレームワーク)のモデルを提供します。

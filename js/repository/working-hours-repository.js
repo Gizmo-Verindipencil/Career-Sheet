@@ -1,4 +1,4 @@
-import { WorkingHoursDataStore } from "../data-store/working-hours-data-store.js";
+import { WorkingHoursDataStore } from "../data-store/working-hours-data-store.min.js";
 
 /**
  * 労働時間データのリポジトリを提供します。

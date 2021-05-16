@@ -1,4 +1,4 @@
-import { WorkExperienceDataStore } from "../data-store/work-experience-data-store.js";
+import { WorkExperienceDataStore } from "../data-store/work-experience-data-store.min.js";
 
 /**
  * 職務経歴データのリポジトリを提供します。

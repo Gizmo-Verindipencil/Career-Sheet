@@ -1,4 +1,4 @@
-import { WorkExperienceRepository } from "../repository/work-experience-repository.js";
+import { WorkExperienceRepository } from "../repository/work-experience-repository.min.js";
 
 /**
  * 職務経歴レポートのモデルを提供します。

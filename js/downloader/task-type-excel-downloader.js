@@ -1,6 +1,6 @@
-import { ExcelDownloader } from "./excel-downloader.js";
-import { TaskCategoryRepository } from "../repository/task-category-repository.js";
-import { TaskTypeRepository } from "../repository/task-type-repository.js";
+import { ExcelDownloader } from "./excel-downloader.min.js";
+import { TaskCategoryRepository } from "../repository/task-category-repository.min.js";
+import { TaskTypeRepository } from "../repository/task-type-repository.min.js";
 
 /**
  * 作業種類Excelファイルの生成・出力処理を提供します。
