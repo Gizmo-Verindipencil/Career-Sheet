@@ -1459,8 +1459,8 @@ class WorkingHoursDataStore {
                 "prescribedWorkingDays" : "18",
                 "prescribedWorkingHours" : "135.00",
                 "actualWorkingDays" : "17",
-                "actualWorkingHours" : "133.20",
-                "overtimeHours" : "5.50",
+                "actualWorkingHours" : "134.05",
+                "overtimeHours" : "6.35",
                 "holidayWorkingDays" : "0",
                 "paidLeave" : "28",
                 "beingLate": {
