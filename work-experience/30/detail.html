@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>案件詳細</title>
+    <link rel="stylesheet" href="../css/work-experience-report-detail.min.css">
+</head>
+<body>
+    <strong>背景:</strong>
+    <p class="work-experience-report-detail-summary">
+        2020年10月頃にシステムの小さな改訂の見積を行いました。その時は出力帳票の表示が少し変わる程度の内容でした。その後しばらく関わっていませんでしたが、その間に要件を増え、2回目の要件定義が行われ、結果的により大きな範囲のシステム改訂となっていました。このシステムは[13]と同じものですが、このシステムの一番の有識者であった方は既に現場を去っていました。初回の見積時はビジネスロジックにはあまり関係しない要件でしたが、2回目の要件定義では、ビジネスロジックに深く関係する内容での改訂に変わっていました。これについて、事前調査は行われていたものの、システムの有識者がいない為、どのように変更すれば要件を実現できるかが想像しにくい状況でした。
+    </p>
+
+    <strong>概要:</strong>
+    <p class="work-experience-report-detail-summary">
+        システム改訂
+    </p>
+
+    <strong>役割:</strong>
+    <p class="work-experience-report-detail-role">
+        方式設計～設計・単体テスト<br>
+        テスター(結合テスト)
+    </p>
+
+    <strong>詳細:</strong>
+    <p class="work-experience-report-detail-summary">
+        「要件定義の内容を本当に実現できるか」という検証から始まりました。[29]に参画していた為、1週間程度遅れてのプロジェクト参画となりました。
+    </p>
+    <ul class="work-experience-report-detail-list">
+        <li class="work-experience-report-detail-list-child-title">最新ソース調査</li>
+        <p class="work-experience-report-detail-list-child-text">
+            このシステムは有識者が現場を去る前に、ソースコードの整理をして去って行かれました。しかしながら、本当にバージョン管理されているものが最新であるかは疑わしい状態でした。この為、本番環境に配置されている資材と、社内で管理されている資材を比較して最新であることを確認する作業が発生しました。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            これはソースコードを管理していた作業者が悪いというよりも、保守チームの変更が開発チームに連携されなかったりするような、A社の管理体制の問題でした。実際に、バージョン管理にはない保守内改訂などが発見されました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="30\1.png" alt="最新ソース調査"> -->
+        <li class="work-experience-report-detail-list-child-title">要件確認</li>
+        <p class="work-experience-report-detail-list-child-text">
+            要件定義はユーザー目線での変更が記述されていました。この為、プログラム的にはどのように変更すれば要件を実現できるかという検討を行いました。また、このシステムは収支分析のシステムである為、改訂の結果として出力内容がユーザーの求めるものになるかというのは怪しいものがありました。その為、本番データの内容から改訂後の帳票を作成し、ユーザーにイメージの誤りがないか確認しました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="30\2.png" alt="要件確認"> -->
+        <li class="work-experience-report-detail-list-child-title">既存処理確認</li>
+        <p class="work-experience-report-detail-list-child-text">
+            このシステムの有識者は既に現場を去っており、プロジェクトの参画者はこのシステム全体についての知識が乏しい状態でした。その為、トランザクションデータを扱うメイン処理全般について、一通り確認することになりました。このシステムはドキュメントがあまり参考になる状態ではなかったので、基本的にはソースコードを確認して処理内容を確認するのがメインでした。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="30\3.png" alt="既存処理確認"> -->
+        <li class="work-experience-report-detail-list-child-title">方式設計</li>
+        <p class="work-experience-report-detail-list-child-text">
+            既存の基本設計・詳細設計は最新の状態とは言えませんでした。その為、今回の改訂部分のみを修正する以外に、全体的な内容の見直しが必要でしたが、その工数はありません。その為、今回は「要件をどのように実現するか」を表現した方式設計をドキュメントとして残すことになりました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="30\4.png" alt="方式設計"> -->
+        <li class="work-experience-report-detail-list-child-title">実装・単体テスト</li>
+        <p class="work-experience-report-detail-list-child-text">
+            この改訂では、大きく、(メインシステムの)帳票出力部分の修正と、(サブシステムの)マスタデータ取込部分の機能追加に分けることができました。私の担当は後者でした。前者は差異クロマティック複雑度が400を超える地獄のような処理がありましたが、後者はあまり複雑な仕組ではありませんでした。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            基本的には大きな問題はありませんでした。実装を進め、ユーザーより受領した本番データを参考にしながら、不明点・懸念点があれば追加で確認をするという形式で進めました。幸運にもプログラムの修正範囲がかなり小さくなるような要件の実現方法が見つかったので、修正作業自体もかなり余裕をもって完了することができました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="30\5.png" alt="実装・単体テスト"> -->
+        <li class="work-experience-report-detail-list-child-title">結合テスト</li>
+        <p class="work-experience-report-detail-list-child-text">
+            今回はプログラムの変更箇所が限定的であった為、モジュール結合の検証という意味ではかなり簡単でした。DBのテーブル構造なども殆ど変更はありませんでしたが、使い方が変わるテーブルがあり、その為にデータ量が大きく変わるものがありました。これに関するパフォーマンス検証がメインでした。
+        </p>
+        <p class="work-experience-report-detail-list-child-text">
+            結合テストのケースについては、もう一人のメンバーが作っていてくれたので、その内容をレビューしました。特に問題もなさそうなので、テストを実施しました。テスト結果の共有を行い、特に問題もなくクローズしました。
+        </p>
+        <!-- <img class="work-experience-report-detail-list-child-image" src="30\5.png" alt="結合テスト"> -->
+    </ul>
+</body>
+</html>

@@ -1935,6 +1935,69 @@ class WorkExperienceDataStore {
                     }
                 ],
                 "businessRelationshipId" : "me-N-A-P"
+            },
+            {
+                "userId" : "1",
+                "no" : "30",
+                "businessType" : "カー用品メーカー",
+                "period" : {
+                    "from" : "2021-4-19",
+                    "to" : "2021-6-31"
+                },
+                "device" : [
+                    "PC"
+                ],
+                "os" : [
+                    "Windows 10"
+                ],
+                "programLanguage" : [
+                    "VB.NET",
+                    "T-SQL"
+                ],
+                "developmentTool" : [
+                    "SQL Server Management Studio"
+                ],
+                "framework" : [
+                    "ASP.NET"
+                ],
+                "platform" : [],
+                "db" : [
+                    "SQL-Server"
+                ],
+                "uncategorizedTechnology" : [],
+                "projectSummary" : "システム改訂",
+                "projectPeakSize" : "3",
+                "subordinate" : "0",
+                "system" : [
+                    "収支分析システム"
+                ],
+                "task" : [
+                    {
+                        "name" : "方式設計",
+                        "type" : [
+                            "HLD"
+                        ]
+                    },
+                    {
+                        "name" : "実装",
+                        "type" : [
+                            "C"
+                        ]
+                    },
+                    {
+                        "name" : "単体テスト",
+                        "type" : [
+                            "UT"
+                        ]
+                    },
+                    {
+                        "name" : "結合テスト",
+                        "type" : [
+                            "IT"
+                        ]
+                    }
+                ],
+                "businessRelationshipId" : "me-N-A-P"
             }
         ];
     }
