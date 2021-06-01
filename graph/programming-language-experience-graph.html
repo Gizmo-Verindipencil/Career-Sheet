@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>プログラミング言語経験グラフ</title>
+    <script language="javascript" type="module">
+        import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.min.js";
+        import ScriptSeriesLoader from "../js/shared/script-series-loader.min.js";
+        import { ProgrammingLanguageExperienceGraphController } from "../js/controller/graph/programming-language-experience-graph-controller.min.js";
+
+        const stylesheetLoader = StylesheetSeriesLoader;
+        stylesheetLoader.add("css/destyle.min.css");
+        stylesheetLoader.add("css/restyle.min.css");
+        stylesheetLoader.add("css/common.min.css");
+        stylesheetLoader.add("css/graph.min.css");
+        stylesheetLoader.load();
+
+        const scriptLoader = ScriptSeriesLoader;
+        scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        scriptLoader.load(() => {
+            $(document).ready(async() => {
+                const controller = await ProgrammingLanguageExperienceGraphController.build();
+                controller.execute();    
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="page-title">プログラミング言語経験(ビジネス)グラフ</h1>
+    </header>
+    <noscript>
+        <p>内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <div id="graph-container"></div>
+</body>
+</html>
