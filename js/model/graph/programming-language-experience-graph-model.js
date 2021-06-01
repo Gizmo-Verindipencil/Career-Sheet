@@ -17,7 +17,7 @@ class ProgrammingLanguageExperienceGraphModel {
         const data = {};
         for(const experience of experiences) {
             // プログラミングが未設定の場合は集計対象
-            if (!experience.programLanguage || experience.programLanguage.length === 0) continue;
+            if (!experience.programmingLanguage || experience.programmingLanguage.length === 0) continue;
 
             // 未完了案件の場合は集計対象
             if (!experience.period.from || !experience.period.to) continue;
@@ -38,7 +38,7 @@ class ProgrammingLanguageExperienceGraphModel {
             const days = to - from;
 
             // プログラミング言語毎に日数を加算
-            for(const lang of experience.programLanguage) {
+            for(const lang of experience.programmingLanguage) {
                 // 初回集計時は追加
                 if (!data[lang]) {
                     data[lang] = 0;

@@ -302,7 +302,7 @@ class WorkExperienceController {
         const innerHtml = [];
         innerHtml.push(createMultiP("device", experience.device));
         innerHtml.push(createMultiP("operating-system", experience.os));
-        innerHtml.push(createMultiP("programming-language", experience.programLanguage));
+        innerHtml.push(createMultiP("programming-language", experience.programmingLanguage));
         innerHtml.push(createMultiP("development-tool", experience.developmentTool));
         innerHtml.push(createMultiP("database", experience.db));
         innerHtml.push(createMultiP("framework", experience.framework));

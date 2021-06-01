@@ -23,7 +23,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VBA"
                 ],
                 "developmentTool" : [],
@@ -77,7 +77,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VBA"
                 ],
                 "developmentTool" : [],
@@ -115,7 +115,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VBA", 
                     "VBScript"
                 ],
@@ -180,7 +180,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "C#"
                 ],
                 "developmentTool" : [
@@ -242,7 +242,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB6.0",
                     "VB.NET",
                     "CRS",
@@ -313,7 +313,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "CRS",
                     "T-SQL"
@@ -390,7 +390,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "T-SQL"
                 ],
@@ -452,7 +452,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "T-SQL"
                 ],
@@ -535,7 +535,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "JavaScript"
                 ],
                 "developmentTool" : [
@@ -581,7 +581,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "Java",
                     "T-SQL",
@@ -653,7 +653,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "JavaScript"
                 ],
                 "developmentTool" : [
@@ -721,7 +721,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "PL/SQL"
                 ],
@@ -800,7 +800,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "JavaScript",
                     "T-SQL"
@@ -874,7 +874,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "JavaScript",
                     "T-SQL"
@@ -925,7 +925,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 7"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "PL/SQL"
                 ],
@@ -988,7 +988,7 @@ class WorkExperienceDataStore {
                     "Windows 8",
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "PL/SQL"
                 ],
@@ -1075,7 +1075,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "Java",
                     "PL/SQL"
                 ],
@@ -1160,7 +1160,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "Java",
                     "JavaScript",
                     "T-SQL",
@@ -1217,7 +1217,7 @@ class WorkExperienceDataStore {
                     "Windows 8",
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "Java",
                     "JavaScript"
                 ],
@@ -1270,7 +1270,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows Server 2010"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "UWSC",
                     "PL/SQL"
@@ -1349,7 +1349,7 @@ class WorkExperienceDataStore {
                     "Windows 8",
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "Java",
                     "JavaScript",
@@ -1452,7 +1452,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 10"
                 ],
-                "programLanguage" : [],
+                "programmingLanguage" : [],
                 "developmentTool" : [
                     "Flow Designer"
                 ],
@@ -1497,7 +1497,7 @@ class WorkExperienceDataStore {
                     "Windows 8",
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "Java",
                     "JavaScript",
                     "T-SQL"
@@ -1596,7 +1596,7 @@ class WorkExperienceDataStore {
                     "Windows 7",
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "PL/SQL"
                 ],
@@ -1651,7 +1651,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VBA"
                 ],
                 "developmentTool" : [],
@@ -1697,7 +1697,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VBScript",
                     "VBA",
                     "T-SQL"
@@ -1774,7 +1774,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "C#",
                     "T-SQL"
                 ],
@@ -1853,7 +1853,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "JavaScript"
                 ],
                 "developmentTool" : [],
@@ -1900,7 +1900,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VBA",
                     "T-SQL"
                 ],
@@ -1950,7 +1950,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 10"
                 ],
-                "programLanguage" : [
+                "programmingLanguage" : [
                     "VB.NET",
                     "T-SQL"
                 ],

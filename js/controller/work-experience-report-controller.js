@@ -243,7 +243,7 @@ class WorkExperienceReportController {
         const values = [];
         values.push(createMultiP("device", data.device));
         values.push(createMultiP("operating-system", data.os));
-        values.push(createMultiP("programming-language", data.programLanguage));
+        values.push(createMultiP("programming-language", data.programmingLanguage));
         values.push(createMultiP("development-tool", data.developmentTool));
         values.push(createMultiP("database", data.db));
         values.push(createMultiP("framework", data.framework));
