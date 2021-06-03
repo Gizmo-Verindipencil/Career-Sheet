@@ -1,4 +1,4 @@
-import { DevelopmentToolRepository } from "../../repository/development-tool-repository.min.js";
+import { DeviceRepository } from "../../repository/device-repository.min.js";
 
 /**
  * ヘルプ(機種)のモデルを提供します。
@@ -10,7 +10,7 @@ class DeviceHelpModel {
      */
     getDevices = () => {
         // データを取得
-        const repository = new DevelopmentToolRepository();
+        const repository = new DeviceRepository();
         const data = repository.getAll();
 
         // 名前の昇順で並べる
