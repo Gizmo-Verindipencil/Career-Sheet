@@ -2,23 +2,23 @@ import { WorkExperienceRepository } from "../../repository/work-experience-repos
 import { Utility } from "../../shared/utility.min.js";
 
 /**
- * プログラミング言語経験グラフのモデルを提供します。
+ * データベース経験グラフのモデルを提供します。
  */
-class ProgrammingLanguageExperienceGraphModel {
+class DatabaseExperienceGraphModel {
     /**
-     * プログラミング言語経験を取得します。
-     * @returns {Object} 集計結果(プロパティ名：プログラミング言語、値：経験日数)を返します。
+     * データベース経験を取得します。
+     * @returns {Object} 集計結果(プロパティ名：データベース、値：経験日数)を返します。
      */
-    getProgrammingLanguageExperience = () => {
+    getDatabaseExperience = () => {
         // 職務経歴データを取得
         const repository = new WorkExperienceRepository();
         const experiences = repository.getAll();
 
-        // 職務経歴毎のプログラミング言語を集計
+        // 職務経歴毎のデータベースを集計
         const data = {};
         for(const experience of experiences) {
-            // プログラミング言語が未設定の場合は集計対象
-            if (!experience.programmingLanguage || experience.programmingLanguage.length === 0) continue;
+            // プログラミングが未設定の場合は集計対象
+            if (!experience.db || experience.db.length === 0) continue;
 
             // 未完了案件の場合は集計対象
             if (!experience.period.from || !experience.period.to) continue;
@@ -28,8 +28,8 @@ class ProgrammingLanguageExperienceGraphModel {
             const to = Utility.getNumberOfDays(experience.period.to);
             const days = to - from;
 
-            // プログラミング言語毎に日数を加算
-            for(const name of experience.programmingLanguage) {
+            // データベース毎に日数を加算
+            for(const name of experience.db) {
                 // 初回集計時は追加
                 if (!data[name]) {
                     data[name] = 0;
@@ -45,4 +45,4 @@ class ProgrammingLanguageExperienceGraphModel {
     }
 }
 
-export { ProgrammingLanguageExperienceGraphModel };
+export { DatabaseExperienceGraphModel };
