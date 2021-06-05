@@ -125,19 +125,10 @@ class WorkExperienceReportController {
             return;
         }
 
-        // 日付の日数を取得
-        const daysOfMonth = 30;
-        const getNumberOfDays = expression => {
-            const delimiter = "-";
-            const delimited = expression.split(delimiter);
-            const date = new Date(delimited[0], delimited[1], delimited[2]);
-            const daysOfYear = 365;
-            return date.getFullYear() * daysOfYear + (date.getMonth() + 1) * daysOfMonth + date.getDate();
-        }
-
         // 日数差から月数差を計算
-        const from = getNumberOfDays(data.period.from);
-        const to = getNumberOfDays(data.period.to);
+        const from = Utility.getNumberOfDays(data.period.from);
+        const to = Utility.getNumberOfDays(data.period.to);
+        const daysOfMonth = 30;
         let numberOfMonths = (to - from) / daysOfMonth;
 
         // 月数0は並行作業なので数日分の工数を設定

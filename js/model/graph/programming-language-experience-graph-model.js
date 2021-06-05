@@ -1,4 +1,5 @@
 import { WorkExperienceRepository } from "../../repository/work-experience-repository.js";
+import { Utility } from "../../shared/utility.min.js";
 
 /**
  * プログラミング言語経験グラフのモデルを提供します。
@@ -13,7 +14,7 @@ class ProgrammingLanguageExperienceGraphModel {
         const repository = new WorkExperienceRepository();
         const experiences = repository.getAll();
 
-        // 
+        // 職務経歴毎のプログラミング言語を集計
         const data = {};
         for(const experience of experiences) {
             // プログラミングが未設定の場合は集計対象
@@ -22,19 +23,9 @@ class ProgrammingLanguageExperienceGraphModel {
             // 未完了案件の場合は集計対象
             if (!experience.period.from || !experience.period.to) continue;
 
-            // 期間の日数を取得
-            const getNumberOfDays = expression => {
-                const delimiter = "-";
-                const delimited = expression.split(delimiter);
-                const date = new Date(delimited[0], delimited[1], delimited[2]);
-                const daysOfYear = 365;
-                const daysOfMonth = 30;
-                return date.getFullYear() * daysOfYear + (date.getMonth() + 1) * daysOfMonth + date.getDate();
-            }
-
             // 期間を取得
-            const from = getNumberOfDays(experience.period.from);
-            const to = getNumberOfDays(experience.period.to);
+            const from = Utility.getNumberOfDays(experience.period.from);
+            const to = Utility.getNumberOfDays(experience.period.to);
             const days = to - from;
 
             // プログラミング言語毎に日数を加算
