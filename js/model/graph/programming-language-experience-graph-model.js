@@ -17,7 +17,7 @@ class ProgrammingLanguageExperienceGraphModel {
         // 職務経歴毎のプログラミング言語を集計
         const data = {};
         for(const experience of experiences) {
-            // プログラミングが未設定の場合は集計対象
+            // プログラミング言語が未設定の場合は集計対象
             if (!experience.programmingLanguage || experience.programmingLanguage.length === 0) continue;
 
             // 未完了案件の場合は集計対象
