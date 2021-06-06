@@ -45,17 +45,17 @@ class DbHelpController {
      */
     execute = () => {
         // DBデータを取得
-        const dbs = this.model.getDatabases();
+        const databases = this.model.getDatabases();
 
         // データ毎の処理
-        for (let i = 0; i < dbs.length;  i++) {
-            const db = dbs[i];
+        for (let i = 0; i < databases.length;  i++) {
+            const database = databases[i];
 
             // td要素を生成
             const cells = [];
             cells.push(this.createNoTd(i));
-            cells.push(this.createNameTd(db));
-            cells.push(this.createDescriptionTd(db));
+            cells.push(this.createNameTd(database));
+            cells.push(this.createDescriptionTd(database));
 
             // tr要素を生成してテーブルに追加
             const row = `<tr>${cells.join("")}</tr>`;
@@ -83,22 +83,22 @@ class DbHelpController {
 
     /**
      * 名称のtd要素を生成します。
-     * @param {Object} db DBデータ。
+     * @param {Object} database DBデータ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createNameTd = db => {
+    createNameTd = database => {
         const classPrefix = "work-experience-technology";
         const noWrap = "white-space:nowrap;";
-        return this.createTd(`<p class='${classPrefix}-database' style='${noWrap}'>${db.name}</p>`);
+        return this.createTd(`<p class='${classPrefix}-database' style='${noWrap}'>${database.name}</p>`);
     }
 
     /**
      * 説明のtd要素を生成します。
-     * @param {Object} db DBデータ。
+     * @param {Object} database DBデータ。
      * @return {String} td要素を表すhtmlを返します。
      */
-    createDescriptionTd = db => {
-        return this.createTd(`<p>${db.description}</p>`);
+    createDescriptionTd = database => {
+        return this.createTd(`<p>${database.description}</p>`);
     }
 }
 

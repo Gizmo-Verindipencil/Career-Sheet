@@ -56,7 +56,7 @@ class WorkExperienceExcelDownloader {
                 experience.developmentTool.join(", "),
                 experience.framework.join(", "),
                 experience.platform.join(", "),
-                experience.db.join(", "),
+                experience.database.join(", "),
                 experience.uncategorizedTechnology.join(", "),
                 experience.projectSummary,
                 experience.projectPeakSize,

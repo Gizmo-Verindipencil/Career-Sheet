@@ -21,15 +21,15 @@ class DatabaseRepository {
      */
     getById = id => {
         const dataStore = new DatabaseDataStore();
-        const dbs = dataStore.get().filter(x => x.id === id);
-        return dbs.length > 0 ? dbs[0] : null;
+        const databases = dataStore.get().filter(x => x.id === id);
+        return databases.length > 0 ? databases[0] : null;
     }
 
     /**
      * DBデータを更新します。
-     * @param {Object} db DBデータ。
+     * @param {Object} database DBデータ。
      */
-    post = db => {
+    post = database => {
         // dummy
     }
 }

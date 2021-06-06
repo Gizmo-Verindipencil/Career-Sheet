@@ -29,7 +29,7 @@ class WorkExperienceDataStore {
                 "developmentTool" : [],
                 "framework" : [],
                 "platform" : [],
-                "db" : [],
+                "database" : [],
                 "uncategorizedTechnology" : [],
                 "projectSummary" : "インターンシップ",
                 "projectPeakSize" : "40",
@@ -83,7 +83,7 @@ class WorkExperienceDataStore {
                 "developmentTool" : [],
                 "framework" : [],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "Access"
                 ],
                 "uncategorizedTechnology" : [],
@@ -122,7 +122,7 @@ class WorkExperienceDataStore {
                 "developmentTool" : [],
                 "framework" : [],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "Access"
                 ],
                 "uncategorizedTechnology" : [],
@@ -188,7 +188,7 @@ class WorkExperienceDataStore {
                 ],
                 "framework" : [],
                 "platform" : [],
-                "db" : [],
+                "database" : [],
                 "uncategorizedTechnology" : [],
                 "projectSummary" : "社内研修＋雑務",
                 "projectPeakSize" : "3",
@@ -255,7 +255,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "Biz Browser"
                 ],
-                "db" : [
+                "database" : [
                     "SQL-Server"
                 ],
                 "uncategorizedTechnology" : [
@@ -325,7 +325,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "Biz Browser"
                 ],
-                "db" : [
+                "database" : [
                     "SQL-Server"
                 ],
                 "uncategorizedTechnology" : [
@@ -401,7 +401,7 @@ class WorkExperienceDataStore {
                     "ASP.NET"
                 ],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "SQL-Server"
                 ],
                 "uncategorizedTechnology" : [
@@ -463,7 +463,7 @@ class WorkExperienceDataStore {
                     "ASP.NET"
                 ],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "SQL-Server"
                 ],
                 "uncategorizedTechnology" : [
@@ -545,7 +545,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "xCute"
                 ],
-                "db" : [],
+                "database" : [],
                 "uncategorizedTechnology" : [
                     "Subversion"
                 ],
@@ -594,7 +594,7 @@ class WorkExperienceDataStore {
                     "独自基盤1"
                 ],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "SQL-Server",
                     "Oracle"
                 ],
@@ -663,7 +663,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "Forguncy"
                 ],
-                "db" : [
+                "database" : [
                     "SQLite"
                 ],
                 "uncategorizedTechnology" : [
@@ -733,7 +733,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "ASTERIA Warp"
                 ],
-                "db" : [
+                "database" : [
                     "Oracle"
                 ],
                 "uncategorizedTechnology" : [
@@ -810,7 +810,7 @@ class WorkExperienceDataStore {
                 ],
                 "framework" : [],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "SQL-Server"
                 ],
                 "uncategorizedTechnology" : [
@@ -887,7 +887,7 @@ class WorkExperienceDataStore {
                     "独自基盤1"
                 ],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "SQL-Server"
                 ],
                 "uncategorizedTechnology" : [],
@@ -936,7 +936,7 @@ class WorkExperienceDataStore {
                     "独自基盤2"
                 ],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "Oracle(AWS)"
                 ],
                 "uncategorizedTechnology" : [],
@@ -1000,7 +1000,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "ASTERIA Warp"
                 ],
-                "db" : [
+                "database" : [
                     "Oracle"
                 ],
                 "uncategorizedTechnology" : [
@@ -1086,7 +1086,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "intra-mart"
                 ],
-                "db" : [
+                "database" : [
                     "Oracle"
                 ],
                 "uncategorizedTechnology" : [],
@@ -1173,7 +1173,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "intra-mart"
                 ],
-                "db" : [
+                "database" : [
                     "SQL-Server",
                     "Oracle"
                 ],
@@ -1229,7 +1229,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "intra-mart"
                 ],
-                "db" : [
+                "database" : [
                     "SQL-Server",
                     "Oracle"
                 ],
@@ -1281,7 +1281,7 @@ class WorkExperienceDataStore {
                 ],
                 "framework" : [],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "Oracle"
                 ],
                 "uncategorizedTechnology" : [
@@ -1367,7 +1367,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "intra-mart"
                 ],
-                "db" : [
+                "database" : [
                     "SQL-Server",
                     "Oracle"
                 ],
@@ -1460,7 +1460,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "ASTERIA Warp"
                 ],
-                "db" : [
+                "database" : [
                     "SQL-Server",
                     "Oracle"
                 ],
@@ -1511,7 +1511,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "intra-mart"
                 ],
-                "db" : [
+                "database" : [
                     "SQL-Server",
                     "Oracle"
                 ],
@@ -1606,7 +1606,7 @@ class WorkExperienceDataStore {
                 ],
                 "framework" : [],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "Oracle"
                 ],
                 "uncategorizedTechnology" : [
@@ -1657,7 +1657,7 @@ class WorkExperienceDataStore {
                 "developmentTool" : [],
                 "framework" : [],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "Access"
                 ],
                 "uncategorizedTechnology" : [],
@@ -1709,7 +1709,7 @@ class WorkExperienceDataStore {
                     "Classic ASP"
                 ],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "SQL-Server",
                     "Access"
                 ],
@@ -1786,7 +1786,7 @@ class WorkExperienceDataStore {
                     "MS Test"
                 ],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "SQL-Server",
                     "Access"
                 ],
@@ -1863,7 +1863,7 @@ class WorkExperienceDataStore {
                 "platform" : [
                     "Form.io"
                 ],
-                "db" : [],
+                "database" : [],
                 "uncategorizedTechnology" : [
                     "JQuery formBuilder",
                     "Packery",
@@ -1909,7 +1909,7 @@ class WorkExperienceDataStore {
                 ],
                 "framework" : [],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "SQL-Server",
                     "Access"
                 ],
@@ -1961,7 +1961,7 @@ class WorkExperienceDataStore {
                     "ASP.NET"
                 ],
                 "platform" : [],
-                "db" : [
+                "database" : [
                     "SQL-Server"
                 ],
                 "uncategorizedTechnology" : [],

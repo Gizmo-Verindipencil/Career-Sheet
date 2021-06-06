@@ -236,7 +236,7 @@ class WorkExperienceReportController {
         values.push(createMultiP("operating-system", data.os));
         values.push(createMultiP("programming-language", data.programmingLanguage));
         values.push(createMultiP("development-tool", data.developmentTool));
-        values.push(createMultiP("database", data.db));
+        values.push(createMultiP("database", data.database));
         values.push(createMultiP("framework", data.framework));
         values.push(createMultiP("platform", data.platform));
         values.push(createMultiP("uncategorized", data.uncategorizedTechnology));

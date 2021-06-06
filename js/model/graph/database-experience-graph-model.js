@@ -18,7 +18,7 @@ class DatabaseExperienceGraphModel {
         const data = {};
         for(const experience of experiences) {
             // プログラミングが未設定の場合は集計対象
-            if (!experience.db || experience.db.length === 0) continue;
+            if (!experience.database || experience.database.length === 0) continue;
 
             // 未完了案件の場合は集計対象
             if (!experience.period.from || !experience.period.to) continue;
@@ -29,7 +29,7 @@ class DatabaseExperienceGraphModel {
             const days = to - from;
 
             // データベース毎に日数を加算
-            for(const name of experience.db) {
+            for(const name of experience.database) {
                 // 初回集計時は追加
                 if (!data[name]) {
                     data[name] = 0;

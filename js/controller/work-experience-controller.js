@@ -304,7 +304,7 @@ class WorkExperienceController {
         innerHtml.push(createMultiP("operating-system", experience.os));
         innerHtml.push(createMultiP("programming-language", experience.programmingLanguage));
         innerHtml.push(createMultiP("development-tool", experience.developmentTool));
-        innerHtml.push(createMultiP("database", experience.db));
+        innerHtml.push(createMultiP("database", experience.database));
         innerHtml.push(createMultiP("framework", experience.framework));
         innerHtml.push(createMultiP("platform", experience.platform));
         innerHtml.push(createMultiP("uncategorized", experience.uncategorizedTechnology));
