@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OS経験グラフ</title>
+    <script language="javascript" type="module">
+        import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.min.js";
+        import ScriptSeriesLoader from "../js/shared/script-series-loader.min.js";
+        import { OsExperienceGraphController } from "../js/controller/graph/os-experience-graph-controller.min.js";
+
+        const stylesheetLoader = StylesheetSeriesLoader;
+        stylesheetLoader.add("css/destyle.min.css");
+        stylesheetLoader.add("css/restyle.min.css");
+        stylesheetLoader.add("css/common.min.css");
+        stylesheetLoader.add("css/graph.min.css");
+        stylesheetLoader.load();
+
+        const scriptLoader = ScriptSeriesLoader;
+        scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
+        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        scriptLoader.load(() => {
+            $(document).ready(async() => {
+                const controller = await OsExperienceGraphController.build();
+                controller.execute();    
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="page-title">OS経験</h1>
+    </header>
+    <noscript>
+        <p>内容を閲覧をするにはJavascriptを有効にしてください</p>
+    </noscript>
+    <p class="annotation">※ビジネスで扱ったOSのみ。プライベートの活動は除く。</p>
+    <div id="graph-container"></div>
+</body>
+</html>
