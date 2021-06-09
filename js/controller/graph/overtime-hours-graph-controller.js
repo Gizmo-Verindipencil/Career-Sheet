@@ -1,4 +1,5 @@
 import { OvertimeHoursGraphModel } from "../../model/graph/overtime-hours-graph-model.min.js";
+import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js"
 
 /**
@@ -15,6 +16,7 @@ class OvertimeHoursGraphController {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
+        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -62,6 +64,18 @@ class OvertimeHoursGraphController {
         };
         const data = [ actual, eMA, average ];
         Plotly.newPlot("graph-container", data, layout);
+
+        // 色を調整
+        this.changeBackgroundColor();
+    }
+
+    /**
+     * 背景色を季節を反映した内容に変える。
+     */
+    changeBackgroundColor = () => {
+        const reminder = new SeasonReminder();
+        reminder.seasonInfluence = 10;
+        reminder.remindAll("background-color");
     }
 }
 

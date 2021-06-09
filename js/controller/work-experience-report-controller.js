@@ -22,6 +22,7 @@ class WorkExperienceReportController {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -82,6 +83,9 @@ class WorkExperienceReportController {
 
         // ビジネス関係図のセット
         this.setBusinessRelationshipChart(experience);
+
+        // 色を調整
+        this.changeBackgroundColor();
     }
 
     /**
@@ -427,6 +431,15 @@ class WorkExperienceReportController {
         const image = `<img class='work-experience-report-supplementary-link-icon' src='../icon/top-to-right-arrow-in-box.svg'>`;
         const link = `<a class='work-experience-report-supplementary-link' href='${source}' target='_blank'>ビジネス関係図${image}</a>`;
         $("#work-experience-report-supplementary").append(link);
+    }
+
+    /**
+     * 背景色を季節を反映した内容に変える。
+     */
+    changeBackgroundColor = () => {
+        const reminder = new SeasonReminder();
+        reminder.seasonInfluence = 10;
+        reminder.remindAll("background-color");
     }
 }
 
