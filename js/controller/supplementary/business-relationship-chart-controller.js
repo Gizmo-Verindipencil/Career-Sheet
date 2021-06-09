@@ -19,6 +19,7 @@ class BusinessRelationshipChartController {
         this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-core.min.js");
         this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-graph.min.js");
         this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.js");
+        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -79,6 +80,9 @@ class BusinessRelationshipChartController {
         
         // 図の描画
         chart.container("chart-container").draw();
+
+        // 色を調整
+        this.changeBackgroundColor();
     }
 
     /**
@@ -91,6 +95,15 @@ class BusinessRelationshipChartController {
             const description = `<p style='${style}'>${node.id}:${node.description}</p>`;
             $("#chart-node-description").append(description);
         }
+    }
+
+    /**
+     * 背景色を季節を反映した内容に変える。
+     */
+    changeBackgroundColor = () => {
+        const reminder = new SeasonReminder();
+        reminder.seasonInfluence = 10;
+        reminder.remindAll("background-color");
     }
 }
 

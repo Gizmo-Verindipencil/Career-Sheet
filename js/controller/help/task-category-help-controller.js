@@ -22,6 +22,7 @@ class TaskCategoryHelpController {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -68,6 +69,9 @@ class TaskCategoryHelpController {
             const row = `<tr>${cells.join("")}</tr>`;
             $("#help-info tr:last").after(row);
         }
+
+        // 色を調整
+        this.changeBackgroundColor();
     }
 
     /**
@@ -143,6 +147,15 @@ class TaskCategoryHelpController {
             displayTypes.push(p);
         }
         return this.createTd(displayTypes.join(""));
+    }
+
+    /**
+     * 背景色を季節を反映した内容に変える。
+     */
+    changeBackgroundColor = () => {
+        const reminder = new SeasonReminder();
+        reminder.seasonInfluence = 10;
+        reminder.remindAll("background-color");
     }
 }
 

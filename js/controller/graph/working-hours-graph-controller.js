@@ -16,6 +16,7 @@ class WorkingHoursGraphController {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
+        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -82,6 +83,18 @@ class WorkingHoursGraphController {
             prescribedAverage
         ];
         Plotly.newPlot("graph-container", data, layout);
+
+        // 色を調整
+        this.changeBackgroundColor();
+    }
+
+    /**
+     * 背景色を季節を反映した内容に変える。
+     */
+    changeBackgroundColor = () => {
+        const reminder = new SeasonReminder();
+        reminder.seasonInfluence = 10;
+        reminder.remindAll("background-color");
     }
 }
 
