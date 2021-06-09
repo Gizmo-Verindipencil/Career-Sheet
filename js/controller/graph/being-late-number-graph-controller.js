@@ -1,4 +1,5 @@
 import { BeingLateNumberGraphModel } from "../../model/graph/being-late-number-graph-model.min.js";
+import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js"
 
 /**
