@@ -67,6 +67,9 @@ class OvertimeHoursGraphController {
 
         // 色を調整
         this.changeBackgroundColor();
+
+        // 読込完了をページに反映
+        $("body").addClass("loaded");
     }
 
     /**
