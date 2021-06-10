@@ -45,6 +45,20 @@ class WorkExperienceReportController {
      * 職務経歴レポート(ヘッダー)の設定を実行します。
      */
     execute = () => {
+        // コンテンツをセット
+        this.setContents();
+
+        // 色を調整
+        this.changeBackgroundColor();
+
+        // 読込完了をページに反映
+        $("body").addClass("loaded");
+    }
+
+    /**
+     * 画面コンテンツの設定を行います。
+     */
+    setContents = () => {
         // 職務経歴データを取得
         const params = new URLSearchParams(document.location.search.substring(1));
         const no = params.get("no");
@@ -83,12 +97,6 @@ class WorkExperienceReportController {
 
         // ビジネス関係図のセット
         this.setBusinessRelationshipChart(experience);
-
-        // 色を調整
-        this.changeBackgroundColor();
-
-        // 読込完了をページに反映
-        $("body").addClass("loaded");
     }
 
     /**
