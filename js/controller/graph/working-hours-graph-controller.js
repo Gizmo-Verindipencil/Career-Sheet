@@ -97,7 +97,8 @@ class WorkingHoursGraphController {
     changeBackgroundColor = () => {
         const reminder = new SeasonReminder();
         reminder.seasonInfluence = 10;
-        reminder.remindAll("background-color");
+        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
+        reminder.remindAll("background-color", ignore);
     }
 }
 
