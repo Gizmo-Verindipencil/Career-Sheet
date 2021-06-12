@@ -1,0 +1,11 @@
+#preloader {
+    border-top-color: #cecece;
+}
+
+#preloader:before {
+    border-top-color: #ebebeb;
+}
+
+#preloader:after {
+    border-top-color: #fff;
+}
