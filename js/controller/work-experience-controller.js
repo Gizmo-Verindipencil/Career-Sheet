@@ -88,7 +88,7 @@ class WorkExperienceController {
         
         if (firstLoading) {
             // 初回はアニメーションなしで追加
-            rows.forEach(x => $("#work-experience tr:last").after(x));
+            rows.forEach(x => $("#work-experience > tbody").append(x));
         }
         else
         {
@@ -111,7 +111,7 @@ class WorkExperienceController {
 
             // tr要素を追加
             const row = rows.shift();
-            $("#work-experience tr:last").after(row);
+            $("#work-experience > tbody").append(row);
 
             /**
              * 初回以降はアニメーションさせる
