@@ -39,7 +39,7 @@ class WorkExperienceReportController {
         this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
 
-        // 全ての処理実行後に行う処理の為の終了管理を設定
+        // 最後に行う処理の為の終了管理を設定
         this.complete = {};
         this.complete[this.completeExecute] = false;
         this.complete[this.completeLoadDetail] = false;
@@ -477,7 +477,7 @@ class WorkExperienceReportController {
     }
 
     /**
-     * 背景色を季節を反映した内容に変える。
+     * 背景色を季節を反映した内容に変えます。
      * @param {String} key 終了管理キー。
      */
     changeBackgroundColor = (key) => {

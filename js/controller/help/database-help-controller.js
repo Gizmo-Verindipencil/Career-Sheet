@@ -109,7 +109,7 @@ class DbHelpController {
     }
 
     /**
-     * 背景色を季節を反映した内容に変える。
+     * 背景色を季節を反映した内容に変えます。
      */
     changeBackgroundColor = () => {
         const reminder = new SeasonReminder();
