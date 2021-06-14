@@ -480,12 +480,12 @@ class WorkExperienceReportController {
      * 背景色を季節を反映した内容に変えます。
      * @param {String} key 終了管理キー。
      */
-    changeBackgroundColor = (key) => {
+    changeBackgroundColor = key => {
         // 処理完了を記録
         this.complete[key] = true;
 
         // 全処理が完了していなければ後続処理を行わない
-        for(const name in this.Complete) {
+        for(const name in this.complete) {
             if (!this.complete[name]) return;
         }
 
