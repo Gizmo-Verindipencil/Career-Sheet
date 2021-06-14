@@ -48,8 +48,6 @@ class CareerSheetController {
         urls.push("supplementary.html");
         this.appendPages(urls);
 
-        
-
         // 読込完了をページに反映
         $("body").addClass("loaded");
     }
