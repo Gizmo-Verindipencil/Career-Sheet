@@ -81,18 +81,17 @@ class CareerSheetController {
                     const content = $(response);
                     $("body").append(content);
                     content.ready(() => {
-                            // 読込完了を記録
-                            loadComplete[url] = true;
-    
-                            // 全ページの読込が完了していなければ後続処理を行わない
-                            for(const name in loadComplete) {
-                                if (!loadComplete[name]) return;
-                            }
+                        // 読込完了を記録
+                        loadComplete[url] = true;
 
-                            // 色を調整
-                            this.changeBackgroundColor();
+                        // 全ページの読込が完了していなければ後続処理を行わない
+                        for(const name in loadComplete) {
+                            if (!loadComplete[name]) return;
                         }
-                    );
+
+                        // 色を調整
+                        this.changeBackgroundColor();
+                    });
 
                     // 次のページを読込
                     append();
