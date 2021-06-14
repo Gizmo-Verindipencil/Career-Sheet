@@ -8,6 +8,20 @@ import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.min.js";
  */
 class WorkExperienceReportController {
     /**
+     * 実行処理の終了管理キーを取得します。
+     */
+    static get completeExecute() {
+        return "execute";
+    }
+
+    /**
+     * 詳細ロード処理の終了管理キーを取得します。
+     */
+    static get completeLoadDetail() {
+        return "load_detail";
+    }
+
+    /**
      * インスタンスを初期化します。
      */
     constructor() {
@@ -24,6 +38,11 @@ class WorkExperienceReportController {
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
+
+        // 全ての処理実行後に行う処理の為の終了管理を設定
+        this.complete = {};
+        this.complete[this.completeExecute] = false;
+        this.complete[this.completeLoadDetail] = false;
     }
 
     /**
@@ -49,7 +68,7 @@ class WorkExperienceReportController {
         this.setContents();
 
         // 色を調整
-        this.changeBackgroundColor();
+        this.changeBackgroundColor(this.completeExecute);
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -423,7 +442,20 @@ class WorkExperienceReportController {
      * @param {Object} data 職務経歴データ。
      */
      setDetail = data => {
-        $("#work-experience-report-detail").load(`${data.no}\\detail.html`);
+        $.ajax({ 
+            type: "GET",   
+            url: `${data.no}\\detail.html`,   
+            async: true,
+            success : response => {
+                // ページを追加
+                const content = $(response);
+                $("#work-experience-report-detail").append(content);
+                content.ready(() => {
+                    // 色を調整
+                    this.changeBackgroundColor(this.completeLoadDetail);
+                });
+            }
+        });
     }
 
     /**
@@ -446,8 +478,18 @@ class WorkExperienceReportController {
 
     /**
      * 背景色を季節を反映した内容に変える。
+     * @param {String} key 終了管理キー。
      */
-    changeBackgroundColor = () => {
+    changeBackgroundColor = (key) => {
+        // 処理完了を記録
+        this.complete[key] = true;
+
+        // 全処理が完了していなければ後続処理を行わない
+        for(const name in this.Complete) {
+            if (!this.complete[name]) return;
+        }
+
+        // 色を調整
         const reminder = new SeasonReminder();
         reminder.seasonInfluence = 10;
         const ignore = Array.from(document.getElementsByClassName("preloader-section"));
