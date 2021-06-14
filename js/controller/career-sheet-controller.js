@@ -48,8 +48,7 @@ class CareerSheetController {
         urls.push("supplementary.html");
         this.appendPages(urls);
 
-        // 色を調整
-        this.changeBackgroundColor();
+        
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -60,6 +59,12 @@ class CareerSheetController {
      * @param {Array<String>} urls 読込ページ。
      */
     appendPages = urls => {
+        // ページの読込完了状況
+        const loadComplete = {};
+        for(const url of urls) {
+            loadComplete[url] = false;
+        }
+
         // ページの読込・追加
         const append = () => {
             // 読込対象がなければ終了
@@ -73,16 +78,31 @@ class CareerSheetController {
                 type: "GET",   
                 url: url,   
                 async: true,
-                success : function(response)
-                {
+                success : response => {
                     // ページを追加
-                    $("body").append(response);
+                    const content = $(response);
+                    $("body").append(content);
+                    content.ready(() => {
+                            // 読込完了を記録
+                            loadComplete[url] = true;
+    
+                            // 全ページの読込が完了していなければ後続処理を行わない
+                            for(const name in loadComplete) {
+                                if (!loadComplete[name]) return;
+                            }
+
+                            // 色を調整
+                            this.changeBackgroundColor();
+                        }
+                    );
 
                     // 次のページを読込
                     append();
                 }
             });
         }
+
+        // 最初の処理を実行
         append();
     } 
 
