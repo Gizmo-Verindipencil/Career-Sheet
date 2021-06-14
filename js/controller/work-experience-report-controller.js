@@ -467,7 +467,7 @@ class WorkExperienceReportController {
 
     /**
      * ビジネス関係図の設定を行います。
-     * @param {Object}} data 職務経歴データ。
+     * @param {Object} data 職務経歴データ。
      */
     setBusinessRelationshipChart = data => {
         const source = `../supplementary/business-relationship-chart.html?id=${data.businessRelationshipId}`;
