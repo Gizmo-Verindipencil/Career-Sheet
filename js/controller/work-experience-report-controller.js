@@ -4,9 +4,9 @@ import ScriptSeriesLoader from "../shared/script-series-loader.min.js"
 import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.min.js";
 
 /**
- * 職務経歴レポートのコントローラーを提供します。
+ * 定数を提供します。
  */
-class WorkExperienceReportController {
+class Constant {
     /**
      * 実行処理の終了管理キーを取得します。
      */
@@ -15,12 +15,17 @@ class WorkExperienceReportController {
     }
 
     /**
-     * 詳細ロード処理の終了管理キーを取得します。
+     * 詳細ページ読込処理の終了管理キーを取得します。
      */
     static get completeLoadDetail() {
         return "load_detail";
     }
+}
 
+/**
+ * 職務経歴レポートのコントローラーを提供します。
+ */
+class WorkExperienceReportController {
     /**
      * インスタンスを初期化します。
      */
@@ -41,8 +46,8 @@ class WorkExperienceReportController {
 
         // 最後に行う処理の為の終了管理を設定
         this.complete = {};
-        this.complete[this.completeExecute] = false;
-        this.complete[this.completeLoadDetail] = false;
+        this.complete[Constant.completeExecute] = false;
+        this.complete[Constant.completeLoadDetail] = false;
     }
 
     /**
@@ -68,7 +73,7 @@ class WorkExperienceReportController {
         this.setContents();
 
         // 色を調整
-        this.changeBackgroundColor(this.completeExecute);
+        this.changeBackgroundColor(Constant.completeExecute);
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -452,7 +457,7 @@ class WorkExperienceReportController {
                 $("#work-experience-report-detail").append(content);
                 content.ready(() => {
                     // 色を調整
-                    this.changeBackgroundColor(this.completeLoadDetail);
+                    this.changeBackgroundColor(Constant.completeLoadDetail);
                 });
             }
         });
