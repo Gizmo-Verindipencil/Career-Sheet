@@ -249,8 +249,7 @@ class WorkExperienceDataStore {
                     "T-SQL"
                 ],
                 "developmentTool" : [
-                    "Visual Studio",
-                    "SQL Server Management Studio"
+                    "Visual Studio"
                 ],
                 "framework" : [],
                 "platform" : [
@@ -320,8 +319,7 @@ class WorkExperienceDataStore {
                     "T-SQL"
                 ],
                 "developmentTool" : [
-                    "Visual Studio",
-                    "SQL Server Management Studio"
+                    "Visual Studio"
                 ],
                 "framework" : [],
                 "platform" : [
@@ -397,8 +395,7 @@ class WorkExperienceDataStore {
                     "T-SQL"
                 ],
                 "developmentTool" : [
-                    "Visual Studio",
-                    "SQL Server Management Studio"
+                    "Visual Studio"
                 ],
                 "framework" : [
                     "ASP.NET"
@@ -460,8 +457,7 @@ class WorkExperienceDataStore {
                     "T-SQL"
                 ],
                 "developmentTool" : [
-                    "Visual Studio",
-                    "SQL Server Management Studio"
+                    "Visual Studio"
                 ],
                 "framework" : [
                     "ASP.NET"
@@ -592,8 +588,7 @@ class WorkExperienceDataStore {
                     "PL/SQL"
                 ],
                 "developmentTool" : [
-                    "Visual Studio",
-                    "SQL Server Management Studio"
+                    "Visual Studio"
                 ],
                 "framework" : [
                     "独自基盤1"
@@ -732,8 +727,7 @@ class WorkExperienceDataStore {
                 ],
                 "developmentTool" : [
                     "Visual Studio",
-                    "Flow Designer",
-                    "SQL Developer"
+                    "Flow Designer"
                 ],
                 "framework" : [],
                 "platform" : [
@@ -812,8 +806,7 @@ class WorkExperienceDataStore {
                     "T-SQL"
                 ],
                 "developmentTool" : [
-                    "Visual Studio",
-                    "SQL Server Management Studio"
+                    "Visual Studio"
                 ],
                 "framework" : [],
                 "platform" : [],
@@ -887,8 +880,7 @@ class WorkExperienceDataStore {
                     "T-SQL"
                 ],
                 "developmentTool" : [
-                    "Visual Studio",
-                    "SQL Server Management Studio"
+                    "Visual Studio"
                 ],
                 "framework" : [
                     "ASP.NET",
@@ -938,8 +930,7 @@ class WorkExperienceDataStore {
                     "PL/SQL"
                 ],
                 "developmentTool" : [
-                    "Visual Studio",
-                    "A5:SQL Mk-2"
+                    "Visual Studio"
                 ],
                 "framework" : [
                     "独自基盤2"
@@ -1003,8 +994,7 @@ class WorkExperienceDataStore {
                 ],
                 "developmentTool" : [
                     "Visual Studio",
-                    "Flow Designer",
-                    "SQL Developer"
+                    "Flow Designer"
                 ],
                 "framework" : [],
                 "platform" : [
@@ -1090,7 +1080,7 @@ class WorkExperienceDataStore {
                     "PL/SQL"
                 ],
                 "developmentTool" : [
-                    "e-Builder(Eclipse)"
+                    "Visual Studio"
                 ],
                 "framework" : [],
                 "platform" : [
@@ -1462,10 +1452,7 @@ class WorkExperienceDataStore {
                 "os" : [
                     "Windows 10"
                 ],
-                "programmingLanguage" : [
-                    "T-SQL",
-                    "PL/SQL"
-                ],
+                "programmingLanguage" : [],
                 "developmentTool" : [
                     "Flow Designer"
                 ],
@@ -1716,8 +1703,7 @@ class WorkExperienceDataStore {
                     "T-SQL"
                 ],
                 "developmentTool" : [
-                    "Visual Studio Code",
-                    "SQL Server Management Studio"
+                    "Visual Studio Code"
                 ],
                 "framework" : [
                     "Classic ASP"
@@ -1793,8 +1779,7 @@ class WorkExperienceDataStore {
                     "T-SQL"
                 ],
                 "developmentTool" : [
-                    "Visual Studio",
-                    "SQL Server Management Studio"
+                    "Visual Studio"
                 ],
                 "framework" : [
                     "Dapper",
@@ -1970,7 +1955,6 @@ class WorkExperienceDataStore {
                     "T-SQL"
                 ],
                 "developmentTool" : [
-                    "Visual Studio",
                     "SQL Server Management Studio"
                 ],
                 "framework" : [

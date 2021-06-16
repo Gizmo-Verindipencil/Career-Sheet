@@ -4,6 +4,25 @@ import ScriptSeriesLoader from "../shared/script-series-loader.min.js"
 import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.min.js";
 
 /**
+ * 定数を提供します。
+ */
+class Constant {
+    /**
+     * 実行処理の終了管理キーを取得します。
+     */
+    static get completeExecute() {
+        return "execute";
+    }
+
+    /**
+     * 詳細ページ読込処理の終了管理キーを取得します。
+     */
+    static get completeLoadDetail() {
+        return "load_detail";
+    }
+}
+
+/**
  * 職務経歴レポートのコントローラーを提供します。
  */
 class WorkExperienceReportController {
@@ -24,6 +43,11 @@ class WorkExperienceReportController {
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
+
+        // 最後に行う処理の為の終了管理を設定
+        this.complete = {};
+        this.complete[Constant.completeExecute] = false;
+        this.complete[Constant.completeLoadDetail] = false;
     }
 
     /**
@@ -49,7 +73,7 @@ class WorkExperienceReportController {
         this.setContents();
 
         // 色を調整
-        this.changeBackgroundColor();
+        this.changeBackgroundColor(Constant.completeExecute);
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -423,7 +447,20 @@ class WorkExperienceReportController {
      * @param {Object} data 職務経歴データ。
      */
      setDetail = data => {
-        $("#work-experience-report-detail").load(`${data.no}\\detail.html`);
+        $.ajax({ 
+            type: "GET",   
+            url: `${data.no}\\detail.html`,   
+            async: true,
+            success : response => {
+                // ページを追加
+                const content = $(response);
+                $("#work-experience-report-detail").append(content);
+                content.ready(() => {
+                    // 色を調整
+                    this.changeBackgroundColor(Constant.completeLoadDetail);
+                });
+            }
+        });
     }
 
     /**
@@ -435,7 +472,7 @@ class WorkExperienceReportController {
 
     /**
      * ビジネス関係図の設定を行います。
-     * @param {Object}} data 職務経歴データ。
+     * @param {Object} data 職務経歴データ。
      */
     setBusinessRelationshipChart = data => {
         const source = `../supplementary/business-relationship-chart.html?id=${data.businessRelationshipId}`;
@@ -445,9 +482,19 @@ class WorkExperienceReportController {
     }
 
     /**
-     * 背景色を季節を反映した内容に変える。
+     * 背景色を季節を反映した内容に変えます。
+     * @param {String} key 終了管理キー。
      */
-    changeBackgroundColor = () => {
+    changeBackgroundColor = key => {
+        // 処理完了を記録
+        this.complete[key] = true;
+
+        // 全処理が完了していなければ後続処理を行わない
+        for(const name in this.complete) {
+            if (!this.complete[name]) return;
+        }
+
+        // 色を調整
         const reminder = new SeasonReminder();
         reminder.seasonInfluence = 10;
         const ignore = Array.from(document.getElementsByClassName("preloader-section"));
