@@ -1,6 +1,6 @@
 import { WorkExperienceReportModel } from "../model/work-experience-report-model.min.js";
 import { Utility } from "../shared/utility.min.js";
-import ScriptSeriesLoader from "../shared/script-series-loader.min.js"
+import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.min.js";
 
 /**

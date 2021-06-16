@@ -1,6 +1,6 @@
 import { CareerSheetModel } from "../model/career-sheet-model.min.js";
 import { Utility } from "../shared/utility.min.js";
-import ScriptSeriesLoader from "../shared/script-series-loader.min.js"
+import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
  * 定数を提供します。

@@ -1,6 +1,6 @@
 import { PersonalInterestModel } from "../../model/supplementary/personal-interest-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
-import ScriptSeriesLoader from "../../shared/script-series-loader.min.js"
+import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 
 /**
  * 個人的な関心ページのコントローラーを提供します。

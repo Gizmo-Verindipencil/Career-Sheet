@@ -1,6 +1,6 @@
 import { TaskTypeListModel } from "../model/task-type-list-model.min.js";
 import { Utility } from "../shared/utility.min.js";
-import ScriptSeriesLoader from "../shared/script-series-loader.min.js"
+import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
  * 作業種類一覧のコントローラーを提供します。
