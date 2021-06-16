@@ -104,7 +104,7 @@ class CareerSheetController {
                 type: "GET",   
                 url: url,   
                 async: true,
-                success : response => {
+                success: response => {
                     // ページを追加
                     const content = $(response);
                     $("body").append(content);
