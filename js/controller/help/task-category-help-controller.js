@@ -1,3 +1,4 @@
+import { Buildable } from "../../interface/buildable.min.js";
 import { TaskCategoryHelpModel } from "../../model/help/task-category-help-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
@@ -6,7 +7,7 @@ import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.min.js
 /**
  * ヘルプ(作業カテゴリ)のコントローラーを提供します。
  */
-class TaskCategoryHelpController {
+class TaskCategoryHelpController extends Buildable {
     /**
      * インスタンスを初期化します。
      */

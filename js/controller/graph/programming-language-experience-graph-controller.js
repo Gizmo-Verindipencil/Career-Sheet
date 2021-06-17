@@ -1,3 +1,4 @@
+import { Buildable } from "../../interface/buildable.min.js";
 import { ProgrammingLanguageExperienceGraphModel } from "../../model/graph/programming-language-experience-graph-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
@@ -5,7 +6,7 @@ import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 /**
  * プログラミング言語経験グラフのコントローラーを提供します。
  */
-class ProgrammingLanguageExperienceGraphController {
+class ProgrammingLanguageExperienceGraphController extends Buildable {
     /**
      * インスタンスを初期化します。
      */

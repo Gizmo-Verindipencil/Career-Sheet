@@ -1,3 +1,4 @@
+import { Buildable } from "../../interface/buildable.min.js";
 import { UncategorizedTechnologyHelpModel } from "../../model/help/uncategorized-techology-help-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
@@ -6,7 +7,7 @@ import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.min.js
 /**
  * ヘルプ(その他技術)のコントローラーを提供します。
  */
-class UncategorizedTechnologyHelpController {
+class UncategorizedTechnologyHelpController extends Buildable {
     /**
      * インスタンスを初期化します。
      */

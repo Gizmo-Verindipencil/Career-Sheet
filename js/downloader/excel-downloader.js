@@ -1,10 +1,11 @@
+import { Buildable } from "../interface/buildable.min.js";
 import { Utility } from "../shared/utility.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
  * Excelファイルの生成・出力処理を提供します。
  */
-class ExcelDownloader {
+class ExcelDownloader extends Buildable {
     /**
      * インスタンスを初期化します。
      */

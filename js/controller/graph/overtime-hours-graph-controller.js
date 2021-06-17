@@ -1,3 +1,4 @@
+import { Buildable } from "../../interface/buildable.min.js";
 import { OvertimeHoursGraphModel } from "../../model/graph/overtime-hours-graph-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
@@ -5,7 +6,7 @@ import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 /**
  * 残業時間グラフのコントローラーを提供します。
  */
-class OvertimeHoursGraphController {
+class OvertimeHoursGraphController extends Buildable {
     /**
      * インスタンスを初期化します。
      */

@@ -1,3 +1,4 @@
+import { Buildable } from "../../interface/buildable.min.js";
 import { BusinessRelationshipChartListModel } from "../../model/supplementary/business-relationship-chart-list-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
@@ -5,7 +6,7 @@ import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 /**
  * ビジネス関係図リストのコントローラーを提供します。
  */
-class BusinessRelationshipChartListController {
+class BusinessRelationshipChartListController extends Buildable {
     /**
      * インスタンスを初期化します。
      */

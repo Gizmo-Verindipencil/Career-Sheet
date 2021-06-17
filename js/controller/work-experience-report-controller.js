@@ -1,3 +1,4 @@
+import { Buildable } from "../interface/buildable.min.js";
 import { WorkExperienceReportModel } from "../model/work-experience-report-model.min.js";
 import { Utility } from "../shared/utility.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
@@ -25,7 +26,7 @@ class Constant {
 /**
  * 職務経歴レポートのコントローラーを提供します。
  */
-class WorkExperienceReportController {
+class WorkExperienceReportController extends Buildable {
     /**
      * インスタンスを初期化します。
      */
