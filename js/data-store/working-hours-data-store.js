@@ -1468,6 +1468,26 @@ class WorkingHoursDataStore {
                     "hours" : "0",
                     "comment" : ""
                 }
+            },
+            {
+                "year" : "2021",
+                "month" : "6",
+                "period" : {
+                    "from" : "2021-5-21",
+                    "to" : "2021-6-20"
+                },
+                "prescribedWorkingDays" : "21",
+                "prescribedWorkingHours" : "157.30",
+                "actualWorkingDays" : "21",
+                "actualWorkingHours" : "160.15",
+                "overtimeHours" : "2.45",
+                "holidayWorkingDays" : "0",
+                "paidLeave" : "28",
+                "beingLate": {
+                    "count" : "0",
+                    "hours" : "0",
+                    "comment" : ""
+                }
             }
         ];
     }
