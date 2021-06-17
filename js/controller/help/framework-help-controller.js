@@ -12,6 +12,8 @@ class FrameworkHelpController extends Buildable {
      * インスタンスを初期化します。
      */
     constructor() {
+        super();
+        
         // 対応するモデルをセット
         this.model = new FrameworkHelpModel();
 

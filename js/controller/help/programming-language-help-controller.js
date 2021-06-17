@@ -12,6 +12,8 @@ class ProgrammingLanguageHelpController extends Buildable {
      * コンストラクタ
      */
     constructor() {
+        super();
+        
         // 対応するモデルをセット
         this.model = new ProgrammingLanguageHelpModel();
 
