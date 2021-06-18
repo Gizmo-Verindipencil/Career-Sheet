@@ -1,3 +1,4 @@
+import { Buildable } from "../../interface/buildable.min.js";
 import { PaidLeaveGraphModel } from "../../model/graph/paid-leave-graph-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
@@ -5,11 +6,13 @@ import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 /**
  * 有給休暇グラフのコントローラーを提供します。
  */
-class PaidLeaveGraphController {
+class PaidLeaveGraphController extends Buildable {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        super();
+        
         // 対応するモデルをセット
         this.model = new PaidLeaveGraphModel();
 

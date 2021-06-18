@@ -1,3 +1,4 @@
+import { Buildable } from "../../interface/buildable.min.js";
 import { OsExperienceGraphModel } from "../../model/graph/os-experience-graph-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
@@ -5,11 +6,13 @@ import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 /**
  * OS経験グラフのコントローラーを提供します。
  */
-class OsExperienceGraphController {
+class OsExperienceGraphController extends Buildable {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        super();
+        
         // 対応するモデルをセット
         this.model = new OsExperienceGraphModel();
 

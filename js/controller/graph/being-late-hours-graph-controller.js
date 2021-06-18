@@ -1,3 +1,4 @@
+import { Buildable } from "../../interface/buildable.min.js";
 import { BeingLateHoursGraphModel } from "../../model/graph/being-late-hours-graph-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
@@ -5,11 +6,13 @@ import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 /**
  * 遅刻時間グラフのコントローラーを提供します。
  */
-class BeingLateHoursGraphController {
+class BeingLateHoursGraphController extends Buildable {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        super();
+        
         // 対応するモデルをセット
         this.model = new BeingLateHoursGraphModel();
 

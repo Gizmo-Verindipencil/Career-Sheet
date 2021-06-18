@@ -1,3 +1,4 @@
+import { Buildable } from "../../interface/buildable.min.js";
 import { DeviceHelpModel } from "../../model/help/device-help-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
@@ -7,11 +8,13 @@ import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.min.js
 /**
  * ヘルプ(機種)のコントローラーを提供します。
  */
-class DeviceHelpController {
+class DeviceHelpController extends Buildable{
     /**
      * インスタンスを初期化します。
      */
     constructor() {
+        super();
+        
         // 対応するモデルをセット
         this.model = new DeviceHelpModel();
 

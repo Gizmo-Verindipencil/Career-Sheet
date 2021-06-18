@@ -1,3 +1,4 @@
+import { Buildable } from "../../interface/buildable.min.js";
 import { ProgrammingLanguageHelpModel } from "../../model/help/programming-language-help-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
@@ -6,11 +7,13 @@ import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.min.js
 /**
  * ヘルプ(プログラミング言語)のコントローラーを提供します。
  */
-class ProgrammingLanguageHelpController {
+class ProgrammingLanguageHelpController extends Buildable {
     /**
      * コンストラクタ
      */
     constructor() {
+        super();
+        
         // 対応するモデルをセット
         this.model = new ProgrammingLanguageHelpModel();
 
