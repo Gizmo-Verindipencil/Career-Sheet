@@ -111,7 +111,7 @@ class ExcelDownloader extends Buildable {
     download = name => {
         // 出力対象の有無を判定
         if (!this.workbook || this.workbook.sheetNames.length === 0) {
-            throw "Not found contents.";
+            throw "Error: Not found contents.";
         }
 
         // 書込オプションの設定
