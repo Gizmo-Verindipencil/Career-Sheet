@@ -1,6 +1,7 @@
 import { Buildable } from "../../interface/buildable.min.js";
 import { DeviceHelpModel } from "../../model/help/device-help-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
+import { PageColorAdjuster } from "../../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.min.js";
 
@@ -68,7 +69,8 @@ class DeviceHelpController extends Buildable{
         }
 
         // 色を調整
-        this.changeBackgroundColor();
+        const adjuster = await PageColorAdjuster.build();
+        adjuster.changeBackgroundColor();
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -110,16 +112,6 @@ class DeviceHelpController extends Buildable{
      */
     createDescriptionTd = device => {
         return this.createTd(`<p>${device.description}</p>`);
-    }
-
-    /**
-     * 背景色を季節を反映した内容に変えます。
-     */
-    changeBackgroundColor = () => {
-        const reminder = new SeasonReminder();
-        reminder.seasonInfluence = 10;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
     }
 }
 

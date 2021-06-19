@@ -1,6 +1,7 @@
 import { Buildable } from "../../interface/buildable.min.js";
 import { BeingLateHoursGraphModel } from "../../model/graph/being-late-hours-graph-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
+import { PageColorAdjuster } from "../../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 
 /**
@@ -41,7 +42,7 @@ class BeingLateHoursGraphController extends Buildable {
     /**
      * 遅刻時間グラフの設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // グラフ用データの作成処理
         const createGraphData = (name, data) => {
             return {
@@ -69,20 +70,11 @@ class BeingLateHoursGraphController extends Buildable {
         Plotly.newPlot("graph-container", data, layout);
 
         // 色を調整
-        this.changeBackgroundColor();
+        const adjuster = await PageColorAdjuster.build();
+        adjuster.changeBackgroundColor();
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
-    }
-
-    /**
-     * 背景色を季節を反映した内容に変えます。
-     */
-    changeBackgroundColor = () => {
-        const reminder = new SeasonReminder();
-        reminder.seasonInfluence = 10;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
     }
 }
 
