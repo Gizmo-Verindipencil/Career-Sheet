@@ -20,7 +20,6 @@ class BeingLateNumberGraphController extends Buildable {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -42,7 +41,7 @@ class BeingLateNumberGraphController extends Buildable {
     /**
      * 遅刻回数グラフの設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // グラフ用データの作成処理
         const createGraphData = (name, data) => {
             return {

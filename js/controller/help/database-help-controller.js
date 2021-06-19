@@ -26,7 +26,6 @@ class DbHelpController extends Buildable {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -48,7 +47,7 @@ class DbHelpController extends Buildable {
     /**
      * ヘルプの設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // DBデータを取得
         const databases = this.model.getDatabases();
 

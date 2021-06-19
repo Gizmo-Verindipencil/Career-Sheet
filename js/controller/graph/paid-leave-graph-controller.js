@@ -20,7 +20,6 @@ class PaidLeaveGraphController extends Buildable {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -42,7 +41,7 @@ class PaidLeaveGraphController extends Buildable {
     /**
      * 有給休暇グラフの設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // 有給休暇の推移を作成
         const actual = this.model.getActual();
         const paidLeave = {

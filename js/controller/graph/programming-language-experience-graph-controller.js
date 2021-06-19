@@ -20,7 +20,6 @@ class ProgrammingLanguageExperienceGraphController extends Buildable {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -42,7 +41,7 @@ class ProgrammingLanguageExperienceGraphController extends Buildable {
     /**
      * プログラミング言語経験グラフの設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // プログラミング言語経験の日数集計を取得
         const model = new ProgrammingLanguageExperienceGraphModel();
         const language = model.getProgrammingLanguageExperience();
