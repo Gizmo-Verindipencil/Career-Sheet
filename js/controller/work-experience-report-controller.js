@@ -1,6 +1,7 @@
 import { Buildable } from "../interface/buildable.min.js";
 import { WorkExperienceReportModel } from "../model/work-experience-report-model.min.js";
 import { Utility } from "../shared/utility.min.js";
+import { PageColorAdjuster } from "../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.min.js";
 
@@ -44,13 +45,19 @@ class WorkExperienceReportController extends Buildable {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
+    }
 
-        // 最後に行う処理の為の終了管理を設定
-        this.complete = {};
-        this.complete[Constant.completeExecute] = false;
-        this.complete[Constant.completeLoadDetail] = false;
+    /**
+     * インスタンスに設定されているPageColorAdjusterを取得します。
+     * このインスタンスがbuild以外で作成されている場合、例外を発生させます。
+     * @returns {PageColorAdjuster} インスタンスを返します。
+     */
+    getPageColorAdjuster = () => {
+        if (!this.pageColorAdjuster) {
+            throw "Error: instance of the class needs to be created with 'build’.";
+        }
+        return this.pageColorAdjuster;
     }
 
     /**
@@ -65,6 +72,15 @@ class WorkExperienceReportController extends Buildable {
         while(controller.scriptLoader.running) {
             await Utility.sleep(2000);
         }
+
+        // 色調整処理のインスタンスを作成
+        const adjuster = await PageColorAdjuster.build();
+
+        // 終了管理キーを設定
+        adjuster.addKey(Constant.completeExecute);
+        adjuster.addKey(Constant.completeLoadDetail);
+        controller.pageColorAdjuster = adjuster;
+
         return controller;
     }
 
@@ -76,7 +92,8 @@ class WorkExperienceReportController extends Buildable {
         this.setContents();
 
         // 色を調整
-        this.changeBackgroundColor(Constant.completeExecute);
+        const adjuster = this.getPageColorAdjuster();
+        adjuster.changeBackgroundColorWhenLastFunctionCall(Constant.completeExecute);
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -460,7 +477,8 @@ class WorkExperienceReportController extends Buildable {
                 $("#work-experience-report-detail").append(content);
                 content.ready(() => {
                     // 色を調整
-                    this.changeBackgroundColor(Constant.completeLoadDetail);
+                    const adjuster = this.getPageColorAdjuster();
+                    adjuster.changeBackgroundColorWhenLastFunctionCall(Constant.completeLoadDetail);
                 });
             }
         });
@@ -482,26 +500,6 @@ class WorkExperienceReportController extends Buildable {
         const image = `<img class='work-experience-report-supplementary-link-icon' src='../icon/top-to-right-arrow-in-box.svg'>`;
         const link = `<a class='work-experience-report-supplementary-link' href='${source}' target='_blank'>ビジネス関係図${image}</a>`;
         $("#work-experience-report-supplementary").append(link);
-    }
-
-    /**
-     * 背景色を季節を反映した内容に変えます。
-     * @param {String} key 終了管理キー。
-     */
-    changeBackgroundColor = key => {
-        // 処理完了を記録
-        this.complete[key] = true;
-
-        // 全処理が完了していなければ後続処理を行わない
-        for(const name in this.complete) {
-            if (!this.complete[name]) return;
-        }
-
-        // 色を調整
-        const reminder = new SeasonReminder();
-        reminder.seasonInfluence = 10;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
     }
 }
 

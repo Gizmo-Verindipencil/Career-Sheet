@@ -1,6 +1,7 @@
 import { Buildable } from "../interface/buildable.min.js";
 import { CareerSheetModel } from "../model/career-sheet-model.min.js";
 import { Utility } from "../shared/utility.min.js";
+import { PageColorAdjuster } from "../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
@@ -12,13 +13,6 @@ import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
      */
     static get completeExecute() {
         return "execute";
-    }
-
-    /**
-     * コンテンツページ読込処理の終了管理キーを取得します。
-     */
-    static get completeLoadContents() {
-        return "load_contents";
     }
 }
 
@@ -38,13 +32,7 @@ class CareerSheetController extends Buildable {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
-
-        // 最後に行う処理の為の終了管理を設定
-        this.complete = {};
-        this.complete[Constant.completeExecute] = false;
-        this.complete[Constant.completeLoadContents] = false;
 
         // 読込対象のコンテンツ一覧を設定
         this.urls = [];
@@ -53,11 +41,18 @@ class CareerSheetController extends Buildable {
         this.urls.push("qualification.html");
         this.urls.push("statistics.html");
         this.urls.push("supplementary.html");
+    }
 
-        // ページの読込完了状況を終了管理に追加
-        for(const url of this.urls) {
-            this.complete[url] = false;
+    /**
+     * インスタンスに設定されているPageColorAdjusterを取得します。
+     * このインスタンスがbuild以外で作成されている場合、例外を発生させます。
+     * @returns {PageColorAdjuster} インスタンスを返します。
+     */
+    getPageColorAdjuster = () => {
+        if (!this.pageColorAdjuster) {
+            throw "Error: instance of the class needs to be created with 'build’.";
         }
+        return this.pageColorAdjuster;
     }
 
     /**
@@ -72,6 +67,15 @@ class CareerSheetController extends Buildable {
         while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
+
+        // 色調整処理のインスタンスを作成
+        const adjuster = await PageColorAdjuster.build();
+
+        // 終了管理キーを設定
+        adjuster.addKey(Constant.completeExecute);
+        controller.urls.forEach(x => adjuster.addKey(x));
+        controller.pageColorAdjuster = adjuster;
+
         return controller;
     }
 
@@ -83,7 +87,8 @@ class CareerSheetController extends Buildable {
         this.appendPages(this.urls);
 
         // 色を調整
-        this.changeBackgroundColor(Constant.completeExecute);
+        const adjuster = this.getPageColorAdjuster();
+        adjuster.changeBackgroundColorWhenLastFunctionCall(Constant.completeExecute);
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -91,18 +96,17 @@ class CareerSheetController extends Buildable {
 
     /**
      * ページを読込・追加します。
-     * @param {Array<String>} urls 読込ページ。
      */
-    appendPages = urls => {
+    appendPages = () => {
         // ページの読込・追加
         const append = () => {
             // 読込対象がなければ終了
-            if (urls.length === 0) {
+            if (this.urls.length === 0) {
                 return;
             }
 
             // ページを読込
-            const url = urls.shift();
+            const url = this.urls.shift();
             $.ajax({ 
                 type: "GET",   
                 url: url,   
@@ -113,7 +117,8 @@ class CareerSheetController extends Buildable {
                     $("body").append(content);
                     content.ready(() => {
                         // 色を調整
-                        this.changeBackgroundColor(url);
+                        const adjuster = this.getPageColorAdjuster();
+                        adjuster.changeBackgroundColorWhenLastFunctionCall(url);
                     });
 
                     // 次のページを読込
@@ -124,32 +129,6 @@ class CareerSheetController extends Buildable {
 
         // 最初の処理を実行
         append();
-    } 
-
-    /**
-     * 背景色を季節を反映した内容に変えます。
-     * @param {String} key 終了管理キー。
-     */
-    changeBackgroundColor = key => {
-        // 処理完了を記録
-        this.complete[key] = true;
-
-        // コンテンツページの読込完了を判定
-        if (!this.complete[Constant.completeLoadContents] 
-            && this.urls.every(x => this.complete[x])) {
-            this.complete[Constant.completeLoadContents] = true;
-        }
-
-        // 全処理が完了していなければ後続処理を行わない
-        for(const name in this.complete) {
-            if (!this.complete[name]) return;
-        }
-
-        // 色を調整
-        const reminder = new SeasonReminder();
-        reminder.seasonInfluence = 10;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
     }
 }
 
