@@ -1,6 +1,7 @@
 import { Buildable } from "../../interface/buildable.min.js";
 import { TaskCategoryHelpModel } from "../../model/help/task-category-help-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
+import { PageColorAdjuster } from "../../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.min.js";
 
@@ -25,7 +26,6 @@ class TaskCategoryHelpController extends Buildable {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -47,7 +47,7 @@ class TaskCategoryHelpController extends Buildable {
     /**
      * ヘルプの設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // 作業カテゴリデータを取得
         const categories = this.model.getTaskCategories();
 
@@ -74,7 +74,8 @@ class TaskCategoryHelpController extends Buildable {
         }
 
         // 色を調整
-        this.changeBackgroundColor();
+        const adjuster = await PageColorAdjuster.build();
+        adjuster.changeBackgroundColor();
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -153,16 +154,6 @@ class TaskCategoryHelpController extends Buildable {
             displayTypes.push(p);
         }
         return this.createTd(displayTypes.join(""));
-    }
-
-    /**
-     * 背景色を季節を反映した内容に変えます。
-     */
-    changeBackgroundColor = () => {
-        const reminder = new SeasonReminder();
-        reminder.seasonInfluence = 10;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
     }
 }
 

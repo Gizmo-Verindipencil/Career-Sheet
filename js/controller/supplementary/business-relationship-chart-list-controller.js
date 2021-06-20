@@ -1,6 +1,7 @@
 import { Buildable } from "../../interface/buildable.min.js";
 import { BusinessRelationshipChartListModel } from "../../model/supplementary/business-relationship-chart-list-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
+import { PageColorAdjuster } from "../../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 
 /**
@@ -44,7 +45,7 @@ class BusinessRelationshipChartListController extends Buildable {
     /**
      * ビジネス関係図リストの設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // ビジネス関係データを取得
         const relationships = this.model.getBusinessRelationships();
 
@@ -92,7 +93,8 @@ class BusinessRelationshipChartListController extends Buildable {
         }
 
         // 色を調整
-        this.changeBackgroundColor();
+        const adjuster = await PageColorAdjuster.build();
+        adjuster.changeBackgroundColor();
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -107,16 +109,6 @@ class BusinessRelationshipChartListController extends Buildable {
         const style = "float:left;padding-left:1rem;";
         const createP = (node) => `<p style='${style}'>${node.id}:${node.description}</p>`;
         return relationship.nodes.map(x => createP(x));
-    }
-
-    /**
-     * 背景色を季節を反映した内容に変えます。
-     */
-    changeBackgroundColor = () => {
-        const reminder = new SeasonReminder();
-        reminder.seasonInfluence = 10;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
     }
 }
 

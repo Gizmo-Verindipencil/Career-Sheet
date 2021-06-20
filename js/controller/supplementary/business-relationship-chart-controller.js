@@ -1,6 +1,7 @@
 import { Buildable } from "../../interface/buildable.min.js";
 import { BusinessRelationshipChartModel } from "../../model/supplementary/business-relationship-chart-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
+import { PageColorAdjuster } from "../../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 
 /**
@@ -22,7 +23,6 @@ class BusinessRelationshipChartController extends Buildable {
         this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-core.min.js");
         this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-graph.min.js");
         this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.js");
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -44,7 +44,7 @@ class BusinessRelationshipChartController extends Buildable {
     /**
      * ビジネス関係図の設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // ビジネス関係データを取得
         const params = new URLSearchParams(document.location.search.substring(1));
         const id = params.get("id");
@@ -85,7 +85,8 @@ class BusinessRelationshipChartController extends Buildable {
         chart.container("chart-container").draw();
 
         // 色を調整
-        this.changeBackgroundColor();
+        const adjuster = await PageColorAdjuster.build();
+        adjuster.changeBackgroundColor();
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -101,16 +102,6 @@ class BusinessRelationshipChartController extends Buildable {
             const description = `<p style='${style}'>${node.id}:${node.description}</p>`;
             $("#chart-node-description").append(description);
         }
-    }
-
-    /**
-     * 背景色を季節を反映した内容に変えます。
-     */
-    changeBackgroundColor = () => {
-        const reminder = new SeasonReminder();
-        reminder.seasonInfluence = 10;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
     }
 }
 

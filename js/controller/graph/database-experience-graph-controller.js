@@ -1,6 +1,7 @@
 import { Buildable } from "../../interface/buildable.min.js";
 import { DatabaseExperienceGraphModel } from "../../model/graph/database-experience-graph-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
+import { PageColorAdjuster } from "../../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 
 /**
@@ -19,7 +20,6 @@ class DatabaseExperienceGraphController extends Buildable {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -41,7 +41,7 @@ class DatabaseExperienceGraphController extends Buildable {
     /**
      * プログラミング言語経験グラフの設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // プログラミング言語経験の日数集計を取得
         const model = new DatabaseExperienceGraphModel();
         const language = model.getDatabaseExperience();
@@ -74,20 +74,11 @@ class DatabaseExperienceGraphController extends Buildable {
         Plotly.newPlot("graph-container", data, layout);
 
         // 色を調整
-        this.changeBackgroundColor();
+        const adjuster = await PageColorAdjuster.build();
+        adjuster.changeBackgroundColor();
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
-    }
-
-    /**
-     * 背景色を季節を反映した内容に変えます。
-     */
-    changeBackgroundColor = () => {
-        const reminder = new SeasonReminder();
-        reminder.seasonInfluence = 10;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
     }
 }
 

@@ -1,6 +1,7 @@
 import { Buildable } from "../../interface/buildable.min.js";
 import { FrameworkHelpModel } from "../../model/help/framework-help-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
+import { PageColorAdjuster } from "../../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 import StylesheetSeriesLoader from "../../shared/stylesheet-series-loader.min.js";
 
@@ -25,7 +26,6 @@ class FrameworkHelpController extends Buildable {
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
@@ -47,7 +47,7 @@ class FrameworkHelpController extends Buildable {
     /**
      * ヘルプの設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // フレームワークデータを取得
         const frameworks = this.model.getFrameworks();
 
@@ -67,7 +67,8 @@ class FrameworkHelpController extends Buildable {
         }
 
         // 色を調整
-        this.changeBackgroundColor();
+        const adjuster = await PageColorAdjuster.build();
+        adjuster.changeBackgroundColor();
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -109,16 +110,6 @@ class FrameworkHelpController extends Buildable {
      */
     createDescriptionTd = framework => {
         return this.createTd(`<p>${framework.description}</p>`);
-    }
-
-    /**
-     * 背景色を季節を反映した内容に変えます。
-     */
-    changeBackgroundColor = () => {
-        const reminder = new SeasonReminder();
-        reminder.seasonInfluence = 10;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
     }
 }
 
