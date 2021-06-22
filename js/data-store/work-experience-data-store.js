@@ -1998,6 +1998,49 @@ class WorkExperienceDataStore {
                     }
                 ],
                 "businessRelationshipId" : "me-N-A-P"
+            },
+            {
+                "userId" : "1",
+                "no" : "31",
+                "businessType" : "機械メーカー",
+                "period" : {
+                    "from" : "2021-5-17",
+                    "to" : "2021-6-1"
+                },
+                "device" : [
+                    "PC"
+                ],
+                "os" : [
+                    "Windows 10"
+                ],
+                "programmingLanguage" : [
+                    "C#",
+                    "Javascript"
+                ],
+                "developmentTool" : [],
+                "framework" : [
+                    "React"
+                ],
+                "platform" : [],
+                "database" : [
+                    "AWS RDS"
+                ],
+                "uncategorizedTechnology" : [],
+                "projectSummary" : "システムリプレース",
+                "projectPeakSize" : "3",
+                "subordinate" : "0",
+                "system" : [
+                    "資産管理システム"
+                ],
+                "task" : [
+                    {
+                        "name" : "概算見積",
+                        "type" : [
+                            "RE"
+                        ]
+                    }
+                ],
+                "businessRelationshipId" : "me-N-A-P"
             }
         ];
     }
