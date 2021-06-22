@@ -158,7 +158,7 @@ class WorkExperienceDataStore {
                         ]
                     },
                     {
-                        "name" : "DFD作成",
+                        "name" : "データフロー図作成",
                         "type" : [
                             "D"
                         ]
