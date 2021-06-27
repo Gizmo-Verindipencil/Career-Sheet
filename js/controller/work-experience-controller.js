@@ -382,7 +382,7 @@ class WorkExperienceController extends Buildable {
             const styles = [];
             styles.push(theme ? `color:${theme.foreColor}` : "");
             styles.push(theme ? `background-color:${theme.backgroundColor}` : "");
-            innerHtml.push(createP("unknown", styles.join(";"), type));
+            innerHtml.push(createP("colorless", styles.join(";"), type));
         }
 
         // td要素を生成して返す

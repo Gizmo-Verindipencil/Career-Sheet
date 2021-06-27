@@ -99,7 +99,7 @@ class TaskTypeHelpController extends Buildable {
      * @return {String} td要素を表すhtmlを返します。
      */
     createCodeTd = type => {
-        const className = "work-experience-task-type-unknown";
+        const className = "work-experience-task-type-colorless";
 
         // 作業テーマデータを取得
         const theme = this.model.getTaskThemeById(type.themeId);

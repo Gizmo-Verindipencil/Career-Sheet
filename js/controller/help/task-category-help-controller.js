@@ -149,7 +149,7 @@ class TaskCategoryHelpController extends Buildable {
             styles.push(theme ? `background-color:${theme.backgroundColor}` : "");
 
             // 要素を生成して追加
-            const className = "work-experience-task-type-unknown";
+            const className = "work-experience-task-type-colorless";
             const p = `<p class='${className}' style='${styles.join(";")}'>${type.id}</p>`;
             displayTypes.push(p);
         }
