@@ -274,7 +274,23 @@ table#work-experience {
     width: 9%;
 }
 
-.work-experience-task-type-unknown {
+.work-experience-task-type-example {
+    background: linear-gradient(#cecece, #ffffff);
+    border: solid 0.08rem #222222;
+    border-radius: 20%;
+    color: #333333;
+    display: table-cell;
+    float: left;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    margin: 0.1rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    text-align: center;
+    width: 1.8rem;
+}
+
+.work-experience-task-type-colorless {
     border: solid 0.08rem #222222;
     border-radius: 20%;
     color: #333333;
