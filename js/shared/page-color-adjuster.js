@@ -15,7 +15,7 @@ class PageColorAdjuster {
         this.scriptLoader.load();
 
         // 処理の終了管理を設定
-        this.complete = {};
+        this.termination = {};
     }
 
     /**
@@ -39,12 +39,12 @@ class PageColorAdjuster {
      */
     addKey = key => {
         // 既に存在するキーの場合はエラー
-        if (this.complete[key]) {
+        if (this.termination[key]) {
             throw "Error: the key already exists.";
         }
 
         // 終了状況を初期化
-        this.complete[key] = false;
+        this.termination[key] = false;
     }
 
     /**
@@ -54,16 +54,16 @@ class PageColorAdjuster {
      */
     changeBackgroundColorWhenLastFunctionCall = key => {
         // 事前に登録されていないキーの場合はエラー
-        if (this.complete[key]) {
+        if (this.termination[key]) {
             throw "Error: the key is unknown.";
         }
 
         // 処理完了を記録
-        this.complete[key] = true;
+        this.termination[key] = true;
 
         // 全処理が完了していなければ終了
-        for(const name in this.complete) {
-            if (!this.complete[name]) return;
+        for(const name in this.termination) {
+            if (!this.termination[name]) return;
         }
 
         // 色を調整
