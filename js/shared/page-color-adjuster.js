@@ -1,10 +1,11 @@
+import { Buildable } from "../interface/buildable.min.js";
 import { Utility } from "../shared/utility.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
  * ページの色調整を提供します。
  */
-class PageColorAdjuster {
+class PageColorAdjuster extends Buildable {
     /**
      * インスタンスを初期化します。
      */
