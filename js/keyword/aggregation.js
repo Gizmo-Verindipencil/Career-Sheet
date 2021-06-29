@@ -2,7 +2,7 @@
  * 複数のクラスをミックスインします。
  * 参考：http://es6-features.org/#ClassInheritanceFromExpressions
  * @param {Function} baseClass 基底クラス。
- * @param  {...any} mixins 継承元クラス。
+ * @param  {...Function} mixins 継承元クラス。
  * @returns {Function} ミックスインしたクラスを返します。
  */
 var aggregation = (baseClass, ...mixins) => {
