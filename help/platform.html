@@ -9,6 +9,7 @@
         import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.min.js";
         import ScriptSeriesLoader from "../js/shared/script-series-loader.min.js";
         import { PlatformHelpController } from "../js/controller/help/platform-help-controller.min.js";
+        import { createInstance } from "../js/keyword/create-instance.min.js";
 
         const stylesheetLoader = StylesheetSeriesLoader;
         stylesheetLoader.add("css/destyle.min.css");
@@ -21,7 +22,7 @@
         scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         scriptLoader.load(() => {
             $(document).ready(async() => {
-                const controller = await PlatformHelpController.build();
+                const controller = await createInstance(PlatformHelpController);
                 controller.execute();
             });
         });

@@ -1,3 +1,4 @@
+import { createInstance } from "../keyword/create-instance.min.js";
 import { Buildable } from "../interface/buildable.min.js";
 import { CareerSheetModel } from "../model/career-sheet-model.min.js";
 import { Utility } from "../shared/utility.min.js";
@@ -69,7 +70,7 @@ class CareerSheetController extends Buildable {
         }
 
         // 色調整処理のインスタンスを作成
-        const adjuster = await PageColorAdjuster.build();
+        const adjuster = await createInstance(PageColorAdjuster);
 
         // 終了管理キーを設定
         adjuster.addKey(Constant.completeExecute);
