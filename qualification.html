@@ -8,6 +8,7 @@
         import ScriptSeriesLoader from "./js/shared/script-series-loader.min.js";
         import { QualificationController } from "./js/controller/qualification-controller.min.js";
         import { TaskTypeListController } from "./js/controller/task-type-list-controller.min.js";
+        import { createInstance } from "./js/keyword/create-instance.min.js";
 
         const stylesheetLoader = StylesheetSeriesLoader;
         stylesheetLoader.add("css/destyle.min.css");
@@ -22,8 +23,8 @@
         scriptLoader.load(() => {
             $(document).ready(async() => {
                 const controllers = [];
-                controllers.push(await QualificationController.build());
-                controllers.push(await TaskTypeListController.build());
+                controllers.push(await createInstance(QualificationController));
+                controllers.push(await createInstance(TaskTypeListController));
                 for (const controller of controllers) {
                     controller.execute();
                 }

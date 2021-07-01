@@ -1,3 +1,4 @@
+import { createInstance } from "../../keyword/create-instance.min.js";
 import { Buildable } from "../../interface/buildable.min.js";
 import { BeingLateNumberGraphModel } from "../../model/graph/being-late-number-graph-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
@@ -69,7 +70,7 @@ class BeingLateNumberGraphController extends Buildable {
         Plotly.newPlot("graph-container", data, layout);
 
         // 色を調整
-        const adjuster = await PageColorAdjuster.build();
+        const adjuster = await createInstance(PageColorAdjuster);
         adjuster.changeBackgroundColor();
 
         // 読込完了をページに反映

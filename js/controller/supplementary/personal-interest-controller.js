@@ -1,3 +1,4 @@
+import { createInstance } from "../../keyword/create-instance.min.js";
 import { Buildable } from "../../interface/buildable.min.js";
 import { PersonalInterestModel } from "../../model/supplementary/personal-interest-model.min.js";
 import { Utility } from "../../shared/utility.min.js";
@@ -43,7 +44,7 @@ class PersonalInterestController extends Buildable {
      */
     execute = async() => {
         // 色を調整
-        const adjuster = await PageColorAdjuster.build();
+        const adjuster = await createInstance(PageColorAdjuster);
         adjuster.changeBackgroundColor();
 
         // 読込完了をページに反映
