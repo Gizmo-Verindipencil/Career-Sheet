@@ -1,6 +1,8 @@
+import { createInstance } from "../keyword/create-instance.min.js";
 import { Buildable } from "../interface/buildable.min.js";
 import { CoreInformationModel } from "../model/core-information-model.min.js";
 import { Utility } from "../shared/utility.min.js";
+import { PageColorAdjuster } from "../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
@@ -40,7 +42,7 @@ class CoreInformationController extends Buildable {
     /**
      * 基本情報の設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // 基本データを取得
         const data = this.model.getCoreInformation();
 
@@ -52,6 +54,10 @@ class CoreInformationController extends Buildable {
         this.setZipCodeAndAddress(data);
         this.setLocalStation(data);
         this.setAcademicBackground(data);
+
+        // 色を調整
+        const adjuster = await createInstance(PageColorAdjuster);
+        adjuster.changeBackgroundColor();
     }
 
     /**

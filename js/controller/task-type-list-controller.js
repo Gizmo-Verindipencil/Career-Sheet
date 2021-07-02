@@ -1,6 +1,8 @@
+import { createInstance } from "../keyword/create-instance.min.js";
 import { Buildable } from "../interface/buildable.min.js";
 import { TaskTypeListModel } from "../model/task-type-list-model.min.js";
 import { Utility } from "../shared/utility.min.js";
+import { PageColorAdjuster } from "../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
@@ -40,7 +42,7 @@ class TaskTypeListController extends Buildable {
     /**
      * 作業種類一覧の設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // 作業種類データを取得
         const types = this.model.getTaskTypes();
 
@@ -69,6 +71,10 @@ class TaskTypeListController extends Buildable {
             const wrapper = `<div class='task-type-list-task-wrapper'>${idP}${nameP}</div>`;
             $("#task-type-list").append(wrapper);
         }
+
+        // 色を調整
+        const adjuster = await createInstance(PageColorAdjuster);
+        adjuster.changeBackgroundColor();
     }
 }
 
