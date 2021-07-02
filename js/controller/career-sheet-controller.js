@@ -6,18 +6,6 @@ import { PageColorAdjuster } from "../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
- * 定数を提供します。
- */
- class Constant {
-    /**
-     * 実行処理の終了管理キーを取得します。
-     */
-    static get completeExecute() {
-        return "execute";
-    }
-}
-
-/**
  * 職務経歴書のコントローラーを提供します。
  */
 class CareerSheetController extends Buildable {
@@ -45,18 +33,6 @@ class CareerSheetController extends Buildable {
     }
 
     /**
-     * インスタンスに設定されているPageColorAdjusterを取得します。
-     * このインスタンスがbuild以外で作成されている場合、例外を発生させます。
-     * @returns {PageColorAdjuster} インスタンスを返します。
-     */
-    getPageColorAdjuster = () => {
-        if (!this.pageColorAdjuster) {
-            throw "Error: instance of the class needs to be created with 'build’.";
-        }
-        return this.pageColorAdjuster;
-    }
-
-    /**
      * インスタンスの生成し、必要なモジュールを読込します。
      * @returns {CareerSheetController} 新しいインスタンスを返します。
      */
@@ -68,28 +44,19 @@ class CareerSheetController extends Buildable {
         while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
-
-        // 色調整処理のインスタンスを作成
-        const adjuster = await createInstance(PageColorAdjuster);
-
-        // 終了管理キーを設定
-        adjuster.addKey(Constant.completeExecute);
-        controller.urls.forEach(x => adjuster.addKey(x));
-        controller.pageColorAdjuster = adjuster;
-
         return controller;
     }
 
     /**
      * 職務経歴書の設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // ページを読込してセット
         this.appendPages(this.urls);
 
         // 色を調整
-        const adjuster = this.getPageColorAdjuster();
-        adjuster.changeBackgroundColorWhenLastFunctionCall(Constant.completeExecute);
+        const adjuster = await createInstance(PageColorAdjuster);
+        adjuster.changeBackgroundColor();
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
@@ -114,13 +81,7 @@ class CareerSheetController extends Buildable {
                 async: true,
                 success: response => {
                     // ページを追加
-                    const content = $(response);
-                    $("body").append(content);
-                    content.ready(() => {
-                        // 色を調整
-                        const adjuster = this.getPageColorAdjuster();
-                        adjuster.changeBackgroundColorWhenLastFunctionCall(url);
-                    });
+                    $("body").append(response);
 
                     // 次のページを読込
                     append();

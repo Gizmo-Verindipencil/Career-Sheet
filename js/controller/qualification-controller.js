@@ -1,3 +1,4 @@
+import { createInstance } from "../keyword/create-instance.min.js";
 import { Buildable } from "../interface/buildable.min.js";
 import { QualificationModel } from "../model/qualification-model.min.js";
 import { Utility } from "../shared/utility.min.js";
@@ -40,13 +41,17 @@ class QualificationController extends Buildable {
     /**
      * 資格・免許の設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // 資格データを取得
         const qualifications = this.model.getQualifications();
 
         for (const qualification of qualifications) {
             $("div#qualification").append(`<p>${qualification.name} ${qualification.score}</p>`);
         }
+
+        // 色を調整
+        const adjuster = await createInstance(PageColorAdjuster);
+        adjuster.changeBackgroundColor();
     }
 }
 

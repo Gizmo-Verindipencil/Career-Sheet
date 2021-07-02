@@ -1,6 +1,8 @@
+import { createInstance } from "../keyword/create-instance.min.js";
 import { Buildable } from "../interface/buildable.min.js";
 import { WorkExperienceModel } from "../model/work-experience-model.min.js";
 import { Utility } from "../shared/utility.min.js";
+import { PageColorAdjuster } from "../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
@@ -40,7 +42,7 @@ class WorkExperienceController extends Buildable {
     /**
      * 職務経歴の設定を実行します。
      */
-    execute = () => {
+    execute = async() => {
         // 職務経歴データを取得
         let experiences = this.model.getWorkExperiences();
 
@@ -98,6 +100,10 @@ class WorkExperienceController extends Buildable {
             // 2回目以降はアニメーションありで追加
             this.appendRowsWithAnimation(rows);
         }
+
+        // 色を調整
+        const adjuster = await createInstance(PageColorAdjuster);
+        adjuster.changeBackgroundColor();
     }
 
     /**
