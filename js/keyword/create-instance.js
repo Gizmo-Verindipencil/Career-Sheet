@@ -1,5 +1,4 @@
 import { Buildable } from "../interface/buildable.min.js";
-import { Utility } from "../shared/utility.min.js";
 
 /**
  * クラスの新しいインスタンスを作成します。
@@ -21,10 +20,6 @@ var createInstance = async type => {
         // Buildableを継承する場合はbuildでインスタンスを生成
         const instance = new type();
         if (instance instanceof Buildable) {
-            // スクリプトの読込完了後にインスタンスを返す
-            while(instance.scriptLoader.running){
-                await Utility.sleep(2000);
-            }
             return await type.build();
         }
 
