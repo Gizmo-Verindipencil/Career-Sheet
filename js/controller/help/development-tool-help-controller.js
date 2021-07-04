@@ -112,16 +112,6 @@ class DevelopmentToolHelpController extends Buildable {
     createDescriptionTd = developmentTool => {
         return this.createTd(`<p>${developmentTool.description}</p>`);
     }
-
-    /**
-     * 背景色を季節を反映した内容に変えます。
-     */
-    changeBackgroundColor = () => {
-        const reminder = new SeasonReminder();
-        reminder.seasonEffect = 10;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
-    }
 }
 
 export { DevelopmentToolHelpController };
