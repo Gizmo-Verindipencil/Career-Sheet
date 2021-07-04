@@ -78,7 +78,7 @@ class PageColorAdjuster extends Buildable {
      */
     changeBackgroundColor = () => {
         const reminder = new SeasonReminder();
-        reminder.seasonInfluence = 10;
+        reminder.seasonEffect = 10;
         reminder.maxNumberOfReminding = 1;
         const ignore = Array.from(document.getElementsByClassName("preloader-section"));
         reminder.remindAll("background-color", ignore);
