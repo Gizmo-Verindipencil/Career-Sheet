@@ -2,6 +2,7 @@ import { createInstance } from "../keyword/create-instance.min.js";
 import { Buildable } from "../interface/buildable.min.js";
 import { QualificationModel } from "../model/qualification-model.min.js";
 import { Utility } from "../shared/utility.min.js";
+import { PageColorAdjuster } from "../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
