@@ -1,39 +1,15 @@
-import { Buildable } from "../interface/buildable.min.js";
-import { Utility } from "../shared/utility.min.js";
-import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
+import { SeasonReminder } from "../vendor/season-reminder.min.js";
 
 /**
  * ページの色調整を提供します。
  */
-class PageColorAdjuster extends Buildable {
+class PageColorAdjuster {
     /**
      * インスタンスを初期化します。
      */
     constructor() {
-        super();
-        
-        // 必要なスクリプトを読込
-        this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
-        this.scriptLoader.load();
-
         // 処理の終了管理を設定
         this.termination = {};
-    }
-
-    /**
-     * インスタンスの生成し、必要なモジュールを読込します。
-     * @returns {PageColorAdjuster} 新しいインスタンスを返します。
-     */
-    static build = async() => {
-        // インスタンスを作成
-        const adjuster = new PageColorAdjuster();
-
-        // スクリプトの読込完了後にインスタンスを返す
-        while(adjuster.scriptLoader.running){
-            await Utility.sleep(2000);
-        }
-        return adjuster;
     }
 
     /**
@@ -76,7 +52,7 @@ class PageColorAdjuster extends Buildable {
     /**
      * 背景色を季節を反映した内容に変えます。
      */
-    changeBackgroundColor = () => {
+    changeBackgroundColor = async() => {
         const reminder = new SeasonReminder();
         reminder.seasonEffect = 10;
         reminder.maxNumberOfReminding = 1;
