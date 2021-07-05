@@ -57,19 +57,19 @@ class ScriptSeriesLoader {
 
         // 対象スクリプトの生成
         const script = document.createElement("script");
-        script.src = this.sources.shift();
-        script.onerror = () => {
-            if (onFailure) onFailure();
-        };
+        document.head.appendChild(script);
 
         // スクリプト読込後に次のスクリプト読込を設定
         script.onload = () => {
             this.load(onSuccess, onFailure);
-        } 
+        }
 
-        // スクリプトの追加
-        document.head.appendChild(script);
-
+        // スクリプトの内容を設定
+        script.src = this.sources.shift();
+        script.onerror = () => {
+            if (onFailure) onFailure();
+        };
+        
         // 追加済ソースとして記録
         this.importedSources.push(script.src);
     }
