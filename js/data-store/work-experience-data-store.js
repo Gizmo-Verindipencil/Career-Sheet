@@ -2041,6 +2041,42 @@ class WorkExperienceDataStore {
                     }
                 ],
                 "businessRelationshipId" : "me-N-A-P"
+            },
+            {
+                "userId" : "1",
+                "no" : "32",
+                "businessType" : "建築",
+                "period" : {
+                    "from" : "2021-6-8",
+                    "to" : "2021-6-9"
+                },
+                "device" : [
+                    "PC"
+                ],
+                "os" : [
+                    "Windows 10"
+                ],
+                "programmingLanguage" : [],
+                "developmentTool" : [],
+                "framework" : [],
+                "platform" : [],
+                "database" : [],
+                "uncategorizedTechnology" : [],
+                "projectSummary" : "システム新規開発",
+                "projectPeakSize" : "2",
+                "subordinate" : "0",
+                "system" : [
+                    "チェックツール"
+                ],
+                "task" : [
+                    {
+                        "name" : "概算見積",
+                        "type" : [
+                            "RE"
+                        ]
+                    }
+                ],
+                "businessRelationshipId" : "me-N-A-PL"
             }
         ];
     }

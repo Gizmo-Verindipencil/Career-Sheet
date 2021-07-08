@@ -503,6 +503,41 @@ class BusinessRelationshipDataStore {
                         "to" : "TM"
                     }
                 ]
+            },
+            {
+                "id" : "me-N-A-PL",
+                "nodes" : [
+                    {
+                        "id" : "me",
+                        "description" : "自分"
+                    },
+                    {
+                        "id" : "N",
+                        "description" : "所属会社"
+                    },
+                    {
+                        "id" : "A",
+                        "description" : "1次請(常駐先)"
+                    },
+                    {
+                        "id" : "PL",
+                        "description" : "ユーザー"
+                    }
+                ],
+                "edges" : [
+                    {
+                        "from" : "me",
+                        "to" : "N"
+                    },
+                    {
+                        "from" : "N",
+                        "to" : "A"
+                    },
+                    {
+                        "from" : "A",
+                        "to" : "PL"
+                    }
+                ]
             }
         ];
     }
