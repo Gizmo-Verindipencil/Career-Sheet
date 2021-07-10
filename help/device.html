@@ -5,18 +5,14 @@
     <title>機種の説明</title>
     <link rel="stylesheet" href="../css/preloader.min.css">
     <link rel="stylesheet" href="../css/preloader/green.min.css">
+    <link rel="stylesheet" href="../css/destyle.min.css">
+    <link rel="stylesheet" href="../css/restyle.min.css">
+    <link rel="stylesheet" href="../css/common.min.css">
+    <link rel="stylesheet" href="../css/help.min.css">
     <script language="javascript" type="module">
-        import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.min.js";
         import ScriptSeriesLoader from "../js/shared/script-series-loader.min.js";
         import { DeviceHelpController } from "../js/controller/help/device-help-controller.min.js";
         import { createInstance } from "../js/keyword/create-instance.min.js";
-
-        const stylesheetLoader = StylesheetSeriesLoader;
-        stylesheetLoader.add("css/destyle.min.css");
-        stylesheetLoader.add("css/restyle.min.css");
-        stylesheetLoader.add("css/common.min.css");
-        stylesheetLoader.add("css/help.min.css");
-        stylesheetLoader.load();
 
         const scriptLoader = ScriptSeriesLoader;
         scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
