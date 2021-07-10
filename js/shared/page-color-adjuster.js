@@ -56,8 +56,7 @@ class PageColorAdjuster {
         const reminder = new SeasonReminder();
         reminder.seasonEffect = 10;
         reminder.maxNumberOfReminding = 1;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
+        reminder.remind(document.body, "background-color");
     }
 }
 
