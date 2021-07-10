@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <title>データベース経験グラフ</title>
     <link rel="stylesheet" href="../css/preloader.min.css">
+    <link rel="stylesheet" href="../css/destyle.min.css">
+    <link rel="stylesheet" href="../css/restyle.min.css">
+    <link rel="stylesheet" href="../css/common.min.css">
+    <link rel="stylesheet" href="../css/graph.min.css">
     <script language="javascript" type="module">
-        import StylesheetSeriesLoader from "../js/shared/stylesheet-series-loader.min.js";
         import ScriptSeriesLoader from "../js/shared/script-series-loader.min.js";
         import { DatabaseExperienceGraphController } from "../js/controller/graph/database-experience-graph-controller.min.js";
         import { createInstance } from "../js/keyword/create-instance.min.js";
-
-        const stylesheetLoader = StylesheetSeriesLoader;
-        stylesheetLoader.add("css/destyle.min.css");
-        stylesheetLoader.add("css/restyle.min.css");
-        stylesheetLoader.add("css/common.min.css");
-        stylesheetLoader.add("css/graph.min.css");
-        stylesheetLoader.load();
 
         const scriptLoader = ScriptSeriesLoader;
         scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
