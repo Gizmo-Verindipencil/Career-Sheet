@@ -119,8 +119,14 @@ class WorkExperienceController extends Buildable {
             }
 
             // tr要素を追加
-            const row = rows.shift();
+            const row = $(rows.shift());
             $("#work-experience > tbody").append(row);
+            row.ready(async() => {
+                // 最終データ読込後に色を調整
+                if (rows.length !== 0) return;
+                const adjuster = await createInstance(PageColorAdjuster);
+                adjuster.changeBackgroundColor();
+            });
 
             /**
              * 初回以降はアニメーションさせる
