@@ -4,7 +4,6 @@ import { QualificationModel } from "../model/qualification-model.min.js";
 import { Utility } from "../shared/utility.min.js";
 import { PageColorAdjuster } from "../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
-import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.min.js";
 
 /**
  * 資格・免許のコントローラーを提供します。
@@ -23,14 +22,6 @@ class QualificationController extends Buildable {
         this.scriptLoader = ScriptSeriesLoader;
         this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
         this.scriptLoader.load();
-
-        // 必要なスタイルシートを読込
-        this.stylesheetLoader = StylesheetSeriesLoader;
-        this.stylesheetLoader.add("css/destyle.min.css");
-        this.stylesheetLoader.add("css/restyle.min.css");
-        this.stylesheetLoader.add("css/common.min.css");
-        this.stylesheetLoader.add("css/qualification.min.css");
-        this.stylesheetLoader.load();
     }
 
     /**
@@ -42,7 +33,7 @@ class QualificationController extends Buildable {
         const controller = new QualificationController();
 
         // スクリプトの読込完了後にインスタンスを返す
-        while(controller.scriptLoader.running || controller.stylesheetLoader.running){
+        while(controller.scriptLoader.running){
             await Utility.sleep(2000);
         }
         return controller;
