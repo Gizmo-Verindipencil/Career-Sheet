@@ -8,19 +8,14 @@
     <link rel="stylesheet" href="../css/restyle.min.css">
     <link rel="stylesheet" href="../css/common.min.css">
     <link rel="stylesheet" href="../css/graph.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module">
-        import ScriptSeriesLoader from "../js/shared/script-series-loader.min.js";
         import { PaidLeaveGraphController } from "../js/controller/graph/paid-leave-graph-controller.min.js";
         import { createInstance } from "../js/keyword/create-instance.min.js";
 
-        const scriptLoader = ScriptSeriesLoader;
-        scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
-        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        scriptLoader.load(() => {
-            $(document).ready(async() => {
-                const controller = await createInstance(PaidLeaveGraphController);
-                controller.execute();    
-            });
+        $(document).ready(async() => {
+            const controller = await createInstance(PaidLeaveGraphController);
+            controller.execute();    
         });
     </script>
 </head>

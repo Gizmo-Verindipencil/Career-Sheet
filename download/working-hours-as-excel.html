@@ -3,18 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>労働時間ダウンロード</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module">
-        import ScriptSeriesLoader from "../js/shared/script-series-loader.min.js";
         import { WorkingHoursExcelDownloader } from "../js/downloader/working-hours-excel-downloader.min.js";
 
-        const scriptLoader = ScriptSeriesLoader;
-        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        scriptLoader.load(() => {
-            $(document).ready(() => {
-                $("#download").on("click", () => {
-                    const downloader = new WorkingHoursExcelDownloader();
-                    downloader.download();
-                });
+        $(document).ready(() => {
+            $("#download").on("click", () => {
+                const downloader = new WorkingHoursExcelDownloader();
+                downloader.download();
             });
         });
     </script>

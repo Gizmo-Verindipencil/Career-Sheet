@@ -8,23 +8,19 @@
     <link rel="stylesheet" href="css/common.min.css">
     <link rel="stylesheet" href="css/qualification.min.css">
     <link rel="stylesheet" href="css/task-type-list.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module">
-        import ScriptSeriesLoader from "./js/shared/script-series-loader.min.js";
         import { QualificationController } from "./js/controller/qualification-controller.min.js";
         import { TaskTypeListController } from "./js/controller/task-type-list-controller.min.js";
         import { createInstance } from "./js/keyword/create-instance.min.js";
 
-        const scriptLoader = ScriptSeriesLoader;
-        scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        scriptLoader.load(() => {
-            $(document).ready(async() => {
-                const controllers = [];
-                controllers.push(await createInstance(QualificationController));
-                controllers.push(await createInstance(TaskTypeListController));
-                for (const controller of controllers) {
-                    controller.execute();
-                }
-            });
+        $(document).ready(async() => {
+            const controllers = [];
+            controllers.push(await createInstance(QualificationController));
+            controllers.push(await createInstance(TaskTypeListController));
+            for (const controller of controllers) {
+                controller.execute();
+            }
         });
     </script>
 </head>
