@@ -60,15 +60,15 @@ class ScriptSeriesLoader {
         document.head.appendChild(script);
 
         // スクリプト読込後に次のスクリプト読込を設定
-        script.onload = () => {
+        script.addEventListener("load", () => {
             this.load(onSuccess, onFailure);
-        }
+        });
 
         // スクリプトの内容を設定
         script.src = this.sources.shift();
-        script.onerror = (e) => {
+        script.addEventListener("error", (e) => {
             if (onFailure) onFailure(e);
-        };
+        });
         
         // 追加済ソースとして記録
         this.importedSources.push(script.src);
