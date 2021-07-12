@@ -11,10 +11,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module">
         import { BusinessRelationshipChartListController } from "../js/controller/supplementary/business-relationship-chart-list-controller.min.js";
-        import { createInstance } from "../js/keyword/create-instance.min.js";
 
         $(document).ready(async() => {
-            const controller = await createInstance(BusinessRelationshipChartListController);
+            const controller = await BusinessRelationshipChartListController.build();
             controller.execute();
         });
     </script>

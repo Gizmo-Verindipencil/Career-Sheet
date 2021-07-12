@@ -11,10 +11,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module">
         import { OsExperienceGraphController } from "../js/controller/graph/os-experience-graph-controller.min.js";
-        import { createInstance } from "../js/keyword/create-instance.min.js";
 
         $(document).ready(async() => {
-            const controller = await createInstance(OsExperienceGraphController);
+            const controller = await OsExperienceGraphController.build();
             controller.execute();
         });
     </script>
