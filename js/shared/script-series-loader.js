@@ -66,8 +66,8 @@ class ScriptSeriesLoader {
 
         // スクリプトの内容を設定
         script.src = this.sources.shift();
-        script.onerror = () => {
-            if (onFailure) onFailure();
+        script.onerror = (e) => {
+            if (onFailure) onFailure(e);
         };
         
         // 追加済ソースとして記録
