@@ -117,7 +117,8 @@ class WorkExperienceDataStore {
                 ],
                 "programmingLanguage" : [
                     "VBA", 
-                    "VBScript"
+                    "VBScript",
+                    "Jet SQL"
                 ],
                 "developmentTool" : [],
                 "framework" : [],
@@ -1700,7 +1701,8 @@ class WorkExperienceDataStore {
                 "programmingLanguage" : [
                     "VBScript",
                     "VBA",
-                    "T-SQL"
+                    "T-SQL",
+                    "Jet SQL"
                 ],
                 "developmentTool" : [
                     "Visual Studio Code"
@@ -1787,8 +1789,7 @@ class WorkExperienceDataStore {
                 ],
                 "platform" : [],
                 "database" : [
-                    "SQL-Server",
-                    "Access"
+                    "SQL-Server"
                 ],
                 "uncategorizedTechnology" : [
                     "Autofac"
@@ -1902,7 +1903,8 @@ class WorkExperienceDataStore {
                 ],
                 "programmingLanguage" : [
                     "VBA",
-                    "T-SQL"
+                    "T-SQL",
+                    "Jet SQL"
                 ],
                 "developmentTool" : [
                     "SQL Server Management Studio"

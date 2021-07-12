@@ -63,6 +63,11 @@ class ProgrammingLanguageDataStore {
                 "id" : "11",
                 "name" : "UWSC",
                 "description" : "umiumi氏が提供するWindows操作を自動化ツールで使われるスクリプト言語。略字の意味は「Umiumiが作った Windows SCript」ということらしい。2018年頃に公式サイトが消滅したので入手不可かつ作者も消息不明。企業で使われることは稀だが、デイトレーダーなどの個人ユーザーの間では未だにシェアが高いらしい。"
+            },
+            {
+                "id" : "12",
+                "name" : "Jet SQL",
+                "description" : "Microsoft社が提供するAccessで使われるSQLの拡張仕様。"
             }
         ];
     }
