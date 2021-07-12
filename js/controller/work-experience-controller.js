@@ -365,7 +365,7 @@ class WorkExperienceController extends Buildable {
      */
     createTaskType = experience => {
         // この情報に対応するクラス名
-        const base = "work-experience-task-type";   
+        const base = "work-experience-task-type";
 
         // 情報がなければ空のtd要素を返す
         if (!experience.task || experience.task.length === 0) {
