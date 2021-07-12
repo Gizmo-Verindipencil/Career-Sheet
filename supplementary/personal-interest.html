@@ -11,10 +11,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module">
         import { PersonalInterestController } from "../js/controller/supplementary/personal-interest-controller.min.js";
-        import { createInstance } from "../js/keyword/create-instance.min.js";
 
         $(document).ready(async() => {
-            const controller = await createInstance(PersonalInterestController);
+            const controller = await PersonalInterestController.build();
             controller.execute();
         });
     </script>

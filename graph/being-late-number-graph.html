@@ -11,10 +11,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module">
         import { BeingLateNumberGraphController } from "../js/controller/graph/being-late-number-graph-controller.min.js";
-        import { createInstance } from "../js/keyword/create-instance.min.js";
 
         $(document).ready(async() => {
-            const controller = await createInstance(BeingLateNumberGraphController);
+            const controller = await BeingLateNumberGraphController.build();
             controller.execute();
         });
     </script>

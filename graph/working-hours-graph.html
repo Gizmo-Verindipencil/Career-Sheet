@@ -11,10 +11,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module">
         import { WorkingHoursGraphController } from "../js/controller/graph/working-hours-graph-controller.min.js";
-        import { createInstance } from "../js/keyword/create-instance.min.js";
 
         $(document).ready(async() => {
-            const controller = await createInstance(WorkingHoursGraphController);
+            const controller = await WorkingHoursGraphController.build();
             controller.execute();
         });
     </script>
