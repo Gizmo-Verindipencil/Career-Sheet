@@ -6,10 +6,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module">
         import { WorkExperienceExcelDownloader } from "../js/downloader/work-experience-excel-downloader.min.js";
+        import { createInstance } from "../js/keyword/create-instance.min.js";
 
         $(document).ready(() => {
-            $("#download").on("click", () => {
-                const downloader = new WorkExperienceExcelDownloader();
+            $("#download").on("click", async() => {
+                const downloader = await createInstance(WorkExperienceExcelDownloader);
                 downloader.download();
             });
         });
