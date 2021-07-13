@@ -20,7 +20,6 @@ class PersonalInterestController extends Buildable {
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 

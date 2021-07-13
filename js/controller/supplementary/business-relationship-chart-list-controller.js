@@ -24,7 +24,6 @@ class BusinessRelationshipChartListController extends Buildable {
         this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-core.min.js");
         this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-graph.min.js");
         this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.js");
-        this.scriptLoader.add("js/vendor/season-reminder.min.js");
         this.scriptLoader.load();
     }
 
