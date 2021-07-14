@@ -1517,7 +1517,7 @@ class WorkExperienceDataStore {
                     "Oracle"
                 ],
                 "uncategorizedTechnology" : [
-                    "JQuery",
+                    "jQuery",
                     "Subversion"
                 ],
                 "projectSummary" : "システム改訂",

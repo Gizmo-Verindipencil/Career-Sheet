@@ -1,4 +1,5 @@
 import { AbsoluteURIConverter } from "./absolute-uri-converter.min.js";
+import { Utility } from "./utility.min.js";
 
 /**
  * スクリプトの直列ローダーを提供します。
@@ -9,6 +10,7 @@ class ScriptSeriesLoader {
      */
     constructor() {
         this.sources = [];
+        this.requiredObjects = [];
         this.importedSources = [];
         this.running = false;
         this.absoluteURIConverter = new AbsoluteURIConverter();
@@ -24,8 +26,10 @@ class ScriptSeriesLoader {
     /**
      * スクリプトの読込対象に追加します。既に存在する場合は無視されます。
      * @param {String} source スクリプトのソース。絶対URI、またはルートからの相対パスである必要があります。
+     * @param {String} required スクリプトで使うオブジェクトを指定します。これはスクリプトロード後に対象の
+     *                          オブジェクトが生成されるまでに時間がある場合、この引数を指定すると改善します。
      */
-    add = source => {
+    add = (source, required) => {
         // 相対パスの場合は絶対URIへ変換
         let ref = source;
         if (!this.absoluteURIConverter.isAbsoluteURI(ref)) {
@@ -37,6 +41,11 @@ class ScriptSeriesLoader {
 
         // 読込ソースに追加
         this.sources.push(ref);
+
+        // 要求オブジェクトを設定
+        if (required) {
+            this.requiredObjects.push(required);
+        }
     }
 
     /**
@@ -44,9 +53,15 @@ class ScriptSeriesLoader {
      * @param {Function} onSuccess 成功時に実行される処理。
      * @param {Function} onFailure 失敗時に実行される処理。
      */
-    load = (onSuccess, onFailure) => {
+    load = async(onSuccess, onFailure) => {
         // 対象がひとつもなければ終了
         if (this.sources.length === 0) {
+            // オブジェクトの準備完了を待機
+            while(this.requiredObjects.some(x => eval(`typeof ${x}`) === "undefined")) {
+                await Utility.sleep(2000);
+            }
+
+            // 終了状態を設定
             this.running = false;
             if (onSuccess) onSuccess();
             return;

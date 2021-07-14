@@ -20,10 +20,8 @@ class BusinessRelationshipChartController extends Buildable {
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
-        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-core.min.js");
-        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-graph.min.js");
-        this.scriptLoader.add("https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.js");
+        this.scriptLoader.add("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js", "jQuery");
+        this.scriptLoader.add("https://cdn.anychart.com/releases/8.10.0/js/anychart-bundle.min.js", "anychart");
         this.scriptLoader.load();
     }
 
