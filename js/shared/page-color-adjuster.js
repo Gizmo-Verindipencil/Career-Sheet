@@ -30,8 +30,9 @@ class PageColorAdjuster {
      * 背景色を季節を反映した内容に変えます。複数回の呼出の内、最後の呼出時のみ実行されます。
      * 処理の呼出は、事前に addKey で登録された内容に対応します。
      * @param {String} key 呼出キー。
+     * @param {Array<HTMLElement>} ignoredElements 季節を反映しない要素。
      */
-    changeBackgroundColorWhenLastFunctionCall = key => {
+    changeBackgroundColorWhenLastFunctionCall = (key, ignoredElements) => {
         // 事前に登録されていないキーの場合はエラー
         if (this.termination[key]) {
             throw "Error: the key is unknown.";
@@ -46,18 +47,22 @@ class PageColorAdjuster {
         }
 
         // 色を調整
-        this.changeBackgroundColor();
+        this.changeBackgroundColor(ignoredElements);
     }
 
     /**
      * 背景色を季節を反映した内容に変えます。
+     * @param {Array<HTMLElement>} ignoredElements 季節を反映しない要素。
      */
-    changeBackgroundColor = async() => {
+    changeBackgroundColor = ignoredElements => {
         const reminder = new SeasonReminder();
         reminder.seasonEffect = 10;
         reminder.maxNumberOfReminding = 1;
-        const ignore = Array.from(document.getElementsByClassName("preloader-section"));
-        reminder.remindAll("background-color", ignore);
+        let ignore = Array.from(document.getElementsByClassName("preloader-section"));
+        if (ignoredElements) {
+            ignore = ignoredElements.concat(ignoredElements);
+        }
+        reminder.remindAll("background-color", ignoredElements);
     }
 }
 

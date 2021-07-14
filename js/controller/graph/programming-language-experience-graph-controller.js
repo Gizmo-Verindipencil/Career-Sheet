@@ -75,8 +75,9 @@ class ProgrammingLanguageExperienceGraphController extends Buildable {
         Plotly.newPlot("graph-container", data, layout);
 
         // 色を調整
+        const ignore = Array.from(document.getElementsByClassName("main-svg"));
         const adjuster = await createInstance(PageColorAdjuster);
-        adjuster.changeBackgroundColor();
+        adjuster.changeBackgroundColor(ignore);
 
         // 読込完了をページに反映
         $("body").addClass("loaded");
