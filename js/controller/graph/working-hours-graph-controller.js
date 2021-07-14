@@ -20,7 +20,7 @@ class WorkingHoursGraphController extends Buildable {
 
         // 必要なスクリプトを読込
         this.scriptLoader = ScriptSeriesLoader;
-        this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js");
+        this.scriptLoader.add("https://cdn.plot.ly/plotly-latest.min.js", "Plotly");
         this.scriptLoader.load();
     }
 
