@@ -11,9 +11,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module">
         import { PaidLeaveGraphController } from "../js/controller/graph/paid-leave-graph-controller.min.js";
+        import { createInstance } from "../js/keyword/create-instance.min.js";
 
         $(document).ready(async() => {
-            const controller = await PaidLeaveGraphController.build();
+            const controller = await createInstance(PaidLeaveGraphController);
             controller.execute();
         });
     </script>
