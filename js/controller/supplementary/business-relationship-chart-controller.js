@@ -44,6 +44,21 @@ class BusinessRelationshipChartController extends Buildable {
      * ビジネス関係図の設定を実行します。
      */
     execute = async() => {
+        // チャート図を設定
+        await this.setChart();
+
+        // 色を調整
+        const adjuster = await createInstance(PageColorAdjuster);
+        adjuster.changeBackgroundColor();
+
+        // 読込完了をページに反映
+        $("body").addClass("loaded");
+    }
+
+    /**
+     * ビジネス関係を示すチャート図をページに設定します。
+     */
+    setChart = async() => {
         // ビジネス関係データを取得
         const params = new URLSearchParams(document.location.search.substring(1));
         const id = params.get("id");
@@ -82,13 +97,6 @@ class BusinessRelationshipChartController extends Buildable {
         
         // 図の描画
         chart.container("chart-container").draw();
-
-        // 色を調整
-        const adjuster = await createInstance(PageColorAdjuster);
-        adjuster.changeBackgroundColor();
-
-        // 読込完了をページに反映
-        $("body").addClass("loaded");
     }
 
     /**
