@@ -2079,6 +2079,47 @@ class WorkExperienceDataStore {
                     }
                 ],
                 "businessRelationshipId" : "me-N-A-PL"
+            },
+            {
+                "userId" : "1",
+                "no" : "33",
+                "businessType" : "メーカー",
+                "period" : {
+                    "from" : "2021-6-14",
+                    "to" : "2021-7-14"
+                },
+                "device" : [
+                    "PC"
+                ],
+                "os" : [
+                    "Windows 10"
+                ],
+                "programmingLanguage" : [
+                    "VBA",
+                    "Jet SQL"
+                ],
+                "developmentTool" : [],
+                "framework" : [],
+                "platform" : [],
+                "database" : [
+                    "Access"
+                ],
+                "uncategorizedTechnology" : [],
+                "projectSummary" : "システム改訂",
+                "projectPeakSize" : "18",
+                "subordinate" : "0",
+                "system" : [
+                    "業務ツール群"
+                ],
+                "task" : [
+                    {
+                        "name" : "ソースコードマージ",
+                        "type" : [
+                            "C"
+                        ]
+                    }
+                ],
+                "businessRelationshipId" : "me-N-A-PL"
             }
         ];
     }
