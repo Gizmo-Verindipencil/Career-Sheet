@@ -4,7 +4,7 @@
 class Utility {
     /**
      * 指定時間の待機します。
-     * @param {Number} millisecond 待機時間(ミリ秒)
+     * @param {Number} millisecond 待機時間(ミリ秒)。
      * @returns {Promise} ダミー。
      */
     static sleep = millisecond => {
@@ -45,7 +45,7 @@ class Utility {
     /**
      * 日付表現(yyyy-mm-dd)から日数を取得します。
      * これは目安の日数であり、正確な数値ではありません。
-     * @param {string} expression 日付表現(yyyy-mm-dd)
+     * @param {string} expression 日付表現(yyyy-mm-dd)。
      * @returns {Number} 日数を返します。
      */
     static getNumberOfDays = expression => {
