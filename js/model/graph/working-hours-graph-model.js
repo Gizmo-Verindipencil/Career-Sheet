@@ -1,5 +1,5 @@
 import { WorkingHoursRepository } from "../../repository/working-hours-repository.min.js";
-import { Utility } from "../../shared/utility.min.js";
+import { MathUtility } from "../../shared/utility/math-utility.min.js";
 
 /**
  * 労働時間グラフのモデルを提供します。
@@ -51,7 +51,7 @@ class WorkingHoursGraphModel {
      * @returns {Array<Object>} 移動平均を返します。
      */
     getEMA = name => {
-        const eMAs = Utility.calculateEMA(this.records.map(x => x[name]), 12);
+        const eMAs = MathUtility.calculateEMA(this.records.map(x => x[name]), 12);
         const data = [];
         for(let i = 0; i < this.records.length; i++) {
             data.push({
@@ -84,7 +84,7 @@ class WorkingHoursGraphModel {
      * @returns {Array<Object>} 平均を返します。
      */
     getAverage = name => {
-        const average = Utility.calculateAverage(this.records.map(x => x[name]));
+        const average = MathUtility.calculateAverage(this.records.map(x => x[name]));
         const data = [];
         for(const record of this.records) {
             data.push({
