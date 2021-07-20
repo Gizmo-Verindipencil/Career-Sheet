@@ -2,7 +2,7 @@ import { createInstance } from "../keyword/create-instance.min.js";
 import { Buildable } from "../interface/buildable.min.js";
 import { WorkExperienceReportModel } from "../model/work-experience-report-model.min.js";
 import { Threading } from "../shared/utility/threading.min.js";
-import { Utility } from "../shared/utility.min.js";
+import { Datetime } from "../shared/utility/datetime.min.js";
 import { PageColorAdjuster } from "../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 import StylesheetSeriesLoader from "../shared/stylesheet-series-loader.min.js";
@@ -187,8 +187,8 @@ class WorkExperienceReportController extends Buildable {
         }
 
         // 日数差から月数差を計算
-        const from = Utility.getNumberOfDays(data.period.from);
-        const to = Utility.getNumberOfDays(data.period.to);
+        const from = Datetime.getNumberOfDays(data.period.from);
+        const to = Datetime.getNumberOfDays(data.period.to);
         const daysOfMonth = 30;
         let numberOfMonths = (to - from) / daysOfMonth;
 

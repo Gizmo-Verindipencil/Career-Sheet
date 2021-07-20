@@ -1,5 +1,5 @@
 import { WorkExperienceRepository } from "../../repository/work-experience-repository.js";
-import { Utility } from "../../shared/utility.min.js";
+import { Datetime } from "../../shared/utility/datetime.min.js";
 
 /**
  * データベース経験グラフのモデルを提供します。
@@ -24,8 +24,8 @@ class DatabaseExperienceGraphModel {
             if (!experience.period.from || !experience.period.to) continue;
 
             // 期間を取得
-            const from = Utility.getNumberOfDays(experience.period.from);
-            const to = Utility.getNumberOfDays(experience.period.to);
+            const from = Datetime.getNumberOfDays(experience.period.from);
+            const to = Datetime.getNumberOfDays(experience.period.to);
             const days = to - from;
 
             // データベース毎に日数を加算
