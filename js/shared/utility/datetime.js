@@ -1,7 +1,7 @@
 /**
  * 日時関連のユーティリティ処理を提供します。
  */
-class DateTime {
+class Datetime {
     /**
      * 日付表現(yyyy-mm-dd)から日数を取得します。
      * これは目安の日数であり、正確な数値ではありません。
@@ -18,4 +18,4 @@ class DateTime {
     }
 }
 
-export { DateTime };
+export { Datetime };
