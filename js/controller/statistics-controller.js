@@ -32,7 +32,7 @@ class StatisticsController extends Buildable {
 
         // スクリプトの読込完了後にインスタンスを返す
         while(controller.scriptLoader.running){
-            await Utility.sleep(2000);
+            await Threading.sleep(2000);
         }
         return controller;
     }

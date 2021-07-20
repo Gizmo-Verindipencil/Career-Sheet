@@ -3,15 +3,6 @@
  */
 class Utility {
     /**
-     * 指定時間の待機します。
-     * @param {Number} millisecond 待機時間(ミリ秒)。
-     * @returns {Promise} ダミー。
-     */
-    static sleep = millisecond => {
-        return new Promise(resolve => setTimeout(resolve, millisecond));
-    }
-
-    /**
      * 指数平滑移動平均(EMA)を計算します。
      * @param {Array<Number>} array 計算元の数値。
      * @param {Number} range 平均する範囲。

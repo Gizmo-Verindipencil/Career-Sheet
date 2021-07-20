@@ -1,7 +1,7 @@
 import { createInstance } from "../keyword/create-instance.min.js";
 import { Buildable } from "../interface/buildable.min.js";
 import { CareerSheetModel } from "../model/career-sheet-model.min.js";
-import { Utility } from "../shared/utility.min.js";
+import { Threading } from "../shared/threading.min.js";
 import { PageColorAdjuster } from "../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
@@ -42,7 +42,7 @@ class CareerSheetController extends Buildable {
 
         // スクリプトの読込完了後にインスタンスを返す
         while(controller.scriptLoader.running){
-            await Utility.sleep(2000);
+            await Threading.sleep(2000);
         }
         return controller;
     }

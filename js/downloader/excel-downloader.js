@@ -1,5 +1,5 @@
 import { Buildable } from "../interface/buildable.min.js";
-import { Utility } from "../shared/utility.min.js";
+import { Threading } from "../shared/threading.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
@@ -35,7 +35,7 @@ class ExcelDownloader extends Buildable {
 
         // スクリプトの読込完了後にインスタンスを返す
         while(downloader.scriptLoader.running){
-            await Utility.sleep(2000);
+            await Threading.sleep(2000);
         }
         return downloader;
     }
