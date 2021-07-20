@@ -1,7 +1,7 @@
 import { createInstance } from "../../keyword/create-instance.min.js";
 import { Buildable } from "../../interface/buildable.min.js";
 import { DatabaseExperienceGraphModel } from "../../model/graph/database-experience-graph-model.min.js";
-import { Threading } from "../../shared/threading.min.js";
+import { Threading } from "../../shared/utility/threading.min.js";
 import { PageColorAdjuster } from "../../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 

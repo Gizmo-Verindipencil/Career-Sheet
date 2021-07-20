@@ -1,5 +1,5 @@
 import { Buildable } from "../interface/buildable.min.js";
-import { Threading } from "../shared/threading.min.js";
+import { Threading } from "../shared/utility/threading.min.js";
 import ScriptSeriesLoader from "../shared/script-series-loader.min.js";
 
 /**
