@@ -1,7 +1,7 @@
 import { createInstance } from "../../keyword/create-instance.min.js";
 import { Buildable } from "../../interface/buildable.min.js";
 import { ProgrammingLanguageExperienceGraphModel } from "../../model/graph/programming-language-experience-graph-model.min.js";
-import { Threading } from "../../shared/utility/threading.min.js";
+import { ThreadingUtility } from "../../shared/utility/threading-utility.min.js";
 import { PageColorAdjuster } from "../../shared/page-color-adjuster.min.js";
 import ScriptSeriesLoader from "../../shared/script-series-loader.min.js";
 
@@ -34,7 +34,7 @@ class ProgrammingLanguageExperienceGraphController extends Buildable {
 
         // スクリプトの読込完了後にインスタンスを返す
         while(controller.scriptLoader.running) {
-            await Threading.sleep(2000);
+            await ThreadingUtility.sleep(2000);
         }
         return controller;
     }

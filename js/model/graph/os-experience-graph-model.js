@@ -1,5 +1,5 @@
 import { WorkExperienceRepository } from "../../repository/work-experience-repository.js";
-import { Datetime } from "../../shared/utility/datetime.min.js";
+import { DatetimeUtility } from "../../shared/utility/datetime-utility.min.js";
 
 /**
  * OS経験グラフのモデルを提供します。
@@ -24,8 +24,8 @@ class OsExperienceGraphModel {
             if (!experience.period.from || !experience.period.to) continue;
 
             // 期間を取得
-            const from = Datetime.getNumberOfDays(experience.period.from);
-            const to = Datetime.getNumberOfDays(experience.period.to);
+            const from = DatetimeUtility.getNumberOfDays(experience.period.from);
+            const to = DatetimeUtility.getNumberOfDays(experience.period.to);
             const days = to - from;
 
             // OS毎に日数を加算

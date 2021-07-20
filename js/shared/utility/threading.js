@@ -1,7 +1,7 @@
 /**
  * スレッド関連のユーティリティ処理を提供します。
  */
-class Threading {
+class ThreadingUtility {
     /**
      * 指定時間の待機します。
      * @param {Number} millisecond 待機時間(ミリ秒)。
@@ -12,4 +12,4 @@ class Threading {
     }
 }
 
-export { Threading };
+export { ThreadingUtility };

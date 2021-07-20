@@ -58,7 +58,7 @@ class ScriptSeriesLoader {
         if (this.sources.length === 0) {
             // オブジェクトの準備完了を待機
             while(this.requiredObjects.some(x => eval(`typeof ${x}`) === "undefined")) {
-                await Threading.sleep(2000);
+                await ThreadingUtility.sleep(2000);
             }
 
             // 終了状態を設定
