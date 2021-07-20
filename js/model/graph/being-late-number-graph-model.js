@@ -1,5 +1,5 @@
 import { WorkingHoursRepository } from "../../repository/working-hours-repository.min.js";
-import { Utility } from "../../shared/utility.min.js";
+import { MathUtility } from "../../shared/utility/math-utility.min.js";
 
 /**
  * 遅刻回数グラフのモデルを提供します。
@@ -33,7 +33,7 @@ class BeingLateNumberGraphModel {
      * @returns {Array<Object>} 遅刻回数の移動平均を返します。
      */
     getEMA = () => {
-        const eMAs = Utility.calculateEMA(this.records.map(x => x.beingLate.count), 12);
+        const eMAs = MathUtility.calculateEMA(this.records.map(x => x.beingLate.count), 12);
         const data = [];
         for(let i = 0; i < this.records.length; i++) {
             data.push({
@@ -49,7 +49,7 @@ class BeingLateNumberGraphModel {
      * @returns {Array<Object>} 遅刻回数の平均を返します。
      */
     getAverage = () => {
-        const average = Utility.calculateAverage(this.records.map(x => x.beingLate.count));
+        const average = MathUtility.calculateAverage(this.records.map(x => x.beingLate.count));
         const data = [];
         for(const record of this.records) {
             data.push({

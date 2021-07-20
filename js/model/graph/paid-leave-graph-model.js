@@ -1,5 +1,4 @@
 import { WorkingHoursRepository } from "../../repository/working-hours-repository.min.js";
-import { Utility } from "../../shared/utility.min.js";
 
 /**
  * 有給休暇グラフのモデルを提供します。

@@ -1,7 +1,7 @@
 /**
- * ユーティリティ処理を提供します。
+ * 計算関連のユーティリティ処理を提供します。
  */
-class Utility {
+class MathUtility {
     /**
      * 指数平滑移動平均(EMA)を計算します。
      * @param {Array<Number>} array 計算元の数値。
@@ -34,4 +34,4 @@ class Utility {
     }
 }
 
-export { Utility };
+export { MathUtility };

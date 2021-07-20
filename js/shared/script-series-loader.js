@@ -1,5 +1,5 @@
 import { AbsoluteURIConverter } from "./absolute-uri-converter.min.js";
-import { Utility } from "./utility.min.js";
+import { ThreadingUtility } from "./utility/threading-utility.min.js";
 
 /**
  * スクリプトの直列ローダーを提供します。
